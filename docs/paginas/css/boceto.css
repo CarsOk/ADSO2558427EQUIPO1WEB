@@ -15,7 +15,7 @@ html {
 header {
   position: fixed;
   width: 100%;
-  background-color: #63db00;
+  background-color: #ce0224;
   padding: 3rem 5rem;
 }
 nav {
@@ -106,3 +106,8 @@ nav ul.active {
 }
 
 /*---*/
+
+.image{
+  margin-top: 100px;
+  display: inline-block;
+}
