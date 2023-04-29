@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+
 html {
   font-size: 62.5%;
 }
@@ -13,7 +14,6 @@ html {
 }
 
 header {
-  position: fixed;
   width: 100%;
   background-color: #ce0224;
   padding: 3rem 5rem;
@@ -49,7 +49,7 @@ section#home {
   place-items: center;
 }
 h1 {
-  font-size: 4rem;
+  font-size: 2rem;
 }
 #ham-menu {
   display: none;
@@ -104,5 +104,22 @@ nav ul.active {
     height: calc(100vh - 65.18px);
   }
 }
+
+.texto {
+  margin-top: 10px;
+  display: inline-block;
+}
+
+p {
+  font-size: 14px;
+}
+
+.pdfview{
+  margin: auto;
+  display: block;
+  width: 1140px;
+  height: 100vh;
+}
+  
 
 /*---*/
