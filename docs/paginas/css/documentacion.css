@@ -49,7 +49,7 @@ section#home {
   place-items: center;
 }
 h1 {
-  font-size: 2rem;
+  font-size: 3rem;
 }
 #ham-menu {
   display: none;
@@ -117,7 +117,7 @@ p {
 .pdfview{
   margin: auto;
   display: block;
-  width: 1140px;
+  width: 1500px;
   height: 100vh;
 }
   
