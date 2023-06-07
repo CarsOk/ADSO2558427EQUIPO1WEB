@@ -1447,3 +1447,518 @@ Processing by HomeController#Inicio as HTML
 Completed 200 OK in 880ms (Views: 874.6ms | ActiveRecord: 0.0ms | Allocations: 20114)
 
 
+Started GET "/" for ::1 at 2023-05-07 14:27:51 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 0.1ms | Allocations: 46)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 33.1ms | Allocations: 3180)
+Completed 200 OK in 34ms (Views: 33.5ms | Allocations: 3698)
+
+
+Started GET "/" for ::1 at 2023-05-07 14:30:14 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 0.8ms | Allocations: 156)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.3ms | Allocations: 3749)
+Completed 200 OK in 19ms (Views: 16.7ms | Allocations: 5050)
+
+
+Started GET "/" for ::1 at 2023-05-07 14:56:20 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 0.1ms | Allocations: 41)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 3017)
+Completed 200 OK in 4ms (Views: 3.9ms | Allocations: 3453)
+
+
+Started GET "/" for ::1 at 2023-05-07 14:56:22 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 0.1ms | Allocations: 41)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 3013)
+Completed 200 OK in 5ms (Views: 4.3ms | Allocations: 3393)
+
+
+Started GET "/" for ::1 at 2023-05-07 14:56:22 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 0.1ms | Allocations: 41)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3013)
+Completed 200 OK in 7ms (Views: 6.4ms | Allocations: 3393)
+
+
+Started GET "/" for ::1 at 2023-05-07 14:56:23 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 0.2ms | Allocations: 41)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 3013)
+Completed 200 OK in 12ms (Views: 11.5ms | Allocations: 3393)
+
+
+Started GET "/" for ::1 at 2023-05-07 14:56:23 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 0.2ms | Allocations: 41)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 3013)
+Completed 200 OK in 14ms (Views: 12.5ms | Allocations: 3393)
+
+
+Started GET "/" for ::1 at 2023-05-07 14:56:24 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 0.2ms | Allocations: 41)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 3016)
+Completed 200 OK in 12ms (Views: 11.5ms | Allocations: 3401)
+
+
+Started GET "/" for ::1 at 2023-05-07 14:56:25 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 0.1ms | Allocations: 41)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3013)
+Completed 200 OK in 7ms (Views: 6.6ms | Allocations: 3393)
+
+
+Started GET "/" for ::1 at 2023-05-07 14:56:26 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 0.1ms | Allocations: 41)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3013)
+Completed 200 OK in 7ms (Views: 6.5ms | Allocations: 3393)
+
+
+Started GET "/" for ::1 at 2023-06-06 19:45:38 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 1.1ms | Allocations: 346)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 90.6ms | Allocations: 6434)
+Completed 200 OK in 101ms (Views: 93.5ms | ActiveRecord: 0.0ms | Allocations: 9615)
+
+
+Started GET "/" for ::1 at 2023-06-06 19:45:43 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 0.1ms | Allocations: 46)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 3177)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 3694)
+
+
+Started GET "/" for ::1 at 2023-06-06 19:45:45 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 0.1ms | Allocations: 41)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 3016)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 3407)
+
+
+Started GET "/inicio" for ::1 at 2023-06-06 19:50:21 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/inicio"):
+  
+Started GET "/" for ::1 at 2023-06-06 19:50:27 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 0.1ms | Allocations: 41)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 3174)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 3643)
+
+
+Started GET "/" for ::1 at 2023-06-06 19:52:56 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 5.1ms | Allocations: 3610)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 146)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 6693)
+Completed 200 OK in 12ms (Views: 10.7ms | Allocations: 7956)
+
+
+Started GET "/" for ::1 at 2023-06-06 19:53:59 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 16.8ms | Allocations: 3610)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 144)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 131)
+  Rendered layout layouts/application.html.erb (Duration: 29.5ms | Allocations: 6990)
+Completed 200 OK in 41ms (Views: 37.7ms | Allocations: 8304)
+
+
+Started GET "/" for ::1 at 2023-06-06 19:56:27 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 14.6ms | Allocations: 3610)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 144)
+  Rendered layouts/_article.html.erb (Duration: 1.1ms | Allocations: 360)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 26.1ms | Allocations: 7442)
+Completed 200 OK in 33ms (Views: 30.4ms | Allocations: 8744)
+
+
+Started GET "/" for ::1 at 2023-06-06 19:57:06 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 13.7ms | Allocations: 3610)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 147)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 33.0ms | Allocations: 6878)
+Completed 200 OK in 41ms (Views: 38.6ms | Allocations: 8181)
+
+
+Started GET "/" for ::1 at 2023-06-06 19:57:58 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 14.5ms | Allocations: 3639)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 1.0ms | Allocations: 145)
+  Rendered layouts/_article.html.erb (Duration: 0.7ms | Allocations: 358)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 27.9ms | Allocations: 7466)
+Completed 200 OK in 34ms (Views: 32.1ms | Allocations: 8773)
+
+
+Started GET "/" for ::1 at 2023-06-06 19:58:08 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 13.8ms | Allocations: 3610)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 1.1ms | Allocations: 144)
+  Rendered layouts/_article.html.erb (Duration: 1.9ms | Allocations: 298)
+  Rendered layouts/_footer.html.erb (Duration: 1.4ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 34.2ms | Allocations: 7375)
+Completed 200 OK in 40ms (Views: 37.9ms | Allocations: 8688)
+
+
+Started GET "/" for ::1 at 2023-06-06 19:58:15 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 8.8ms | Allocations: 2967)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.2ms | Allocations: 43)
+  Rendered layouts/_article.html.erb (Duration: 0.1ms | Allocations: 42)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 5658)
+Completed 200 OK in 17ms (Views: 16.1ms | Allocations: 6086)
+
+
+Started GET "/" for ::1 at 2023-06-06 19:58:16 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 12.5ms | Allocations: 3610)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 144)
+  Rendered layouts/_article.html.erb (Duration: 0.6ms | Allocations: 237)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 21.9ms | Allocations: 7313)
+Completed 200 OK in 26ms (Views: 24.0ms | Allocations: 8571)
+
+
+Started GET "/" for ::1 at 2023-06-06 19:58:28 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 17.1ms | Allocations: 3610)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 144)
+  Rendered layouts/_article.html.erb (Duration: 0.6ms | Allocations: 201)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 29.7ms | Allocations: 7279)
+Completed 200 OK in 36ms (Views: 34.2ms | Allocations: 8586)
+
+
+Started GET "/" for ::1 at 2023-06-06 19:58:41 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 12.0ms | Allocations: 3610)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 144)
+  Rendered layouts/_article.html.erb (Duration: 0.5ms | Allocations: 187)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 7264)
+Completed 200 OK in 31ms (Views: 28.3ms | Allocations: 8566)
+
+
+Started GET "/" for ::1 at 2023-06-06 19:58:56 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 23.1ms | Allocations: 3610)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 144)
+  Rendered layouts/_article.html.erb (Duration: 0.6ms | Allocations: 224)
+  Rendered layouts/_footer.html.erb (Duration: 0.8ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 36.4ms | Allocations: 7300)
+Completed 200 OK in 44ms (Views: 41.6ms | Allocations: 8603)
+
+
+Started GET "/" for ::1 at 2023-06-06 19:59:32 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 12.6ms | Allocations: 3610)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 1.4ms | Allocations: 144)
+  Rendered layouts/_article.html.erb (Duration: 0.5ms | Allocations: 225)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 31.7ms | Allocations: 7302)
+Completed 200 OK in 38ms (Views: 35.9ms | Allocations: 8604)
+
+
+Started GET "/" for ::1 at 2023-06-06 20:04:36 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 14.5ms | Allocations: 3623)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 145)
+  Rendered layouts/_carousel.html.erb (Duration: 0.5ms | Allocations: 125)
+  Rendered layouts/_article.html.erb (Duration: 0.5ms | Allocations: 224)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 24.4ms | Allocations: 7641)
+Completed 200 OK in 31ms (Views: 29.0ms | Allocations: 8949)
+
+
+Started GET "/" for ::1 at 2023-06-06 20:13:52 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 12.9ms | Allocations: 3618)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.5ms | Allocations: 144)
+  Rendered layouts/_carousel.html.erb (Duration: 0.6ms | Allocations: 125)
+  Rendered layouts/_article.html.erb (Duration: 0.5ms | Allocations: 224)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 26.5ms | Allocations: 7628)
+Completed 200 OK in 33ms (Views: 30.8ms | Allocations: 8933)
+
+
+Started GET "/" for ::1 at 2023-06-06 20:15:05 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 16.9ms | Allocations: 3648)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 1.2ms | Allocations: 144)
+  Rendered layouts/_carousel.html.erb (Duration: 2.8ms | Allocations: 1117)
+  Rendered layout layouts/application.html.erb (Duration: 34.5ms | Allocations: 7920)
+Completed 500 Internal Server Error in 41ms (Allocations: 9212)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+<div class="carousel-inner">
+  <div class="carousel-item active oscurecer-img">
+    <%= image_tag("images/hamburguesa/hamburguesa1.jpeg" height="800", class:"d-block w-100") %>
+      <img src="https://lasamaria.co/wp-content/uploads/2022/06/mixta-scaled.jpg" class="d-block w-100" height="800" alt="..." >
+  </div>
+  <div class="carousel-item oscurecer-img">
+    <img src="https://assets.unileversolutions.com/recipes-v2/237633.jpg?imwidth=1600" class="d-block w-100" height="800" alt="...">
+  </div>
+  <div class="carousel-item oscurecer-img">
+    <img src="https://cdn.colombia.com/gastronomia/2016/11/17/hamburguesa-artesanal-3029.webp" class="d-block w-100" height="800" alt="...">
+  </div>
+  <div class="container-fluid bg-danger text-white">
+    <p class="centro">Abajo puede encontrar nuestro Menú</p>        
+  </div>
+):
+1:    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+2:    <div class="carousel-inner">
+3:      <div class="carousel-item active oscurecer-img">
+4:        <%= image_tag("images/hamburguesa/hamburguesa1.jpeg" height="800", class:"d-block w-100") %>
+5:          <img src="https://lasamaria.co/wp-content/uploads/2022/06/mixta-scaled.jpg" class="d-block w-100" height="800" alt="..." >
+6:      </div>
+7:      <div class="carousel-item oscurecer-img">
+8:        <img src="https://assets.unileversolutions.com/recipes-v2/237633.jpg?imwidth=1600" class="d-block w-100" height="800" alt="...">
+9:      </div>
+10:      <div class="carousel-item oscurecer-img">
+11:        <img src="https://cdn.colombia.com/gastronomia/2016/11/17/hamburguesa-artesanal-3029.webp" class="d-block w-100" height="800" alt="...">
+12:      </div>
+13:      <div class="container-fluid bg-danger text-white">
+14:        <p class="centro">Abajo puede encontrar nuestro Menú</p>        
+15:      </div>
+  
+app/views/layouts/_carousel.html.erb:4: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_carousel.html.erb:4: syntax error, unexpected label
+app/views/layouts/_carousel.html.erb:4: syntax error, unexpected ')', expecting `end'
+app/views/layouts/_carousel.html.erb:4: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_carousel.html.erb:4: syntax error, unexpected label
+app/views/layouts/_carousel.html.erb:4: syntax error, unexpected ')', expecting `end'
+app/views/layouts/_carousel.html.erb:4: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_carousel.html.erb:4: syntax error, unexpected label
+app/views/layouts/_carousel.html.erb:4: syntax error, unexpected ')', expecting `end'
+app/views/layouts/_carousel.html.erb:4: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_carousel.html.erb:4: syntax error, unexpected label
+app/views/layouts/_carousel.html.erb:4: syntax error, unexpected ')', expecting `end'
+app/views/layouts/_carousel.html.erb:4: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_carousel.html.erb:4: syntax error, unexpected label
+app/views/layouts/_carousel.html.erb:4: syntax error, unexpected ')', expecting `end'
+app/views/layouts/_carousel.html.erb:4: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_carousel.html.erb:4: syntax error, unexpected label
+app/views/layouts/_carousel.html.erb:4: syntax error, unexpected ')', expecting `end'
+app/views/layouts/application.html.erb:17
+Started GET "/" for ::1 at 2023-06-06 20:15:27 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 18.7ms | Allocations: 3623)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.4ms | Allocations: 144)
+  Rendered layouts/_carousel.html.erb (Duration: 1.4ms | Allocations: 1098)
+  Rendered layout layouts/application.html.erb (Duration: 30.7ms | Allocations: 7877)
+Completed 500 Internal Server Error in 42ms (Allocations: 9151)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+<div class="carousel-inner">
+  <div class="carousel-item active oscurecer-img">
+    <%= image_tag("images/hamburguesa/hamburguesa1.jpeg" height="800") %>
+      <img src="https://lasamaria.co/wp-content/uploads/2022/06/mixta-scaled.jpg" class="d-block w-100" height="800" alt="..." >
+  </div>
+  <div class="carousel-item oscurecer-img">
+    <img src="https://assets.unileversolutions.com/recipes-v2/237633.jpg?imwidth=1600" class="d-block w-100" height="800" alt="...">
+  </div>
+  <div class="carousel-item oscurecer-img">
+    <img src="https://cdn.colombia.com/gastronomia/2016/11/17/hamburguesa-artesanal-3029.webp" class="d-block w-100" height="800" alt="...">
+  </div>
+  <div class="container-fluid bg-danger text-white">
+    <p class="centro">Abajo puede encontrar nuestro Menú</p>        
+  </div>
+):
+1:    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+2:    <div class="carousel-inner">
+3:      <div class="carousel-item active oscurecer-img">
+4:        <%= image_tag("images/hamburguesa/hamburguesa1.jpeg" height="800") %>
+5:          <img src="https://lasamaria.co/wp-content/uploads/2022/06/mixta-scaled.jpg" class="d-block w-100" height="800" alt="..." >
+6:      </div>
+7:      <div class="carousel-item oscurecer-img">
+8:        <img src="https://assets.unileversolutions.com/recipes-v2/237633.jpg?imwidth=1600" class="d-block w-100" height="800" alt="...">
+9:      </div>
+10:      <div class="carousel-item oscurecer-img">
+11:        <img src="https://cdn.colombia.com/gastronomia/2016/11/17/hamburguesa-artesanal-3029.webp" class="d-block w-100" height="800" alt="...">
+12:      </div>
+13:      <div class="container-fluid bg-danger text-white">
+14:        <p class="centro">Abajo puede encontrar nuestro Menú</p>        
+15:      </div>
+  
+app/views/layouts/_carousel.html.erb:4: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_carousel.html.erb:4: syntax error, unexpected ')', expecting `end'
+app/views/layouts/_carousel.html.erb:4: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_carousel.html.erb:4: syntax error, unexpected ')', expecting `end'
+app/views/layouts/_carousel.html.erb:4: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_carousel.html.erb:4: syntax error, unexpected ')', expecting `end'
+app/views/layouts/_carousel.html.erb:4: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_carousel.html.erb:4: syntax error, unexpected ')', expecting `end'
+app/views/layouts/_carousel.html.erb:4: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_carousel.html.erb:4: syntax error, unexpected ')', expecting `end'
+app/views/layouts/_carousel.html.erb:4: syntax error, unexpected local variable or method, expecting ')'
+app/views/layouts/_carousel.html.erb:4: syntax error, unexpected ')', expecting `end'
+app/views/layouts/application.html.erb:17
+Started GET "/" for ::1 at 2023-06-06 20:15:49 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 4.9ms | Allocations: 3623)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.3ms | Allocations: 144)
+  Rendered layouts/_carousel.html.erb (Duration: 36.3ms | Allocations: 1538)
+  Rendered layout layouts/application.html.erb (Duration: 47.8ms | Allocations: 8319)
+Completed 500 Internal Server Error in 51ms (Allocations: 9596)
+
+
+  
+ActionView::Template::Error (The asset "images/hamburguesa/hamburguesa1.jpeg" is not present in the asset pipeline.
+):
+    1: <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    2: <div class="carousel-inner">
+    3:   <div class="carousel-item active oscurecer-img">
+    4:     <%= image_tag("images/hamburguesa/hamburguesa1.jpeg", height:"800px") %>
+    5:       <img src="https://lasamaria.co/wp-content/uploads/2022/06/mixta-scaled.jpg" class="d-block w-100" height="800" alt="..." >
+    6:   </div>
+    7:   <div class="carousel-item oscurecer-img">
+  
+app/views/layouts/_carousel.html.erb:4
+app/views/layouts/application.html.erb:17
+Started GET "/" for ::1 at 2023-06-06 20:17:05 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 15.5ms | Allocations: 3623)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 144)
+  Rendered layouts/_carousel.html.erb (Duration: 1.7ms | Allocations: 1518)
+  Rendered layout layouts/application.html.erb (Duration: 30.1ms | Allocations: 8297)
+Completed 500 Internal Server Error in 37ms (Allocations: 9570)
+
+
+  
+ActionView::Template::Error (The asset "images/hamburguesa/hamburguesa1.jpeg" is not present in the asset pipeline.
+):
+    1: <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    2: <div class="carousel-inner">
+    3:   <div class="carousel-item active oscurecer-img">
+    4:     <%= image_tag("images/hamburguesa/hamburguesa1.jpeg", height:"800px") %>
+    5:   </div>
+    6:   <div class="carousel-item oscurecer-img">
+    7:     <img src="https://assets.unileversolutions.com/recipes-v2/237633.jpg?imwidth=1600" class="d-block w-100" height="800" alt="...">
+  
+app/views/layouts/_carousel.html.erb:4
+app/views/layouts/application.html.erb:17
