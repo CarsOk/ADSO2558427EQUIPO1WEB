@@ -2793,3 +2793,755 @@ Processing by HomeController#Inicio as HTML
 Completed 200 OK in 24ms (Views: 22.9ms | Allocations: 7812)
 
 
+Started GET "/" for 127.0.0.1 at 2023-06-07 10:23:33 -0500
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 168.4ms | Allocations: 20840)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.4ms | Allocations: 153)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 2.5ms | Allocations: 1564)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 0.7ms | Allocations: 487)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.3ms | Allocations: 131)
+  Rendered layout layouts/application.html.erb (Duration: 182.5ms | Allocations: 26651)
+Completed 200 OK in 200ms (Views: 187.8ms | ActiveRecord: 0.0ms | Allocations: 30878)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-07 10:46:01 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 9.4ms | Allocations: 3623)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.7ms | Allocations: 144)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 25.6ms | Allocations: 8096)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 1.4ms | Allocations: 481)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.5ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 44.6ms | Allocations: 15863)
+Completed 200 OK in 48ms (Views: 47.2ms | Allocations: 17265)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-07 10:46:03 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 7.0ms | Allocations: 2970)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.1ms | Allocations: 43)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 2.3ms | Allocations: 1380)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 0.6ms | Allocations: 300)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.1ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 7366)
+Completed 200 OK in 17ms (Views: 16.3ms | Allocations: 7804)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-07 10:49:05 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 8.6ms | Allocations: 3616)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.3ms | Allocations: 144)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 52.2ms | Allocations: 10348)
+  Rendered layout layouts/application.html.erb (Duration: 66.5ms | Allocations: 17131)
+Completed 500 Internal Server Error in 70ms (Allocations: 18375)
+
+
+  
+ActionView::Template::Error (The asset "imagenes/asados/asado1.jpeg" is not present in the asset pipeline.
+):
+    11:   </div>
+    12:   </div>
+    13:   <div class="carousel-item oscurecer-img">
+    14:     <%= image_tag("imagenes/asados/asado1.jpeg", height:"800", class:"d-block w-100") %>
+    15:   </div>
+    16:   <div class="container-fluid bg-danger text-white">
+    17:     <p class="centro">Abajo puede encontrar nuestro Menú</p>        
+  
+app/views/layouts/page_principal/_carousel.html.erb:14
+app/views/layouts/application.html.erb:19
+Started GET "/" for 127.0.0.1 at 2023-06-07 10:49:10 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 9.4ms | Allocations: 3125)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.2ms | Allocations: 43)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 6.8ms | Allocations: 2762)
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 8437)
+Completed 500 Internal Server Error in 25ms (Allocations: 8876)
+
+
+  
+ActionView::Template::Error (The asset "imagenes/asados/asado1.jpeg" is not present in the asset pipeline.
+):
+    11:   </div>
+    12:   </div>
+    13:   <div class="carousel-item oscurecer-img">
+    14:     <%= image_tag("imagenes/asados/asado1.jpeg", height:"800", class:"d-block w-100") %>
+    15:   </div>
+    16:   <div class="container-fluid bg-danger text-white">
+    17:     <p class="centro">Abajo puede encontrar nuestro Menú</p>        
+  
+app/views/layouts/page_principal/_carousel.html.erb:14
+app/views/layouts/application.html.erb:19
+Started GET "/" for 127.0.0.1 at 2023-06-07 10:49:42 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 7.3ms | Allocations: 2968)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.1ms | Allocations: 43)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 6.1ms | Allocations: 2754)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 8271)
+Completed 500 Internal Server Error in 22ms (Allocations: 8624)
+
+
+  
+ActionView::Template::Error (The asset "imagenes/asados/asado1.jpeg" is not present in the asset pipeline.
+):
+    11:   </div>
+    12:   </div>
+    13:   <div class="carousel-item oscurecer-img">
+    14:     <%= image_tag("imagenes/asados/asado1.jpeg", height:"800", class:"d-block w-100") %>
+    15:   </div>
+    16:   <div class="container-fluid bg-danger text-white">
+    17:     <p class="centro">Abajo puede encontrar nuestro Menú</p>        
+  
+app/views/layouts/page_principal/_carousel.html.erb:14
+app/views/layouts/application.html.erb:19
+Started GET "/" for 127.0.0.1 at 2023-06-07 10:50:01 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 6.9ms | Allocations: 3619)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.5ms | Allocations: 144)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 24.3ms | Allocations: 8201)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 1.1ms | Allocations: 481)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.4ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 43.2ms | Allocations: 15964)
+Completed 200 OK in 46ms (Views: 45.3ms | Allocations: 17225)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-07 10:55:55 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 8.1ms | Allocations: 3629)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.4ms | Allocations: 144)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 21.4ms | Allocations: 9523)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 1.4ms | Allocations: 481)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.6ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 39.9ms | Allocations: 17299)
+Completed 200 OK in 43ms (Views: 41.8ms | Allocations: 18606)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-07 10:55:56 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2973)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.1ms | Allocations: 43)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 3.9ms | Allocations: 2524)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 0.3ms | Allocations: 300)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.1ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 8516)
+Completed 200 OK in 18ms (Views: 17.5ms | Allocations: 8945)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-07 10:59:58 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2968)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.1ms | Allocations: 43)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 3.6ms | Allocations: 2509)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 0.4ms | Allocations: 300)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.1ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 8496)
+Completed 200 OK in 17ms (Views: 16.7ms | Allocations: 8876)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-07 11:00:36 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 8.7ms | Allocations: 2968)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.4ms | Allocations: 43)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 4.6ms | Allocations: 2509)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 0.4ms | Allocations: 300)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.1ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 22.6ms | Allocations: 8496)
+Completed 200 OK in 24ms (Views: 23.2ms | Allocations: 8878)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-07 11:05:17 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 8.7ms | Allocations: 3629)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.4ms | Allocations: 144)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 3.7ms | Allocations: 3004)
+  Rendered layout layouts/application.html.erb (Duration: 18.9ms | Allocations: 9792)
+Completed 500 Internal Server Error in 23ms (Allocations: 11017)
+
+
+  
+ActionView::Template::Error (The asset "images/asados/asado1.jpeg" is not present in the asset pipeline.
+):
+    12:   </div>
+    13: 
+    14:   <div class="carousel-item oscurecer-img">
+    15:     <%= image_tag("images/asados/asado1.jpeg", height:"800", class:"d-block w-100") %>
+    16:   </div>
+    17: 
+    18:   <div class="carousel-item oscurecer-img">
+  
+app/views/layouts/page_principal/_carousel.html.erb:15
+app/views/layouts/application.html.erb:19
+Started GET "/" for 127.0.0.1 at 2023-06-07 11:05:31 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 7.0ms | Allocations: 3624)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.4ms | Allocations: 144)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 4.3ms | Allocations: 2767)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 0.8ms | Allocations: 481)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.6ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 10538)
+Completed 200 OK in 24ms (Views: 22.6ms | Allocations: 11845)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-07 11:07:56 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 10.9ms | Allocations: 3619)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.4ms | Allocations: 144)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 4.4ms | Allocations: 2752)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 0.7ms | Allocations: 482)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.3ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 25.9ms | Allocations: 10515)
+Completed 200 OK in 31ms (Views: 28.8ms | Allocations: 11817)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-07 11:09:13 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 6.3ms | Allocations: 3620)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.4ms | Allocations: 147)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 3.1ms | Allocations: 1554)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 0.7ms | Allocations: 483)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.3ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 9326)
+Completed 200 OK in 25ms (Views: 23.7ms | Allocations: 10629)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-07 11:10:11 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 9.0ms | Allocations: 3624)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.3ms | Allocations: 144)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 3.0ms | Allocations: 1552)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 0.9ms | Allocations: 482)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.4ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 9324)
+Completed 200 OK in 23ms (Views: 21.7ms | Allocations: 10631)
+
+
+Started GET "/perros_calientes/perro.jpg" for 127.0.0.1 at 2023-06-07 11:10:11 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/perros_calientes/perro.jpg"):
+  
+Started GET "/" for 127.0.0.1 at 2023-06-07 11:10:24 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 5.6ms | Allocations: 3624)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.5ms | Allocations: 144)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 2.7ms | Allocations: 1552)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 0.6ms | Allocations: 485)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.3ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 9328)
+Completed 200 OK in 21ms (Views: 19.1ms | Allocations: 10601)
+
+
+Started GET "/images/perros_calientes/perro.jpg" for 127.0.0.1 at 2023-06-07 11:10:24 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/perros_calientes/perro.jpg"):
+  
+Started GET "/" for 127.0.0.1 at 2023-06-07 11:10:38 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 6.2ms | Allocations: 3624)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.3ms | Allocations: 144)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 3.2ms | Allocations: 1553)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 0.8ms | Allocations: 482)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.3ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 9325)
+Completed 200 OK in 21ms (Views: 19.9ms | Allocations: 10596)
+
+
+Started GET "/perros_caliente/perro.jpg" for 127.0.0.1 at 2023-06-07 11:10:38 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/perros_caliente/perro.jpg"):
+  
+Started GET "/" for 127.0.0.1 at 2023-06-07 11:10:49 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 9.2ms | Allocations: 3627)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.4ms | Allocations: 144)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 3.1ms | Allocations: 1553)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 0.9ms | Allocations: 482)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.3ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 9328)
+Completed 200 OK in 25ms (Views: 23.2ms | Allocations: 10599)
+
+
+Started GET "/images/perros_caliente/perro.jpg" for 127.0.0.1 at 2023-06-07 11:10:49 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/images/perros_caliente/perro.jpg"):
+  
+Started GET "/" for 127.0.0.1 at 2023-06-07 11:11:36 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 7.1ms | Allocations: 3628)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.6ms | Allocations: 145)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 3.6ms | Allocations: 1553)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 0.7ms | Allocations: 481)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.6ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 9329)
+Completed 200 OK in 24ms (Views: 23.2ms | Allocations: 10600)
+
+
+Started GET "/perros_caliente/perro.jpg" for 127.0.0.1 at 2023-06-07 11:11:36 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/perros_caliente/perro.jpg"):
+  
+Started GET "/" for 127.0.0.1 at 2023-06-07 11:11:38 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 8.2ms | Allocations: 2973)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.1ms | Allocations: 43)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 2.6ms | Allocations: 1389)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 0.4ms | Allocations: 300)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.1ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 7386)
+Completed 200 OK in 22ms (Views: 21.4ms | Allocations: 7784)
+
+
+Started GET "/perros_caliente/perro.jpg" for 127.0.0.1 at 2023-06-07 11:11:38 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/perros_caliente/perro.jpg"):
+  
+Started GET "/" for 127.0.0.1 at 2023-06-07 11:12:12 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 7.1ms | Allocations: 3628)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.4ms | Allocations: 144)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 2.9ms | Allocations: 1552)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 0.7ms | Allocations: 482)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.4ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 9328)
+Completed 200 OK in 23ms (Views: 21.4ms | Allocations: 10582)
+
+
+Started GET "/perros_caliente/perro.jpg" for 127.0.0.1 at 2023-06-07 11:12:12 -0500
+Started GET "/alitas/alita1.jpeg" for 127.0.0.1 at 2023-06-07 11:12:12 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/perros_caliente/perro.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/alitas/alita1.jpeg"):
+  
+Started GET "/" for 127.0.0.1 at 2023-06-07 11:16:22 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 6.6ms | Allocations: 3624)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.4ms | Allocations: 144)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 3.2ms | Allocations: 1552)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 0.8ms | Allocations: 490)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.5ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 9333)
+Completed 200 OK in 22ms (Views: 20.5ms | Allocations: 10603)
+
+
+Started GET "/perros_caliente/perro.jpg" for 127.0.0.1 at 2023-06-07 11:16:22 -0500
+Started GET "/alitas/alita1.jpeg" for 127.0.0.1 at 2023-06-07 11:16:22 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/alitas/alita1.jpeg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/perros_caliente/perro.jpg"):
+  
+Started GET "/" for 127.0.0.1 at 2023-06-07 11:18:46 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 6.1ms | Allocations: 3624)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.4ms | Allocations: 144)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 3.8ms | Allocations: 1552)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 2.3ms | Allocations: 760)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.3ms | Allocations: 130)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 9603)
+Completed 200 OK in 24ms (Views: 22.5ms | Allocations: 10873)
+
+
+Started GET "/alitas/alita1.jpeg" for 127.0.0.1 at 2023-06-07 11:18:46 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/alitas/alita1.jpeg"):
+  
+Started GET "/" for 127.0.0.1 at 2023-06-07 11:19:39 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 7.5ms | Allocations: 3625)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.5ms | Allocations: 144)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 4.8ms | Allocations: 1552)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 3.4ms | Allocations: 1871)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.4ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 23.7ms | Allocations: 10714)
+Completed 200 OK in 27ms (Views: 26.1ms | Allocations: 11984)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-07 11:22:20 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 8.3ms | Allocations: 3620)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.5ms | Allocations: 147)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 2.6ms | Allocations: 1556)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 23.7ms | Allocations: 9208)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.7ms | Allocations: 130)
+  Rendered layout layouts/application.html.erb (Duration: 47.3ms | Allocations: 18054)
+Completed 200 OK in 53ms (Views: 50.7ms | Allocations: 19356)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-07 11:23:08 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 7.9ms | Allocations: 3620)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.5ms | Allocations: 144)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 2.7ms | Allocations: 1549)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 3.5ms | Allocations: 2061)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.6ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 10894)
+Completed 200 OK in 27ms (Views: 25.1ms | Allocations: 12201)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-07 11:23:52 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 6.3ms | Allocations: 3629)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.6ms | Allocations: 144)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 2.9ms | Allocations: 1556)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 2.8ms | Allocations: 2253)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.3ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 11104)
+Completed 200 OK in 24ms (Views: 22.6ms | Allocations: 12412)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-07 11:24:25 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 10.1ms | Allocations: 3620)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.4ms | Allocations: 144)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 2.8ms | Allocations: 1549)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 3.5ms | Allocations: 2444)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.3ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 25.7ms | Allocations: 11279)
+Completed 200 OK in 31ms (Views: 29.3ms | Allocations: 12585)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-07 11:27:41 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 9.3ms | Allocations: 3619)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.3ms | Allocations: 144)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 2.6ms | Allocations: 1551)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 5.2ms | Allocations: 3300)
+  Rendered layout layouts/application.html.erb (Duration: 23.7ms | Allocations: 11817)
+Completed 500 Internal Server Error in 27ms (Allocations: 13086)
+
+
+  
+ActionView::Template::Error (The asset "salchipapa/salchipapa2." is not present in the asset pipeline.
+):
+    36:               <div class="col">
+    37:                       <div class="card mx-auto efecto">
+    38:                     <a href="">
+    39:                     <%= image_tag("salchipapa/salchipapa2.", height:"auto", width:"auto", class:"img-thumbnail card-tamaño") %>
+    40:                       </a>                  
+    41:                     </div>
+    42:                 </div>
+  
+app/views/layouts/page_principal/_article.html.erb:39
+app/views/layouts/application.html.erb:20
+Started GET "/" for 127.0.0.1 at 2023-06-07 11:28:10 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 7.0ms | Allocations: 3624)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.4ms | Allocations: 144)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 2.6ms | Allocations: 1560)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 22.9ms | Allocations: 10189)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.7ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 41.8ms | Allocations: 19039)
+Completed 200 OK in 46ms (Views: 44.0ms | Allocations: 20346)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-07 11:34:08 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 6.8ms | Allocations: 3624)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.8ms | Allocations: 144)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 2.6ms | Allocations: 1551)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 33.5ms | Allocations: 11650)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 1.0ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 54.0ms | Allocations: 20491)
+Completed 200 OK in 60ms (Views: 57.5ms | Allocations: 21793)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-07 11:35:06 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 9.8ms | Allocations: 3624)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.4ms | Allocations: 144)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 3.4ms | Allocations: 1551)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 4.8ms | Allocations: 3741)
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 12266)
+Completed 500 Internal Server Error in 29ms (Allocations: 13534)
+
+
+  
+ActionView::Template::Error (The asset "bebidas/babidas.jpg" is not present in the asset pipeline.
+):
+    43:               <div class="col">
+    44:                       <div class="card mx-auto efecto">
+    45:                     <a href="">
+    46:                     <%= image_tag("bebidas/babidas.jpg", height:"auto", width:"auto", class:"img-thumbnail card-tamaño") %>
+    47:                     </a>                  
+    48:                   </div>
+    49:                 </div>
+  
+app/views/layouts/page_principal/_article.html.erb:46
+app/views/layouts/application.html.erb:20
+Started GET "/" for 127.0.0.1 at 2023-06-07 11:35:19 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 6.8ms | Allocations: 3629)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.5ms | Allocations: 144)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 3.7ms | Allocations: 1560)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 5.7ms | Allocations: 3752)
+  Rendered layout layouts/application.html.erb (Duration: 26.8ms | Allocations: 12294)
+Completed 500 Internal Server Error in 30ms (Allocations: 13567)
+
+
+  
+ActionView::Template::Error (The asset "bebidas/babida.jpg" is not present in the asset pipeline.
+):
+    43:               <div class="col">
+    44:                       <div class="card mx-auto efecto">
+    45:                     <a href="">
+    46:                     <%= image_tag("bebidas/babida.jpg", height:"auto", width:"auto", class:"img-thumbnail card-tamaño") %>
+    47:                     </a>                  
+    48:                   </div>
+    49:                 </div>
+  
+app/views/layouts/page_principal/_article.html.erb:46
+app/views/layouts/application.html.erb:20
+Started GET "/" for 127.0.0.1 at 2023-06-07 11:35:33 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 8.6ms | Allocations: 3629)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.3ms | Allocations: 144)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 3.0ms | Allocations: 1560)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 4.5ms | Allocations: 2823)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.4ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 23.4ms | Allocations: 11682)
+Completed 200 OK in 27ms (Views: 26.4ms | Allocations: 12989)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-07 11:37:19 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 7.6ms | Allocations: 3624)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.4ms | Allocations: 144)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 3.0ms | Allocations: 1551)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 5.0ms | Allocations: 3741)
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 12266)
+Completed 500 Internal Server Error in 27ms (Allocations: 13534)
+
+
+  
+ActionView::Template::Error (The asset "bebidas/bebida3.png" is not present in the asset pipeline.
+):
+    43:               <div class="col">
+    44:                       <div class="card mx-auto efecto">
+    45:                     <a href="">
+    46:                     <%= image_tag("bebidas/bebida3.png", height:"auto", width:"auto", class:"img-thumbnail card-tamaño") %>
+    47:                     </a>                  
+    48:                   </div>
+    49:                 </div>
+  
+app/views/layouts/page_principal/_article.html.erb:46
+app/views/layouts/application.html.erb:20
+Started GET "/" for 127.0.0.1 at 2023-06-07 11:38:05 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 6.0ms | Allocations: 2978)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.2ms | Allocations: 43)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 3.4ms | Allocations: 1397)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 29.2ms | Allocations: 11198)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.7ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 46.2ms | Allocations: 18510)
+Completed 200 OK in 48ms (Views: 47.1ms | Allocations: 18952)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-07 11:39:20 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 8.3ms | Allocations: 3624)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.7ms | Allocations: 144)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 6.4ms | Allocations: 1551)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 29.5ms | Allocations: 11855)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.7ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 53.8ms | Allocations: 20699)
+Completed 200 OK in 59ms (Views: 56.8ms | Allocations: 21952)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-07 11:57:47 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2973)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.1ms | Allocations: 43)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 3.7ms | Allocations: 1388)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 3.9ms | Allocations: 2543)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.1ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 9627)
+Completed 200 OK in 19ms (Views: 18.8ms | Allocations: 10055)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-07 15:06:49 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 323.0ms | Allocations: 2973)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.1ms | Allocations: 43)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 73.0ms | Allocations: 1388)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 181.4ms | Allocations: 2547)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.1ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 585.5ms | Allocations: 9631)
+Completed 200 OK in 646ms (Views: 586.2ms | Allocations: 10011)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-07 17:29:27 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 7.9ms | Allocations: 2978)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.2ms | Allocations: 43)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 3.3ms | Allocations: 1397)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 3.7ms | Allocations: 2556)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.1ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | Allocations: 9654)
+Completed 200 OK in 22ms (Views: 21.2ms | Allocations: 10035)
+
+
