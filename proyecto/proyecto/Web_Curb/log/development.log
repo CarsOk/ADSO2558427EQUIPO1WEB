@@ -1447,6 +1447,7 @@ Processing by HomeController#Inicio as HTML
 Completed 200 OK in 880ms (Views: 874.6ms | ActiveRecord: 0.0ms | Allocations: 20114)
 
 
+<<<<<<< Updated upstream
 Started GET "/" for ::1 at 2023-05-07 14:27:51 -0500
 Processing by HomeController#Inicio as HTML
   Rendering layout layouts/application.html.erb
@@ -1518,11 +1519,36 @@ Completed 200 OK in 14ms (Views: 12.5ms | Allocations: 3393)
 
 
 Started GET "/" for ::1 at 2023-05-07 14:56:24 -0500
+=======
+Started GET "/" for 127.0.0.1 at 2023-05-08 14:44:27 -0500
+  [1m[35m (3.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 2.9ms | Allocations: 451)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 98.9ms | Allocations: 17452)
+Completed 200 OK in 131ms (Views: 109.7ms | ActiveRecord: 0.0ms | Allocations: 21673)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-08 14:57:27 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 0.3ms | Allocations: 46)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 3183)
+Completed 200 OK in 14ms (Views: 12.4ms | Allocations: 3694)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-08 14:57:29 -0500
+>>>>>>> Stashed changes
 Processing by HomeController#Inicio as HTML
   Rendering layout layouts/application.html.erb
   Rendering home/Inicio.html.erb within layouts/application
   Rendered home/Inicio.html.erb within layouts/application (Duration: 0.2ms | Allocations: 41)
 [Webpacker] Everything's up-to-date. Nothing to do
+<<<<<<< Updated upstream
   Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 3016)
 Completed 200 OK in 12ms (Views: 11.5ms | Allocations: 3401)
 
@@ -3604,5 +3630,396 @@ Processing by HomeController#Inicio as HTML
   Rendered layouts/page_principal/_footer.html.erb (Duration: 0.1ms | Allocations: 43)
   Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 9683)
 Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.0ms | Allocations: 10071)
+=======
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 3013)
+Completed 200 OK in 14ms (Views: 12.1ms | Allocations: 3393)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-08 14:58:29 -0500
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 1.7ms | Allocations: 345)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 6395)
+Completed 200 OK in 47ms (Views: 33.0ms | ActiveRecord: 0.0ms | Allocations: 9676)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-08 14:59:12 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 1.8ms | Allocations: 153)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 3745)
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.0ms | Allocations: 5118)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-08 15:02:27 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 2.9ms | Allocations: 153)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 3745)
+Completed 200 OK in 39ms (Views: 34.4ms | ActiveRecord: 0.0ms | Allocations: 5063)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-08 15:03:59 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 1.1ms | Allocations: 153)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 67.6ms | Allocations: 3754)
+Completed 200 OK in 87ms (Views: 84.6ms | ActiveRecord: 0.0ms | Allocations: 5073)
+
+
+Started GET "/Inicio" for 127.0.0.1 at 2023-05-08 15:13:26 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/Inicio"):
+  
+Started GET "/" for 127.0.0.1 at 2023-05-08 15:13:32 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 0.3ms | Allocations: 41)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 3176)
+Completed 200 OK in 15ms (Views: 12.8ms | Allocations: 3640)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-08 16:42:35 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 0.6ms | Allocations: 345)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 6395)
+Completed 200 OK in 19ms (Views: 13.3ms | ActiveRecord: 0.0ms | Allocations: 9677)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-08 16:45:56 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 0.9ms | Allocations: 153)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 3848)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.0ms | Allocations: 5221)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-08 16:47:52 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 0.4ms | Allocations: 156)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 41.2ms | Allocations: 12022)
+Completed 200 OK in 44ms (Views: 42.8ms | ActiveRecord: 0.0ms | Allocations: 13348)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-08 16:50:14 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 0.2ms | Allocations: 41)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 35.5ms | Allocations: 8653)
+Completed 200 OK in 37ms (Views: 36.2ms | Allocations: 9083)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateProductos (20230508215318)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "productos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar, "precio" decimal, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230508215318"]]
+  [1m[36mTRANSACTION (3.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-05-08 21:53:25.434861"], ["updated_at", "2023-05-08 21:53:25.434861"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mProducto Load (0.1ms)[0m  [1m[34mSELECT "productos".* FROM "productos"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProducto Create (0.6ms)[0m  [1m[32mINSERT INTO "productos" ("nombre", "precio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["nombre", "Perro"], ["precio", 15000.0], ["created_at", "2023-05-08 21:54:41.192840"], ["updated_at", "2023-05-08 21:54:41.192840"]]
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProducto Create (0.5ms)[0m  [1m[32mINSERT INTO "productos" ("nombre", "precio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["nombre", "Hamburguesa"], ["precio", 25000.0], ["created_at", "2023-05-08 21:55:05.216015"], ["updated_at", "2023-05-08 21:55:05.216015"]]
+  [1m[36mTRANSACTION (50.6ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/productos" for 127.0.0.1 at 2023-05-08 16:58:24 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+NoMethodError (undefined method `respond' for ProductosController:Class
+
+  respond :html, :json
+  ^^^^^^^
+Did you mean?  respond_to?):
+  
+app/controllers/productos_controller.rb:2:in `<class:ProductosController>'
+app/controllers/productos_controller.rb:1:in `<main>'
+Started GET "/productos" for 127.0.0.1 at 2023-05-08 16:58:41 -0500
+  
+NoMethodError (undefined method `respond_to' for ProductosController:Class
+
+  respond_to :html, :json
+  ^^^^^^^^^^
+Did you mean?  respond_to?):
+  
+app/controllers/productos_controller.rb:2:in `<class:ProductosController>'
+app/controllers/productos_controller.rb:1:in `<main>'
+Started GET "/productos" for 127.0.0.1 at 2023-05-08 16:58:57 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+NoMethodError (undefined method `respond_to' for ProductosController:Class
+
+  respond_to :html, :json
+  ^^^^^^^^^^
+Did you mean?  respond_to?):
+  
+app/controllers/productos_controller.rb:2:in `<class:ProductosController>'
+app/controllers/productos_controller.rb:1:in `<main>'
+Started GET "/producto" for 127.0.0.1 at 2023-05-08 17:00:25 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/producto"):
+  
+Started GET "/productos" for 127.0.0.1 at 2023-05-08 17:00:31 -0500
+  
+NoMethodError (undefined method `respond_to' for ProductosController:Class
+
+  respond_to :html, :json
+  ^^^^^^^^^^
+Did you mean?  respond_to?):
+  
+app/controllers/productos_controller.rb:2:in `<class:ProductosController>'
+app/controllers/productos_controller.rb:1:in `<main>'
+Started GET "/productos" for 127.0.0.1 at 2023-05-08 17:00:43 -0500
+Processing by ProductosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering productos/index.html.erb within layouts/application
+  Rendered productos/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 151)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 60.4ms | Allocations: 19629)
+Completed 200 OK in 66ms (Views: 62.3ms | Allocations: 22704)
+
+
+Started GET "/productos" for 127.0.0.1 at 2023-05-08 17:00:50 -0500
+Processing by ProductosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering productos/index.html.erb within layouts/application
+  Rendered productos/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 46)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 3239)
+Completed 200 OK in 11ms (Views: 10.3ms | Allocations: 3739)
+
+
+Started GET "/productos.json" for 127.0.0.1 at 2023-05-08 17:01:35 -0500
+Processing by ProductosController#index as JSON
+Completed 406 Not Acceptable in 5ms (Allocations: 1363)
+
+
+  
+ActionController::UnknownFormat (ProductosController#index is missing a template for this request format and variant.
+
+request.formats: ["application/json"]
+request.variant: []):
+  
+actionpack (6.1.7.3) lib/action_controller/metal/implicit_render.rb:42:in `default_render'
+actionpack (6.1.7.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+<internal:kernel>:90:in `tap'
+actionpack (6.1.7.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.1.7.3) lib/abstract_controller/base.rb:228:in `process_action'
+actionpack (6.1.7.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.1.7.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.1.7.3) lib/active_support/callbacks.rb:117:in `block in run_callbacks'
+actiontext (6.1.7.3) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (6.1.7.3) lib/action_text/engine.rb:59:in `block (4 levels) in <class:Engine>'
+activesupport (6.1.7.3) lib/active_support/callbacks.rb:126:in `instance_exec'
+activesupport (6.1.7.3) lib/active_support/callbacks.rb:126:in `block in run_callbacks'
+activesupport (6.1.7.3) lib/active_support/callbacks.rb:137:in `run_callbacks'
+actionpack (6.1.7.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.1.7.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.1.7.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (6.1.7.3) lib/active_support/notifications.rb:203:in `block in instrument'
+activesupport (6.1.7.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.1.7.3) lib/active_support/notifications.rb:203:in `instrument'
+actionpack (6.1.7.3) lib/action_controller/metal/instrumentation.rb:33:in `process_action'
+actionpack (6.1.7.3) lib/action_controller/metal/params_wrapper.rb:249:in `process_action'
+activerecord (6.1.7.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.1.7.3) lib/abstract_controller/base.rb:165:in `process'
+actionview (6.1.7.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.7.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.7.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.7.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.7.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.7.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.7.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.7.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.7.3) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.6.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.6.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.6.4) lib/rack/head.rb:12:in `call'
+actionpack (6.1.7.3) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.7.3) lib/action_dispatch/http/content_security_policy.rb:19:in `call'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.7.3) lib/action_dispatch/middleware/cookies.rb:697:in `call'
+activerecord (6.1.7.3) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.7.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.7.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.7.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.7.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.3) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.7.3) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.7.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.7.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.7.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.7.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.7.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.7.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.7.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.7.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.7.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.7.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.7.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.7.3) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.7.3) lib/action_dispatch/middleware/host_authorization.rb:148:in `call'
+rack-mini-profiler (2.3.4) lib/mini_profiler/profiler.rb:393:in `call'
+webpacker (5.4.4) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.6) lib/rack/proxy.rb:87:in `call'
+railties (6.1.7.3) lib/rails/engine.rb:539:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/productos" for 127.0.0.1 at 2023-05-08 17:03:24 -0500
+Processing by ProductosController#index as HTML
+Completed 500 Internal Server Error in 13ms (Allocations: 3704)
+
+
+  
+NoMethodError (undefined method `respond_with' for #<ProductosController:0x0000000000a9b0>
+
+    respond_with @productos
+    ^^^^^^^^^^^^
+Did you mean?  respond_to):
+  
+app/controllers/productos_controller.rb:5:in `index'
+Started GET "/productos" for 127.0.0.1 at 2023-05-08 17:03:35 -0500
+  
+NoMethodError (undefined method `respond_to' for ProductosController:Class
+
+  respond_to :html, :json
+  ^^^^^^^^^^
+Did you mean?  respond_to?):
+  
+app/controllers/productos_controller.rb:2:in `<class:ProductosController>'
+app/controllers/productos_controller.rb:1:in `<main>'
+Started GET "/productos" for 127.0.0.1 at 2023-05-08 17:03:55 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+NoMethodError (undefined method `respond_to' for ProductosController:Class
+
+  respond_to :html, :json
+  ^^^^^^^^^^
+Did you mean?  respond_to?):
+  
+app/controllers/productos_controller.rb:2:in `<class:ProductosController>'
+app/controllers/productos_controller.rb:1:in `<main>'
+Started GET "/productos" for 127.0.0.1 at 2023-05-08 17:06:46 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductosController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering productos/index.html.erb within layouts/application
+  Rendered productos/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 337)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 6833)
+Completed 200 OK in 23ms (Views: 16.9ms | ActiveRecord: 0.0ms | Allocations: 10786)
+
+
+Started GET "/productos.json" for 127.0.0.1 at 2023-05-08 17:06:52 -0500
+Processing by ProductosController#index as JSON
+  [1m[36mProducto Load (0.4ms)[0m  [1m[34mSELECT "productos".* FROM "productos"[0m
+  ↳ app/controllers/productos_controller.rb:6:in `block (2 levels) in index'
+Completed 200 OK in 21ms (Views: 18.1ms | ActiveRecord: 1.6ms | Allocations: 4977)
+
+
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked host: 0201-191-95-91-193.ngrok.io
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked host: 0201-191-95-91-193.ngrok.io
+Started GET "/productos.json" for 191.95.30.158 at 2023-05-08 17:13:33 -0500
+Cannot render console from 191.95.30.158! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductosController#index as JSON
+  [1m[36mProducto Load (0.2ms)[0m  [1m[34mSELECT "productos".* FROM "productos"[0m
+  ↳ app/controllers/productos_controller.rb:6:in `block (2 levels) in index'
+Completed 200 OK in 15ms (Views: 8.9ms | ActiveRecord: 0.6ms | Allocations: 6737)
+
+
+Started GET "/productos" for 191.95.30.158 at 2023-05-08 17:13:53 -0500
+Cannot render console from 191.95.30.158! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductosController#index as */*
+  Rendering layout layouts/application.html.erb
+  Rendering productos/index.html.erb within layouts/application
+  Rendered productos/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 327)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 6785)
+Completed 200 OK in 31ms (Views: 20.1ms | ActiveRecord: 0.0ms | Allocations: 10727)
+
+
+Started GET "/productos" for 191.95.30.158 at 2023-05-08 17:15:18 -0500
+Cannot render console from 191.95.30.158! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductosController#index as */*
+  Parameters: {"producto"=>{}}
+  Rendering layout layouts/application.html.erb
+  Rendering productos/index.html.erb within layouts/application
+  Rendered productos/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 41)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 3082)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.0ms | Allocations: 3551)
+
+
+Started GET "/productos.json" for 191.95.30.158 at 2023-05-08 17:17:07 -0500
+Cannot render console from 191.95.30.158! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ProductosController#index as JSON
+  Parameters: {"producto"=>{}}
+  [1m[36mProducto Load (0.1ms)[0m  [1m[34mSELECT "productos".* FROM "productos"[0m
+  ↳ app/controllers/productos_controller.rb:6:in `block (2 levels) in index'
+Completed 200 OK in 16ms (Views: 10.8ms | ActiveRecord: 0.1ms | Allocations: 1278)
+
+
+Started GET "/" for 127.0.0.1 at 2023-05-08 17:32:45 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 0.6ms | Allocations: 157)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 3422)
+Completed 200 OK in 8ms (Views: 7.4ms | Allocations: 4645)
+>>>>>>> Stashed changes
 
 
