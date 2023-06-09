@@ -3545,3 +3545,64 @@ Processing by HomeController#Inicio as HTML
 Completed 200 OK in 22ms (Views: 21.2ms | Allocations: 10035)
 
 
+Started GET "/" for 127.0.0.1 at 2023-06-09 14:55:18 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 111.4ms | Allocations: 27637)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.3ms | Allocations: 154)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 2.5ms | Allocations: 1581)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 4.3ms | Allocations: 2853)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.4ms | Allocations: 132)
+  Rendered layout layouts/application.html.erb (Duration: 125.5ms | Allocations: 35860)
+Completed 200 OK in 140ms (Views: 130.5ms | ActiveRecord: 0.0ms | Allocations: 40075)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-09 14:59:39 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 6.9ms | Allocations: 3154)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.1ms | Allocations: 45)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 2.3ms | Allocations: 1398)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 3.2ms | Allocations: 2554)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.1ms | Allocations: 43)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 9855)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.0ms | Allocations: 10379)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-09 14:59:54 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 4.7ms | Allocations: 2992)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.2ms | Allocations: 44)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 3.2ms | Allocations: 1399)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 3.4ms | Allocations: 2554)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.1ms | Allocations: 43)
+  Rendered layout layouts/application.html.erb (Duration: 18.9ms | Allocations: 9687)
+Completed 200 OK in 20ms (Views: 19.5ms | ActiveRecord: 0.0ms | Allocations: 10077)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-09 15:00:01 -0500
+Processing by HomeController#Inicio as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/Inicio.html.erb within layouts/application
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 7.0ms | Allocations: 2992)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.1ms | Allocations: 44)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 2.4ms | Allocations: 1395)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 3.5ms | Allocations: 2554)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 0.1ms | Allocations: 43)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 9683)
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.0ms | Allocations: 10071)
+
+
