@@ -1,7 +1,89 @@
 body {
-    background-color: #e0380d;
+    background-color: #0E1317;
 }
 
 .columna{
     margin: 10px 0 2px 0;
 }
+
+.blanco{
+    background:white;
+}
+
+.textblanco{
+    color   :white;
+}
+.negro{
+    background-color: black;
+}
+
+.separar{
+    margin: auto;
+}
+
+.centro{
+    text-align: center;
+}
+
+.oscurecer-img{
+  filter: brightness(30%); // Más oscura
+}
+
+.navbar{
+    border-top: 2px solid #dc3545;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; /* remove the gap so it doesn't close */
+}
+
+    .new{ 
+        overflow:hidden; 
+        margin-top: 150px ;
+        background:#262626 ;
+        color: #627482  !important;
+        margin-bottom: 0 ;
+        padding-bottom:0  ;
+    }
+    
+    small{
+        font-size: calc(12px + (15 - 12) * ((100vw - 360px) / (1600 - 360))) !important; 
+    }
+    
+    .bold-text{
+        color: #989c9e !important;
+    }
+    
+    
+    .mt-55{
+        margin-top: calc(50px + (60 - 50) * ((100vw - 360px) / (1600 - 360))) !important; 
+    }
+    
+    
+    h3{
+        font-size: calc(34px + (40 - 34) * ((100vw - 360px) / (1600 - 360))) !important; 
+    }
+     
+    .social{
+        font-size: 21px !important; 
+    }
+    
+    .rights{
+        font-size: calc(10px + (12 - 10) * ((100vw - 360px) / (1600 - 360))) !important; 
+    }
+    
+    .efecto:hover{
+        border: 5px solid #dc3545;
+    }
+
+<<<<<<< Updated upstream
+.card-tamaño{
+    height: 290px;
+    width: 350px;
+}
+=======
+    footer{
+        margin-top: 15px;
+    }
+>>>>>>> Stashed changes
