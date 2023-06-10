@@ -2819,12 +2819,18 @@ Processing by HomeController#Inicio as HTML
 Completed 200 OK in 24ms (Views: 22.9ms | Allocations: 7812)
 
 
+<<<<<<< Updated upstream
 Started GET "/" for 127.0.0.1 at 2023-06-07 10:23:33 -0500
   [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+=======
+Started GET "/" for ::1 at 2023-06-07 14:56:10 -0500
+  [1m[35m (19.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+>>>>>>> Stashed changes
 Processing by HomeController#Inicio as HTML
   Rendering layout layouts/application.html.erb
   Rendering home/Inicio.html.erb within layouts/application
 [Webpacker] Everything's up-to-date. Nothing to do
+<<<<<<< Updated upstream
   Rendered home/Inicio.html.erb within layouts/application (Duration: 168.4ms | Allocations: 20840)
 [Webpacker] Everything's up-to-date. Nothing to do
   Rendered layouts/page_principal/_navbar.html.erb (Duration: 0.4ms | Allocations: 153)
@@ -4020,6 +4026,16 @@ Processing by HomeController#Inicio as HTML
 [Webpacker] Everything's up-to-date. Nothing to do
   Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 3422)
 Completed 200 OK in 8ms (Views: 7.4ms | Allocations: 4645)
+>>>>>>> Stashed changes
+=======
+  Rendered home/Inicio.html.erb within layouts/application (Duration: 297.3ms | Allocations: 14282)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/page_principal/_navbar.html.erb (Duration: 9.5ms | Allocations: 154)
+  Rendered layouts/page_principal/_carousel.html.erb (Duration: 18.8ms | Allocations: 1559)
+  Rendered layouts/page_principal/_article.html.erb (Duration: 11.5ms | Allocations: 488)
+  Rendered layouts/page_principal/_footer.html.erb (Duration: 13.3ms | Allocations: 132)
+  Rendered layout layouts/application.html.erb (Duration: 376.2ms | Allocations: 20108)
+Completed 200 OK in 387ms (Views: 379.3ms | ActiveRecord: 0.0ms | Allocations: 23284)
 >>>>>>> Stashed changes
 
 
