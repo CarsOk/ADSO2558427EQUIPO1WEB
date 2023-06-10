@@ -8,18 +8,6 @@
 html {
   font-size: 62.5%;
 }
-
-.dag-1 {
-  margin-top: 50px;
-  width: 100%;
-  text-align: center;
-}
-
-.dag-1 img {
-  width: 100%;
-  height: auto;
-}
-
 *:not(i) {
   font-family: "Poppins", sans-serif;
 }
