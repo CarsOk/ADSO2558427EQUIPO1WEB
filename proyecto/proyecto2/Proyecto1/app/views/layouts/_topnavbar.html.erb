@@ -10,9 +10,9 @@
         </div>
         <ul class="nav navbar-top-links navbar-right">
             <li>
-                <a href="#">
-                    <i class="fa fa-sign-out"></i> Log out
-                </a>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class="fa fa-sign-out"></i> Cerrar Sesion
+            <% end %>
             </li>
         </ul>
 
