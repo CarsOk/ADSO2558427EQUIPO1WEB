@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get "home/index"
   get "home/minor"
 
+  resources :secciones
+
   root to: 'home#index'
 
 end

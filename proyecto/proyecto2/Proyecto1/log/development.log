@@ -359,3 +359,137 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 67ms (Views: 31.1ms | ActiveRecord: 0.4ms | Allocations: 20207)
 
 
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateSecciones (20230614224116)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "secciones" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230614224116"]]
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateProductos (20230614224140)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "productos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar, "precio" integer, "seccion_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_5b71d8d455"
+FOREIGN KEY ("seccion_id")
+  REFERENCES "secciones" ("id")
+)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_productos_on_seccion_id" ON "productos" ("seccion_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230614224140"]]
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSeccion Create (0.6ms)[0m  [1m[32mINSERT INTO "secciones" ("nombre", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["nombre", "Asados"], ["created_at", "2023-06-14 22:42:12.151420"], ["updated_at", "2023-06-14 22:42:12.151420"]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mProducto Load (0.5ms)[0m  [1m[34mSELECT "productos".* FROM "productos" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mSeccion Load (0.3ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mProducto Load (0.2ms)[0m  [1m[34mSELECT "productos".* FROM "productos" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mProducto Load (0.5ms)[0m  [1m[34mSELECT "productos".* FROM "productos" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mSeccion Load (0.4ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mSeccion Load (0.3ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mProducto Load (0.2ms)[0m  [1m[34mSELECT "productos".* FROM "productos" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mSeccion Load (0.4ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" ORDER BY "secciones"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSeccion Load (0.4ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProducto Create (0.9ms)[0m  [1m[32mINSERT INTO "productos" ("nombre", "precio", "seccion_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nombre", "Carne"], ["precio", 9000], ["seccion_id", 1], ["created_at", "2023-06-14 22:48:30.938220"], ["updated_at", "2023-06-14 22:48:30.938220"]]
+  [1m[35m (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mSeccion Load (0.3ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/secciones" for 127.0.0.1 at 2023-06-14 17:55:21 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SeccionesController#index as HTML
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered secciones/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 858)
+  Rendered layouts/_navigation.html.erb (Duration: 4.6ms | Allocations: 1304)
+  Rendered layouts/_topnavbar.html.erb (Duration: 1.7ms | Allocations: 213)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 92)
+Completed 200 OK in 3898ms (Views: 3883.5ms | ActiveRecord: 0.0ms | Allocations: 281888)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-14 17:56:49 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SeccionesController#index as HTML
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered secciones/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 96)
+  Rendered layouts/_navigation.html.erb (Duration: 2.9ms | Allocations: 1257)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.9ms | Allocations: 201)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 89)
+Completed 200 OK in 33ms (Views: 28.6ms | ActiveRecord: 0.0ms | Allocations: 18636)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-14 18:00:07 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.5ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered secciones/index.html.erb within layouts/application (Duration: 7.1ms | Allocations: 2601)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 1.9ms | Allocations: 9502)
+
+
+  
+ActionView::Template::Error (Missing partial secciones/_seccion with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/home/equiponose/Documentos/GitHub/ADSO2558427EQUIPO1WEB/proyecto/proyecto2/Proyecto1/app/views"
+  * "/home/equiponose/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/devise-4.9.2/app/views"
+  * "/home/equiponose/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/actiontext-6.0.1/app/views"
+  * "/home/equiponose/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/actionmailbox-6.0.1/app/views"
+):
+    2: <p>Find me in app/views/secciones/index.html.erb</p>
+    3: 
+    4: <ul>
+    5:     <%= render @secciones %>
+    6: </ul>
+  
+app/views/secciones/index.html.erb:5
+Started GET "/secciones" for 127.0.0.1 at 2023-06-14 18:00:37 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.3ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [1 times] (Duration: 0.8ms | Allocations: 120)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 456)
+  Rendered layouts/_navigation.html.erb (Duration: 2.7ms | Allocations: 1303)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.6ms | Allocations: 213)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 92)
+Completed 200 OK in 227ms (Views: 220.0ms | ActiveRecord: 0.3ms | Allocations: 82518)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSeccion Create (0.6ms)[0m  [1m[32mINSERT INTO "secciones" ("nombre", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["nombre", "otro"], ["created_at", "2023-06-14 23:01:05.683314"], ["updated_at", "2023-06-14 23:01:05.683314"]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/secciones" for 127.0.0.1 at 2023-06-14 18:01:09 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.4ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.1ms | Allocations: 20)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 113)
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 436)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.2ms | Allocations: 49)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 28ms (Views: 23.3ms | ActiveRecord: 0.4ms | Allocations: 15234)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-14 18:01:51 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.3ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 1.1ms | Allocations: 146)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 480)
+  Rendered layouts/_navigation.html.erb (Duration: 1.7ms | Allocations: 761)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.8ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 89)
+Completed 200 OK in 51ms (Views: 46.7ms | ActiveRecord: 0.3ms | Allocations: 17753)
+
+
