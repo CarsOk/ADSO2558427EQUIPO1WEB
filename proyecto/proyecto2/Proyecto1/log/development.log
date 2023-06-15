@@ -493,3 +493,61 @@ Processing by SeccionesController#index as HTML
 Completed 200 OK in 51ms (Views: 46.7ms | ActiveRecord: 0.3ms | Allocations: 17753)
 
 
+Started GET "/" for ::1 at 2023-06-14 22:06:14 -0500
+  [1m[35m (4.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.0ms | Allocations: 2826)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-06-14 22:06:15 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/empty
+  Rendered devise/shared/_links.html.erb (Duration: 2.1ms | Allocations: 653)
+  Rendered devise/sessions/new.html.erb within layouts/empty (Duration: 16.9ms | Allocations: 2458)
+Completed 200 OK in 8087ms (Views: 8060.4ms | ActiveRecord: 1.4ms | Allocations: 400765)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-06-14 22:06:28 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"rzxDA/Cs/7xUc2rQTE1IR5CxyfrlH48phKIw/ujq8voyV6hUcnvyhvFDYiqoP3CTKBDk0mRZdddIGf20rBv5Eg==", "user"=>{"email"=>"luislemus0109@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "luislemus0109@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 548ms (ActiveRecord: 0.4ms | Allocations: 6988)
+
+
+Started GET "/" for ::1 at 2023-06-14 22:06:29 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 143)
+  Rendered layouts/_navigation.html.erb (Duration: 3.7ms | Allocations: 1285)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.8ms | Allocations: 209)
+  Rendered layouts/_footer.html.erb (Duration: 0.7ms | Allocations: 92)
+Completed 200 OK in 87ms (Views: 79.7ms | ActiveRecord: 0.4ms | Allocations: 19123)
+
+
+Started GET "/home/index" for ::1 at 2023-06-14 22:06:43 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_navigation.html.erb (Duration: 1.3ms | Allocations: 436)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.2ms | Allocations: 49)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 30ms (Views: 26.3ms | ActiveRecord: 0.1ms | Allocations: 15950)
+
+
+Started GET "/secciones" for ::1 at 2023-06-14 22:06:51 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.3ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.6ms | Allocations: 153)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 520)
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 436)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 49)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 282ms (Views: 30.1ms | ActiveRecord: 1.0ms | Allocations: 20231)
+
+
