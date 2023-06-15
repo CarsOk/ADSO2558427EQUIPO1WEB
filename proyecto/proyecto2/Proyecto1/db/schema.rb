@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_06_10_060351) do
+ActiveRecord::Schema.define(version: 2023_06_14_224140) do
+
+  create_table "productos", force: :cascade do |t|
+    t.string "nombre"
+    t.integer "precio"
+    t.integer "seccion_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["seccion_id"], name: "index_productos_on_seccion_id"
+  end
+
+  create_table "secciones", force: :cascade do |t|
+    t.string "nombre"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,4 +39,5 @@ ActiveRecord::Schema.define(version: 2023_06_10_060351) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "productos", "secciones"
 end
