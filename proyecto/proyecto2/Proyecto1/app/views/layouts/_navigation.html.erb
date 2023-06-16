@@ -21,7 +21,11 @@
                     <li class="<%= is_active_action('dashboard_5') %>"><%= link_to "Menu Infantil"%></li>
                 </ul>
             </li>
+            <li class="<%= is_active_controller('metrics') %>">
+                <%= link_to secciones_path do %>
+                <i class="fa fa-pie-chart"></i> <span class="nav-label" data-i18n="nav.metrics">Seccion</span>
+                <% end %>
+            </li>
         </ul>
-
     </div>
 </nav>

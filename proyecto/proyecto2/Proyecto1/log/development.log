@@ -493,3 +493,808 @@ Processing by SeccionesController#index as HTML
 Completed 200 OK in 51ms (Views: 46.7ms | ActiveRecord: 0.3ms | Allocations: 17753)
 
 
+Started GET "/" for 127.0.0.1 at 2023-06-14 22:17:31 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 277)
+  Rendered layouts/_navigation.html.erb (Duration: 2.2ms | Allocations: 1307)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.4ms | Allocations: 213)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 92)
+Completed 200 OK in 8643ms (Views: 8624.3ms | ActiveRecord: 0.8ms | Allocations: 358636)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-14 22:17:52 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.4ms | Allocations: 153)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 522)
+  Rendered layouts/_navigation.html.erb (Duration: 1.3ms | Allocations: 436)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.3ms | Allocations: 49)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 82ms (Views: 55.9ms | ActiveRecord: 0.7ms | Allocations: 20560)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-14 22:19:32 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 436)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.2ms | Allocations: 49)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 24ms (Views: 19.2ms | ActiveRecord: 0.2ms | Allocations: 15932)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-14 22:21:17 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 427)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 24ms (Views: 19.9ms | ActiveRecord: 0.2ms | Allocations: 15910)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-14 22:22:35 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 426)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.2ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.1ms | Allocations: 15894)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-14 22:30:01 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 426)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 27ms (Views: 23.0ms | ActiveRecord: 0.3ms | Allocations: 15923)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-14 22:38:10 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 937)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 50)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 38ms (Views: 19.3ms | ActiveRecord: 0.4ms | Allocations: 21427)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-14 22:58:36 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 426)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 25ms (Views: 20.3ms | ActiveRecord: 0.3ms | Allocations: 15910)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-14 23:41:46 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 9ms (ActiveRecord: 0.0ms | Allocations: 2809)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-06-14 23:41:46 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/empty
+  Rendered devise/shared/_links.html.erb (Duration: 3.4ms | Allocations: 653)
+  Rendered devise/sessions/new.html.erb within layouts/empty (Duration: 12.0ms | Allocations: 1958)
+Completed 200 OK in 263ms (Views: 245.3ms | ActiveRecord: 1.2ms | Allocations: 87765)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-06-14 23:42:06 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"Tnn0Aap40L7ixTZx9kyFuzwhEPUvcNYMYDLBQ/AzCTnMK3alJ87sN1+IAHFQefXZPdNoZMRyVFpgHJs12TpvqA==", "user"=>{"email"=>"wilmercarmona810@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "wilmercarmona810@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 307ms (ActiveRecord: 0.3ms | Allocations: 5260)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-14 23:42:06 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 143)
+  Rendered layouts/_navigation.html.erb (Duration: 1.8ms | Allocations: 1285)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.6ms | Allocations: 209)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 92)
+Completed 200 OK in 27ms (Views: 23.6ms | ActiveRecord: 0.2ms | Allocations: 18786)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-14 23:42:17 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.3ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 1.1ms | Allocations: 153)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 520)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 436)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.2ms | Allocations: 49)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 44ms (Views: 26.0ms | ActiveRecord: 1.2ms | Allocations: 19840)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-14 23:45:27 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.7ms | Allocations: 187)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 521)
+  Rendered layouts/_navigation.html.erb (Duration: 1.2ms | Allocations: 761)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.7ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 44ms (Views: 41.2ms | ActiveRecord: 0.2ms | Allocations: 17828)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-14 23:48:10 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.4ms | Allocations: 141)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 475)
+  Rendered layouts/_navigation.html.erb (Duration: 2.0ms | Allocations: 756)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.5ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 31ms (Views: 27.2ms | ActiveRecord: 0.1ms | Allocations: 17760)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-14 23:48:11 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.1ms | Allocations: 14)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 107)
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 436)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.2ms | Allocations: 49)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 27ms (Views: 25.5ms | ActiveRecord: 0.1ms | Allocations: 15247)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-14 23:49:04 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.6ms | Allocations: 231)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 564)
+  Rendered layouts/_navigation.html.erb (Duration: 1.5ms | Allocations: 755)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.8ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 89)
+Completed 200 OK in 30ms (Views: 28.1ms | ActiveRecord: 0.1ms | Allocations: 17843)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-14 23:51:24 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 1.0ms | Allocations: 229)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 562)
+  Rendered layouts/_navigation.html.erb (Duration: 14.8ms | Allocations: 755)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.6ms | Allocations: 205)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 42ms (Views: 38.8ms | ActiveRecord: 0.2ms | Allocations: 17852)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-14 23:51:45 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.6ms | Allocations: 229)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 563)
+  Rendered layouts/_navigation.html.erb (Duration: 1.3ms | Allocations: 755)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.4ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 30ms (Views: 27.5ms | ActiveRecord: 0.2ms | Allocations: 17838)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-14 23:52:16 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.9ms | Allocations: 229)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 562)
+  Rendered layouts/_navigation.html.erb (Duration: 1.2ms | Allocations: 755)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.5ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 29ms (Views: 26.0ms | ActiveRecord: 0.2ms | Allocations: 17830)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-14 23:52:48 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.9ms | Allocations: 231)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 564)
+  Rendered layouts/_navigation.html.erb (Duration: 1.2ms | Allocations: 755)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.4ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 31ms (Views: 27.6ms | ActiveRecord: 0.2ms | Allocations: 17834)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-14 23:52:51 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 130)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 435)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.2ms | Allocations: 49)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 28ms (Views: 25.0ms | ActiveRecord: 0.1ms | Allocations: 16713)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-14 23:53:24 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.6ms | Allocations: 273)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 606)
+  Rendered layouts/_navigation.html.erb (Duration: 1.9ms | Allocations: 755)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.5ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 89)
+Completed 200 OK in 30ms (Views: 27.7ms | ActiveRecord: 0.1ms | Allocations: 17878)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-14 23:54:41 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 130)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 435)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.2ms | Allocations: 49)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 37ms (Views: 33.0ms | ActiveRecord: 0.2ms | Allocations: 16717)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-14 23:54:46 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.3ms | Allocations: 92)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 184)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 434)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.2ms | Allocations: 49)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 28ms (Views: 24.9ms | ActiveRecord: 0.2ms | Allocations: 15297)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-14 23:55:42 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.6ms | Allocations: 271)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 610)
+  Rendered layouts/_navigation.html.erb (Duration: 1.8ms | Allocations: 755)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.5ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 28ms (Views: 25.6ms | ActiveRecord: 0.2ms | Allocations: 17893)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-14 23:56:54 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.8ms | Allocations: 232)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 565)
+  Rendered layouts/_navigation.html.erb (Duration: 1.3ms | Allocations: 755)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.5ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 30ms (Views: 26.6ms | ActiveRecord: 0.2ms | Allocations: 17835)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-14 23:57:34 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.5ms | Allocations: 229)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 562)
+  Rendered layouts/_navigation.html.erb (Duration: 1.2ms | Allocations: 755)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.4ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 27ms (Views: 23.7ms | ActiveRecord: 0.2ms | Allocations: 17834)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-14 23:58:07 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.6ms | Allocations: 189)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 442.8ms | Allocations: 181486)
+Completed 500 Internal Server Error in 449ms (ActiveRecord: 0.2ms | Allocations: 183325)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `seccion' for #<#<Class:0x00007f255c126230>:0x00007f255c124840>
+Did you mean?  @secciones
+               session):
+    6: </ul>
+    7: 
+    8: 
+    9: <li><%= link_to seccion.nombre, "/" %></li> 
+  
+app/views/secciones/index.html.erb:9
+Started GET "/secciones" for 127.0.0.1 at 2023-06-14 23:58:24 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.5ms | Allocations: 189)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 528)
+  Rendered layouts/_navigation.html.erb (Duration: 1.3ms | Allocations: 755)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.5ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 31ms (Views: 28.0ms | ActiveRecord: 0.2ms | Allocations: 17888)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-14 23:59:35 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.7ms | Allocations: 271)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 607)
+  Rendered layouts/_navigation.html.erb (Duration: 1.7ms | Allocations: 760)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.7ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 89)
+Completed 200 OK in 40ms (Views: 37.3ms | ActiveRecord: 0.2ms | Allocations: 17899)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 00:02:03 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.3ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.9ms | Allocations: 189)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 526)
+  Rendered layouts/_navigation.html.erb (Duration: 1.4ms | Allocations: 755)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.4ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 89)
+Completed 200 OK in 32ms (Views: 28.8ms | ActiveRecord: 0.3ms | Allocations: 17801)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 00:02:36 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.3ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.5ms | Allocations: 188)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 524)
+  Rendered layouts/_navigation.html.erb (Duration: 2.1ms | Allocations: 755)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.6ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 33ms (Views: 29.9ms | ActiveRecord: 0.3ms | Allocations: 17790)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 00:02:52 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.6ms | Allocations: 189)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 525)
+  Rendered layouts/_navigation.html.erb (Duration: 2.0ms | Allocations: 755)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.7ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 89)
+Completed 200 OK in 34ms (Views: 31.5ms | ActiveRecord: 0.2ms | Allocations: 17798)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 00:03:04 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.4ms | Allocations: 188)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 524)
+  Rendered layouts/_navigation.html.erb (Duration: 1.5ms | Allocations: 755)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.6ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 27ms (Views: 25.0ms | ActiveRecord: 0.2ms | Allocations: 17804)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-15 00:03:20 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 130)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 435)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.2ms | Allocations: 49)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 29ms (Views: 23.8ms | ActiveRecord: 0.2ms | Allocations: 16734)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 00:03:49 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.8ms | Allocations: 165)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 501)
+  Rendered layouts/_navigation.html.erb (Duration: 1.3ms | Allocations: 760)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.4ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 42ms (Views: 39.2ms | ActiveRecord: 0.2ms | Allocations: 17789)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-15 19:51:19 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 20.0ms | Allocations: 258)
+  Rendered layouts/_navigation.html.erb (Duration: 2.0ms | Allocations: 1305)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.7ms | Allocations: 213)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 92)
+Completed 200 OK in 598ms (Views: 546.4ms | ActiveRecord: 1.4ms | Allocations: 91094)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 19:51:29 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (8.5ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 6.6ms | Allocations: 155)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 14.5ms | Allocations: 527)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 436)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 49)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 55ms (Views: 35.7ms | ActiveRecord: 9.1ms | Allocations: 20017)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-15 19:53:32 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 5)
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 436)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.2ms | Allocations: 49)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 23ms (Views: 19.8ms | ActiveRecord: 0.2ms | Allocations: 15960)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 19:58:01 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.7ms | Allocations: 148)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 484)
+  Rendered layouts/_navigation.html.erb (Duration: 1.3ms | Allocations: 756)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.4ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 29ms (Views: 25.7ms | ActiveRecord: 0.2ms | Allocations: 17757)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-15 19:59:28 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 136)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 436)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 49)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 29ms (Views: 24.3ms | ActiveRecord: 0.2ms | Allocations: 16749)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" ORDER BY "secciones"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProducto Create (0.9ms)[0m  [1m[32mINSERT INTO "productos" ("nombre", "precio", "seccion_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nombre", "Carne de cerdo"], ["precio", 12000], ["seccion_id", 1], ["created_at", "2023-06-16 01:07:44.828292"], ["updated_at", "2023-06-16 01:07:44.828292"]]
+  [1m[35m (52.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProducto Create (0.6ms)[0m  [1m[32mINSERT INTO "productos" ("nombre", "precio", "seccion_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nombre", "Pollo"], ["precio", 10000], ["seccion_id", 1], ["created_at", "2023-06-16 01:08:57.681817"], ["updated_at", "2023-06-16 01:08:57.681817"]]
+  [1m[35m (86.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 20:33:21 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.5ms | Allocations: 159)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 496)
+  Rendered layouts/_navigation.html.erb (Duration: 1.2ms | Allocations: 755)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.5ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 32ms (Views: 29.8ms | ActiveRecord: 0.2ms | Allocations: 17795)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 20:34:44 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.5ms | Allocations: 197)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 533)
+  Rendered layouts/_navigation.html.erb (Duration: 1.2ms | Allocations: 755)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.4ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 29ms (Views: 26.4ms | ActiveRecord: 0.1ms | Allocations: 17805)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 20:37:10 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 1.0ms | Allocations: 391)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 727)
+  Rendered layouts/_navigation.html.erb (Duration: 2.2ms | Allocations: 755)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.6ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 89)
+Completed 200 OK in 31ms (Views: 27.6ms | ActiveRecord: 0.1ms | Allocations: 18004)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 20:37:20 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.9ms | Allocations: 343)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 679)
+  Rendered layouts/_navigation.html.erb (Duration: 1.4ms | Allocations: 755)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.4ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 30ms (Views: 27.2ms | ActiveRecord: 0.2ms | Allocations: 17954)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 20:37:28 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.7ms | Allocations: 344)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 687)
+  Rendered layouts/_navigation.html.erb (Duration: 1.4ms | Allocations: 756)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.6ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.4ms | Allocations: 89)
+Completed 200 OK in 41ms (Views: 26.4ms | ActiveRecord: 0.2ms | Allocations: 17990)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 20:37:33 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 1.0ms | Allocations: 344)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 680)
+  Rendered layouts/_navigation.html.erb (Duration: 1.3ms | Allocations: 755)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.4ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 35ms (Views: 31.8ms | ActiveRecord: 0.2ms | Allocations: 17962)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 20:37:38 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.8ms | Allocations: 344)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 680)
+  Rendered layouts/_navigation.html.erb (Duration: 2.0ms | Allocations: 755)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.7ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 89)
+Completed 200 OK in 38ms (Views: 35.6ms | ActiveRecord: 0.1ms | Allocations: 17958)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 20:38:00 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 1.2ms | Allocations: 344)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 680)
+  Rendered layouts/_navigation.html.erb (Duration: 1.2ms | Allocations: 755)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.4ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 36ms (Views: 33.2ms | ActiveRecord: 0.2ms | Allocations: 17950)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 20:41:06 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 1.0ms | Allocations: 343)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 679)
+  Rendered layouts/_navigation.html.erb (Duration: 67.3ms | Allocations: 3826)
+Completed 500 Internal Server Error in 95ms (ActiveRecord: 0.2ms | Allocations: 20314)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"secciones"}, missing required keys: [:id]):
+    12:                 </div>
+    13:             </li>
+    14:             <li class="<%= is_active_controller('metrics') %>">
+    15:                 <%= link_to seccion_path do %>
+    16:                 <i class="fa fa-pie-chart"></i> <span class="nav-label" data-i18n="nav.metrics">Metrics</span>
+    17:                 <% end %>
+    18:             </li>
+  
+app/views/layouts/_navigation.html.erb:15
+app/views/layouts/application.html.erb:28
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 20:41:33 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.8ms | Allocations: 343)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 681)
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 280)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.4ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 29ms (Views: 26.6ms | ActiveRecord: 0.1ms | Allocations: 17554)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 20:41:35 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.5ms | Allocations: 233)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 325)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 92)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.2ms | Allocations: 15104)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 20:41:36 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.5ms | Allocations: 231)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 323)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 86)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 27ms (Views: 24.2ms | ActiveRecord: 0.2ms | Allocations: 15092)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-15 20:41:40 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 135)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 92)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 26ms (Views: 21.9ms | ActiveRecord: 0.3ms | Allocations: 16414)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 20:41:43 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.6ms | Allocations: 233)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 325)
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 92)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 28ms (Views: 25.3ms | ActiveRecord: 0.1ms | Allocations: 15101)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 20:42:28 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 1.2ms | Allocations: 343)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 680)
+  Rendered layouts/_navigation.html.erb (Duration: 1.5ms | Allocations: 858)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.4ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 31ms (Views: 27.7ms | ActiveRecord: 0.2ms | Allocations: 18071)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 20:42:51 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 1.3ms | Allocations: 343)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 679)
+  Rendered layouts/_navigation.html.erb (Duration: 1.9ms | Allocations: 857)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.5ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 35ms (Views: 31.6ms | ActiveRecord: 0.2ms | Allocations: 18056)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 20:42:53 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.4ms | Allocations: 233)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 325)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 469)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 5)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.1ms | Allocations: 15479)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 20:42:55 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.4ms | Allocations: 231)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 323)
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 458)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 36ms (Views: 33.2ms | ActiveRecord: 0.2ms | Allocations: 15475)
+
+
+Started GET "/" for 127.0.0.1 at 2023-06-15 20:43:01 -0500
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 135)
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 469)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 29ms (Views: 23.0ms | ActiveRecord: 0.2ms | Allocations: 16759)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 20:43:02 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 0.4ms | Allocations: 233)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 325)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 469)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.1ms | Allocations: 15473)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 20:43:55 -0500
+Processing by SeccionesController#index as HTML
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/controllers/secciones_controller.rb:4:in `puts'
+  Rendering secciones/index.html.erb within layouts/application
+  Rendered collection of secciones/_seccion.html.erb [2 times] (Duration: 1.1ms | Allocations: 344)
+  Rendered secciones/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 681)
+  Rendered layouts/_navigation.html.erb (Duration: 1.4ms | Allocations: 856)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.4ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 29ms (Views: 26.6ms | ActiveRecord: 0.2ms | Allocations: 18061)
+
+
