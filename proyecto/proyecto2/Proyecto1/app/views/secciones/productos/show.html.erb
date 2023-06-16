@@ -1,0 +1,9 @@
+<h1>DATOS DEL PRODUCTO</h1>
+<p><strong>Nombre:</strong> <%= @producto.nombre %></p>
+<p><strong>Precio:</strong> <%= @producto.precio %></p>
+ 
+  <p>
+    <%= link_to 'Editar', edit_seccion_producto_path(@seccion, @producto) %> |
+    <%= link_to 'Ver Productos', seccion_productos_path(@seccion) %>
+  </p>
+  

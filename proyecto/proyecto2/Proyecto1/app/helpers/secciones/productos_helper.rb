@@ -1,0 +1,2 @@
+module Secciones::ProductosHelper
+end

@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  get "home/index"
-  get "home/minor"
 
-  resources :secciones
-
+  resources :secciones do
+    resources :productos, module: :secciones
+  end
+  
   root to: 'home#index'
 
 end

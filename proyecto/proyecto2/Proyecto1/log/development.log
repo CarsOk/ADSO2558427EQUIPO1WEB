@@ -1298,3 +1298,2235 @@ Processing by SeccionesController#index as HTML
 Completed 200 OK in 29ms (Views: 26.6ms | ActiveRecord: 0.2ms | Allocations: 18061)
 
 
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSeccion Create (0.4ms)[0m  [1m[32mINSERT INTO "secciones" ("nombre", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["nombre", "Comidas rápidas"], ["created_at", "2023-06-16 03:27:51.617583"], ["updated_at", "2023-06-16 03:27:51.617583"]]
+  [1m[35m (71.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSeccion Create (0.4ms)[0m  [1m[32mINSERT INTO "secciones" ("nombre", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["nombre", "bebidas"], ["created_at", "2023-06-16 03:29:04.328177"], ["updated_at", "2023-06-16 03:29:04.328177"]]
+  [1m[35m (64.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/secciones/1" for 127.0.0.1 at 2023-06-15 22:56:35 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SeccionesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones_controller.rb:9:in `show'
+Completed 406 Not Acceptable in 20ms (ActiveRecord: 0.8ms | Allocations: 7605)
+
+
+  
+ActionController::MissingExactTemplate (SeccionesController#show is missing a template for request formats: text/html):
+  
+actionpack (6.0.1) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.1) lib/abstract_controller/base.rb:196:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.1) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.1) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.1) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.1) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (6.0.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.2.1) lib/puma/configuration.rb:228:in `call'
+puma (4.2.1) lib/puma/server.rb:667:in `handle_request'
+puma (4.2.1) lib/puma/server.rb:470:in `process_client'
+puma (4.2.1) lib/puma/server.rb:328:in `block in run'
+puma (4.2.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/secciones/1" for 127.0.0.1 at 2023-06-15 23:00:00 -0500
+Processing by SeccionesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones_controller.rb:9:in `show'
+Completed 406 Not Acceptable in 7ms (ActiveRecord: 0.2ms | Allocations: 2984)
+
+
+  
+ActionController::MissingExactTemplate (SeccionesController#show is missing a template for request formats: text/html):
+  
+actionpack (6.0.1) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.1) lib/abstract_controller/base.rb:196:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.1) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.1) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.1) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.1) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (6.0.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.2.1) lib/puma/configuration.rb:228:in `call'
+puma (4.2.1) lib/puma/server.rb:667:in `handle_request'
+puma (4.2.1) lib/puma/server.rb:470:in `process_client'
+puma (4.2.1) lib/puma/server.rb:328:in `block in run'
+puma (4.2.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 23:00:02 -0500
+Processing by SeccionesController#index as HTML
+  Rendering secciones/index.html.erb within layouts/application
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/views/secciones/index.html.erb:16
+  Rendered secciones/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1130)
+  Rendered layouts/_navigation.html.erb (Duration: 1.8ms | Allocations: 1431)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.4ms | Allocations: 208)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 92)
+Completed 200 OK in 376ms (Views: 374.0ms | ActiveRecord: 0.2ms | Allocations: 108096)
+
+
+Started GET "/secciones/productos.1" for 127.0.0.1 at 2023-06-15 23:00:04 -0500
+Processing by Secciones::ProductosController#index as 
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 655)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Seccion without an ID):
+  
+app/controllers/secciones/productos_controller.rb:14:in `set_producto'
+Started GET "/secciones/productos/1" for 127.0.0.1 at 2023-06-15 23:03:46 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Secciones::ProductosController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 404 Not Found in 7ms (ActiveRecord: 1.4ms | Allocations: 1930)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Seccion without an ID):
+  
+app/controllers/secciones/productos_controller.rb:18:in `set_producto'
+Started GET "/secciones/productos.1" for 127.0.0.1 at 2023-06-15 23:05:03 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Secciones::ProductosController#index as 
+Completed 404 Not Found in 4ms (ActiveRecord: 0.7ms | Allocations: 1888)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Seccion without an ID):
+  
+app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+Started GET "/" for 127.0.0.1 at 2023-06-15 23:12:27 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 144)
+  Rendered layouts/_navigation.html.erb (Duration: 1.6ms | Allocations: 1005)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 49)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 39ms (Views: 22.0ms | ActiveRecord: 1.1ms | Allocations: 22762)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 23:12:29 -0500
+Processing by SeccionesController#index as HTML
+  Rendering secciones/index.html.erb within layouts/application
+  [1m[36mSeccion Load (0.3ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/views/secciones/index.html.erb:16
+  Rendered secciones/index.html.erb within layouts/application (Duration: 227.3ms | Allocations: 95117)
+Completed 500 Internal Server Error in 231ms (ActiveRecord: 0.3ms | Allocations: 96407)
+
+
+  
+ActionView::Template::Error (undefined method `secciones_productos_path' for #<#<Class:0x00007f72c48d8ab8>:0x00007f72c48e6370>
+Did you mean?  seccion_producto_path
+               seccion_productos_path
+               seccion_productos_url):
+    17:       <tr>
+    18:         <tr>
+    19:             <td><%= seccion.nombre %></td>
+    20:             <td><%= link_to "Ver Productos", secciones_productos_path(seccion) %></td>
+    21: 
+    22:         </tr>
+    23:     <% end %>
+  
+app/views/secciones/index.html.erb:20
+app/views/secciones/index.html.erb:16
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 23:12:47 -0500
+Processing by SeccionesController#index as HTML
+  Rendering secciones/index.html.erb within layouts/application
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/views/secciones/index.html.erb:16
+  Rendered secciones/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 973)
+  Rendered layouts/_navigation.html.erb (Duration: 1.3ms | Allocations: 835)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.4ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 29ms (Views: 27.5ms | ActiveRecord: 0.2ms | Allocations: 17811)
+
+
+Started GET "/secciones/1/productos" for 127.0.0.1 at 2023-06-15 23:12:48 -0500
+Processing by Secciones::ProductosController#index as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.5ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/index.html.erb within layouts/application
+  [1m[36mProducto Load (0.4ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ?[0m  [["seccion_id", 1]]
+  ↳ app/views/secciones/productos/index.html.erb:11
+  Rendered secciones/productos/index.html.erb within layouts/application (Duration: 13.6ms | Allocations: 6184)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 482)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 48ms (Views: 38.8ms | ActiveRecord: 1.7ms | Allocations: 24375)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 23:13:01 -0500
+Processing by SeccionesController#index as HTML
+  Rendering secciones/index.html.erb within layouts/application
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/views/secciones/index.html.erb:16
+  Rendered secciones/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 765)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 443)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.2ms | Allocations: 15353)
+
+
+Started GET "/secciones/2/productos" for 127.0.0.1 at 2023-06-15 23:13:03 -0500
+Processing by Secciones::ProductosController#index as HTML
+  Parameters: {"seccion_id"=>"2"}
+  [1m[36mSeccion Load (0.4ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/index.html.erb within layouts/application
+  [1m[36mProducto Load (0.1ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ?[0m  [["seccion_id", 2]]
+  ↳ app/views/secciones/productos/index.html.erb:11
+  Rendered secciones/productos/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 718)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 476)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 24ms (Views: 20.5ms | ActiveRecord: 0.6ms | Allocations: 15869)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 23:13:04 -0500
+Processing by SeccionesController#index as HTML
+  Rendering secciones/index.html.erb within layouts/application
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/views/secciones/index.html.erb:16
+  Rendered secciones/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 759)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 436)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 23ms (Views: 22.4ms | ActiveRecord: 0.1ms | Allocations: 15344)
+
+
+Started GET "/secciones/3/productos" for 127.0.0.1 at 2023-06-15 23:13:05 -0500
+Processing by Secciones::ProductosController#index as HTML
+  Parameters: {"seccion_id"=>"3"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/index.html.erb within layouts/application
+  [1m[36mProducto Load (0.1ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ?[0m  [["seccion_id", 3]]
+  ↳ app/views/secciones/productos/index.html.erb:11
+  Rendered secciones/productos/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 718)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 477)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 27ms (Views: 24.0ms | ActiveRecord: 0.3ms | Allocations: 15864)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 23:13:06 -0500
+Processing by SeccionesController#index as HTML
+  Rendering secciones/index.html.erb within layouts/application
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/views/secciones/index.html.erb:16
+  Rendered secciones/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 759)
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 436)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 43ms (Views: 42.3ms | ActiveRecord: 0.2ms | Allocations: 15348)
+
+
+Started GET "/secciones/4/productos" for 127.0.0.1 at 2023-06-15 23:13:07 -0500
+Processing by Secciones::ProductosController#index as HTML
+  Parameters: {"seccion_id"=>"4"}
+  [1m[36mSeccion Load (0.5ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/index.html.erb within layouts/application
+  [1m[36mProducto Load (0.1ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ?[0m  [["seccion_id", 4]]
+  ↳ app/views/secciones/productos/index.html.erb:11
+  Rendered secciones/productos/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 718)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 477)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 26ms (Views: 23.1ms | ActiveRecord: 0.6ms | Allocations: 15857)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 23:13:09 -0500
+Processing by SeccionesController#index as HTML
+  Rendering secciones/index.html.erb within layouts/application
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/views/secciones/index.html.erb:16
+  Rendered secciones/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 759)
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 436)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 24ms (Views: 22.8ms | ActiveRecord: 0.2ms | Allocations: 15339)
+
+
+Started GET "/secciones/1/productos" for 127.0.0.1 at 2023-06-15 23:13:10 -0500
+Processing by Secciones::ProductosController#index as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/index.html.erb within layouts/application
+  [1m[36mProducto Load (0.2ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ?[0m  [["seccion_id", 1]]
+  ↳ app/views/secciones/productos/index.html.erb:11
+  Rendered secciones/productos/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 784)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 476)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 24ms (Views: 21.3ms | ActiveRecord: 0.3ms | Allocations: 15919)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 23:13:11 -0500
+Processing by SeccionesController#index as HTML
+  Rendering secciones/index.html.erb within layouts/application
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/views/secciones/index.html.erb:16
+  Rendered secciones/index.html.erb within layouts/application (Duration: 1.7ms | Allocations: 759)
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 436)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 24ms (Views: 23.3ms | ActiveRecord: 0.1ms | Allocations: 15344)
+
+
+Started GET "/secciones/1/productos" for 127.0.0.1 at 2023-06-15 23:13:25 -0500
+Processing by Secciones::ProductosController#index as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/index.html.erb within layouts/application
+  [1m[36mProducto Load (0.1ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ?[0m  [["seccion_id", 1]]
+  ↳ app/views/secciones/productos/index.html.erb:11
+  Rendered secciones/productos/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 784)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 476)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 27ms (Views: 24.7ms | ActiveRecord: 0.3ms | Allocations: 15921)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 23:13:28 -0500
+Processing by SeccionesController#index as HTML
+  Rendering secciones/index.html.erb within layouts/application
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/views/secciones/index.html.erb:16
+  Rendered secciones/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 759)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 436)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 38ms (Views: 36.8ms | ActiveRecord: 0.2ms | Allocations: 15345)
+
+
+Started GET "/secciones/1/productos" for 127.0.0.1 at 2023-06-15 23:13:29 -0500
+Processing by Secciones::ProductosController#index as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/index.html.erb within layouts/application
+  [1m[36mProducto Load (0.2ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ?[0m  [["seccion_id", 1]]
+  ↳ app/views/secciones/productos/index.html.erb:11
+  Rendered secciones/productos/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 784)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 476)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 26ms (Views: 22.4ms | ActiveRecord: 0.4ms | Allocations: 15926)
+
+
+Started GET "/secciones/1/productos/new" for 127.0.0.1 at 2023-06-15 23:13:35 -0500
+Processing by Secciones::ProductosController#new as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+Completed 406 Not Acceptable in 9ms (ActiveRecord: 0.2ms | Allocations: 3109)
+
+
+  
+ActionController::MissingExactTemplate (Secciones::ProductosController#new is missing a template for request formats: text/html):
+  
+actionpack (6.0.1) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.1) lib/abstract_controller/base.rb:196:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.1) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.1) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.1) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.1) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (6.0.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.2.1) lib/puma/configuration.rb:228:in `call'
+puma (4.2.1) lib/puma/server.rb:667:in `handle_request'
+puma (4.2.1) lib/puma/server.rb:470:in `process_client'
+puma (4.2.1) lib/puma/server.rb:328:in `block in run'
+puma (4.2.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/secciones/1/productos" for 127.0.0.1 at 2023-06-15 23:15:41 -0500
+Processing by Secciones::ProductosController#index as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/index.html.erb within layouts/application
+  [1m[36mProducto Load (0.2ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ?[0m  [["seccion_id", 1]]
+  ↳ app/views/secciones/productos/index.html.erb:11
+  Rendered secciones/productos/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1012)
+  Rendered layouts/_navigation.html.erb (Duration: 1.6ms | Allocations: 879)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.4ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 44ms (Views: 40.9ms | ActiveRecord: 0.4ms | Allocations: 18398)
+
+
+Started GET "/secciones/1/productos/new" for 127.0.0.1 at 2023-06-15 23:15:42 -0500
+Processing by Secciones::ProductosController#new as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/new.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 206.7ms | Allocations: 92209)
+  Rendered secciones/productos/new.html.erb within layouts/application (Duration: 207.6ms | Allocations: 92504)
+Completed 500 Internal Server Error in 211ms (ActiveRecord: 0.2ms | Allocations: 93761)
+
+
+  
+ActionView::Template::Error (undefined method `simple_form_for' for #<#<Class:0x00007f72c4c66450>:0x0000559e9476e188>
+Did you mean?  simple_format):
+    1: <%= simple_form_for [@producto] do |f| %>
+    2:     <%= f.input :nombre %>
+    3:     <%= f.input :precio %>
+    4: 
+  
+app/views/secciones/productos/_form.html.erb:1
+app/views/secciones/productos/new.html.erb:2
+Started GET "/secciones/1/productos/new" for 127.0.0.1 at 2023-06-15 23:16:01 -0500
+Processing by Secciones::ProductosController#new as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/new.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 443.0ms | Allocations: 181151)
+  Rendered secciones/productos/new.html.erb within layouts/application (Duration: 443.9ms | Allocations: 181443)
+Completed 500 Internal Server Error in 448ms (ActiveRecord: 0.1ms | Allocations: 183402)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `producto' for #<#<Class:0x00007f72c4887c08>:0x00007f72c4886218>
+Did you mean?  @producto):
+    1: <%= simple_form_for [@seccion, producto] do |f| %>
+    2:     <%= f.input :nombre %>
+    3:     <%= f.input :precio %>
+    4: 
+  
+app/views/secciones/productos/_form.html.erb:1
+app/views/secciones/productos/new.html.erb:2
+Started GET "/secciones/1/productos/new" for 127.0.0.1 at 2023-06-15 23:16:09 -0500
+Processing by Secciones::ProductosController#new as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.3ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/new.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 216.4ms | Allocations: 92186)
+  Rendered secciones/productos/new.html.erb within layouts/application (Duration: 217.6ms | Allocations: 92478)
+Completed 500 Internal Server Error in 224ms (ActiveRecord: 0.3ms | Allocations: 94437)
+
+
+  
+ActionView::Template::Error (undefined method `simple_form_for' for #<#<Class:0x00007f72c4c47668>:0x00007f72c4c45c28>
+Did you mean?  simple_format):
+    1: <%= simple_form_for [@seccion, @producto] do |f| %>
+    2:     <%= f.input :nombre %>
+    3:     <%= f.input :precio %>
+    4: 
+  
+app/views/secciones/productos/_form.html.erb:1
+app/views/secciones/productos/new.html.erb:2
+Started GET "/secciones/1/productos/new" for 127.0.0.1 at 2023-06-15 23:17:29 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Secciones::ProductosController#new as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/new.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 201.6ms | Allocations: 23270)
+  Rendered secciones/productos/new.html.erb within layouts/application (Duration: 203.9ms | Allocations: 23895)
+  Rendered layouts/_navigation.html.erb (Duration: 2.2ms | Allocations: 1469)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.5ms | Allocations: 208)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 92)
+Completed 200 OK in 429ms (Views: 399.0ms | ActiveRecord: 1.5ms | Allocations: 119477)
+
+
+Started GET "/secciones/1/productos/new" for 127.0.0.1 at 2023-06-15 23:17:33 -0500
+Processing by Secciones::ProductosController#new as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/new.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 13.2ms | Allocations: 5480)
+  Rendered secciones/productos/new.html.erb within layouts/application (Duration: 13.5ms | Allocations: 5544)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 488)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 40ms (Views: 36.8ms | ActiveRecord: 0.2ms | Allocations: 20857)
+
+
+Started GET "/secciones/1/productos/new" for 127.0.0.1 at 2023-06-15 23:17:46 -0500
+Processing by Secciones::ProductosController#new as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/new.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 231.5ms | Allocations: 92189)
+  Rendered secciones/productos/new.html.erb within layouts/application (Duration: 232.5ms | Allocations: 92482)
+Completed 500 Internal Server Error in 239ms (ActiveRecord: 0.2ms | Allocations: 94466)
+
+
+  
+ActionView::Template::Error (undefined method `productos_path' for #<#<Class:0x00007fd108036fc0>:0x00007fd108035698>):
+    1: <%= simple_form_for [@producto] do |f| %>
+    2:     <%= f.input :nombre %>
+    3:     <%= f.input :precio %>
+    4: 
+  
+app/views/secciones/productos/_form.html.erb:1
+app/views/secciones/productos/new.html.erb:2
+Started GET "/secciones/1/productos/new" for 127.0.0.1 at 2023-06-15 23:17:50 -0500
+Processing by Secciones::ProductosController#new as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/new.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 14.3ms | Allocations: 5709)
+  Rendered secciones/productos/new.html.erb within layouts/application (Duration: 15.1ms | Allocations: 5999)
+  Rendered layouts/_navigation.html.erb (Duration: 2.1ms | Allocations: 904)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.6ms | Allocations: 206)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 92)
+Completed 200 OK in 46ms (Views: 42.9ms | ActiveRecord: 0.2ms | Allocations: 23692)
+
+
+Started GET "/secciones/1/productos/new" for 127.0.0.1 at 2023-06-15 23:18:16 -0500
+Processing by Secciones::ProductosController#new as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/new.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 14.2ms | Allocations: 5653)
+  Rendered secciones/productos/new.html.erb within layouts/application (Duration: 15.0ms | Allocations: 5945)
+  Rendered layouts/_navigation.html.erb (Duration: 1.6ms | Allocations: 878)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.5ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 43ms (Views: 40.2ms | ActiveRecord: 0.1ms | Allocations: 23468)
+
+
+Started GET "/secciones/1/productos/new" for 127.0.0.1 at 2023-06-15 23:19:29 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Secciones::ProductosController#new as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/new.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 12.1ms | Allocations: 5881)
+  Rendered secciones/productos/new.html.erb within layouts/application (Duration: 12.8ms | Allocations: 6178)
+  Rendered layouts/_navigation.html.erb (Duration: 1.9ms | Allocations: 1434)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.4ms | Allocations: 201)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 69ms (Views: 35.7ms | ActiveRecord: 1.8ms | Allocations: 32862)
+
+
+Started GET "/secciones/1/productos/new" for 127.0.0.1 at 2023-06-15 23:19:43 -0500
+Processing by Secciones::ProductosController#new as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.3ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/new.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 12.5ms | Allocations: 5499)
+  Rendered secciones/productos/new.html.erb within layouts/application (Duration: 12.8ms | Allocations: 5563)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 488)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 41ms (Views: 37.8ms | ActiveRecord: 0.3ms | Allocations: 20879)
+
+
+Started GET "/secciones/1/productos/new" for 127.0.0.1 at 2023-06-15 23:21:36 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Secciones::ProductosController#new as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.3ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/new.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 61.3ms | Allocations: 14360)
+  Rendered secciones/productos/new.html.erb within layouts/application (Duration: 65.1ms | Allocations: 14956)
+  Rendered layouts/_navigation.html.erb (Duration: 2.1ms | Allocations: 1474)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.5ms | Allocations: 208)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 92)
+Completed 200 OK in 335ms (Views: 299.9ms | ActiveRecord: 1.7ms | Allocations: 111930)
+
+
+Started GET "/secciones/1/productos/new" for 127.0.0.1 at 2023-06-15 23:21:37 -0500
+Processing by Secciones::ProductosController#new as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/new.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 16.4ms | Allocations: 5490)
+  Rendered secciones/productos/new.html.erb within layouts/application (Duration: 17.1ms | Allocations: 5579)
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 488)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.2ms | Allocations: 48)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 79ms (Views: 76.5ms | ActiveRecord: 0.1ms | Allocations: 29928)
+
+
+Started GET "/secciones/1/productos/new" for 127.0.0.1 at 2023-06-15 23:22:06 -0500
+Processing by Secciones::ProductosController#new as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/new.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 12.2ms | Allocations: 5646)
+  Rendered secciones/productos/new.html.erb within layouts/application (Duration: 13.1ms | Allocations: 5945)
+  Rendered layouts/_navigation.html.erb (Duration: 1.6ms | Allocations: 878)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.5ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 53ms (Views: 47.4ms | ActiveRecord: 0.2ms | Allocations: 23478)
+
+
+Started GET "/secciones/1/productos/new" for 127.0.0.1 at 2023-06-15 23:22:30 -0500
+Processing by Secciones::ProductosController#new as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/new.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 203.1ms | Allocations: 94493)
+  Rendered secciones/productos/new.html.erb within layouts/application (Duration: 204.0ms | Allocations: 94790)
+Completed 500 Internal Server Error in 209ms (ActiveRecord: 0.1ms | Allocations: 96763)
+
+
+  
+ActionView::Template::Error (undefined method `productos_path' for #<#<Class:0x000055f1014a9ed8>:0x000055f1014b1b88>):
+    1: <%= simple_form_for [@producto] do |f| %>
+    2:     <%= f.input :nombre %>
+    3:     <%= f.input :precio %>
+    4: 
+  
+app/views/secciones/productos/_form.html.erb:1
+app/views/secciones/productos/new.html.erb:3
+Started GET "/secciones/1/productos/new" for 127.0.0.1 at 2023-06-15 23:23:44 -0500
+Processing by Secciones::ProductosController#new as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/new.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 229.0ms | Allocations: 91882)
+  Rendered secciones/productos/new.html.erb within layouts/application (Duration: 229.8ms | Allocations: 92178)
+Completed 500 Internal Server Error in 235ms (ActiveRecord: 0.1ms | Allocations: 94208)
+
+
+  
+ActionView::Template::Error (undefined method `productos_path' for #<#<Class:0x000055f101a13338>:0x00007fce30687dc8>):
+    1: <div class="container">
+    2:     <%= simple_form_for [@producto] do |f| %>
+    3:         <%= f.input :nombre %>
+    4:         <%= f.input :precio %>
+    5: 
+  
+app/views/secciones/productos/_form.html.erb:2
+app/views/secciones/productos/new.html.erb:3
+Started GET "/secciones/1/productos/new" for 127.0.0.1 at 2023-06-15 23:23:54 -0500
+Processing by Secciones::ProductosController#new as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/new.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 16.8ms | Allocations: 5727)
+  Rendered secciones/productos/new.html.erb within layouts/application (Duration: 17.8ms | Allocations: 6021)
+  Rendered layouts/_navigation.html.erb (Duration: 1.5ms | Allocations: 879)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.4ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 49ms (Views: 45.6ms | ActiveRecord: 0.2ms | Allocations: 23600)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 23:24:08 -0500
+Processing by SeccionesController#index as HTML
+  Rendering secciones/index.html.erb within layouts/application
+  [1m[36mSeccion Load (0.3ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/views/secciones/index.html.erb:16
+  Rendered secciones/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1001)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 443)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.3ms | Allocations: 16313)
+
+
+Started GET "/secciones/1/productos" for 127.0.0.1 at 2023-06-15 23:24:09 -0500
+Processing by Secciones::ProductosController#index as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/index.html.erb within layouts/application
+  [1m[36mProducto Load (0.4ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ?[0m  [["seccion_id", 1]]
+  ↳ app/views/secciones/productos/index.html.erb:11
+  Rendered secciones/productos/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1198)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 483)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 28ms (Views: 25.1ms | ActiveRecord: 0.6ms | Allocations: 16493)
+
+
+Started GET "/secciones/1/productos/new" for 127.0.0.1 at 2023-06-15 23:24:11 -0500
+Processing by Secciones::ProductosController#new as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/new.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 12.5ms | Allocations: 5493)
+  Rendered secciones/productos/new.html.erb within layouts/application (Duration: 12.8ms | Allocations: 5556)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 481)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 33ms (Views: 31.2ms | ActiveRecord: 0.1ms | Allocations: 20851)
+
+
+Started GET "/secciones/1/productos/new" for 127.0.0.1 at 2023-06-15 23:27:13 -0500
+Processing by Secciones::ProductosController#new as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/new.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 46.8ms | Allocations: 3857)
+  Rendered secciones/productos/new.html.erb within layouts/application (Duration: 47.6ms | Allocations: 4155)
+  Rendered layouts/_navigation.html.erb (Duration: 1.6ms | Allocations: 878)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.4ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 74ms (Views: 70.8ms | ActiveRecord: 0.1ms | Allocations: 21692)
+
+
+Started GET "/secciones/1/productos/new" for 127.0.0.1 at 2023-06-15 23:27:14 -0500
+Processing by Secciones::ProductosController#new as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/new.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 1.9ms | Allocations: 641)
+  Rendered secciones/productos/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 704)
+  Rendered layouts/_navigation.html.erb (Duration: 1.0ms | Allocations: 488)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.2ms | Allocations: 48)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 25ms (Views: 21.5ms | ActiveRecord: 0.2ms | Allocations: 16004)
+
+
+Started GET "/secciones/1/productos/new" for 127.0.0.1 at 2023-06-15 23:27:14 -0500
+Processing by Secciones::ProductosController#new as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.3ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/new.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 1.9ms | Allocations: 633)
+  Rendered secciones/productos/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 696)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 480)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 28ms (Views: 24.6ms | ActiveRecord: 0.3ms | Allocations: 15994)
+
+
+Started GET "/secciones/1/productos/new" for 127.0.0.1 at 2023-06-15 23:27:15 -0500
+Processing by Secciones::ProductosController#new as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/new.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 1.6ms | Allocations: 633)
+  Rendered secciones/productos/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 696)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 480)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 27ms (Views: 24.3ms | ActiveRecord: 0.2ms | Allocations: 15990)
+
+
+Started GET "/secciones/1/productos/new" for 127.0.0.1 at 2023-06-15 23:27:15 -0500
+Processing by Secciones::ProductosController#new as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/new.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 1.5ms | Allocations: 633)
+  Rendered secciones/productos/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 696)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 480)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 24ms (Views: 21.7ms | ActiveRecord: 0.2ms | Allocations: 15992)
+
+
+Started GET "/secciones/1/productos/new" for 127.0.0.1 at 2023-06-15 23:27:15 -0500
+Processing by Secciones::ProductosController#new as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/new.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 2.3ms | Allocations: 633)
+  Rendered secciones/productos/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 696)
+  Rendered layouts/_navigation.html.erb (Duration: 1.6ms | Allocations: 480)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.2ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 30ms (Views: 27.3ms | ActiveRecord: 0.1ms | Allocations: 15994)
+
+
+Started GET "/secciones/1/productos/new" for 127.0.0.1 at 2023-06-15 23:29:09 -0500
+Processing by Secciones::ProductosController#new as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/new.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 2.0ms | Allocations: 857)
+  Rendered secciones/productos/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1155)
+  Rendered layouts/_navigation.html.erb (Duration: 1.5ms | Allocations: 878)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.5ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 32ms (Views: 27.8ms | ActiveRecord: 0.2ms | Allocations: 18699)
+
+
+Started GET "/secciones/1/productos" for 127.0.0.1 at 2023-06-15 23:29:11 -0500
+Processing by Secciones::ProductosController#index as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/index.html.erb within layouts/application
+  [1m[36mProducto Load (0.1ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ?[0m  [["seccion_id", 1]]
+  ↳ app/views/secciones/productos/index.html.erb:13
+  Rendered secciones/productos/index.html.erb within layouts/application (Duration: 9.1ms | Allocations: 3375)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms | Allocations: 4479)
+
+
+  
+ActionView::Template::Error (undefined method `cantidad' for #<Producto:0x000055f10167d6d8>):
+    14:       <tr>
+    15:         <td><%= producto.id %></td>
+    16:         <td><%= link_to producto.nombre, seccion_producto_path(@seccion, producto)%></td>
+    17:         <td><%= producto.cantidad %></td>
+    18:         <td><%= link_to 'Editar', edit_seccion_producto_path(@seccion, producto) %></td>
+    19: 
+    20:       </tr>
+  
+app/views/secciones/productos/index.html.erb:17
+app/views/secciones/productos/index.html.erb:13
+Started GET "/secciones/1/productos" for 127.0.0.1 at 2023-06-15 23:29:19 -0500
+Processing by Secciones::ProductosController#index as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/index.html.erb within layouts/application
+  [1m[36mProducto Load (0.2ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ?[0m  [["seccion_id", 1]]
+  ↳ app/views/secciones/productos/index.html.erb:13
+  Rendered secciones/productos/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1229)
+  Rendered layouts/_navigation.html.erb (Duration: 2.2ms | Allocations: 874)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.4ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 30ms (Views: 27.3ms | ActiveRecord: 0.3ms | Allocations: 18605)
+
+
+Started GET "/secciones/1/productos/new" for 127.0.0.1 at 2023-06-15 23:29:23 -0500
+Processing by Secciones::ProductosController#new as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/new.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 1.7ms | Allocations: 857)
+  Rendered secciones/productos/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1150)
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 488)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 25ms (Views: 21.7ms | ActiveRecord: 0.2ms | Allocations: 16590)
+
+
+Started GET "/secciones/1/productos/1/edit" for 127.0.0.1 at 2023-06-15 23:29:28 -0500
+  
+AbstractController::ActionNotFound (The action 'edit' could not be found for Secciones::ProductosController):
+  
+actionpack (6.0.1) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (6.0.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.2.1) lib/puma/configuration.rb:228:in `call'
+puma (4.2.1) lib/puma/server.rb:667:in `handle_request'
+puma (4.2.1) lib/puma/server.rb:470:in `process_client'
+puma (4.2.1) lib/puma/server.rb:328:in `block in run'
+puma (4.2.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/secciones/1/productos/1" for 127.0.0.1 at 2023-06-15 23:29:30 -0500
+Processing by Secciones::ProductosController#show as HTML
+  Parameters: {"seccion_id"=>"1", "id"=>"1"}
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/show.html.erb within layouts/application
+  Rendered secciones/productos/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 85)
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 549)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 24ms (Views: 21.4ms | ActiveRecord: 0.1ms | Allocations: 15435)
+
+
+Started GET "/secciones/1" for 127.0.0.1 at 2023-06-15 23:29:38 -0500
+Processing by SeccionesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones_controller.rb:9:in `show'
+Completed 406 Not Acceptable in 7ms (ActiveRecord: 0.2ms | Allocations: 2915)
+
+
+  
+ActionController::MissingExactTemplate (SeccionesController#show is missing a template for request formats: text/html):
+  
+actionpack (6.0.1) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.1) lib/abstract_controller/base.rb:196:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.1) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.1) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.1) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.1) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (6.0.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.2.1) lib/puma/configuration.rb:228:in `call'
+puma (4.2.1) lib/puma/server.rb:667:in `handle_request'
+puma (4.2.1) lib/puma/server.rb:470:in `process_client'
+puma (4.2.1) lib/puma/server.rb:328:in `block in run'
+puma (4.2.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/secciones/1" for 127.0.0.1 at 2023-06-15 23:29:48 -0500
+Processing by SeccionesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSeccion Load (0.3ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones_controller.rb:9:in `show'
+Completed 406 Not Acceptable in 3ms (ActiveRecord: 0.3ms | Allocations: 1169)
+
+
+  
+ActionController::MissingExactTemplate (SeccionesController#show is missing a template for request formats: text/html):
+  
+actionpack (6.0.1) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.1) lib/abstract_controller/base.rb:196:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.1) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.1) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.1) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.1) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (6.0.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.2.1) lib/puma/configuration.rb:228:in `call'
+puma (4.2.1) lib/puma/server.rb:667:in `handle_request'
+puma (4.2.1) lib/puma/server.rb:470:in `process_client'
+puma (4.2.1) lib/puma/server.rb:328:in `block in run'
+puma (4.2.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 23:30:03 -0500
+Processing by SeccionesController#index as HTML
+  Rendering secciones/index.html.erb within layouts/application
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/views/secciones/index.html.erb:16
+  Rendered secciones/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 969)
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 443)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.3ms | Allocations: 48)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 28ms (Views: 26.8ms | ActiveRecord: 0.2ms | Allocations: 16237)
+
+
+Started GET "/secciones/2/productos" for 127.0.0.1 at 2023-06-15 23:30:04 -0500
+Processing by Secciones::ProductosController#index as HTML
+  Parameters: {"seccion_id"=>"2"}
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/index.html.erb within layouts/application
+  [1m[36mProducto Load (0.1ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ?[0m  [["seccion_id", 2]]
+  ↳ app/views/secciones/productos/index.html.erb:13
+  Rendered secciones/productos/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 746)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 483)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 36ms (Views: 33.8ms | ActiveRecord: 0.3ms | Allocations: 15899)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 23:30:06 -0500
+Processing by SeccionesController#index as HTML
+  Rendering secciones/index.html.erb within layouts/application
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/views/secciones/index.html.erb:16
+  Rendered secciones/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 760)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 436)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 22ms (Views: 21.6ms | ActiveRecord: 0.1ms | Allocations: 15346)
+
+
+Started GET "/secciones/1/productos" for 127.0.0.1 at 2023-06-15 23:30:07 -0500
+Processing by Secciones::ProductosController#index as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/index.html.erb within layouts/application
+  [1m[36mProducto Load (0.2ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ?[0m  [["seccion_id", 1]]
+  ↳ app/views/secciones/productos/index.html.erb:13
+  Rendered secciones/productos/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 985)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 476)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 26ms (Views: 23.3ms | ActiveRecord: 0.3ms | Allocations: 16125)
+
+
+Started GET "/secciones/1/productos/new" for 127.0.0.1 at 2023-06-15 23:30:09 -0500
+Processing by Secciones::ProductosController#new as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:18:in `set_seccion'
+  Rendering secciones/productos/new.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 1.3ms | Allocations: 636)
+  Rendered secciones/productos/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 699)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 480)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.1ms | Allocations: 15990)
+
+
+Started GET "/secciones/1/productos/new" for 127.0.0.1 at 2023-06-15 23:32:06 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Secciones::ProductosController#new as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:27:in `set_seccion'
+  Rendering secciones/productos/new.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 1.5ms | Allocations: 750)
+  Rendered secciones/productos/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 912)
+  Rendered layouts/_navigation.html.erb (Duration: 1.5ms | Allocations: 1043)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 49)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 50ms (Views: 21.1ms | ActiveRecord: 1.4ms | Allocations: 25390)
+
+
+Started GET "/secciones/1/productos/new" for 127.0.0.1 at 2023-06-15 23:32:20 -0500
+Processing by Secciones::ProductosController#new as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:27:in `set_seccion'
+  Rendering secciones/productos/new.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 1.8ms | Allocations: 857)
+  Rendered secciones/productos/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1156)
+  Rendered layouts/_navigation.html.erb (Duration: 1.6ms | Allocations: 878)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.4ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 30ms (Views: 26.6ms | ActiveRecord: 0.1ms | Allocations: 18689)
+
+
+Started GET "/secciones" for 127.0.0.1 at 2023-06-15 23:32:51 -0500
+Processing by SeccionesController#index as HTML
+  Rendering secciones/index.html.erb within layouts/application
+  [1m[36mSeccion Load (0.3ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/views/secciones/index.html.erb:16
+  Rendered secciones/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 986)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 443)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.2ms | Allocations: 48)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 26ms (Views: 24.1ms | ActiveRecord: 0.3ms | Allocations: 16263)
+
+
+Started GET "/secciones/1/productos" for 127.0.0.1 at 2023-06-15 23:32:53 -0500
+Processing by Secciones::ProductosController#index as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:27:in `set_seccion'
+  Rendering secciones/productos/index.html.erb within layouts/application
+  [1m[36mProducto Load (0.3ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ?[0m  [["seccion_id", 1]]
+  ↳ app/views/secciones/productos/index.html.erb:13
+  Rendered secciones/productos/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1191)
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 483)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.2ms | Allocations: 48)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 29ms (Views: 24.1ms | ActiveRecord: 0.5ms | Allocations: 16665)
+
+
+Started GET "/secciones/1" for 127.0.0.1 at 2023-06-15 23:32:56 -0500
+Processing by SeccionesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones_controller.rb:9:in `show'
+Completed 406 Not Acceptable in 5ms (ActiveRecord: 0.2ms | Allocations: 2918)
+
+
+  
+ActionController::MissingExactTemplate (SeccionesController#show is missing a template for request formats: text/html):
+  
+actionpack (6.0.1) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.1) lib/abstract_controller/base.rb:196:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.1) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.1) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.1) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.1) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (6.0.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.2.1) lib/puma/configuration.rb:228:in `call'
+puma (4.2.1) lib/puma/server.rb:667:in `handle_request'
+puma (4.2.1) lib/puma/server.rb:470:in `process_client'
+puma (4.2.1) lib/puma/server.rb:328:in `block in run'
+puma (4.2.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/secciones/1/productos" for 127.0.0.1 at 2023-06-15 23:33:43 -0500
+Processing by Secciones::ProductosController#index as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:27:in `set_seccion'
+  Rendering secciones/productos/index.html.erb within layouts/application
+  [1m[36mProducto Load (0.2ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ?[0m  [["seccion_id", 1]]
+  ↳ app/views/secciones/productos/index.html.erb:13
+  Rendered secciones/productos/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1187)
+  Rendered layouts/_navigation.html.erb (Duration: 1.4ms | Allocations: 874)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.4ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 30ms (Views: 26.2ms | ActiveRecord: 0.4ms | Allocations: 18682)
+
+
+Started GET "/secciones.1" for 127.0.0.1 at 2023-06-15 23:33:44 -0500
+Processing by SeccionesController#index as 
+  Rendering secciones/index.html.erb within layouts/application
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/views/secciones/index.html.erb:16
+  Rendered secciones/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 969)
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 468)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 26ms (Views: 24.2ms | ActiveRecord: 0.2ms | Allocations: 16747)
+
+
+Started GET "/secciones/1/productos" for 127.0.0.1 at 2023-06-15 23:33:46 -0500
+Processing by Secciones::ProductosController#index as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:27:in `set_seccion'
+  Rendering secciones/productos/index.html.erb within layouts/application
+  [1m[36mProducto Load (0.1ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ?[0m  [["seccion_id", 1]]
+  ↳ app/views/secciones/productos/index.html.erb:13
+  Rendered secciones/productos/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 951)
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 482)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 35ms (Views: 32.5ms | ActiveRecord: 0.3ms | Allocations: 16221)
+
+
+Started GET "/secciones.1" for 127.0.0.1 at 2023-06-15 23:33:48 -0500
+Processing by SeccionesController#index as 
+  Rendering secciones/index.html.erb within layouts/application
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones"[0m
+  ↳ app/views/secciones/index.html.erb:16
+  Rendered secciones/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 759)
+  Rendered layouts/_navigation.html.erb (Duration: 1.3ms | Allocations: 461)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.2ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 26ms (Views: 24.8ms | ActiveRecord: 0.2ms | Allocations: 15379)
+
+
+Started GET "/secciones/1/productos" for 127.0.0.1 at 2023-06-15 23:33:49 -0500
+Processing by Secciones::ProductosController#index as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:27:in `set_seccion'
+  Rendering secciones/productos/index.html.erb within layouts/application
+  [1m[36mProducto Load (0.1ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ?[0m  [["seccion_id", 1]]
+  ↳ app/views/secciones/productos/index.html.erb:13
+  Rendered secciones/productos/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 943)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 476)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 27ms (Views: 24.2ms | ActiveRecord: 0.3ms | Allocations: 16186)
+
+
+Started GET "/secciones/1/productos/new" for 127.0.0.1 at 2023-06-15 23:33:51 -0500
+Processing by Secciones::ProductosController#new as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:27:in `set_seccion'
+  Rendering secciones/productos/new.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 1.7ms | Allocations: 857)
+  Rendered secciones/productos/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1156)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 488)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 26ms (Views: 22.8ms | ActiveRecord: 0.2ms | Allocations: 16602)
+
+
+Started GET "/secciones/1/productos" for 127.0.0.1 at 2023-06-15 23:35:06 -0500
+Processing by Secciones::ProductosController#index as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:27:in `set_seccion'
+  Rendering secciones/productos/index.html.erb within layouts/application
+  [1m[36mProducto Load (0.2ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ?[0m  [["seccion_id", 1]]
+  ↳ app/views/secciones/productos/index.html.erb:13
+  Rendered secciones/productos/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1187)
+  Rendered layouts/_navigation.html.erb (Duration: 1.6ms | Allocations: 874)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.5ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 89)
+Completed 200 OK in 31ms (Views: 27.4ms | ActiveRecord: 0.4ms | Allocations: 18674)
+
+
+Started GET "/secciones/1/productos/1" for 127.0.0.1 at 2023-06-15 23:35:08 -0500
+Processing by Secciones::ProductosController#show as HTML
+  Parameters: {"seccion_id"=>"1", "id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:27:in `set_seccion'
+  Rendering secciones/productos/show.html.erb within layouts/application
+  [1m[36mProducto Load (0.2ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ?[0m  [["seccion_id", 1]]
+  ↳ app/views/secciones/productos/show.html.erb:1
+  Rendered secciones/productos/show.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1204)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 523)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 37ms (Views: 33.8ms | ActiveRecord: 0.4ms | Allocations: 16536)
+
+
+Started GET "/secciones/1/productos/1" for 127.0.0.1 at 2023-06-15 23:35:13 -0500
+Processing by Secciones::ProductosController#show as HTML
+  Parameters: {"seccion_id"=>"1", "id"=>"1"}
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:27:in `set_seccion'
+  Rendering secciones/productos/show.html.erb within layouts/application
+  [1m[36mProducto Load (0.1ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ?[0m  [["seccion_id", 1]]
+  ↳ app/views/secciones/productos/show.html.erb:1
+  Rendered secciones/productos/show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 845)
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 516)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 0.3ms | Allocations: 16029)
+
+
+Started GET "/secciones/1/productos/1" for 127.0.0.1 at 2023-06-15 23:36:12 -0500
+Processing by Secciones::ProductosController#show as HTML
+  Parameters: {"seccion_id"=>"1", "id"=>"1"}
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:27:in `set_seccion'
+  Rendering secciones/productos/show.html.erb within layouts/application
+  [1m[36mProducto Load (0.3ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ? LIMIT ?[0m  [["seccion_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Producto Load (0.0ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ? LIMIT ?[0m  [["seccion_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Producto Load (0.0ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ? LIMIT ?[0m  [["seccion_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Producto Load (0.0ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ? LIMIT ?[0m  [["seccion_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Producto Load (0.0ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ? LIMIT ?[0m  [["seccion_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Producto Load (0.0ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ? LIMIT ?[0m  [["seccion_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Producto Load (0.0ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ? LIMIT ?[0m  [["seccion_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE Producto Load (0.0ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ? LIMIT ?[0m  [["seccion_id", 1], ["LIMIT", 11]]
+  Rendered secciones/productos/show.html.erb within layouts/application (Duration: 444.9ms | Allocations: 195211)
+Completed 500 Internal Server Error in 449ms (ActiveRecord: 0.7ms | Allocations: 197021)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `producto' for #<#<Class:0x00007fce08063cf8>:0x00007fce08062038>
+Did you mean?  @producto):
+    1: <tr>
+    2:     <td><%= producto.nombre %></td>
+    3:     <td><%= producto.precio %></td>
+    4: </tr>
+    5:   
+  
+app/views/secciones/productos/show.html.erb:2
+Started GET "/secciones/1/productos/1" for 127.0.0.1 at 2023-06-15 23:36:33 -0500
+Processing by Secciones::ProductosController#show as HTML
+  Parameters: {"seccion_id"=>"1", "id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:27:in `set_seccion'
+  Rendering secciones/productos/show.html.erb within layouts/application
+  [1m[36mProducto Load (0.2ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ? LIMIT ?[0m  [["seccion_id", 1], ["LIMIT", 11]]
+  Rendered secciones/productos/show.html.erb within layouts/application (Duration: 9.5ms | Allocations: 4201)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.4ms | Allocations: 6010)
+
+
+  
+ActionView::Template::Error (undefined method `nombre' for #<Producto::ActiveRecord_Associations_CollectionProxy:0x00007fce28136750>):
+    1: <tr>
+    2:     <td><%= @producto.nombre %></td>
+    3:     <td><%= @producto.precio %></td>
+    4: </tr>
+    5:   
+  
+app/views/secciones/productos/show.html.erb:2
+Started GET "/secciones/1/productos/1" for 127.0.0.1 at 2023-06-15 23:37:17 -0500
+Processing by Secciones::ProductosController#show as HTML
+  Parameters: {"seccion_id"=>"1", "id"=>"1"}
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:27:in `set_seccion'
+  Rendering secciones/productos/show.html.erb within layouts/application
+  Rendered secciones/productos/show.html.erb within layouts/application (Duration: 7.5ms | Allocations: 2515)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.1ms | Allocations: 4324)
+
+
+  
+ActionView::Template::Error (undefined method `producto' for #<Seccion:0x00007fce28187f10>
+Did you mean?  productos
+               productos=):
+    1: <tr>
+    2:     <td><%= @seccion.producto.nombre %></td>
+    3:     <td><%= @seccion.producto.precio %></td>
+    4: </tr>
+    5:   
+  
+app/views/secciones/productos/show.html.erb:2
+Started GET "/secciones/1/productos/1" for 127.0.0.1 at 2023-06-15 23:37:24 -0500
+Processing by Secciones::ProductosController#show as HTML
+  Parameters: {"seccion_id"=>"1", "id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:27:in `set_seccion'
+  Rendering secciones/productos/show.html.erb within layouts/application
+  [1m[36mProducto Load (0.1ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ? LIMIT ?[0m  [["seccion_id", 1], ["LIMIT", 11]]
+  Rendered secciones/productos/show.html.erb within layouts/application (Duration: 7.5ms | Allocations: 4202)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms | Allocations: 6011)
+
+
+  
+ActionView::Template::Error (undefined method `nombre' for #<Producto::ActiveRecord_Associations_CollectionProxy:0x00007fce2c052560>):
+    1: <tr>
+    2:     <td><%= @seccion.productos.nombre %></td>
+    3:     <td><%= @seccion.productos.precio %></td>
+    4: </tr>
+    5:   
+  
+app/views/secciones/productos/show.html.erb:2
+Started GET "/secciones/1/productos/1" for 127.0.0.1 at 2023-06-15 23:37:34 -0500
+Processing by Secciones::ProductosController#show as HTML
+  Parameters: {"seccion_id"=>"1", "id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:27:in `set_seccion'
+  Rendering secciones/productos/show.html.erb within layouts/application
+  [1m[36mProducto Load (0.2ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ? LIMIT ?[0m  [["seccion_id", 1], ["LIMIT", 11]]
+  Rendered secciones/productos/show.html.erb within layouts/application (Duration: 7.5ms | Allocations: 4202)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.4ms | Allocations: 6011)
+
+
+  
+ActionView::Template::Error (undefined method `nombre' for #<Producto::ActiveRecord_Associations_CollectionProxy:0x000055f0ffa14848>):
+    1: <tr>
+    2:     <td><%= @producto.nombre %></td>
+    3:     <td><%= @producto.precio %></td>
+    4: </tr>
+    5:   
+  
+app/views/secciones/productos/show.html.erb:2
+Started GET "/secciones/1/productos/1" for 127.0.0.1 at 2023-06-15 23:38:04 -0500
+Processing by Secciones::ProductosController#show as HTML
+  Parameters: {"seccion_id"=>"1", "id"=>"1"}
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:27:in `set_seccion'
+  Rendering secciones/productos/show.html.erb within layouts/application
+  Rendered secciones/productos/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 279)
+  Rendered layouts/_navigation.html.erb (Duration: 1.4ms | Allocations: 914)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.5ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 89)
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.1ms | Allocations: 17704)
+
+
+Started GET "/secciones/1/productos/1" for 127.0.0.1 at 2023-06-15 23:39:00 -0500
+Processing by Secciones::ProductosController#show as HTML
+  Parameters: {"seccion_id"=>"1", "id"=>"1"}
+  [1m[36mSeccion Load (0.3ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:27:in `set_seccion'
+  Rendering secciones/productos/show.html.erb within layouts/application
+  [1m[36mProducto Load (0.2ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ? LIMIT ?[0m  [["seccion_id", 1], ["LIMIT", 11]]
+  Rendered secciones/productos/show.html.erb within layouts/application (Duration: 7.8ms | Allocations: 4203)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.5ms | Allocations: 6009)
+
+
+  
+ActionView::Template::Error (undefined method `nombre' for #<Producto::ActiveRecord_Associations_CollectionProxy:0x00007fce00020e10>):
+    1: <h1>DATOS DEL PRODUCTO</h1>
+    2: <p><strong>Nombre:</strong> <%= @producto.nombre %></p>
+    3: <p><strong>Precio:</strong> <%= @producto.precio %></p>
+    4:  
+    5:   <p>
+  
+app/views/secciones/productos/show.html.erb:2
+Started GET "/secciones/1/productos/1" for 127.0.0.1 at 2023-06-15 23:42:33 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Secciones::ProductosController#show as HTML
+  Parameters: {"seccion_id"=>"1", "id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:27:in `set_seccion'
+  [1m[36mProducto Load (0.1ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ? AND "productos"."id" = ? LIMIT ?[0m  [["seccion_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:22:in `show'
+  Rendering secciones/productos/show.html.erb within layouts/application
+  Rendered secciones/productos/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 317)
+  Rendered layouts/_navigation.html.erb (Duration: 2.1ms | Allocations: 1469)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.5ms | Allocations: 201)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 53ms (Views: 25.3ms | ActiveRecord: 1.9ms | Allocations: 27677)
+
+
+Started GET "/secciones/1" for 127.0.0.1 at 2023-06-15 23:42:40 -0500
+Processing by SeccionesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones_controller.rb:9:in `show'
+Completed 406 Not Acceptable in 8ms (ActiveRecord: 0.2ms | Allocations: 2913)
+
+
+  
+ActionController::MissingExactTemplate (SeccionesController#show is missing a template for request formats: text/html):
+  
+actionpack (6.0.1) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.1) lib/abstract_controller/base.rb:196:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.1) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.1) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.1) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.1) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.1) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (6.0.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.2.1) lib/puma/configuration.rb:228:in `call'
+puma (4.2.1) lib/puma/server.rb:667:in `handle_request'
+puma (4.2.1) lib/puma/server.rb:470:in `process_client'
+puma (4.2.1) lib/puma/server.rb:328:in `block in run'
+puma (4.2.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/secciones/1/productos/1" for 127.0.0.1 at 2023-06-15 23:43:40 -0500
+Processing by Secciones::ProductosController#show as HTML
+  Parameters: {"seccion_id"=>"1", "id"=>"1"}
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:27:in `set_seccion'
+  [1m[36mProducto Load (0.1ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ? AND "productos"."id" = ? LIMIT ?[0m  [["seccion_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:22:in `show'
+  Rendering secciones/productos/show.html.erb within layouts/application
+  Rendered secciones/productos/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 243)
+  Rendered layouts/_navigation.html.erb (Duration: 1.5ms | Allocations: 914)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.4ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 28ms (Views: 23.4ms | ActiveRecord: 0.3ms | Allocations: 18446)
+
+
+Started GET "/secciones/1/productos" for 127.0.0.1 at 2023-06-15 23:43:41 -0500
+Processing by Secciones::ProductosController#index as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.3ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:27:in `set_seccion'
+  Rendering secciones/productos/index.html.erb within layouts/application
+  [1m[36mProducto Load (0.3ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ?[0m  [["seccion_id", 1]]
+  ↳ app/views/secciones/productos/index.html.erb:13
+  Rendered secciones/productos/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1205)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 482)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 48)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 27ms (Views: 22.8ms | ActiveRecord: 0.5ms | Allocations: 16634)
+
+
+Started GET "/secciones/1/productos/2" for 127.0.0.1 at 2023-06-15 23:43:43 -0500
+Processing by Secciones::ProductosController#show as HTML
+  Parameters: {"seccion_id"=>"1", "id"=>"2"}
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:27:in `set_seccion'
+  [1m[36mProducto Load (0.1ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ? AND "productos"."id" = ? LIMIT ?[0m  [["seccion_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:22:in `show'
+  Rendering secciones/productos/show.html.erb within layouts/application
+  Rendered secciones/productos/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 89)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 516)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 24ms (Views: 20.5ms | ActiveRecord: 0.2ms | Allocations: 16044)
+
+
+Started GET "/secciones/1/productos" for 127.0.0.1 at 2023-06-15 23:43:44 -0500
+Processing by Secciones::ProductosController#index as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:27:in `set_seccion'
+  Rendering secciones/productos/index.html.erb within layouts/application
+  [1m[36mProducto Load (0.2ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ?[0m  [["seccion_id", 1]]
+  ↳ app/views/secciones/productos/index.html.erb:13
+  Rendered secciones/productos/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 943)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 476)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 26ms (Views: 22.9ms | ActiveRecord: 0.4ms | Allocations: 16191)
+
+
+Started GET "/secciones/1/productos/3" for 127.0.0.1 at 2023-06-15 23:43:45 -0500
+Processing by Secciones::ProductosController#show as HTML
+  Parameters: {"seccion_id"=>"1", "id"=>"3"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:27:in `set_seccion'
+  [1m[36mProducto Load (0.2ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ? AND "productos"."id" = ? LIMIT ?[0m  [["seccion_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:22:in `show'
+  Rendering secciones/productos/show.html.erb within layouts/application
+  Rendered secciones/productos/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 88)
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 516)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.2ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 26ms (Views: 20.9ms | ActiveRecord: 0.4ms | Allocations: 16044)
+
+
+Started GET "/secciones/1/productos" for 127.0.0.1 at 2023-06-15 23:43:46 -0500
+Processing by Secciones::ProductosController#index as HTML
+  Parameters: {"seccion_id"=>"1"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:27:in `set_seccion'
+  Rendering secciones/productos/index.html.erb within layouts/application
+  [1m[36mProducto Load (0.1ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ?[0m  [["seccion_id", 1]]
+  ↳ app/views/secciones/productos/index.html.erb:13
+  Rendered secciones/productos/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 943)
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 476)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 26ms (Views: 23.2ms | ActiveRecord: 0.3ms | Allocations: 16196)
+
+
+Started GET "/secciones/1/productos/3" for 127.0.0.1 at 2023-06-15 23:43:47 -0500
+Processing by Secciones::ProductosController#show as HTML
+  Parameters: {"seccion_id"=>"1", "id"=>"3"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:27:in `set_seccion'
+  [1m[36mProducto Load (0.2ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ? AND "productos"."id" = ? LIMIT ?[0m  [["seccion_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:22:in `show'
+  Rendering secciones/productos/show.html.erb within layouts/application
+  Rendered secciones/productos/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 88)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 516)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 31ms (Views: 25.3ms | ActiveRecord: 0.4ms | Allocations: 16043)
+
+
+Started GET "/secciones/1/productos/3/edit" for 127.0.0.1 at 2023-06-15 23:43:48 -0500
+  
+AbstractController::ActionNotFound (The action 'edit' could not be found for Secciones::ProductosController):
+  
+actionpack (6.0.1) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (6.0.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.2.1) lib/puma/configuration.rb:228:in `call'
+puma (4.2.1) lib/puma/server.rb:667:in `handle_request'
+puma (4.2.1) lib/puma/server.rb:470:in `process_client'
+puma (4.2.1) lib/puma/server.rb:328:in `block in run'
+puma (4.2.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/secciones/1/productos/3" for 127.0.0.1 at 2023-06-15 23:44:28 -0500
+Processing by Secciones::ProductosController#show as HTML
+  Parameters: {"seccion_id"=>"1", "id"=>"3"}
+  [1m[36mSeccion Load (0.3ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:27:in `set_seccion'
+  [1m[36mProducto Load (0.2ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ? AND "productos"."id" = ? LIMIT ?[0m  [["seccion_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:22:in `show'
+  Rendering secciones/productos/show.html.erb within layouts/application
+  Rendered secciones/productos/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 241)
+  Rendered layouts/_navigation.html.erb (Duration: 1.5ms | Allocations: 914)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.4ms | Allocations: 200)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 30ms (Views: 25.1ms | ActiveRecord: 0.4ms | Allocations: 18447)
+
+
+Started GET "/secciones/1/productos/3/edit" for 127.0.0.1 at 2023-06-15 23:44:29 -0500
+Processing by Secciones::ProductosController#edit as HTML
+  Parameters: {"seccion_id"=>"1", "id"=>"3"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:27:in `set_seccion'
+  Rendering secciones/productos/edit.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 2.9ms | Allocations: 1745)
+  Rendered secciones/productos/edit.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2045)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms | Allocations: 3106)
+
+
+  
+ActionView::Template::Error (undefined method `model_name' for nil:NilClass):
+    1: <%= form_with(model: [@seccion, @producto], local: true) do |form| %>
+    2:     <div class="form-group">
+    3:       <%= form.label :nombre %>
+    4:       <%= form.text_field :nombre, class: "form-control" %>
+  
+app/views/secciones/productos/_form.html.erb:1
+app/views/secciones/productos/edit.html.erb:3
+Started GET "/secciones/1/productos/3/edit" for 127.0.0.1 at 2023-06-15 23:45:42 -0500
+Processing by Secciones::ProductosController#edit as HTML
+  Parameters: {"seccion_id"=>"1", "id"=>"3"}
+  [1m[36mSeccion Load (0.2ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:27:in `set_seccion'
+  Rendering secciones/productos/edit.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 2.3ms | Allocations: 1618)
+  Rendered secciones/productos/edit.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1915)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms | Allocations: 3680)
+
+
+  
+ActionView::Template::Error (undefined method `model_name' for nil:NilClass):
+    1: <%= simple_form_for [@seccion, @producto] do |f| %>
+    2:     <div class="form-group">
+    3:       <%= f.label :nombre %>
+    4:       <%= f.text_field :nombre, class: "form-control" %>
+  
+app/views/secciones/productos/_form.html.erb:1
+app/views/secciones/productos/edit.html.erb:3
+Started GET "/secciones/1/productos/3/edit" for 127.0.0.1 at 2023-06-15 23:47:03 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Secciones::ProductosController#edit as HTML
+  Parameters: {"seccion_id"=>"1", "id"=>"3"}
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:31:in `set_seccion'
+  [1m[36mProducto Load (0.1ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ? AND "productos"."id" = ? LIMIT ?[0m  [["seccion_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:26:in `edit'
+  Rendering secciones/productos/edit.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 3.7ms | Allocations: 1242)
+  Rendered secciones/productos/edit.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1305)
+  Rendered layouts/_navigation.html.erb (Duration: 2.6ms | Allocations: 1467)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.7ms | Allocations: 201)
+  Rendered layouts/_footer.html.erb (Duration: 0.2ms | Allocations: 89)
+Completed 200 OK in 50ms (Views: 29.1ms | ActiveRecord: 1.5ms | Allocations: 27943)
+
+
+Started PATCH "/secciones/1/productos/3" for 127.0.0.1 at 2023-06-15 23:47:06 -0500
+  
+AbstractController::ActionNotFound (The action 'update' could not be found for Secciones::ProductosController):
+  
+actionpack (6.0.1) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (6.0.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.2.1) lib/puma/configuration.rb:228:in `call'
+puma (4.2.1) lib/puma/server.rb:667:in `handle_request'
+puma (4.2.1) lib/puma/server.rb:470:in `process_client'
+puma (4.2.1) lib/puma/server.rb:328:in `block in run'
+puma (4.2.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started PATCH "/secciones/1/productos/3" for 127.0.0.1 at 2023-06-15 23:58:37 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/home/wilmer/Proyecto_final/ADSO2558427EQUIPO1WEB/proyecto/proyecto2/Proyecto1/app/controllers/secciones/productos_controller.rb:47: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/secciones/productos_controller.rb:47: syntax error, unexpected end-of-input, expecting end
+app/controllers/secciones/productos_controller.rb:47: syntax error, unexpected end-of-input, expecting end
+app/controllers/secciones/productos_controller.rb:47: syntax error, unexpected end-of-input, expecting end
+Started PATCH "/secciones/1/productos/3" for 127.0.0.1 at 2023-06-15 23:59:17 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/home/wilmer/Proyecto_final/ADSO2558427EQUIPO1WEB/proyecto/proyecto2/Proyecto1/app/controllers/secciones/productos_controller.rb:47: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/secciones/productos_controller.rb:47: syntax error, unexpected end-of-input, expecting end
+app/controllers/secciones/productos_controller.rb:47: syntax error, unexpected end-of-input, expecting end
+app/controllers/secciones/productos_controller.rb:47: syntax error, unexpected end-of-input, expecting end
+Started PATCH "/secciones/1/productos/3" for 127.0.0.1 at 2023-06-15 23:59:20 -0500
+  
+SyntaxError (/home/wilmer/Proyecto_final/ADSO2558427EQUIPO1WEB/proyecto/proyecto2/Proyecto1/app/controllers/secciones/productos_controller.rb:47: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/secciones/productos_controller.rb:47: syntax error, unexpected end-of-input, expecting end
+app/controllers/secciones/productos_controller.rb:47: syntax error, unexpected end-of-input, expecting end
+app/controllers/secciones/productos_controller.rb:47: syntax error, unexpected end-of-input, expecting end
+Started PATCH "/secciones/1/productos/3" for 127.0.0.1 at 2023-06-15 23:59:23 -0500
+  
+SyntaxError (/home/wilmer/Proyecto_final/ADSO2558427EQUIPO1WEB/proyecto/proyecto2/Proyecto1/app/controllers/secciones/productos_controller.rb:47: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/secciones/productos_controller.rb:47: syntax error, unexpected end-of-input, expecting end
+app/controllers/secciones/productos_controller.rb:47: syntax error, unexpected end-of-input, expecting end
+app/controllers/secciones/productos_controller.rb:47: syntax error, unexpected end-of-input, expecting end
+Started PATCH "/secciones/1/productos/3" for 127.0.0.1 at 2023-06-15 23:59:36 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/home/wilmer/Proyecto_final/ADSO2558427EQUIPO1WEB/proyecto/proyecto2/Proyecto1/app/controllers/secciones/productos_controller.rb:45: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/secciones/productos_controller.rb:45: syntax error, unexpected end-of-input, expecting end
+app/controllers/secciones/productos_controller.rb:45: syntax error, unexpected end-of-input, expecting end
+app/controllers/secciones/productos_controller.rb:45: syntax error, unexpected end-of-input, expecting end
+Started PATCH "/secciones/1/productos/3" for 127.0.0.1 at 2023-06-16 00:00:55 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/home/wilmer/Proyecto_final/ADSO2558427EQUIPO1WEB/proyecto/proyecto2/Proyecto1/app/controllers/secciones/productos_controller.rb:45: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/secciones/productos_controller.rb:45: syntax error, unexpected end-of-input, expecting end
+app/controllers/secciones/productos_controller.rb:45: syntax error, unexpected end-of-input, expecting end
+app/controllers/secciones/productos_controller.rb:45: syntax error, unexpected end-of-input, expecting end
+Started GET "/secciones/1/productos/3/edit" for 127.0.0.1 at 2023-06-16 00:01:11 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Secciones::ProductosController#edit as HTML
+  Parameters: {"seccion_id"=>"1", "id"=>"3"}
+  [1m[36mSeccion Load (0.1ms)[0m  [1m[34mSELECT "secciones".* FROM "secciones" WHERE "secciones"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:31:in `set_seccion'
+  [1m[36mProducto Load (0.1ms)[0m  [1m[34mSELECT "productos".* FROM "productos" WHERE "productos"."seccion_id" = ? AND "productos"."id" = ? LIMIT ?[0m  [["seccion_id", 1], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/secciones/productos_controller.rb:26:in `edit'
+  Rendering secciones/productos/edit.html.erb within layouts/application
+  Rendered secciones/productos/_form.html.erb (Duration: 2.3ms | Allocations: 1207)
+  Rendered secciones/productos/edit.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1378)
+  Rendered layouts/_navigation.html.erb (Duration: 1.3ms | Allocations: 1076)
+  Rendered layouts/_topnavbar.html.erb (Duration: 0.1ms | Allocations: 49)
+  Rendered layouts/_footer.html.erb (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 41ms (Views: 22.2ms | ActiveRecord: 1.5ms | Allocations: 26541)
+
+
+Started PATCH "/secciones/1/productos/3" for 127.0.0.1 at 2023-06-16 00:01:12 -0500
+  
+AbstractController::ActionNotFound (The action 'update' could not be found for Secciones::ProductosController):
+  
+actionpack (6.0.1) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+warden (1.2.8) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.8) lib/warden/manager.rb:34:in `catch'
+warden (1.2.8) lib/warden/manager.rb:34:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (6.0.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.2.1) lib/puma/configuration.rb:228:in `call'
+puma (4.2.1) lib/puma/server.rb:667:in `handle_request'
+puma (4.2.1) lib/puma/server.rb:470:in `process_client'
+puma (4.2.1) lib/puma/server.rb:328:in `block in run'
+puma (4.2.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
