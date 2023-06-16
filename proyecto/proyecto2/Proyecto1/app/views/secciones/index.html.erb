@@ -1,6 +1,31 @@
 <h1>Secciones#index</h1>
 <p>Find me in app/views/secciones/index.html.erb</p>
 
-<ul>
-    <%= render @secciones %>
-</ul>
+<!-- app/views/secciones/index.html.erb -->
+
+<h1>Lista de Secciones</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Productos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @secciones.each do |seccion| %>
+      <tr>
+        <tr>
+            <td><%= seccion.nombre %></td>
+            <td><%= link_to "Ver Productos", seccion_productos_path(seccion) %></td>
+
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p>
+  <%= link_to 'Nueva Sección', new_seccion_path %>
+</p>
+
+

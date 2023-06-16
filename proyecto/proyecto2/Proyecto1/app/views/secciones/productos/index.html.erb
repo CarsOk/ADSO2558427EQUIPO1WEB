@@ -1,0 +1,26 @@
+<h1>Productos</h1>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Precio</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @productos.each do |producto| %>
+      <tr>
+        <td><%= producto.id %></td>
+        <td><%= link_to producto.nombre, seccion_producto_path(@seccion, producto)%></td>
+        <td><%= producto.precio %></td>
+        <td><%= link_to 'Editar', edit_seccion_producto_path(@seccion, producto) %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Crear producto", new_seccion_producto_path %>
+<%= link_to "Ver seccion", secciones_path(@seccion) %>
