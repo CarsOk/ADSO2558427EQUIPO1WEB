@@ -1,60 +1,825 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>CURB</title>
-    <!-- Font Awesome Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <nav>
-        <a href="../index.html" id="logo">CURB</a>
-        <i class="fas fa-bars" id="ham-menu"></i>
-        <ul id="nav-bar">
-          <li>
-            <a href="paginas/proyecto.html">Proyecto</a>
-          </li>
-          <li>
-            <a href="paginas/investigacio.html">Investigacion</a>
-          </li>
-          <li>
-            <a href="paginas/boceto.html">Bocetos</a>
-          </li>
-          <li>
-            <a href="paginas/documentacion.html">Documentacion</a>
-          </li>
-          <li>
-            <a href="paginas/diagrama.html">Diagrama</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+<html lang="en" >
+<head>
+	<meta charset="utf-8" />
+	<title>Color Admin | Profile Page</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+	<meta content="" name="description" />
+	<meta content="" name="author" />
+	
+	<!-- ================== BEGIN core-css ================== -->
+	<link href="../assets/css/vendor.min.css" rel="stylesheet" />
+	<link href="../assets/css/apple/app.min.css" rel="stylesheet" />
+	<link href="../assets/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+	<!-- ================== END core-css ================== -->
+	
+	<!-- ================== BEGIN page-css ================== -->
+	<link href="../assets/plugins/superbox/superbox.min.css" rel="stylesheet" />
+	<link href="../assets/plugins/lity/dist/lity.min.css" rel="stylesheet" />
+	<!-- ================== END page-css ================== -->
+</head>
+<body>
+	<!-- BEGIN #loader -->
+	<div id="loader" class="app-loader">
+		<span class="spinner"></span>
+	</div>
+	<!-- END #loader -->
 
-    <div class="ui">
-      <p class="zoom">
-        <span class="zoom zoomin">+</span><span class="zoom zoomout">-</span>
-      </p>
-      <p class="zoomlevel">
-        <span class="percent">100</span> % - (<span class="width"></span
-        >px)(<span class="height"></span>px)
-      </p>
-      <p>Dead: <span class="dead">0</span></p>
-      <p>Alive: <span class="alive">0</span></p>
-      <p>Drawn: <span class="drawn">0</span></p>
-    </div>
-    <!-- Script -->
-    <script src="script.js"></script>
-  </body>
+	<!-- BEGIN #app -->
+	<div id="app" class="app app-header-fixed app-sidebar-fixed">
+		<!-- BEGIN #header -->
+		<div id="header" class="app-header">
+			<!-- BEGIN navbar-header -->
+			<div class="navbar-header">
+				<a href="index.html" class="navbar-brand"><span class="navbar-logo"><i class="ion-ios-cloud"></i></span> <b class="me-1">Color</b> Admin</a>
+				<button type="button" class="navbar-mobile-toggler" data-toggle="app-sidebar-mobile">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<!-- END navbar-header -->
+			<!-- BEGIN header-nav -->
+			<div class="navbar-nav">
+				<div class="navbar-item navbar-form">
+					<form action="" method="POST" name="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Enter keyword" />
+							<button type="submit" class="btn btn-search"><i class="ion-ios-search"></i></button>
+						</div>
+					</form>
+				</div>
+				<div class="navbar-item dropdown">
+					<a href="#" data-bs-toggle="dropdown" class="navbar-link dropdown-toggle icon">
+						<i class="ion-ios-notifications"></i>
+						<span class="badge">5</span>
+					</a>
+					<div class="dropdown-menu media-list dropdown-menu-end">
+						<div class="dropdown-header">NOTIFICATIONS (5)</div>
+						<a href="javascript:;" class="dropdown-item media">
+							<div class="media-left">
+								<i class="fa fa-bug media-object bg-gray-400"></i>
+							</div>
+							<div class="media-body">
+								<h6 class="media-heading">Server Error Reports <i class="fa fa-exclamation-circle text-danger"></i></h6>
+								<div class="text-muted fs-10px">3 minutes ago</div>
+							</div>
+						</a>
+						<a href="javascript:;" class="dropdown-item media">
+							<div class="media-left">
+								<img src="../assets/img/user/user-1.jpg" class="media-object" alt="" />
+								<i class="fab fa-facebook-messenger text-blue media-object-icon"></i>
+							</div>
+							<div class="media-body">
+								<h6 class="media-heading">John Smith</h6>
+								<p>Quisque pulvinar tellus sit amet sem scelerisque tincidunt.</p>
+								<div class="text-muted fs-10px">25 minutes ago</div>
+							</div>
+						</a>
+						<a href="javascript:;" class="dropdown-item media">
+							<div class="media-left">
+								<img src="../assets/img/user/user-2.jpg" class="media-object" alt="" />
+								<i class="fab fa-facebook-messenger text-blue media-object-icon"></i>
+							</div>
+							<div class="media-body">
+								<h6 class="media-heading">Olivia</h6>
+								<p>Quisque pulvinar tellus sit amet sem scelerisque tincidunt.</p>
+								<div class="text-muted fs-10px">35 minutes ago</div>
+							</div>
+						</a>
+						<a href="javascript:;" class="dropdown-item media">
+							<div class="media-left">
+								<i class="fa fa-plus media-object bg-gray-400"></i>
+							</div>
+							<div class="media-body">
+								<h6 class="media-heading"> New User Registered</h6>
+								<div class="text-muted fs-10px">1 hour ago</div>
+							</div>
+						</a>
+						<a href="javascript:;" class="dropdown-item media">
+							<div class="media-left">
+								<i class="fa fa-envelope media-object bg-gray-400"></i>
+								<i class="fab fa-google text-warning media-object-icon fs-14px"></i>
+							</div>
+							<div class="media-body">
+								<h6 class="media-heading"> New Email From John</h6>
+								<div class="text-muted fs-10px">2 hour ago</div>
+							</div>
+						</a>
+						<div class="dropdown-footer text-center">
+							<a href="javascript:;" class="text-decoration-none">View more</a>
+						</div>
+					</div>
+				</div>
+				<div class="navbar-item navbar-user dropdown">
+					<a href="#" class="navbar-link dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown">
+						<img src="../assets/img/user/user-13.jpg" alt="" /> 
+						<span>
+							<span class="d-none d-md-inline">Adam Schwartz</span>
+							<b class="caret"></b>
+						</span>
+					</a>
+					<div class="dropdown-menu dropdown-menu-end me-1">
+						<a href="javascript:;" class="dropdown-item">Edit Profile</a>
+						<a href="javascript:;" class="dropdown-item d-flex align-items-center">
+							Inbox
+							<span class="badge bg-danger rounded-pill ms-auto pb-4px">2</span> 
+						</a>
+						<a href="javascript:;" class="dropdown-item">Calendar</a>
+						<a href="javascript:;" class="dropdown-item">Setting</a>
+						<div class="dropdown-divider"></div>
+						<a href="javascript:;" class="dropdown-item">Log Out</a>
+					</div>
+				</div>
+			</div>
+			<!-- END header-nav -->
+		</div>
+		<!-- END #header -->
+	
+		<!-- BEGIN #sidebar -->
+		<div id="sidebar" class="app-sidebar">
+			<!-- BEGIN scrollbar -->
+			<div class="app-sidebar-content" data-scrollbar="true" data-height="100%">
+				<!-- BEGIN menu -->
+				<div class="menu">
+					<div class="menu-profile">
+						<a href="javascript:;" class="menu-profile-link" data-toggle="app-sidebar-profile" data-target="#appSidebarProfileMenu">
+							<div class="menu-profile-cover with-shadow"></div>
+							<div class="menu-profile-image">
+								<img src="../assets/img/user/user-13.jpg" alt="" />
+							</div>
+							<div class="menu-profile-info">
+								<div class="d-flex align-items-center">
+									<div class="flex-grow-1">ADSO-1</div>
+									<div class=""></div>
+								</div>
+								<small>Documentacion de proyecto formativo</small>
+							</div>
+						</a>
+					</div>
+					<div class="menu-header">Navigation</div>
+					<div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="ion-ios-pulse"></i>
+							</div>
+							<div class="menu-text">WEB</div>
+							<div class=""></div>
+						</a>
+					</div>
+                    <div class="menu-item has-sub">
+						<a href="javascript:;" class="menu-link">
+							<div class="menu-icon">
+								<i class="ion-ios-pulse"></i>
+							</div>
+							<div class="menu-text">MOVIL</div>
+							<div class=""></div>
+						</a>
+					</div>
+				
+				</div>
+				<!-- END menu -->
+			</div>
+			<!-- END scrollbar -->
+		</div>
+		<div class="app-sidebar-bg"></div>
+		<div class="app-sidebar-mobile-backdrop"><a href="#" data-dismiss="app-sidebar-mobile" class="stretched-link"></a></div>
+		<!-- END #sidebar -->
+		
+		<!-- BEGIN #content -->
+		<div id="content" class="app-content p-0">
+			<!-- BEGIN profile -->
+			<div class="profile">
+				<div class="profile-header">
+					<!-- BEGIN profile-header-cover -->
+					<div class="profile-header-cover"></div>
+					<!-- END profile-header-cover -->
+					<!-- BEGIN profile-header-content -->
+					<div class="profile-header-content">
+						<!-- BEGIN profile-header-img -->
+						<div class="profile-header-img">
+							<img src="LogoCurb.png" alt="" />
+						</div>
+						<!-- END profile-header-img -->
+						<!-- BEGIN profile-header-info -->
+						<div class="profile-header-info">
+							<h4 class="mt-0 mb-1">CURB</h4>
+							<p class="mb-2">Documentación</p>
+							<a href="#" class="btn btn-xs btn-yellow">Edicion</a>
+						</div>
+						<!-- END profile-header-info -->
+					</div>
+					<!-- END profile-header-content -->
+					<!-- BEGIN profile-header-tab -->
+					<ul class="profile-header-tab nav nav-tabs">
+						<li class="nav-item"><a href="#profile-post" class="nav-link active" data-bs-toggle="tab">AVANCES</a></li>
+						<li class="nav-item"><a href="#profile-about" class="nav-link" data-bs-toggle="tab">DOCUMENTACION</a></li>
+						<li class="nav-item"><a href="#profile-photos" class="nav-link" data-bs-toggle="tab">BOCETOS</a></li>
+						<li class="nav-item"><a href="#profile-videos" class="nav-link" data-bs-toggle="tab">DIAGRAMAS</a></li>
+					</ul>
+					<!-- END profile-header-tab -->
+				</div>
+			</div>
+			<!-- END profile -->
+			<!-- BEGIN profile-content -->
+			<div class="profile-content">
+				<!-- BEGIN tab-content -->
+				<div class="tab-content p-0">
+					<!-- BEGIN #profile-post tab -->
+					<div class="tab-pane fade show active" id="profile-post">
+						<!-- BEGIN timeline -->
+						<div class="timeline">
+							<!-- BEGIN timeline-item -->
+							<div class="timeline-item">
+								<!-- BEGIN timeline-time -->
+								<div class="timeline-time">
+									<span class="date">today</span>
+									<span class="time">04:20</span>
+								</div>
+								<!-- END timeline-time -->
+								<!-- BEGIN timeline-icon -->
+								<div class="timeline-icon">
+									<a href="javascript:;">&nbsp;</a>
+								</div>
+								<!-- END timeline-icon -->
+								<!-- BEGIN timeline-content -->
+								<div class="timeline-content">
+									<!-- BEGIN timeline-header -->
+									<div class="timeline-header">
+										<div class="userimage"><img src="LogoCurb.png" alt="" /></div>
+										<div class="username">
+											<a href="javascript:;">CURB AVANCES<i class="fa fa-check-circle text-blue ms-1"></i></a>
+											<div class="text-muted fs-12px">8 mins <i class="fa fa-globe-americas opacity-5 ms-1"></i></div>
+										</div>
+										<div>
+											<a href="#" class="btn btn-lg border-0 rounded-pill w-40px h-40px p-0 d-flex align-items-center justify-content-center" data-bs-toggle="dropdown">
+												<i class="fa fa-ellipsis-h text-gray-600"></i>
+											</a>
+											<div class="dropdown-menu dropdown-menu-end">
+												<a href="#" class="dropdown-item d-flex align-items-center">
+													<i class="fa fa-fw fa-bookmark fa-lg"></i> 
+													<div class="flex-1 ps-1">
+														<div>Save Post</div>
+														<div class="mt-n1 text-gray-500"><small>Add this to your saved items</small></div>
+													</div>
+												</a>
+												
+											</div>
+										</div>
+									</div>
+									<!-- END timeline-header -->
+						
+									<!-- BEGIN timeline-body -->
+									<div class="timeline-body">
+										<!-- timeline-post -->
+										<div class="mb-3">
+											<div class="mb-2">
+												Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus turpis quis tincidunt luctus.
+												Nam sagittis dui in nunc consequat, in imperdiet nunc sagittis.
+											</div>
+											<div class="row gx-1">
+												<div class="col-6">
+													<div class="ratio ratio-4x3">
+														<img src="../assets/img/gallery/gallery-14.jpg" class="d-block mw-100" />
+													</div>
+												</div>
+												<div class="col-3">
+													<div class="ratio ratio-4x3 mb-3px">
+														<img src="../assets/img/gallery/gallery-12.jpg" class="d-block mw-100" />
+													</div>
+													<div class="ratio ratio-4x3">
+														<img src="../assets/img/gallery/gallery-16.jpg" class="d-block mw-100" />
+													</div>
+												</div>
+												<div class="col-3">
+													<div class="ratio ratio-4x3 mb-3px">
+														<img src="../assets/img/gallery/gallery-15.jpg" class="d-block mw-100" />
+													</div>
+													<div class="ratio ratio-4x3">
+														<img src="../assets/img/gallery/gallery-11.jpg" class="d-block mw-100" />
+													</div>
+												</div>
+											</div>
+										</div>
+							
+										<!-- timeline-stats -->
+										<div class="d-flex align-items-center text-dark mb-2">
+											<div class="d-flex align-items-center">
+												<span class="fa-stack fs-10px">
+													<i class="fa fa-circle fa-stack-2x text-danger"></i>
+													<i class="fa fa-heart fa-stack-1x fa-inverse fs-11px"></i>
+												</span>
+												<span class="fa-stack fs-10px">
+													<i class="fa fa-circle fa-stack-2x text-blue"></i>
+													<i class="fa fa-thumbs-up fa-stack-1x fa-inverse fs-11px bottom-0 mb-1px"></i>
+												</span>
+												<span class="ms-1">4.3k</span>
+											</div>
+											<div class="d-flex align-items-center ms-auto">
+												<div>259 Shares</div>
+												<div class="ms-3">21 Comments</div>
+											</div>
+										</div>
+							
+										<!-- timeline-action -->
+										<hr class="my-10px" />
+										<div class="d-flex align-items-center fw-bold">
+											<a href="javascript:;" class="flex-fill text-decoration-none text-center text-gray-600">
+												<i class="fa fa-thumbs-up fa-fw me-3px"></i> Like
+											</a>
+											<a href="javascript:;" class="flex-fill text-decoration-none text-center text-gray-600">
+												<i class="fa fa-comments fa-fw me-3px"></i> Comment
+											</a> 
+											<a href="javascript:;" class="flex-fill text-decoration-none text-center text-gray-600">
+												<i class="fa fa-share fa-fw me-3px"></i> Share
+											</a>
+										</div>
+										<hr class="mt-10px mb-3" />
+							
+										<!-- timeline-input -->
+										<form action="" class="d-flex align-items-center">
+											<div><img src="../assets/img/user/user-13.jpg" height="35" class="rounded-pill" /></div>
+											<div class="ps-2 flex-1">
+												<div class="position-relative">
+													<input type="text" class="form-control rounded-pill ps-3 py-2 fs-13px bg-light" placeholder="Write a comment..." />
+													<div class="position-absolute end-0 top-0 bottom-0 d-flex align-items-center px-2">
+														<a href="#" class="btn bg-none text-gray-600 shadow-none px-1"><i class="far fa-smile fa-fw fa-lg d-block"></i></a>
+														<a href="#" class="btn bg-none text-gray-600 shadow-none px-1"><i class="fa fa-camera fa-fw fa-lg d-block"></i></a>
+														<a href="#" class="btn bg-none text-gray-600 shadow-none px-1"><i class="fa fa-film fa-fw fa-lg d-block"></i></a>
+														<a href="#" class="btn bg-none text-gray-600 shadow-none px-1"><i class="far fa-sticky-note fa-fw fa-lg d-block"></i></a>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+									<!-- END timeline-body -->
+								</div>
+								<!-- END timeline-content -->
+							</div>
+							<!-- END timeline-item -->
+							<!-- BEGIN timeline-item -->
+							<div class="timeline-item">
+								<!-- BEGIN timeline-time -->
+								<div class="timeline-time">
+									<span class="date">yesterday</span>
+									<span class="time">20:17</span>
+								</div>
+								<!-- END timeline-time -->
+								<!-- BEGIN timeline-icon -->
+								<div class="timeline-icon">
+									<a href="javascript:;">&nbsp;</a>
+								</div>
+								<!-- END timeline-icon -->
+								<!-- BEGIN timeline-content -->
+								<div class="timeline-content">
+									<!-- BEGIN timeline-header -->
+									<div class="timeline-header">
+										<div class="userimage"><img src="../assets/img/user/user-2.jpg" alt="" /></div>
+										<div class="username">
+											<a href="javascript:;">Darren Parrase</a>
+											<div class="text-muted fs-12px">24 mins <i class="fa fa-globe-americas opacity-5 ms-1"></i></div>
+										</div>
+										<div>
+											<a href="#" class="btn btn-lg border-0 rounded-pill w-40px h-40px p-0 d-flex align-items-center justify-content-center" data-bs-toggle="dropdown">
+												<i class="fa fa-ellipsis-h text-gray-600"></i>
+											</a>
+											<div class="dropdown-menu dropdown-menu-end">
+												<a href="#" class="dropdown-item d-flex align-items-center">
+													<i class="fa fa-fw fa-bookmark fa-lg"></i> 
+													<div class="flex-1 ps-1">
+														<div>Save Post</div>
+														<div class="mt-n1 text-gray-500"><small>Add this to your saved items</small></div>
+													</div>
+												</a>
+												<div class="dropdown-divider"></div>
+												<a href="#" class="dropdown-item"><i class="fa fa-fw fa-edit fa-lg me-1"></i> Edit post</a>
+												<a href="#" class="dropdown-item"><i class="fa fa-fw fa-user fa-lg me-1"></i> Edit audience</a>
+												<a href="#" class="dropdown-item"><i class="fa fa-fw fa-bell fa-lg me-1"></i> Turn off notifications for this post</a>
+												<a href="#" class="dropdown-item"><i class="fa fa-fw fa-language fa-lg me-1"></i> Turn off translations</a>
+												<a href="#" class="dropdown-item"><i class="fa fa-fw fa-calendar-alt fa-lg me-1"></i> Turn date</a>
+												<div class="dropdown-divider"></div>
+												<a href="#" class="dropdown-item"><i class="fa fa-fw fa-archive fa-lg me-1"></i> Move to archive</a>
+												<a href="#" class="dropdown-item"><i class="fa fa-fw fa-trash-alt fa-lg me-1"></i> Move to Recycle bin</a>
+											</div>
+										</div>
+									</div>
+									<!-- END timeline-header -->
+						
+									<!-- BEGIN timeline-body -->
+									<div class="timeline-body">
+										<!-- timeline-post -->
+										<div class="mb-3">
+											<div class="mb-2">Location: United States</div>
+											<div id="google-map" class="h-250px"></div>
+										</div>
+							
+										<!-- timeline-stats -->
+										<div class="d-flex align-items-center text-dark mb-2">
+											<div class="d-flex align-items-center">
+												<span class="fa-stack fs-10px">
+													<i class="fa fa-circle fa-stack-2x text-danger"></i>
+													<i class="fa fa-heart fa-stack-1x fa-inverse fs-11px"></i>
+												</span>
+												<span class="fa-stack fs-10px">
+													<i class="fa fa-circle fa-stack-2x text-blue"></i>
+													<i class="fa fa-thumbs-up fa-stack-1x fa-inverse fs-11px bottom-0 mb-1px"></i>
+												</span>
+												<span class="ms-1">269</span>
+											</div>
+											<div class="d-flex align-items-center ms-auto">
+												<div>2 Shares</div>
+												<div class="ms-3">9 Comments</div>
+											</div>
+										</div>
+							
+										<!-- timeline-action -->
+										<hr class="my-10px" />
+										<div class="d-flex align-items-center fw-bold">
+											<a href="javascript:;" class="flex-fill text-decoration-none text-center text-gray-600">
+												<i class="fa fa-thumbs-up fa-fw me-3px"></i> Like
+											</a>
+											<a href="javascript:;" class="flex-fill text-decoration-none text-center text-gray-600">
+												<i class="fa fa-comments fa-fw me-3px"></i> Comment</a> 
+											<a href="javascript:;" class="flex-fill text-decoration-none text-center text-gray-600">
+												<i class="fa fa-share fa-fw me-3px"></i> Share
+											</a>
+										</div>
+										<hr class="mt-10px mb-3" />
+							
+										<!-- timeline-input -->
+										<form action="" class="d-flex align-items-center">
+											<div><img src="../assets/img/user/user-13.jpg" height="35" class="rounded-pill" /></div>
+											<div class="ps-2 flex-1">
+												<div class="position-relative">
+													<input type="text" class="form-control rounded-pill ps-3 py-2 fs-13px bg-light" placeholder="Write a comment..." />
+													<div class="position-absolute end-0 top-0 bottom-0 d-flex align-items-center px-2">
+														<a href="#" class="btn bg-none text-gray-600 shadow-none px-1"><i class="far fa-smile fa-fw fa-lg d-block"></i></a>
+														<a href="#" class="btn bg-none text-gray-600 shadow-none px-1"><i class="fa fa-camera fa-fw fa-lg d-block"></i></a>
+														<a href="#" class="btn bg-none text-gray-600 shadow-none px-1"><i class="fa fa-film fa-fw fa-lg d-block"></i></a>
+														<a href="#" class="btn bg-none text-gray-600 shadow-none px-1"><i class="far fa-sticky-note fa-fw fa-lg d-block"></i></a>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+									<!-- END timeline-body -->
+								</div>
+								<!-- END timeline-content -->
+							</div>
+							<!-- END timeline-item -->
+							
+							
+							<!-- BEGIN timeline-item -->
+							<div class="timeline-item">
+								<!-- BEGIN timeline-time -->
+								<div class="timeline-time">
+									<span class="date">10 January 2021</span>
+									<span class="time">20:43</span>
+								</div>
+								<!-- END timeline-time -->
+								<!-- BEGIN timeline-icon -->
+								<div class="timeline-icon">
+									<a href="javascript:;">&nbsp;</a>
+								</div>
+								<!-- END timeline-icon -->
+							</div>
+			
+
+						</div>
+						<!-- END timeline -->
+					</div>
+					<!-- END #profile-post tab -->
+					<!-- BEGIN #profile-about tab -->
+					<div class="tab-pane fade" id="profile-about">
+						<!-- BEGIN table -->
+						<div class="table-responsive form-inline">
+							<table class="table table-profile align-middle">
+								<thead>
+									<tr>
+										<th></th>
+										<th>
+											<h4>DOCUMENTACION<small>DOCUMENTO QUE CONTIENE LA EXPLICACIÓN Y LA DOCUMENTACION DEL PROYECTO FORMATIVO</small></h4>
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<!-- END table -->
+					</div>
+					<!-- END #profile-about tab -->
+					<!-- BEGIN #profile-photos tab -->
+					<div class="tab-pane fade" id="profile-photos">
+						<h4 class="mb-3">Fotos</h4>
+						<!-- BEGIN superbox -->
+						<div class="superbox " data-offset="50">
+							<div class="superbox-list">
+								<a href="javascript:;" class="superbox-img">
+									<img data-img="../assets/img/gallery/gallery-1.jpg" />
+									<span style="background: url(../assets/img/gallery/gallery-1-thumb.jpg);"></span>
+								</a>
+							</div>
+							<div class="superbox-list">
+								<a href="javascript:;" class="superbox-img">
+									<img data-img="../assets/img/gallery/gallery-2.jpg" />
+									<span style="background: url(../assets/img/gallery/gallery-2-thumb.jpg);"></span>
+								</a>
+							</div>
+							<div class="superbox-list">
+								<a href="javascript:;" class="superbox-img">
+									<img data-img="../assets/img/gallery/gallery-3.jpg" />
+									<span style="background: url(../assets/img/gallery/gallery-3-thumb.jpg);"></span>
+								</a>
+							</div>
+							<div class="superbox-list">
+								<a href="javascript:;" class="superbox-img">
+									<img data-img="../assets/img/gallery/gallery-4.jpg" />
+									<span style="background: url(../assets/img/gallery/gallery-4-thumb.jpg);"></span>
+								</a>
+							</div>
+							
+						</div>
+						<!-- END superbox -->
+					</div>
+					<!-- END #profile-photos tab -->
+
+                    <!-- BEGIN #profile-videos tab -->
+                    <div class="tab-pane fade" id="profile-videos">
+						<h4 class="mb-3">Fotos</h4>
+						<!-- BEGIN superbox -->
+						<div class="superbox " data-offset="50">
+							<div class="superbox-list">
+								<a href="javascript:;" class="superbox-img">
+									<img data-img="../assets/img/gallery/gallery-1.jpg" />
+									<span style="background: url(../assets/img/gallery/gallery-1-thumb.jpg);"></span>
+								</a>
+							</div>
+							<div class="superbox-list">
+								<a href="javascript:;" class="superbox-img">
+									<img data-img="../assets/img/gallery/gallery-2.jpg" />
+									<span style="background: url(../assets/img/gallery/gallery-2-thumb.jpg);"></span>
+								</a>
+							</div>
+							<div class="superbox-list">
+								<a href="javascript:;" class="superbox-img">
+									<img data-img="../assets/img/gallery/gallery-3.jpg" />
+									<span style="background: url(../assets/img/gallery/gallery-3-thumb.jpg);"></span>
+								</a>
+							</div>
+							<div class="superbox-list">
+								<a href="javascript:;" class="superbox-img">
+									<img data-img="../assets/img/gallery/gallery-4.jpg" />
+									<span style="background: url(../assets/img/gallery/gallery-4-thumb.jpg);"></span>
+								</a>
+							</div>
+							
+						</div>
+					<!-- END #profile-videos tab -->
+				</div>
+				<!-- END tab-content -->
+			</div>
+			<!-- END profile-content -->
+		</div>
+		<!-- END #content -->
+		
+		<!-- BEGIN theme-panel -->
+		<div class="theme-panel">
+			<a href="javascript:;" data-toggle="theme-panel-expand" class="theme-collapse-btn"><i class="fa fa-cog"></i></a>
+			<div class="theme-panel-content" data-scrollbar="true" data-height="100%">
+				<h5>App Settings</h5>
+				
+				<!-- BEGIN theme-list -->
+				<div class="theme-list">
+					<div class="theme-list-item"><a href="javascript:;" class="theme-list-link bg-red" data-theme-class="theme-red" data-toggle="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Red">&nbsp;</a></div>
+					<div class="theme-list-item"><a href="javascript:;" class="theme-list-link bg-pink" data-theme-class="theme-pink" data-toggle="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Pink">&nbsp;</a></div>
+					<div class="theme-list-item"><a href="javascript:;" class="theme-list-link bg-orange" data-theme-class="theme-orange" data-toggle="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Orange">&nbsp;</a></div>
+					<div class="theme-list-item"><a href="javascript:;" class="theme-list-link bg-yellow" data-theme-class="theme-yellow" data-toggle="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Yellow">&nbsp;</a></div>
+					<div class="theme-list-item"><a href="javascript:;" class="theme-list-link bg-lime" data-theme-class="theme-lime" data-toggle="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Lime">&nbsp;</a></div>
+					<div class="theme-list-item"><a href="javascript:;" class="theme-list-link bg-green" data-theme-class="theme-green" data-toggle="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Green">&nbsp;</a></div>
+					<div class="theme-list-item"><a href="javascript:;" class="theme-list-link bg-teal" data-theme-class="theme-teal" data-toggle="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Teal">&nbsp;</a></div>
+					<div class="theme-list-item"><a href="javascript:;" class="theme-list-link bg-cyan" data-theme-class="theme-cyan" data-toggle="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Cyan">&nbsp;</a></div>
+					<div class="theme-list-item active"><a href="javascript:;" class="theme-list-link bg-blue" data-theme-class="" data-toggle="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Default">&nbsp;</a></div>
+					<div class="theme-list-item"><a href="javascript:;" class="theme-list-link bg-purple" data-theme-class="theme-purple" data-toggle="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Purple">&nbsp;</a></div>
+					<div class="theme-list-item"><a href="javascript:;" class="theme-list-link bg-indigo" data-theme-class="theme-indigo" data-toggle="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Indigo">&nbsp;</a></div>
+					<div class="theme-list-item"><a href="javascript:;" class="theme-list-link bg-black" data-theme-class="theme-gray-600" data-toggle="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Black">&nbsp;</a></div>
+				</div>
+				<!-- END theme-list -->
+				
+				<div class="theme-panel-divider"></div>
+				
+				<div class="row mt-10px">
+					<div class="col-8 control-label text-dark fw-bold">
+						<div>Dark Mode <span class="badge bg-primary ms-1 py-2px position-relative" style="top: -1px;">NEW</span></div>
+						<div class="lh-14">
+							<small class="text-dark opacity-50">
+								Adjust the appearance to reduce glare and give your eyes a break.
+							</small>
+						</div>
+					</div>
+					<div class="col-4 d-flex">
+						<div class="form-check form-switch ms-auto mb-0">
+							<input type="checkbox" class="form-check-input" name="app-theme-dark-mode" id="appThemeDarkMode" value="1" />
+							<label class="form-check-label" for="appThemeDarkMode">&nbsp;</label>
+						</div>
+					</div>
+				</div>
+				
+				<div class="theme-panel-divider"></div>
+				
+				<!-- BEGIN theme-switch -->
+				<div class="row mt-10px align-items-center">
+					<div class="col-8 control-label text-dark fw-bold">Header Fixed</div>
+					<div class="col-4 d-flex">
+						<div class="form-check form-switch ms-auto mb-0">
+							<input type="checkbox" class="form-check-input" name="app-header-fixed" id="appHeaderFixed" value="1" checked />
+							<label class="form-check-label" for="appHeaderFixed">&nbsp;</label>
+						</div>
+					</div>
+				</div>
+				<div class="row mt-10px align-items-center">
+					<div class="col-8 control-label text-dark fw-bold">Header Inverse</div>
+					<div class="col-4 d-flex">
+						<div class="form-check form-switch ms-auto mb-0">
+							<input type="checkbox" class="form-check-input" name="app-header-inverse" id="appHeaderInverse" value="1" />
+							<label class="form-check-label" for="appHeaderInverse">&nbsp;</label>
+						</div>
+					</div>
+				</div>
+				<div class="row mt-10px align-items-center">
+					<div class="col-8 control-label text-dark fw-bold">Sidebar Fixed</div>
+					<div class="col-4 d-flex">
+						<div class="form-check form-switch ms-auto mb-0">
+							<input type="checkbox" class="form-check-input" name="app-sidebar-fixed" id="appSidebarFixed" value="1" checked />
+							<label class="form-check-label" for="appSidebarFixed">&nbsp;</label>
+						</div>
+					</div>
+				</div>
+				<div class="row mt-10px align-items-center">
+					<div class="col-8 control-label text-dark fw-bold">Sidebar Grid</div>
+					<div class="col-4 d-flex">
+						<div class="form-check form-switch ms-auto mb-0">
+							<input type="checkbox" class="form-check-input" name="app-sidebar-grid" id="appSidebarGrid" value="1" />
+							<label class="form-check-label" for="appSidebarGrid">&nbsp;</label>
+						</div>
+					</div>
+				</div>
+				<div class="row mt-10px align-items-center">
+					<div class="col-md-8 control-label text-dark fw-bold">Gradient Enabled</div>
+					<div class="col-md-4 d-flex">
+						<div class="form-check form-switch ms-auto mb-0">
+							<input type="checkbox" class="form-check-input" name="app-gradient-enabled" id="appGradientEnabled" value="1" />
+							<label class="form-check-label" for="appGradientEnabled">&nbsp;</label>
+						</div>
+					</div>
+				</div>
+				<!-- END theme-switch -->
+				
+				<div class="theme-panel-divider"></div>
+				
+				<h5>Admin Design (5)</h5>
+				<!-- BEGIN theme-version -->
+				<div class="theme-version">
+					<div class="theme-version-item">
+						<a href="../template_html/index_v2.html" class="theme-version-link">
+							<span style="background-image: url(../assets/img/theme/default.jpg);" class="theme-version-cover"></span>
+						</a>
+					</div>
+					<div class="theme-version-item">
+						<a href="../template_transparent/index_v2.html" class="theme-version-link">
+							<span style="background-image: url(../assets/img/theme/transparent.jpg);" class="theme-version-cover"></span>
+						</a>
+					</div>
+					<div class="theme-version-item">
+						<a href="../template_apple/index_v2.html" class="theme-version-link active">
+							<span style="background-image: url(../assets/img/theme/apple.jpg);" class="theme-version-cover"></span>
+						</a>
+					</div>
+					<div class="theme-version-item">
+						<a href="../template_material/index_v2.html" class="theme-version-link">
+							<span style="background-image: url(../assets/img/theme/material.jpg);" class="theme-version-cover"></span>
+						</a>
+					</div>
+					<div class="theme-version-item">
+						<a href="../template_facebook/index_v2.html" class="theme-version-link">
+							<span style="background-image: url(../assets/img/theme/facebook.jpg);" class="theme-version-cover"></span>
+						</a>
+					</div>
+					<div class="theme-version-item">
+						<a href="../template_google/index_v2.html" class="theme-version-link">
+							<span style="background-image: url(../assets/img/theme/google.jpg);" class="theme-version-cover"></span>
+						</a>
+					</div>
+				</div>
+				<!-- END theme-version -->
+				
+				<div class="theme-panel-divider"></div>
+				
+				<h5>Language Version (7)</h5>
+				<!-- BEGIN theme-version -->
+				<div class="theme-version">
+					<div class="theme-version-item">
+						<a href="../template_html/index.html" class="theme-version-link active">
+							<span style="background-image: url(../assets/img/version/html.jpg);" class="theme-version-cover"></span>
+						</a>
+					</div>
+					<div class="theme-version-item">
+						<a href="../template_ajax/index.html" class="theme-version-link">
+							<span style="background-image: url(../assets/img/version/ajax.jpg);" class="theme-version-cover"></span>
+						</a>
+					</div>
+					<div class="theme-version-item">
+						<a href="../template_angularjs/index.html" class="theme-version-link">
+							<span style="background-image: url(../assets/img/version/angular1x.jpg);" class="theme-version-cover"></span>
+						</a>
+					</div>
+					<div class="theme-version-item">
+						<a href="../template_angularjs13/index.html" class="theme-version-link">
+							<span style="background-image: url(../assets/img/version/angular10x.jpg);" class="theme-version-cover"></span>
+						</a>
+					</div>
+					<div class="theme-version-item">
+						<a href="javascript:alert('Laravel Version only available in downloaded version.');" class="theme-version-link">
+							<span style="background-image: url(../assets/img/version/laravel.jpg);" class="theme-version-cover"></span>
+						</a>
+					</div>
+					<div class="theme-version-item">
+						<a href="../template_vuejs/index.html" class="theme-version-link">
+							<span style="background-image: url(../assets/img/version/vuejs.jpg);" class="theme-version-cover"></span>
+						</a>
+					</div>
+					<div class="theme-version-item">
+						<a href="../template_reactjs/index.html" class="theme-version-link">
+							<span style="background-image: url(../assets/img/version/reactjs.jpg);" class="theme-version-cover"></span>
+						</a>
+					</div>
+					<div class="theme-version-item">
+						<a href="javascript:alert('.NET Core 3.1 MVC Version only available in downloaded version.');" class="theme-version-link">
+							<span style="background-image: url(../assets/img/version/dotnet.jpg);" class="theme-version-cover"></span>
+						</a>
+					</div>
+				</div>
+				<!-- END theme-version -->
+				
+				<div class="theme-panel-divider"></div>
+				
+				<h5>Frontend Design (5)</h5>
+				<!-- BEGIN theme-version -->
+				<div class="theme-version">
+					<div class="theme-version-item">
+						<a href="../../../frontend/template/template_one_page_parallax/index.html" class="theme-version-link">
+							<span style="background-image: url(../assets/img/theme/one-page-parallax.jpg);" class="theme-version-cover"></span>
+						</a>
+					</div>
+					<div class="theme-version-item">
+						<a href="../../../frontend/template/template_e_commerce/index.html" class="theme-version-link">
+							<span style="background-image: url(../assets/img/theme/e-commerce.jpg);" class="theme-version-cover"></span>
+						</a>
+					</div>
+					<div class="theme-version-item">
+						<a href="../../../frontend/template/template_blog/index.html" class="theme-version-link">
+							<span style="background-image: url(../assets/img/theme/blog.jpg);" class="theme-version-cover"></span>
+						</a>
+					</div>
+					<div class="theme-version-item">
+						<a href="../../../frontend/template/template_forum/index.html" class="theme-version-link">
+							<span style="background-image: url(../assets/img/theme/forum.jpg);" class="theme-version-cover"></span>
+						</a>
+					</div>
+					<div class="theme-version-item">
+						<a href="../../../frontend/template/template_corporate/index.html" class="theme-version-link">
+							<span style="background-image: url(../assets/img/theme/corporate.jpg);" class="theme-version-cover"></span>
+						</a>
+					</div>
+				</div>
+				<!-- END theme-version -->
+				
+				<div class="theme-panel-divider"></div>
+				
+				<a href="https://seantheme.com/color-admin/documentation/" class="btn btn-dark d-block w-100 rounded-pill mb-10px" target="_blank"><b>Documentation</b></a>
+				<a href="javascript:;" class="btn btn-default d-block w-100 rounded-pill" data-toggle="reset-local-storage"><b>Reset Local Storage</b></a>
+			</div>
+		</div>
+		<!-- END theme-panel -->
+		<!-- BEGIN scroll-top-btn -->
+		<a href="javascript:;" class="btn btn-icon btn-circle btn-primary btn-scroll-to-top" data-toggle="scroll-to-top"><i class="fa fa-angle-up"></i></a>
+		<!-- END scroll-top-btn -->
+	</div>
+	<!-- END #app -->
+	
+	<!-- ================== BEGIN core-js ================== -->
+	<script src="../assets/js/vendor.min.js"></script>
+	<script src="../assets/js/app.min.js"></script>
+	<!-- ================== END core-js ================== -->
+	
+	<!-- ================== BEGIN page-js ================== -->
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+	<script src="../assets/plugins/superbox/jquery.superbox.min.js"></script>
+	<script src="../assets/plugins/lity/dist/lity.min.js"></script>
+	<script src="../assets/js/demo/profile.demo.js"></script>
+	<!-- ================== END page-js ================== -->
+</body>
 </html>
