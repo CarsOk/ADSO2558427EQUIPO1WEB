@@ -2,22 +2,20 @@
 <html lang="en" >
 <head>
 	<meta charset="utf-8" />
-	<title>Documentacion | ADSO-1 </title>
+	<title>Color Admin | Profile Page</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
 	
 	<!-- ================== BEGIN core-css ================== -->
 	<link href="../../../../../../../../../../../docs/assets/css/vendor.min.css" rel="stylesheet" />
-	<link href="../../../../../../../../docs/assets/css/apple/app.min.css" rel="stylesheet" />
-	<link href="../../../../../../../../docs/assets/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
+	<link href="../../../../../../../../../../../docs/assets/css/apple/app.min.css" rel="stylesheet" />
+	<link href="../../../../../../../../../../../docs/assets/plugins/ionicons/css/ionicons.min.css" rel="stylesheet" />
 	<!-- ================== END core-css ================== -->
 	
 	<!-- ================== BEGIN page-css ================== -->
-	<link href="../../../../../../../../docs/assets/plugins/superbox/superbox.min.css" rel="stylesheet" />
-	<link href="../../../../../../../../docs/assets/plugins/lity/dist/lity.min.css" rel="stylesheet" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
+	<link href="../../../../../../../../../../../docs/assets/plugins/superbox/superbox.min.css" rel="stylesheet" />
+	<link href="../../../../../../../../../../../docs/assets/plugins/lity/dist/lity.min.css" rel="stylesheet" />
 	<!-- ================== END page-css ================== -->
 </head>
 <body>
@@ -28,28 +26,27 @@
 	<!-- END #loader -->
 
 	<!-- BEGIN #app -->
-	<div id="app" class="app app-header-fixed app-sidebar-fixed">
-		<!-- BEGIN #header -->
-		<div id="header" class="app-header">
-			<!-- BEGIN navbar-header -->
-			<div class="navbar-header">
-				<a href="index.html" class="navbar-brand"><span class="navbar-logo" style="color: red;"><i class="fas fa-hamburger"></i></span> <b class="me-1">CURB</b></a>
-				<button type="button" class="navbar-mobile-toggler" data-toggle="app-sidebar-mobile">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-			</div>
+			<div id="app" class="app app-header-fixed app-sidebar-fixed">
+				<!-- BEGIN #header -->
+				<div id="header" class="app-header">
+					<!-- BEGIN navbar-header -->
+					<div class="navbar-header">
+			<a href="index.html" class="navbar-brand">
+				<img src="img/LogoCurb.png" alt="Logo" class="navbar-logo">
+			</a>
+			<button type="button" class="navbar-mobile-toggler" data-toggle="app-sidebar-mobile">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
 			<!-- END navbar-header -->
 			<!-- BEGIN header-nav -->
 			<div class="navbar-nav">
-				<div class="navbar-item dropdown">
-					<a href="#" data-bs-toggle="dropdown" class="navbar-link dropdown-toggle icon">
-						<i class="ion-ios-notifications"></i>
-						<span class="badge">5</span>
-					</a>				
+				<div class="navbar-item navbar-form">
+					<form action="" method="POST" name="search">
+					</form>
 				</div>
-				<div class="navbar-item navbar-user dropdown">				
 				</div>
 			</div>
 			<!-- END header-nav -->
@@ -64,16 +61,17 @@
 				<div class="menu">
 					<div class="menu-profile">
 						<a href="javascript:;" class="menu-profile-link" data-toggle="app-sidebar-profile" data-target="#appSidebarProfileMenu">
-							<div class="menu-profile-cover with-shadow"></div>
+						<div class="menu-profile-cover with-shadow"></div>
 							<div class="menu-profile-image">
-								<img src="../assets/img/user/user-13.jpg" alt="" />
 							</div>
 							<div class="menu-profile-info">
 								<div class="d-flex align-items-center">
-									<div class="flex-grow-1">ADSO-1</div>
-									<div class=""></div>
+									<div class="flex-grow-1">
+										ADSO
+									</div>
+									<div class="menu-caret ms-auto"></div>
 								</div>
-								<small>Documentacion de proyecto formativo</small>
+								<small>Proyecto formativo</small>
 							</div>
 						</a>
 					</div>
@@ -83,20 +81,24 @@
 							<div class="menu-icon">
 								<i class="ion-ios-pulse"></i>
 							</div>
-							<div class="menu-text">WEB</div>
-							<div class=""></div>
+							<div class="menu-text">PROYECTO</div>
+							<div class="menu-caret"></div>
 						</a>
-					</div>
-                    <div class="menu-item has-sub">
-						<a href="javascript:;" class="menu-link">
-							<div class="menu-icon">
-								<i class="ion-ios-pulse"></i>
+						<div class="menu-submenu">
+							<div class="menu-item">
+								<a href="index.html" class="menu-link"><div class="menu-text">Dashboard v1</div></a>
 							</div>
-							<div class="menu-text">MOVIL</div>
-							<div class=""></div>
-						</a>
+							<div class="menu-item">
+								<a href="index_v2.html" class="menu-link"><div class="menu-text">Dashboard v2</div></a>
+							</div>
+							<div class="menu-item">
+								<a href="index_v3.html" class="menu-link"><div class="menu-text">Dashboard v3</div></a>
+							</div>
+						</div>
 					</div>
-				
+					
+					
+					
 				</div>
 				<!-- END menu -->
 			</div>
@@ -112,28 +114,29 @@
 			<div class="profile">
 				<div class="profile-header">
 					<!-- BEGIN profile-header-cover -->
-					<div class="profile-header-cover"></div>
+					<div class="profile-header-cover" style="background-image: url('img/fondo.png');"></div>
+
 					<!-- END profile-header-cover -->
 					<!-- BEGIN profile-header-content -->
 					<div class="profile-header-content">
 						<!-- BEGIN profile-header-img -->
 						<div class="profile-header-img">
-							<img src="LogoCurb.png" alt="" />
+							<img src="img/LogoCurb.png" alt="" />
 						</div>
 						<!-- END profile-header-img -->
 						<!-- BEGIN profile-header-info -->
 						<div class="profile-header-info">
-							<h4 class="mt-0 mb-1">CURB</h4>
-							<p class="mb-2">Documentación</p>
-							<a href="#" class="btn btn-xs btn-yellow">Edicion</a>
+							<h4 class="mt-0 mb-1">DOCUMENTACION CURB</h4>
+							<p class="mb-2">PROYECTO 2023 - ADSO</p>
+							<a href="#" class="btn btn-xs btn-yellow">Novedades </a>
 						</div>
 						<!-- END profile-header-info -->
 					</div>
 					<!-- END profile-header-content -->
 					<!-- BEGIN profile-header-tab -->
 					<ul class="profile-header-tab nav nav-tabs">
-						<li class="nav-item"><a href="#profile-post" class="nav-link active" data-bs-toggle="tab">AVANCES</a></li>
-						<li class="nav-item"><a href="#profile-about" class="nav-link" data-bs-toggle="tab">DOCUMENTACION</a></li>
+						<li class="nav-item"><a href="#profile-post" class="nav-link active" data-bs-toggle="tab">NOVEDADES</a></li>
+						<li class="nav-item"><a href="#profile-about" class="nav-link" data-bs-toggle="tab">DOCUMENTOS</a></li>
 						<li class="nav-item"><a href="#profile-photos" class="nav-link" data-bs-toggle="tab">BOCETOS</a></li>
 						<li class="nav-item"><a href="#profile-videos" class="nav-link" data-bs-toggle="tab">DIAGRAMAS</a></li>
 					</ul>
@@ -166,9 +169,9 @@
 								<div class="timeline-content">
 									<!-- BEGIN timeline-header -->
 									<div class="timeline-header">
-										<div class="userimage"><img src="LogoCurb.png" alt="" /></div>
+										<div class="userimage"><img src="img/LogoCurb.png" alt="" /></div>
 										<div class="username">
-											<a href="javascript:;">CURB AVANCES<i class="fa fa-check-circle text-blue ms-1"></i></a>
+											<a href="javascript:;">CURB <i class="fa fa-check-circle text-blue ms-1"></i></a>
 											<div class="text-muted fs-12px">8 mins <i class="fa fa-globe-americas opacity-5 ms-1"></i></div>
 										</div>
 										<div>
@@ -183,7 +186,15 @@
 														<div class="mt-n1 text-gray-500"><small>Add this to your saved items</small></div>
 													</div>
 												</a>
-												
+												<div class="dropdown-divider"></div>
+												<a href="#" class="dropdown-item"><i class="fa fa-fw fa-edit fa-lg me-1"></i> Edit post</a>
+												<a href="#" class="dropdown-item"><i class="fa fa-fw fa-user fa-lg me-1"></i> Edit audience</a>
+												<a href="#" class="dropdown-item"><i class="fa fa-fw fa-bell fa-lg me-1"></i> Turn off notifications for this post</a>
+												<a href="#" class="dropdown-item"><i class="fa fa-fw fa-language fa-lg me-1"></i> Turn off translations</a>
+												<a href="#" class="dropdown-item"><i class="fa fa-fw fa-calendar-alt fa-lg me-1"></i> Turn date</a>
+												<div class="dropdown-divider"></div>
+												<a href="#" class="dropdown-item"><i class="fa fa-fw fa-archive fa-lg me-1"></i> Move to archive</a>
+												<a href="#" class="dropdown-item"><i class="fa fa-fw fa-trash-alt fa-lg me-1"></i> Move to Recycle bin</a>
 											</div>
 										</div>
 									</div>
@@ -198,21 +209,31 @@
 												Nam sagittis dui in nunc consequat, in imperdiet nunc sagittis.
 											</div>
 											<div class="row gx-1">
-												<div class="col-6">
-													<div class="ratio ratio-4x3">
-														<img src="../assets/img/gallery/gallery-14.jpg" class="d-block mw-100" />
-													</div>
+											<div class="container">
+										<div class="row gx-1">
+											<div class="col-6">
+												<div class="ratio ratio-4x3">
+													<img src="img/burger.png" class="d-block mw-100" />
 												</div>
+											</div>
+											<div class="col-6">
+												<div class="ratio ratio-4x3">
+													<img src="img/burger.png" class="d-block mw-100" />
+												</div>
+											</div>
+										</div>
+									</div>
 											</div>
 										</div>
 							
 										<!-- timeline-stats -->
 							
 										<!-- timeline-action -->
+									
 										<hr class="mt-10px mb-3" />
 							
 										<!-- timeline-input -->
-
+									
 									</div>
 									<!-- END timeline-body -->
 								</div>
@@ -220,8 +241,112 @@
 							</div>
 							<!-- END timeline-item -->
 							<!-- BEGIN timeline-item -->
-
-
+							<div class="timeline-item">
+								<!-- BEGIN timeline-time -->
+								<div class="timeline-time">
+									<span class="date">yesterday</span>
+									<span class="time">20:17</span>
+								</div>
+								<!-- END timeline-time -->
+								<!-- BEGIN timeline-icon -->
+								<div class="timeline-icon">
+									<a href="javascript:;">&nbsp;</a>
+								</div>
+								<!-- END timeline-icon -->
+								<!-- BEGIN timeline-content -->
+								<div class="timeline-content">
+									<!-- BEGIN timeline-header -->
+									<div class="timeline-header">
+										<div class="userimage"><img src="img/LogoCurb.png" alt="" /></div>
+										<div class="username">
+											<a href="javascript:;">CURB</a>
+											<div class="text-muted fs-12px">24 mins <i class="fa fa-globe-americas opacity-5 ms-1"></i></div>
+										</div>
+										<div>
+											<a href="#" class="btn btn-lg border-0 rounded-pill w-40px h-40px p-0 d-flex align-items-center justify-content-center" data-bs-toggle="dropdown">
+												<i class="fa fa-ellipsis-h text-gray-600"></i>
+											</a>
+											<div class="dropdown-menu dropdown-menu-end">
+												<a href="#" class="dropdown-item d-flex align-items-center">
+													<i class="fa fa-fw fa-bookmark fa-lg"></i> 
+													<div class="flex-1 ps-1">
+														<div>Save Post</div>
+														<div class="mt-n1 text-gray-500"><small>Add this to your saved items</small></div>
+													</div>
+												</a>
+												<div class="dropdown-divider"></div>
+												<a href="#" class="dropdown-item"><i class="fa fa-fw fa-edit fa-lg me-1"></i> Edit post</a>
+												<a href="#" class="dropdown-item"><i class="fa fa-fw fa-user fa-lg me-1"></i> Edit audience</a>
+												<a href="#" class="dropdown-item"><i class="fa fa-fw fa-bell fa-lg me-1"></i> Turn off notifications for this post</a>
+												<a href="#" class="dropdown-item"><i class="fa fa-fw fa-language fa-lg me-1"></i> Turn off translations</a>
+												<a href="#" class="dropdown-item"><i class="fa fa-fw fa-calendar-alt fa-lg me-1"></i> Turn date</a>
+												<div class="dropdown-divider"></div>
+												<a href="#" class="dropdown-item"><i class="fa fa-fw fa-archive fa-lg me-1"></i> Move to archive</a>
+												<a href="#" class="dropdown-item"><i class="fa fa-fw fa-trash-alt fa-lg me-1"></i> Move to Recycle bin</a>
+											</div>
+										</div>
+									</div>
+									<!-- END timeline-header -->
+						
+									
+									<!-- BEGIN timeline-body -->
+									<div class="timeline-body">
+										<!-- timeline-post -->
+										<div class="mb-3">
+											<h4 class="mb-1">
+												795 Folsom Ave, Suite 600 San Francisco, CA 94107
+											</h4>
+											<div class="mb-2">In hac habitasse platea dictumst. Pellentesque bibendum id sem nec faucibus. Maecenas molestie, augue vel accumsan rutrum, massa mi rutrum odio, id luctus mauris nibh ut leo.</div>
+											<div class="row gx-1">
+											<div class="container">
+												<div class="row gx-1">
+													<div class="col-6">
+														<div class="ratio ratio-4x3">
+															<img src="img/burger.png" class="d-block mw-100" />
+														</div>
+													</div>
+													<div class="col-6">
+														<div class="ratio ratio-4x3">
+															<img src="img/burger.png" class="d-block mw-100" />
+														</div>
+													</div>
+												</div>
+											</div>
+											</div>
+										</div>
+										<!-- timeline-action -->
+										<hr class="mt-10px mb-3" />
+							
+										<!-- timeline-input -->
+									</div>
+									<!-- END timeline-body -->
+								</div>
+								<!-- END timeline-content -->
+							</div>
+							<!-- END timeline-item -->
+							<!-- BEGIN timeline-item -->
+							<div class="timeline-item">
+								<!-- BEGIN timeline-icon -->
+								<div class="timeline-icon">
+									<a href="javascript:;">&nbsp;</a>
+								</div>
+								<!-- END timeline-icon -->
+								<!-- BEGIN timeline-content -->
+								<div class="timeline-content">
+									<!-- BEGIN timeline-body -->
+									<div class="timeline-body">
+										<div class="d-flex align-items-center">
+											<div class="spinner-border spinner-border-sm me-3" role="status">
+												<span class="visually-hidden">Loading...</span>
+											</div>
+											Loading...
+										</div>
+									</div>
+									<!-- END timeline-body -->
+								</div>
+								<!-- BEGIN timeline-content -->
+							</div>
+							<!-- END timeline-item -->
 						</div>
 						<!-- END timeline -->
 					</div>
@@ -235,15 +360,11 @@
 									<tr>
 										<th></th>
 										<th>
-											<h4>DOCUMENTACION<small>DOCUMENTO QUE CONTIENE LA EXPLICACIÓN Y LA DOCUMENTACION DEL PROYECTO FORMATIVO</small></h4>
+											<h4>DOCUMENTACION CURB <small>PROYECTO 2023 - ADSO</small></h4>
 										</th>
 									</tr>
 								</thead>
-								<tbody>
-									<tr>
-										
-									</tr>
-								</tbody>
+								
 							</table>
 						</div>
 						<!-- END table -->
@@ -251,151 +372,71 @@
 					<!-- END #profile-about tab -->
 					<!-- BEGIN #profile-photos tab -->
 					<div class="tab-pane fade" id="profile-photos">
-						<h4 class="mb-3">Fotos</h4>
-						<!-- BEGIN superbox -->
-						<div class="superbox " data-offset="50">
-							<div class="superbox-list">
-								<a href="javascript:;" class="superbox-img">
-									<img data-img="../assets/img/gallery/gallery-1.jpg" />
-									<span style="background: url(../assets/img/gallery/gallery-1-thumb.jpg);"></span>
+						<h4 class="mb-3">BOCETOS</h4>
+						<div class="row gx-1">
+							<!-- BEGIN col-3 -->
+							<div class="col-md-3 col-sm-4 mb-1">
+								<a href="img/burger.png" data-lity>
+								<img src="img/burger.png" class="d-block w-100" />
 								</a>
 							</div>
-							<div class="superbox-list">
-								<a href="javascript:;" class="superbox-img">
-									<img data-img="../assets/img/gallery/gallery-2.jpg" />
-									<span style="background: url(../assets/img/gallery/gallery-2-thumb.jpg);"></span>
+							<!-- END col-3 -->
+							<!-- BEGIN col-3 -->
+							<div class="col-md-3 col-sm-4 mb-1">
+								<a href="img/burger.png" data-lity>
+								<img src="img/burger.png" class="d-block w-100" />
 								</a>
 							</div>
-							<div class="superbox-list">
-								<a href="javascript:;" class="superbox-img">
-									<img data-img="../assets/img/gallery/gallery-3.jpg" />
-									<span style="background: url(../assets/img/gallery/gallery-3-thumb.jpg);"></span>
+							<!-- BEGIN col-3 -->
+							<div class="col-md-3 col-sm-4 mb-1">
+								<a href="img/burger.png" data-lity>
+								<img src="img/burger.png" class="d-block w-100" />
 								</a>
 							</div>
-							<div class="superbox-list">
-								<a href="javascript:;" class="superbox-img">
-									<img data-img="../assets/img/gallery/gallery-4.jpg" />
-									<span style="background: url(../assets/img/gallery/gallery-4-thumb.jpg);"></span>
-								</a>
-							</div>
-							
+							<!-- END col-3 -->
 						</div>
-						<!-- END superbox -->
 					</div>
 					<!-- END #profile-photos tab -->
-
-                    <!-- BEGIN #profile-videos tab -->
-					<div class="tab-pane fade" id="profile-photos">
-						<h4 class="mb-3">Photos (70)</h4>
-						<!-- BEGIN superbox -->
-						<div class="superbox " data-offset="50">
-							<div class="superbox-list">
-								<a href="javascript:;" class="superbox-img">
-									<img data-img="../assets/img/gallery/gallery-1.jpg" />
-									<span style="background: url(../assets/img/gallery/gallery-1-thumb.jpg);"></span>
+					<!-- BEGIN #profile-videos tab -->
+					<div class="tab-pane fade" id="profile-videos">
+						<h4 class="mb-3">DIAGRAMAS</h4>
+						<!-- BEGIN row -->
+						<div class="row gx-1">
+							<!-- BEGIN col-3 -->
+							<div class="col-md-3 col-sm-4 mb-1">
+								<a href="img/burger.png" data-lity>
+								<img src="img/burger.png" class="d-block w-100" />
 								</a>
 							</div>
-							<div class="superbox-list">
-								<a href="javascript:;" class="superbox-img">
-									<img data-img="../assets/img/gallery/gallery-55.jpg" />
-									<span style="background: url(../assets/img/gallery/gallery-55-thumb.jpg);"></span>
+							<!-- END col-3 -->
+							<!-- BEGIN col-3 -->
+							<div class="col-md-3 col-sm-4 mb-1">
+								<a href="img/burger.png" data-lity>
+								<img src="img/burger.png" class="d-block w-100" />
 								</a>
 							</div>
-							<div class="superbox-list">
-								<a href="javascript:;" class="superbox-img">
-									<img data-img="../assets/img/gallery/gallery-56.jpg" />
-									<span style="background: url(../assets/img/gallery/gallery-56-thumb.jpg);"></span>
+							<!-- BEGIN col-3 -->
+							<div class="col-md-3 col-sm-4 mb-1">
+								<a href="img/burger.png" data-lity>
+								<img src="img/burger.png" class="d-block w-100" />
 								</a>
 							</div>
-							<div class="superbox-list">
-								<a href="javascript:;" class="superbox-img">
-									<img data-img="../assets/img/gallery/gallery-57.jpg" />
-									<span style="background: url(../assets/img/gallery/gallery-57-thumb.jpg);"></span>
-								</a>
-							</div>
-							<div class="superbox-list">
-								<a href="javascript:;" class="superbox-img">
-									<img data-img="../assets/img/gallery/gallery-58.jpg" />
-									<span style="background: url(../assets/img/gallery/gallery-58-thumb.jpg);"></span>
-								</a>
-							</div>
-							<div class="superbox-list">
-								<a href="javascript:;" class="superbox-img">
-									<img data-img="../assets/img/gallery/gallery-59.jpg" />
-									<span style="background: url(../assets/img/gallery/gallery-59-thumb.jpg);"></span>
-								</a>
-							</div>
-							<div class="superbox-list">
-								<a href="javascript:;" class="superbox-img">
-									<img data-img="../assets/img/gallery/gallery-60.jpg" />
-									<span style="background: url(../assets/img/gallery/gallery-60-thumb.jpg);"></span>
-								</a>
-							</div>
-							<div class="superbox-list">
-								<a href="javascript:;" class="superbox-img">
-									<img data-img="../assets/img/gallery/gallery-61.jpg" />
-									<span style="background: url(../assets/img/gallery/gallery-61-thumb.jpg);"></span>
-								</a>
-							</div>
-							<div class="superbox-list">
-								<a href="javascript:;" class="superbox-img">
-									<img data-img="../assets/img/gallery/gallery-62.jpg" />
-									<span style="background: url(../assets/img/gallery/gallery-62-thumb.jpg);"></span>
-								</a>
-							</div>
-							<div class="superbox-list">
-								<a href="javascript:;" class="superbox-img">
-									<img data-img="../assets/img/gallery/gallery-63.jpg" />
-									<span style="background: url(../assets/img/gallery/gallery-63-thumb.jpg);"></span>
-								</a>
-							</div>
-							<div class="superbox-list">
-								<a href="javascript:;" class="superbox-img">
-									<img data-img="../assets/img/gallery/gallery-64.jpg" />
-									<span style="background: url(../assets/img/gallery/gallery-64-thumb.jpg);"></span>
-								</a>
-							</div>
-							<div class="superbox-list">
-								<a href="javascript:;" class="superbox-img">
-									<img data-img="../assets/img/gallery/gallery-65.jpg" />
-									<span style="background: url(../assets/img/gallery/gallery-65-thumb.jpg);"></span>
-								</a>
-							</div>
-							<div class="superbox-list">
-								<a href="javascript:;" class="superbox-img">
-									<img data-img="../assets/img/gallery/gallery-66.jpg" />
-									<span style="background: url(../assets/img/gallery/gallery-66-thumb.jpg);"></span>
-								</a>
-							</div>
-							
+							<!-- END col-3 -->
 						</div>
-						<!-- END superbox -->
+						<!-- END row -->
 					</div>
+					<!-- END #profile-videos tab -->
+					<!-- BEGIN #profile-friends tab -->
+					
 		<!-- END #content -->
 		
 		<!-- BEGIN theme-panel -->
 		<div class="theme-panel">
 			<a href="javascript:;" data-toggle="theme-panel-expand" class="theme-collapse-btn"><i class="fa fa-cog"></i></a>
 			<div class="theme-panel-content" data-scrollbar="true" data-height="100%">
-				<h5>App Settings</h5>
+				<h5>Configuracion web</h5>
 				
 				<!-- BEGIN theme-list -->
-				<div class="theme-list">
-					<div class="theme-list-item"><a href="javascript:;" class="theme-list-link bg-red" data-theme-class="theme-red" data-toggle="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Red">&nbsp;</a></div>
-					<div class="theme-list-item"><a href="javascript:;" class="theme-list-link bg-pink" data-theme-class="theme-pink" data-toggle="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Pink">&nbsp;</a></div>
-					<div class="theme-list-item"><a href="javascript:;" class="theme-list-link bg-orange" data-theme-class="theme-orange" data-toggle="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Orange">&nbsp;</a></div>
-					<div class="theme-list-item"><a href="javascript:;" class="theme-list-link bg-yellow" data-theme-class="theme-yellow" data-toggle="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Yellow">&nbsp;</a></div>
-					<div class="theme-list-item"><a href="javascript:;" class="theme-list-link bg-lime" data-theme-class="theme-lime" data-toggle="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Lime">&nbsp;</a></div>
-					<div class="theme-list-item"><a href="javascript:;" class="theme-list-link bg-green" data-theme-class="theme-green" data-toggle="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Green">&nbsp;</a></div>
-					<div class="theme-list-item"><a href="javascript:;" class="theme-list-link bg-teal" data-theme-class="theme-teal" data-toggle="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Teal">&nbsp;</a></div>
-					<div class="theme-list-item"><a href="javascript:;" class="theme-list-link bg-cyan" data-theme-class="theme-cyan" data-toggle="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Cyan">&nbsp;</a></div>
-					<div class="theme-list-item active"><a href="javascript:;" class="theme-list-link bg-blue" data-theme-class="" data-toggle="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Default">&nbsp;</a></div>
-					<div class="theme-list-item"><a href="javascript:;" class="theme-list-link bg-purple" data-theme-class="theme-purple" data-toggle="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Purple">&nbsp;</a></div>
-					<div class="theme-list-item"><a href="javascript:;" class="theme-list-link bg-indigo" data-theme-class="theme-indigo" data-toggle="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Indigo">&nbsp;</a></div>
-					<div class="theme-list-item"><a href="javascript:;" class="theme-list-link bg-black" data-theme-class="theme-gray-600" data-toggle="theme-selector" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-container="body" data-bs-title="Black">&nbsp;</a></div>
-				</div>
-				<!-- END theme-list -->
-				
 				<div class="theme-panel-divider"></div>
 				
 				<div class="row mt-10px">
@@ -418,177 +459,9 @@
 				<div class="theme-panel-divider"></div>
 				
 				<!-- BEGIN theme-switch -->
-				<div class="row mt-10px align-items-center">
-					<div class="col-8 control-label text-dark fw-bold">Header Fixed</div>
-					<div class="col-4 d-flex">
-						<div class="form-check form-switch ms-auto mb-0">
-							<input type="checkbox" class="form-check-input" name="app-header-fixed" id="appHeaderFixed" value="1" checked />
-							<label class="form-check-label" for="appHeaderFixed">&nbsp;</label>
-						</div>
-					</div>
-				</div>
-				<div class="row mt-10px align-items-center">
-					<div class="col-8 control-label text-dark fw-bold">Header Inverse</div>
-					<div class="col-4 d-flex">
-						<div class="form-check form-switch ms-auto mb-0">
-							<input type="checkbox" class="form-check-input" name="app-header-inverse" id="appHeaderInverse" value="1" />
-							<label class="form-check-label" for="appHeaderInverse">&nbsp;</label>
-						</div>
-					</div>
-				</div>
-				<div class="row mt-10px align-items-center">
-					<div class="col-8 control-label text-dark fw-bold">Sidebar Fixed</div>
-					<div class="col-4 d-flex">
-						<div class="form-check form-switch ms-auto mb-0">
-							<input type="checkbox" class="form-check-input" name="app-sidebar-fixed" id="appSidebarFixed" value="1" checked />
-							<label class="form-check-label" for="appSidebarFixed">&nbsp;</label>
-						</div>
-					</div>
-				</div>
-				<div class="row mt-10px align-items-center">
-					<div class="col-8 control-label text-dark fw-bold">Sidebar Grid</div>
-					<div class="col-4 d-flex">
-						<div class="form-check form-switch ms-auto mb-0">
-							<input type="checkbox" class="form-check-input" name="app-sidebar-grid" id="appSidebarGrid" value="1" />
-							<label class="form-check-label" for="appSidebarGrid">&nbsp;</label>
-						</div>
-					</div>
-				</div>
-				<div class="row mt-10px align-items-center">
-					<div class="col-md-8 control-label text-dark fw-bold">Gradient Enabled</div>
-					<div class="col-md-4 d-flex">
-						<div class="form-check form-switch ms-auto mb-0">
-							<input type="checkbox" class="form-check-input" name="app-gradient-enabled" id="appGradientEnabled" value="1" />
-							<label class="form-check-label" for="appGradientEnabled">&nbsp;</label>
-						</div>
-					</div>
-				</div>
-				<!-- END theme-switch -->
-				
-				<div class="theme-panel-divider"></div>
-				
-				<h5>Admin Design (5)</h5>
-				<!-- BEGIN theme-version -->
-				<div class="theme-version">
-					<div class="theme-version-item">
-						<a href="../template_html/index_v2.html" class="theme-version-link">
-							<span style="background-image: url(../assets/img/theme/default.jpg);" class="theme-version-cover"></span>
-						</a>
-					</div>
-					<div class="theme-version-item">
-						<a href="../template_transparent/index_v2.html" class="theme-version-link">
-							<span style="background-image: url(../assets/img/theme/transparent.jpg);" class="theme-version-cover"></span>
-						</a>
-					</div>
-					<div class="theme-version-item">
-						<a href="../template_apple/index_v2.html" class="theme-version-link active">
-							<span style="background-image: url(../assets/img/theme/apple.jpg);" class="theme-version-cover"></span>
-						</a>
-					</div>
-					<div class="theme-version-item">
-						<a href="../template_material/index_v2.html" class="theme-version-link">
-							<span style="background-image: url(../assets/img/theme/material.jpg);" class="theme-version-cover"></span>
-						</a>
-					</div>
-					<div class="theme-version-item">
-						<a href="../template_facebook/index_v2.html" class="theme-version-link">
-							<span style="background-image: url(../assets/img/theme/facebook.jpg);" class="theme-version-cover"></span>
-						</a>
-					</div>
-					<div class="theme-version-item">
-						<a href="../template_google/index_v2.html" class="theme-version-link">
-							<span style="background-image: url(../assets/img/theme/google.jpg);" class="theme-version-cover"></span>
-						</a>
-					</div>
-				</div>
+			
 				<!-- END theme-version -->
 				
-				<div class="theme-panel-divider"></div>
-				
-				<h5>Language Version (7)</h5>
-				<!-- BEGIN theme-version -->
-				<div class="theme-version">
-					<div class="theme-version-item">
-						<a href="../template_html/index.html" class="theme-version-link active">
-							<span style="background-image: url(../assets/img/version/html.jpg);" class="theme-version-cover"></span>
-						</a>
-					</div>
-					<div class="theme-version-item">
-						<a href="../template_ajax/index.html" class="theme-version-link">
-							<span style="background-image: url(../assets/img/version/ajax.jpg);" class="theme-version-cover"></span>
-						</a>
-					</div>
-					<div class="theme-version-item">
-						<a href="../template_angularjs/index.html" class="theme-version-link">
-							<span style="background-image: url(../assets/img/version/angular1x.jpg);" class="theme-version-cover"></span>
-						</a>
-					</div>
-					<div class="theme-version-item">
-						<a href="../template_angularjs13/index.html" class="theme-version-link">
-							<span style="background-image: url(../assets/img/version/angular10x.jpg);" class="theme-version-cover"></span>
-						</a>
-					</div>
-					<div class="theme-version-item">
-						<a href="javascript:alert('Laravel Version only available in downloaded version.');" class="theme-version-link">
-							<span style="background-image: url(../assets/img/version/laravel.jpg);" class="theme-version-cover"></span>
-						</a>
-					</div>
-					<div class="theme-version-item">
-						<a href="../template_vuejs/index.html" class="theme-version-link">
-							<span style="background-image: url(../assets/img/version/vuejs.jpg);" class="theme-version-cover"></span>
-						</a>
-					</div>
-					<div class="theme-version-item">
-						<a href="../template_reactjs/index.html" class="theme-version-link">
-							<span style="background-image: url(../assets/img/version/reactjs.jpg);" class="theme-version-cover"></span>
-						</a>
-					</div>
-					<div class="theme-version-item">
-						<a href="javascript:alert('.NET Core 3.1 MVC Version only available in downloaded version.');" class="theme-version-link">
-							<span style="background-image: url(../assets/img/version/dotnet.jpg);" class="theme-version-cover"></span>
-						</a>
-					</div>
-				</div>
-				<!-- END theme-version -->
-				
-				<div class="theme-panel-divider"></div>
-				
-				<h5>Frontend Design (5)</h5>
-				<!-- BEGIN theme-version -->
-				<div class="theme-version">
-					<div class="theme-version-item">
-						<a href="../../../frontend/template/template_one_page_parallax/index.html" class="theme-version-link">
-							<span style="background-image: url(../assets/img/theme/one-page-parallax.jpg);" class="theme-version-cover"></span>
-						</a>
-					</div>
-					<div class="theme-version-item">
-						<a href="../../../frontend/template/template_e_commerce/index.html" class="theme-version-link">
-							<span style="background-image: url(../assets/img/theme/e-commerce.jpg);" class="theme-version-cover"></span>
-						</a>
-					</div>
-					<div class="theme-version-item">
-						<a href="../../../frontend/template/template_blog/index.html" class="theme-version-link">
-							<span style="background-image: url(../assets/img/theme/blog.jpg);" class="theme-version-cover"></span>
-						</a>
-					</div>
-					<div class="theme-version-item">
-						<a href="../../../frontend/template/template_forum/index.html" class="theme-version-link">
-							<span style="background-image: url(../assets/img/theme/forum.jpg);" class="theme-version-cover"></span>
-						</a>
-					</div>
-					<div class="theme-version-item">
-						<a href="../../../frontend/template/template_corporate/index.html" class="theme-version-link">
-							<span style="background-image: url(../assets/img/theme/corporate.jpg);" class="theme-version-cover"></span>
-						</a>
-					</div>
-				</div>
-				<!-- END theme-version -->
-				
-				<div class="theme-panel-divider"></div>
-				
-				<a href="https://seantheme.com/color-admin/documentation/" class="btn btn-dark d-block w-100 rounded-pill mb-10px" target="_blank"><b>Documentation</b></a>
-				<a href="javascript:;" class="btn btn-default d-block w-100 rounded-pill" data-toggle="reset-local-storage"><b>Reset Local Storage</b></a>
-			</div>
 		</div>
 		<!-- END theme-panel -->
 		<!-- BEGIN scroll-top-btn -->
@@ -598,15 +471,15 @@
 	<!-- END #app -->
 	
 	<!-- ================== BEGIN core-js ================== -->
-	<script src="../../../../../../../../docs/assets/js/vendor.min.js"></script>
-	<script src="../../../../../../../../docs/assets/js/app.min.js"></script>
+	<script src="../../../../../../../../../../../docs/assets/js/vendor.min.js"></script>
+	<script src="../../../../../../../../../../../docs/assets/js/app.min.js"></script>
 	<!-- ================== END core-js ================== -->
 	
 	<!-- ================== BEGIN page-js ================== -->
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
-	<script src="../../../../../../../../docs/assets/plugins/superbox/jquery.superbox.min.js"></script>
-	<script src="../../../../../../../../docs/assets/plugins/lity/dist/lity.min.js"></script>
-	<script src="../../../../../../../../docs/assets/js/demo/profile.demo.js"></script>
+	<script src="../../../../../../../../../../../docs/assets/plugins/superbox/jquery.superbox.min.js"></script>
+	<script src="../../../../../../../../../../../docs/assets/plugins/lity/dist/lity.min.js"></script>
+	<script src="../../../../../../../../../../../docs/assets/js/demo/profile.demo.js"></script>
 	<!-- ================== END page-js ================== -->
 </body>
 </html>
