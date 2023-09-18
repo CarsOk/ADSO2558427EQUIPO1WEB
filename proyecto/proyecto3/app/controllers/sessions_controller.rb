@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
-  def login
+  before_action :authenticate_user!
+
+  def index
   end
 end
