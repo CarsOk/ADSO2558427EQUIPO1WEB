@@ -551,3 +551,18 @@ Processing by SeccionesController#index as HTML
 Completed 200 OK in 282ms (Views: 30.1ms | ActiveRecord: 1.0ms | Allocations: 20231)
 
 
+Started GET "/" for ::1 at 2023-09-13 20:54:12 -0500
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-09-13 20:54:13 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/empty
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 648)
+  Rendered devise/sessions/new.html.erb within layouts/empty (Duration: 4.9ms | Allocations: 2453)
+Completed 200 OK in 7980ms (Views: 7973.2ms | ActiveRecord: 0.6ms | Allocations: 386279)
+
+

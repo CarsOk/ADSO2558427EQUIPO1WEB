@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  get '/login', to: 'sessions#login'
+  devise_for :users
+
+  resource :sessions
+  root to: 'sessions#index'
+
 end
