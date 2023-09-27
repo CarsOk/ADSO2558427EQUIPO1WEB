@@ -1,0 +1,29 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+            
+                <div class="dropdown profile-element">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <%= image_tag("LogoCurb.png" , width: "150px" )%>
+                    </a>
+                </div>
+                <div class="logo-element">
+                    <%= image_tag("LogoCurb.png" , width: "40px" )%>
+                </div>
+            </li>
+
+            <li class="<%= is_active_controller('sessions') %>">
+                <a href=""><i class="fa fa-th-large"></i> <span class="nav-label" data-i18n="nav.dashboard">Home</span></a>
+            </li>
+        
+              
+                        
+            </ul>
+            
+        </li>
+        </ul>
+
+    </div>
+</nav>
+
