@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   resource :sessions
   root to: 'sessions#index'
+
 end
