@@ -13,10 +13,10 @@
                 </div>
             </li>
 
-            <li class="">
-                <a href=""><span class="nav-label"><%= link_to "Home", root_path %></span> <span class="fa arrow"></span></a> 
-                <a href=""><span class="nav-label"><%= link_to "Ventas", root_path %></span> <span class="fa arrow"></span></a>  
-                
+            <li class="<%= is_active_controller('sessions') %>">
+                <a href=""><i class="fa fa-th-large"></i> <span class="nav-label" data-i18n="nav.dashboard">Home</span></a>
+            </li>
+        
               
                         
             </ul>
