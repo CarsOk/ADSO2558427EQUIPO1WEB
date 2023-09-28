@@ -1,5 +1,3 @@
-# API REST CRUD
-## API para el restaurante **Curb**
-
+# API REST CRUD 
 ### Registro de cambios
 **Version 1.0**
