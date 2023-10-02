@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :products
-  resource :sessions
+  resources :sessions
   resource :cards, only:[:show]
   resources :shops, only:[:index, :show]
   resources :order_items
 
-  root to: 'shops#index'
+  root to: 'sessions#index'
   
 
 end

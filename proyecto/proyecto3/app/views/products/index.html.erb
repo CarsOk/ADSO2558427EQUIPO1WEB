@@ -1,17 +1,19 @@
-
-<div id="Notification" class="alert alert-info alert-dismissable col-lg-5 float-right">
+<div id="Notification" class="alert alert-info alert-dismissible custom-alert">
   <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
   <p id="notice"><%= notice %></p>
 </div>
 
-<h1>Products</h1>
+<h1 class="custom-header">Productos</h1>
 
-<table>
-  <thead>
+<table class="table table-bordered custom-table">
+  <thead class="thead-dark">
     <tr>
       <th>Title</th>
       <th>Price</th>
-      <th colspan="3"></th>
+      <th>Disponibilidad</th>
+      <th class="text-center">Ver</th>
+      <th class="text-center">Editar</th>
+      <th class="text-center">Eliminar</th>
     </tr>
   </thead>
 
@@ -20,14 +22,14 @@
       <tr>
         <td><%= product.title %></td>
         <td><%= product.price %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>Disponible</td>
+        <td class="col-md-1 text-center"><%= link_to content_tag(:i, '', class: 'fa fa-eye'), product, class: 'btn btn-primary' %></td>
+        <td class="col-md-1 text-center"><%= link_to content_tag(:i, '', class: 'fal fa-edit'), edit_product_path(product), class: 'btn btn-success' %></td>
+        <td class="col-md-1 text-center"><%= link_to content_tag(:i, '', class: 'fa fa-trash'), product, method: :delete, data: { confirm: 'Estas seguro?' }, class: 'btn btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
 
 <%= link_to 'New Product', new_product_path %>

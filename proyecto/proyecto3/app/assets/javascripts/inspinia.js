@@ -277,4 +277,4 @@ function CloseNotification() {
     div.style.display = "none";
 }
 
-    setTimeout(CloseNotification, 5000); 
+    setTimeout(CloseNotification, 2000); 

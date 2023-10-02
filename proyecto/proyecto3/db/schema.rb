@@ -10,22 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_09_28_041259) do
-
-  create_table "item_ordens", force: :cascade do |t|
-    t.integer "producto_id", null: false
-    t.integer "orden_id", null: false
-    t.integer "cantidad"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["orden_id"], name: "index_item_ordens_on_orden_id"
-    t.index ["producto_id"], name: "index_item_ordens_on_producto_id"
-  end
-
-  create_table "ordens", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+ActiveRecord::Schema.define(version: 2023_10_02_202254) do
 
   create_table "order_items", force: :cascade do |t|
     t.integer "quantity"
@@ -40,13 +25,6 @@ ActiveRecord::Schema.define(version: 2023_09_28_041259) do
   create_table "orders", force: :cascade do |t|
     t.integer "subtotal"
     t.integer "total"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "productos", force: :cascade do |t|
-    t.string "nombre"
-    t.string "precio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -70,6 +48,4 @@ ActiveRecord::Schema.define(version: 2023_09_28_041259) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "item_ordens", "ordens"
-  add_foreign_key "item_ordens", "productos"
 end

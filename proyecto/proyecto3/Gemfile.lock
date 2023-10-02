@@ -252,7 +252,7 @@ DEPENDENCIES
   bootstrap (~> 4.3.1)
   byebug
   capybara (>= 3.26)
-  devise (~> 4.9)
+  devise
   font-awesome-rails
   jbuilder (~> 2.7)
   jquery-rails
