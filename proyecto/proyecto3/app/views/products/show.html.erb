@@ -1,14 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @product.title %>
-</p>
+<h1><%= @product.title %></h1>
+<p>Price: $<%= @product.price %></p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
+<%= image_tag @product.image.url if @product.image? %>
+
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
