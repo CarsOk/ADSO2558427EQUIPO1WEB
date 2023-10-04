@@ -1,0 +1,38 @@
+<h1>Shops#index</h1>
+<p>Find me in app/views/shops/index.html.erb</p>
+
+<h1>Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Price</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.title %></td>
+        <td><%= product.price %></td>
+        <td><%= link_to 'Show', shop_path(product) %></td>
+      
+      
+        <td>
+          <%= form_for @order_item, remote: true  do |f|%>
+            <%= f.hidden_field :product_id, :value => product.id%>
+            <%= f.number_field :quantity, :value => 1, :min => 1%>
+            <%= f.submit "Añadir al Carrito" %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<div id="card">
+  <%= render 'cards/card'%>
+</div>

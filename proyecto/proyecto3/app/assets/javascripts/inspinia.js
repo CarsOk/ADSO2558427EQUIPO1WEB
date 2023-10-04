@@ -272,4 +272,9 @@ function WinMove() {
         .disableSelection();
 }
 
+function CloseNotification() {
+    var div = document.getElementById("Notification");
+    div.style.display = "none";
+}
 
+    setTimeout(CloseNotification, 2000); 

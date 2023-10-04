@@ -1,0 +1,41 @@
+<div id="Notification" class="alert alert-info alert-dismissible custom-alert">
+  <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+  <p id="notice"><%= notice %></p>
+</div>
+
+<h1 class="custom-header">Productos</h1>
+
+<table class="table table-bordered custom-table">
+  <thead class="thead-dark">
+    <tr>
+      <th class="col-md-3">Title</th>
+      <th class="col-md-3">Price</th>
+      <th class="col-md-3">Available</th>
+      <th class="text-center">Ver</th>
+      <th class="text-center">Editar</th>
+      <th class="text-center">Eliminar</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.title %></td>
+        <td><%= product.price %></td>
+        <td>
+          <% if product.available == true %>
+            <span class="badge badge-success">Disponible</span>
+          <% else %>
+            <span class="badge badge-danger">No Disponible</span>
+          <% end %>
+        </td>        
+        <td class="col-md-1 text-center"><%= link_to content_tag(:i, '', class: 'fa fa-eye'), product, class: 'btn btn-primary' %></td>
+        <td class="col-md-1 text-center"><%= link_to content_tag(:i, '', class: 'fa fa-edit'), edit_product_path(product), class: 'btn btn-success' %></td>
+        <td class="col-md-1 text-center"><%= link_to content_tag(:i, '', class: 'fa fa-trash'), product, method: :delete, data: { confirm: 'Estas seguro?' }, class: 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= link_to 'New Product', new_product_path %>

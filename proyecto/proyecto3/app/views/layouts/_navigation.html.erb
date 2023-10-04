@@ -14,11 +14,16 @@
             </li>
 
             <li class="<%= is_active_controller('sessions') %>">
-                <a href=""><i class="fa fa-th-large"></i> <span class="nav-label" data-i18n="nav.dashboard">Home</span></a>
+                <%= link_to root_path do %>
+                    <i class="fa fa-th-large"></i> <span class="nav-label" data-i18n="nav.dashboard">Home</span></a>
+                <% end %>
             </li>
-        
-              
-                        
+                 
+            <li class="<%= is_active_controller('products') %>">
+                <%= link_to products_path do %>
+                    <i class="fa fa-product-hunt"></i> <span class="nav-label" data-i18n="nav.dashboard">Products</span></a>
+                <% end %>
+            </li>
             </ul>
             
         </li>
