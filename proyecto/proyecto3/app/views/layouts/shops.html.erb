@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet">
+
+    <!-- Main css styles -->
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <!-- Main javascript files -->
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag asset_path('LogoCurb.png') %>
+  </head>
+
+  <body>
+      <div id="page-wrapper" class="gray-bg <%= @extra_class %>">
+          <%= yield %>          
+          <!-- Footer -->
+          <%= render 'layouts/footer' %>
+      </div>
+  <%= yield :javascript %>
+  
+  </body>
+</html>
