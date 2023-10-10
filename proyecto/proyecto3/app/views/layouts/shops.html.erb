@@ -17,12 +17,8 @@
   </head>
 
   <body>
-      <div id="page-wrapper" class="gray-bg <%= @extra_class %>">
-          <%= yield %>          
-          <!-- Footer -->
-          <%= render 'layouts/footer' %>
-      </div>
-  <%= yield :javascript %>
+    <%= yield %>          
+  </div>
   
   </body>
 </html>
