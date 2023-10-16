@@ -37,32 +37,28 @@
 									</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="#" data-filter="meat">
+									<a class="nav-link" href="#" data-filter="perros calientes">
 										<i class="fa fa-fw fa-hotdog me-1 ms-n2"></i> Perro caliente
 									</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="#" data-filter="burger">
-										<i class="fa fa-fw fa-hamburger me-1 ms-n2"></i> Hamburguesa
-									</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#" data-filter="pizza">
-										<i class="fa fa-fw fa-pizza-slice me-1 ms-n2"></i> Pizza
-									</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#" data-filter="drinks">
-										<i class="fa fa-fw fa-fire me-1 ms-n2"></i> Asados
-									</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#" data-filter="desserts">
+									<a class="nav-link" href="#" data-filter="salchipapas">
 										<i class="fa fa-fw fa-drumstick-bite me-1 ms-n2"></i> Salchipapa
 									</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="#" data-filter="snacks">
+									<a class="nav-link" href="#" data-filter="hamburguesas">
+										<i class="fa fa-fw fa-hamburger me-1 ms-n2"></i> Hamburguesa
+									</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#" data-filter="asados">
+										<i class="fa fa-fw fa-fire me-1 ms-n2"></i> Asados
+									</a>
+								</li>
+
+								<li class="nav-item">
+									<a class="nav-link" href="#" data-filter="bebidas">
 										<i class="fa fa-fw fa-cocktail  me-1 ms-n2"></i> Bebidas
 									</a>
 								</li>
@@ -76,53 +72,27 @@
 				<div class="pos-content">
 					<div class="pos-content-container" data-scrollbar="true" data-height="100%" data-skip-mobile="true">
 						<div class="product-row">
-							<div class="product-container" data-type="meat">
-								<a href="#" class="product" data-bs-toggle="modal" data-bs-target="#modalPosItem">
-								<div class="img" style="background-image: url(<%= asset_path('perrocaliente2.jpg') %>)"></div>
-									<div class="text">
-										<div class="title">Perro Especial&reg;</div>
-										<div class="desc">chicken, egg, mushroom, salad</div>
-										<div class="price">$10.99</div>
-									</div>
-								</a>
+						<% @products.each do |product| %>
+							<div class="product-container" data-type="<%= product.category %>">
+							<a href="#" class="product" data-bs-toggle="modal" data-bs-target="#modalPosItem">
+								<div class="img" style="background-image: url(<%= asset_path(product.image) %>)"></div>
+								<div class="text">
+								<div class="title"><%= product.title %></div>
+								<div class="desc"><%= product.description %></div>
+								<div class="price"><%= number_to_currency(product.price) %></div>
+									<%= form_for @order_item, remote: true do |f| %>
+										<%= f.hidden_field :product_id, value: product.id %>
+										<%= f.number_field :quantity, value: 1, min: 1%>
+										<%= f.submit "Añadir al Carrito"%>
+									<% end %>
+								</div>
+							</a>
 							</div>
-							<div class="product-container" data-type="meat">
-								<a href="#" class="product" data-bs-toggle="modal" data-bs-target="#modalPosItem">
-								<div class="img" style="background-image: url(<%= asset_path('perrocaliente1.jpg') %>)"></div>
-									<div class="text">
-										<div class="title">Perro Ranchero&reg;</div>
-										<div class="desc">pork, egg, mushroom, salad</div>
-										<div class="price">$12.99</div>
-									</div>
-								</a>
-							</div>
-							<div class="product-container" data-type="meat">
-								<a href="#" class="product" data-bs-toggle="modal" data-bs-target="#modalPosItem">
-								<div class="img" style="background-image: url(<%= asset_path('perrocaliente3.jpg') %>)"></div>
-									<div class="text">
-										<div class="title">Perro Extra&reg;</div>
-										<div class="desc">spaghetti, tomato, mushroom </div>
-										<div class="price">$11.99</div>
-									</div>
-								</a>
-							</div>
-							<div class="product-container" data-type="meat">
-								<a href="#" class="product" data-bs-toggle="modal" data-bs-target="#modalPosItem">
-								<div class="img" style="background-image: url(<%= asset_path('perrocaliente4.jpg') %>)"></div>
-									<div class="text">
-										<div class="title">Perro Mega&reg;</div>
-										<div class="desc">apple, carrot, tomato </div>
-										<div class="price">$6.99</div>
-									</div>
-								</a>
-							</div>
-
+						<% end %>
 						</div>
 					</div>
 				</div>
-				<!-- END pos-content -->
-				
-				<!-- BEGIN pos-sidebar -->
+
 				<div class="pos-sidebar" id="pos-sidebar">
 					<div class="pos-sidebar-header">
 						<div class="back-btn">
@@ -235,7 +205,9 @@
 		</div>
 		<!-- END #content -->
 
-
+<div id="card">
+  <%= render 'cards/card'%>
+</div>
 
 
 
@@ -272,13 +244,8 @@
 			  });
 			};
 	  
-			handleFilter(); // Llama a la función cuando el documento se carga
+			handleFilter();
 		  });
    </script>
-	<!-- ================== BEGIN core-js ================== -->
-	<!-- ================== END core-js ================== -->
-	
-	<!-- ================== BEGIN page-js ================== -->
-	<!-- ================== END page-js ================== -->
 </body>
 </html>
