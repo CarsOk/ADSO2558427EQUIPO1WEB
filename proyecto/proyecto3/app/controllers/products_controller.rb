@@ -4,20 +4,39 @@ class ProductsController < ApplicationController
 
   # GET /products or /products.json
   def index
-    @products = Product.all
+    if current_user.admin?
+      @products = Product.all
+    else
+      redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aqui.")
+    end
   end
+
 
   # GET /products/1 or /products/1.json
   def show
+    if current_user.admin?
+      @product = Product.find(params[:id])
+      else
+        redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aqui.")
+      end
   end
 
   # GET /products/new
   def new
+    if current_user.admin?
     @product = Product.new
+    else
+      redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aqui.")
+    end
   end
 
   # GET /products/1/edit
   def edit
+    if current_user.admin?
+      @product = Product.find(params[:id])
+      else
+        redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aqui.")
+      end
   end
 
   # POST /products or /products.json
@@ -50,11 +69,15 @@ class ProductsController < ApplicationController
 
   # DELETE /products/1 or /products/1.json
   def destroy
-    @product.destroy
+    if current_user.admin?
+      @product.destroy
 
-    respond_to do |format|
-      format.html { redirect_to products_url, notice: "Product was successfully destroyed." }
-      format.json { head :no_content }
+      respond_to do |format|
+        format.html { redirect_to products_url, notice: "Product was successfully destroyed." }
+        format.json { head :no_content }
+      end
+    else
+      redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aqui.")
     end
   end
 
