@@ -66,32 +66,39 @@
 						</div>
 					</div>
 				</div>
-				<!-- END pos-menu -->
-				
-				<!-- BEGIN pos-content -->
+
 				<div class="pos-content">
 					<div class="pos-content-container" data-scrollbar="true" data-height="100%" data-skip-mobile="true">
 						<div class="product-row">
-						<% @products.each do |product| %>
-							<div class="product-container" data-type="<%= product.category %>">
-							<a href="#" class="product" data-bs-toggle="modal" data-bs-target="#modalPosItem">
-								<div class="img" style="background-image: url(<%= asset_path(product.image) %>)"></div>
-								<div class="text">
-								<div class="title"><%= product.title %></div>
-								<div class="desc"><%= product.description %></div>
-								<div class="price"><%= number_to_currency(product.price) %></div>
-									<%= form_for @order_item, remote: true do |f| %>
-										<%= f.hidden_field :product_id, value: product.id %>
-										<%= f.number_field :quantity, value: 1, min: 1%>
-										<%= f.submit "Añadir al Carrito"%>
-									<% end %>
-								</div>
-							</a>
-							</div>
-						<% end %>
+							<% @products.each do |product| %>
+								<% if product.available %>
+									<div class="product-container" data-type="<%= product.category %>">
+										<div class="product" data-bs-toggle="modal" data-bs-target="#modalPosItem">
+										<div class="img" style="background-image: url(<%= asset_path(product.image) %>)"></div>
+										<div class="text">
+										<div class="title"><%= product.title %></div>
+										<div class="desc"><%= product.description %></div>
+										<div class="price"><%= number_to_currency(product.price) %></div>
+										<%= form_for @order_item, remote: true do |f| %>
+											<%= f.hidden_field :product_id, value: product.id %>
+											<div class="input-group">
+												<%= f.number_field :quantity, value: 1, min: 1, class: 'form-control col-md-3' %>
+												<div class="input-group-append">
+												<%= f.button type: "submit", class: "btn btn-success" do %>
+													<i class="fa fa-plus"></i> 
+												<% end %>
+												</div>
+											</div>
+										<% end %>
+										</div>
+										</div>
+									</div>
+								<% end %>
+							<% end %>
 						</div>
 					</div>
 				</div>
+
 
 				<div class="pos-sidebar" id="pos-sidebar">
 					<div class="pos-sidebar-header">
@@ -102,14 +109,14 @@
 								</svg>
 							</button>
 						</div>
-						<div class="icon"><img src="../assets/img/pos/icon-table.svg" /></div>
+						<%= image_tag "icon-table.svg", class: "icon", width: 20 %>
 						<div class="title">Table 01</div>
 						<div class="order">Order: <b>#0056</b></div>
 					</div>
 					<div class="pos-sidebar-nav">
 						<ul class="nav nav-tabs nav-fill">
 							<li class="nav-item">
-								<a class="nav-link active" href="#" data-bs-toggle="tab" data-bs-target="#newOrderTab">New Order (5)</a>
+								<a class="nav-link active" href="#" data-bs-toggle="tab" data-bs-target="#newOrderTab">Nueva Orden (<%="#{current_order.order_items.size}"%>)</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="#" data-bs-toggle="tab" data-bs-target="#orderHistoryTab">Order History (0)</a>
@@ -118,29 +125,35 @@
 					</div>
 					<div class="pos-sidebar-body tab-content" data-scrollbar="true" data-height="100%">
 						<div class="tab-pane fade h-100 show active" id="newOrderTab">
-							<div class="pos-table">
-								<div class="row pos-table-row">
-									<div class="col-9">
+							<div id="card-item">
+							<% @order_items.each do |item|%>
+								<div class="pos-table">
+									<div class="row pos-table-row">
+										<div class="col-9">
 										<div class="pos-product-thumb">
-											<div class="img" style="background-image: url(../assets/img/pos/product-2.jpg)"></div>
+											<div class="img" style="background-image: url(<%= asset_path(item.product.image) %>)"></div>
 											<div class="info">
-												<div class="title">Perro Especial </div>
-												<div class="single-price">$10.99</div>
-												<div class="desc">- size: large</div>
-												<div class="input-group qty">
-													<div class="input-group-append">
-														<a href="#" class="btn btn-default"><i class="fa fa-minus"></i></a>
-													</div>
-													<input type="text" class="form-control" value="01" />
-													<div class="input-group-prepend">
-														<a href="#" class="btn btn-default"><i class="fa fa-plus"></i></a>
-													</div>
-												</div>
+											<div class="title"><%= item.product.title %></div>
+											<div class="single-price">$<%= item.product.price %></div>
+											<div class="input-group">
+												<%= form_for item, remote: true do |f|%>
+													<%= f.hidden_field :product_id, :value => item.product.id %>
+													<%= f.number_field :quantity, :value => item.quantity.to_i, class: "col-md-4 quantity" %>
+        											<%= f.button type: "submit", class: "btn btn-success btn-sm" do %>
+														<i class="fa fa-refresh"></i> 
+													<% end %>
+													<%= link_to order_item_path(item), method: :delete, remote: true, class: "btn btn-danger btn-sm" do %>
+														<i class="fa fa-trash"></i>
+													<% end %>
+												<% end %>
+											</div>
 											</div>
 										</div>
+										</div>
+										<div class="col-3 total-price">$<%= item.total %></div>
 									</div>
-									<div class="col-3 total-price">$10.99</div>
 								</div>
+							<%end%>
 							</div>
 						</div>
 						<div class="tab-pane fade h-100" id="orderHistoryTab">
@@ -160,15 +173,15 @@
 					<div class="pos-sidebar-footer">
 						<div class="subtotal">
 							<div class="text">Subtotal</div>
-							<div class="price">$30.98</div>
+							<div class="price">$<%= current_order.subtotal %></div>
 						</div>
 						<div class="taxes">
-							<div class="text">Taxes (6%)</div>
-							<div class="price">$2.12</div>
+							<div class="text">Impuesto (0%)</div>
+							<div class="price">$0</div>
 						</div>
 						<div class="total">
 							<div class="text">Total</div>
-							<div class="price">$33.10</div>
+							<div class="price">$<%= current_order.subtotal %></div>
 						</div>
 						<div class="btn-row">
 							<a href="#" class="btn btn-default"><i class="fa fa-bell fa-fw fa-lg"></i> Service</a>
@@ -177,22 +190,7 @@
 						</div>
 					</div>
 				</div>
-				<!-- END pos-sidebar -->
 			</div>
-			<!-- END pos -->
-			
-			<!-- BEGIN pos-mobile-sidebar-toggler -->
-			<a href="#" class="pos-mobile-sidebar-toggler" data-toggle-class="pos-mobile-sidebar-toggled" data-target="#pos-customer">
-				<svg viewBox="0 0 16 16" class="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-					<path fill-rule="evenodd" d="M14 5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V5zM1 4v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4H1z"/>
-					<path d="M8 1.5A2.5 2.5 0 0 0 5.5 4h-1a3.5 3.5 0 1 1 7 0h-1A2.5 2.5 0 0 0 8 1.5z"/>
-				</svg>
-				<span class="badge">5</span>
-			</a>
-			<!-- END pos-mobile-sidebar-toggler -->
-		</div>
-		<!-- END #content -->
-	<!-- END #app -->
 
 			<a href="#" class="pos-mobile-sidebar-toggler" data-toggle-class="pos-mobile-sidebar-toggled" data-target="#pos-customer">
 				<svg viewBox="0 0 16 16" class="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -201,28 +199,21 @@
 				</svg>
 				<span class="badge">5</span>
 			</a>
-			<!-- END pos-mobile-sidebar-toggler -->
 		</div>
-		<!-- END #content -->
-
-<div id="card">
-  <%= render 'cards/card'%>
-</div>
 
 
+			<a href="#" class="pos-mobile-sidebar-toggler" data-toggle-class="pos-mobile-sidebar-toggled" data-target="#pos-customer">
+				<svg viewBox="0 0 16 16" class="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" d="M14 5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V5zM1 4v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4H1z"/>
+					<path d="M8 1.5A2.5 2.5 0 0 0 5.5 4h-1a3.5 3.5 0 1 1 7 0h-1A2.5 2.5 0 0 0 8 1.5z"/>
+				</svg>
+				<span class="badge">5</span>
+			</a>
+
+		</div>
 
 
 	<script>
-
-	<!---AQUI ESTAN LOS JS QUE USA ESTA VISTA---->
-		$(document).ready(function() {
-			// Escucha el clic en el botón y muestra el modal
-			$('#openModalButton').click(function() {
-			$('#modalPosItem').modal('show');
-			});
-		});
-
-
 
 		$(document).ready(function() {
 			var handleFilter = function() {
@@ -246,6 +237,12 @@
 	  
 			handleFilter();
 		  });
+
+		  var reloadButton = document.getElementById("reloadButton");
+
+			reloadButton.addEventListener("click", function() {
+				location.reload();
+			});
    </script>
 </body>
 </html>
