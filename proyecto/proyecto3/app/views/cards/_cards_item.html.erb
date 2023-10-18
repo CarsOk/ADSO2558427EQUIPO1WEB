@@ -1,22 +1,89 @@
-<% @order_items.each do |item|%>
-    <h3><%= item.product.title %></h3>
-    <h5><%= item.product.price %></h5>
-
-
-    <%= form_for item, remote: true do |f|%>
-        <%= f.hidden_field :product_id, :value => item.product.id %>
-        <%= f.number_field :quantity, :value => item.quantity.to_i%>
-        <%= f.submit "Update Card" %>
-
-        <%= link_to order_item_path(item), method: :delete, remote: true, class: "btn btn-danger btn-circle" do %>
-            <i class="fa fa-trash"></i>
-        <% end %>
-
-
-    <% end %>
-
-    <h2>Subtotal: <%= item.total %></h2>
-<% end %>
-
-
-<h3>Your current card value has a subtotal of: <%= current_order.subtotal %></h3>
+<div class="pos-sidebar" id="pos-sidebar">
+					<div class="pos-sidebar-header">
+						<div class="back-btn">
+							<button type="button" data-dismiss-class="pos-mobile-sidebar-toggled" data-target="#pos-customer" class="btn">
+								<svg viewBox="0 0 16 16" class="bi bi-chevron-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+								</svg>
+							</button>
+						</div>
+						<%= image_tag "icon-table.svg", class: "icon", width: 20 %>
+						<div class="title">Table 01</div>
+						<div class="order">Order: <b>#0056</b></div>
+					</div>
+					<div class="pos-sidebar-nav">
+						<ul class="nav nav-tabs nav-fill">
+							<li class="nav-item">
+								<a class="nav-link active" href="#" data-bs-toggle="tab" data-bs-target="#newOrderTab">Nueva Orden (<%="#{current_order.order_items.size}"%>)</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#" data-bs-toggle="tab" data-bs-target="#orderHistoryTab">Order History (0)</a>
+							</li>
+						</ul>
+					</div>
+					<div class="pos-sidebar-body tab-content" data-scrollbar="true" data-height="100%">
+						<div class="tab-pane fade h-100 show active" id="newOrderTab">
+							<% @order_items.each do |item|%>
+								<div class="pos-table">
+									<div class="row pos-table-row">
+										<div class="col-9">
+										<div class="pos-product-thumb">
+											<div class="img" style="background-image: url(<%= asset_path(item.product.image) %>)"></div>
+											<div class="info">
+											<div class="title"><%= item.product.title %></div>
+											<div class="single-price">$<%= item.product.price %></div>
+											<div class="input-group">
+												<%= form_for item, remote: true do |f|%>
+													<%= f.hidden_field :product_id, :value => item.product.id %>
+													<%= f.number_field :quantity, :value => item.quantity.to_i, class: "col-md-4 quantity" %>
+        											<%= f.button type: "submit", class: "btn btn-success btn-sm" do %>
+														<i class="fa fa-refresh"></i> 
+													<% end %>
+													<%= link_to order_item_path(item), method: :delete, remote: true, class: "btn btn-danger btn-sm" do %>
+														<i class="fa fa-trash"></i>
+													<% end %>
+												<% end %>
+											</div>
+											</div>
+										</div>
+										</div>
+										<div class="col-3 total-price">$<%= item.total %></div>
+									</div>
+								</div>
+							<%end%>
+						</div>
+						<div class="tab-pane fade h-100" id="orderHistoryTab">
+							<div class="h-100 d-flex align-items-center justify-content-center text-center p-20">
+								<div>
+									<div class="mb-3 mt-n5">
+										<svg width="6em" height="6em" viewBox="0 0 16 16" class="text-gray-300" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+											<path fill-rule="evenodd" d="M14 5H2v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V5zM1 4v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4H1z"/>
+											<path d="M8 1.5A2.5 2.5 0 0 0 5.5 4h-1a3.5 3.5 0 1 1 7 0h-1A2.5 2.5 0 0 0 8 1.5z"/>
+										</svg>
+									</div>
+									<h4>No order history found</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="pos-sidebar-footer">
+						<div class="subtotal">
+							<div class="text">Subtotal</div>
+							<div class="price">$<%= current_order.subtotal %></div>
+						</div>
+						<div class="taxes">
+							<div class="text">Impuesto (0%)</div>
+							<div class="price">$0</div>
+						</div>
+						<div class="total">
+							<div class="text">Total</div>
+							<div class="price">$<%= current_order.subtotal %></div>
+						</div>
+						<div class="btn-row">
+							<a href="#" class="btn btn-default"><i class="fa fa-bell fa-fw fa-lg"></i> Service</a>
+							<a href="#" class="btn btn-default"><i class="fa fa-file-invoice-dollar fa-fw fa-lg"></i> Bill</a>
+							<a href="#" class="btn btn-success"><i class="fa fa-check fa-fw fa-lg"></i> Submit Order</a>
+						</div>
+					</div>
+				</div>
+			</div>

@@ -1,31 +1,41 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_product, only: %i[show edit update destroy]
-  
+  skip_before_action :authenticate_user!, only: [:index, :show], if: -> { request.format.json? }
+
 
   def index
-    if current_user.admin?
+    if request.format.json?
       @products = Product.all
-      respond_to do |format|
-        format.html
-        format.json { render json: @products }
-      end
+      render json: @products
     else
-      redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
+      if current_user && current_user.admin?
+        @products = Product.all
+        respond_to do |format|
+          format.html
+        end
+      else
+        redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
+      end
     end
   end
 
   def show
-    if current_user.admin?
+    if request.format.json?
       @product = Product.find(params[:id])
-      respond_to do |format|
-        format.html
-        format.json { render json: @product }
-      end
+      render json: @product
     else
-      redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
+      if current_user && current_user.admin?
+        @product = Product.find(params[:id])
+        respond_to do |format|
+          format.html
+        end
+      else
+        redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
+      end
     end
   end
+
 
   def new
     if current_user.admin?

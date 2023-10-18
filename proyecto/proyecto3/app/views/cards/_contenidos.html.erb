@@ -1,0 +1,25 @@
+	<% @products.each do |product| %>
+		<% if product.available %>
+			<div class="product-container" data-type="<%= product.category %>">
+				<div class="product" data-bs-toggle="modal" data-bs-target="#modalPosItem">
+				<div class="img" style="background-image: url(<%= asset_path(product.image) %>)"></div>
+				<div class="text">
+				<div class="title"><%= product.title %></div>
+				<div class="desc"><%= product.description %></div>
+				<div class="price"><%= number_to_currency(product.price) %></div>
+				<%= form_for @order_item, remote: true do |f| %>
+					<%= f.hidden_field :product_id, value: product.id %>
+					<div class="input-group">
+						<%= f.number_field :quantity, value: 1, min: 1, class: 'form-control col-md-3' %>
+						<div class="input-group-append">
+						<%= f.button type: "submit", class: "btn btn-success custom-button" do %>
+							<i class="fa fa-plus"></i>
+						<% end %>
+						</div>
+					</div>
+				<% end %>
+				</div>
+				</div>
+			</div>
+		<% end %>
+	<% end %>
