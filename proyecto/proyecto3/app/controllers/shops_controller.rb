@@ -5,13 +5,11 @@ class ShopsController < ApplicationController
   def index
     @products = Product.all
     @order_item = current_order.order_items.new
-  end
+    
+    @order_items = current_order.order_items
 
-  def show
-    @product = Product.find(params[:id])
   end
   def custom_action
-    # Tu código aquí
     render layout: 'shops' 
   end
 end

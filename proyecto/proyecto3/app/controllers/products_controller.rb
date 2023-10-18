@@ -1,45 +1,50 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_product, only: %i[ show edit update destroy ]
+  before_action :set_product, only: %i[show edit update destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show], if: -> { request.format.json? }
 
-  # GET /products or /products.json
+
   def index
-    if current_user.admin?
+    if request.format.json?
       @products = Product.all
+      render json: @products
     else
-      redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aqui.")
+      if current_user && current_user.admin?
+        @products = Product.all
+        respond_to do |format|
+          format.html
+        end
+      else
+        redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
+      end
+    end
+  end
+
+  def show
+    if request.format.json?
+      @product = Product.find(params[:id])
+      render json: @product
+    else
+      if current_user && current_user.admin?
+        @product = Product.find(params[:id])
+        respond_to do |format|
+          format.html
+        end
+      else
+        redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
+      end
     end
   end
 
 
-  # GET /products/1 or /products/1.json
-  def show
-    if current_user.admin?
-      @product = Product.find(params[:id])
-      else
-        redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aqui.")
-      end
-  end
-
-  # GET /products/new
   def new
     if current_user.admin?
-    @product = Product.new
+      @product = Product.new
     else
-      redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aqui.")
+      redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
     end
   end
 
-  # GET /products/1/edit
-  def edit
-    if current_user.admin?
-      @product = Product.find(params[:id])
-      else
-        redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aqui.")
-      end
-  end
-
-  # POST /products or /products.json
   def create
     @product = Product.new(product_params)
 
@@ -54,7 +59,14 @@ class ProductsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /products/1 or /products/1.json
+  def edit
+    if current_user.admin?
+      @product = Product.find(params[:id])
+    else
+      redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
+    end
+  end
+
   def update
     respond_to do |format|
       if @product.update(product_params)
@@ -67,7 +79,6 @@ class ProductsController < ApplicationController
     end
   end
 
-  # DELETE /products/1 or /products/1.json
   def destroy
     if current_user.admin?
       @product.destroy
@@ -77,18 +88,16 @@ class ProductsController < ApplicationController
         format.json { head :no_content }
       end
     else
-      redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aqui.")
+      redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_product
-      @product = Product.find(params[:id])
-    end
+  def set_product
+    @product = Product.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def product_params
-      params.require(:product).permit(:title, :price, :image, :description, :available, :category)
-    end
+  def product_params
+    params.require(:product).permit(:title, :price, :image, :description, :available, :category)
+  end
 end
