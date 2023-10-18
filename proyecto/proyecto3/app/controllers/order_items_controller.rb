@@ -13,8 +13,6 @@ class OrderItemsController < ApplicationController
         @order_item = @order.order_items.find(params[:id])
         if @order_item.update(order_params)
           @order_items = current_order.order_items
-        else
-            puts "no sirve"
         end
       end
       
