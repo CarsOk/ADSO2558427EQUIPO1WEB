@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2023_10_11_023926) do
-
+ActiveRecord::Schema.define(version: 2023_10_15_182806) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "btree_gin"
@@ -38,6 +36,11 @@ ActiveRecord::Schema.define(version: 2023_10_11_023926) do
   enable_extension "uuid-ossp"
   enable_extension "xml2"
 
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "order_items", force: :cascade do |t|
     t.integer "quantity"
     t.integer "product_id"
@@ -46,6 +49,16 @@ ActiveRecord::Schema.define(version: 2023_10_11_023926) do
     t.integer "unit_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "orderables", force: :cascade do |t|
+    t.bigint "product_id", null: false
+    t.bigint "cart_id", null: false
+    t.integer "quantity"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cart_id"], name: "index_orderables_on_cart_id"
+    t.index ["product_id"], name: "index_orderables_on_product_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -79,4 +92,6 @@ ActiveRecord::Schema.define(version: 2023_10_11_023926) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "orderables", "carts"
+  add_foreign_key "orderables", "products"
 end

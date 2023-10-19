@@ -61,3 +61,5 @@ gem "carrierwave"
 gem "pundit", "~> 2.3"
 gem "fog"
 gem "fog-aws"
+gem 'turbo-rails'
+gem 'hotwire-rails'
