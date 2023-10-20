@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_product, only: %i[show edit update destroy]
-  skip_before_action :authenticate_user!, only: [:index, :show], if: -> { request.format.json? }
+  skip_before_action :authenticate_user!, only: [:index, :show, :new, :create, :edit, :update, :destroy], if: -> { request.format.json? }
 
 
   def index
