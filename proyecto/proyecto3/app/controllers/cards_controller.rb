@@ -7,6 +7,7 @@ class CardsController < ApplicationController
   end
 
   def custom_action
+    # Tu código aquí
     render layout: 'shops' 
   end
 end

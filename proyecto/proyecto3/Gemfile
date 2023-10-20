@@ -59,7 +59,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "devise"
 gem "carrierwave"
 gem "pundit", "~> 2.3"
+<<<<<<< HEAD
 gem "fog"
 gem "fog-aws"
 gem 'turbo-rails'
 gem 'hotwire-rails'
+=======
+>>>>>>> parent of d05950d6 (update)

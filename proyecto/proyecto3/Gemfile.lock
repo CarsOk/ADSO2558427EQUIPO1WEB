@@ -1,7 +1,6 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    CFPropertyList (2.3.6)
     actioncable (6.1.7.6)
       actionpack (= 6.1.7.6)
       activesupport (= 6.1.7.6)
@@ -63,12 +62,8 @@ GEM
       zeitwerk (~> 2.3)
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
-    aliyun-sdk (0.8.0)
-      nokogiri (~> 1.6)
-      rest-client (~> 2.0)
     autoprefixer-rails (10.4.15.0)
       execjs (~> 2)
-    base64 (0.1.1)
     bcrypt (3.1.19)
     bindex (0.8.1)
     bootsnap (1.16.0)
@@ -98,197 +93,21 @@ GEM
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     date (3.3.3)
-    declarative (0.0.20)
     devise (4.9.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    domain_name (0.5.20190701)
-      unf (>= 0.0.5, < 1.0.0)
-    dry-inflector (1.0.0)
     erubi (1.12.0)
-    excon (0.104.0)
     execjs (2.9.1)
-    faraday (2.7.11)
-      base64
-      faraday-net_http (>= 2.0, < 3.1)
-      ruby2_keywords (>= 0.0.4)
-    faraday-net_http (3.0.2)
     ffi (1.15.5)
     ffi (1.15.5-x64-mingw-ucrt)
-    fission (0.5.0)
-      CFPropertyList (~> 2.2)
-    fog (2.3.0)
-      fog-aliyun (>= 0.1.0)
-      fog-atmos
-      fog-aws (>= 0.6.0)
-      fog-brightbox (>= 0.4, < 2.0)
-      fog-cloudatcost (~> 0.4)
-      fog-cloudstack (~> 0.1.0)
-      fog-core (~> 2.1)
-      fog-digitalocean (>= 0.3.0)
-      fog-dnsimple (~> 2.1)
-      fog-dynect (>= 0.0.2, < 0.6.0)
-      fog-ecloud (~> 0.1)
-      fog-google (~> 1.0)
-      fog-internet-archive
-      fog-json
-      fog-local
-      fog-openstack
-      fog-ovirt
-      fog-powerdns (>= 0.1.1)
-      fog-profitbricks
-      fog-rackspace
-      fog-radosgw (>= 0.0.2)
-      fog-riakcs
-      fog-sakuracloud (>= 0.0.4)
-      fog-serverlove
-      fog-softlayer
-      fog-storm_on_demand
-      fog-terremark
-      fog-vmfusion
-      fog-voxel
-      fog-vsphere (>= 0.4.0)
-      fog-xenserver
-      fog-xml (~> 0.1.1)
-      ipaddress (~> 0.5)
-      json (~> 2.3)
-    fog-aliyun (0.4.0)
-      addressable (~> 2.8.0)
-      aliyun-sdk (~> 0.8.0)
-      fog-core
-      fog-json
-      ipaddress (~> 0.8)
-      xml-simple (~> 1.1)
-    fog-atmos (0.1.0)
-      fog-core
-      fog-xml
-    fog-aws (3.21.0)
-      fog-core (~> 2.1)
-      fog-json (~> 1.1)
-      fog-xml (~> 0.1)
-    fog-brightbox (1.11.0)
-      dry-inflector
-      fog-core (>= 1.45, < 3.0)
-      fog-json
-    fog-cloudatcost (0.4.0)
-      fog-core
-      fog-json
-      ipaddress
-    fog-cloudstack (0.1.0)
-      fog-core (~> 2.1)
-      fog-json (~> 1.1)
-      fog-xml (~> 0.1)
-    fog-core (2.2.4)
-      builder
-      excon (~> 0.71)
-      formatador (~> 0.2)
-      mime-types
-    fog-digitalocean (0.4.0)
-      fog-core
-      fog-json
-      fog-xml
-      ipaddress (>= 0.5)
-    fog-dnsimple (2.1.0)
-      fog-core (>= 1.38, < 3)
-      fog-json
-    fog-dynect (0.5.0)
-      fog-core
-      fog-json
-      fog-xml
-    fog-ecloud (0.3.0)
-      fog-core
-      fog-xml
-    fog-google (1.22.0)
-      addressable (>= 2.7.0)
-      fog-core (< 2.3)
-      fog-json (~> 1.2)
-      fog-xml (~> 0.1.0)
-      google-apis-compute_v1 (~> 0.53)
-      google-apis-dns_v1 (~> 0.28)
-      google-apis-iamcredentials_v1 (~> 0.15)
-      google-apis-monitoring_v3 (~> 0.37)
-      google-apis-pubsub_v1 (~> 0.30)
-      google-apis-sqladmin_v1beta4 (~> 0.38)
-      google-apis-storage_v1 (>= 0.19, < 1)
-      google-cloud-env (~> 1.2)
-    fog-internet-archive (0.0.2)
-      fog-core
-      fog-json
-      fog-xml
-    fog-json (1.2.0)
-      fog-core
-      multi_json (~> 1.10)
-    fog-local (0.8.0)
-      fog-core (>= 1.27, < 3.0)
-    fog-openstack (1.1.0)
-      fog-core (~> 2.1)
-      fog-json (>= 1.0)
-    fog-ovirt (2.0.2)
-      activesupport
-      fog-core
-      fog-json
-      fog-xml
-      ovirt-engine-sdk (>= 4.3.1)
-    fog-powerdns (0.2.0)
-      fog-core
-      fog-json
-      fog-xml
-    fog-profitbricks (0.0.5)
-      fog-core
-      fog-xml
-      nokogiri
-    fog-rackspace (0.1.6)
-      fog-core (>= 1.35)
-      fog-json (>= 1.0)
-      fog-xml (>= 0.1)
-      ipaddress (>= 0.8)
-    fog-radosgw (0.0.5)
-      fog-core (>= 1.21.0)
-      fog-json
-      fog-xml (>= 0.0.1)
-    fog-riakcs (0.1.0)
-      fog-core
-      fog-json
-      fog-xml
-    fog-sakuracloud (1.7.5)
-      fog-core
-      fog-json
-    fog-serverlove (0.1.2)
-      fog-core
-      fog-json
-    fog-softlayer (1.1.4)
-      fog-core
-      fog-json
-    fog-storm_on_demand (0.1.1)
-      fog-core
-      fog-json
-    fog-terremark (0.1.0)
-      fog-core
-      fog-xml
-    fog-vmfusion (0.1.0)
-      fission
-      fog-core
-    fog-voxel (0.1.0)
-      fog-core
-      fog-xml
-    fog-vsphere (3.6.2)
-      fog-core
-      rbvmomi2 (~> 3.0)
-    fog-xenserver (1.0.0)
-      fog-core
-      fog-xml
-      xmlrpc
-    fog-xml (0.1.4)
-      fog-core
-      nokogiri (>= 1.5.11, < 2.0.0)
     font-awesome-rails (4.7.0.8)
       railties (>= 3.2, < 8.0)
-    formatador (0.3.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
+<<<<<<< HEAD
     google-apis-compute_v1 (0.81.0)
       google-apis-core (>= 0.11.0, < 2.a)
     google-apis-core (0.11.1)
@@ -328,12 +147,13 @@ GEM
     http-cookie (1.0.5)
       domain_name (~> 0.5)
     httpclient (2.8.3)
+=======
+>>>>>>> parent of d05950d6 (update)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.2)
       mini_magick (>= 4.9.5, < 5)
       ruby-vips (>= 2.0.17, < 3)
-    ipaddress (0.8.3)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -341,8 +161,6 @@ GEM
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
-    json (2.6.3)
-    jwt (2.7.1)
     loofah (2.21.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -354,14 +172,10 @@ GEM
     marcel (1.0.2)
     matrix (0.4.2)
     method_source (1.0.0)
-    mime-types (3.5.1)
-      mime-types-data (~> 3.2015)
-    mime-types-data (3.2023.1003)
     mini_magick (4.12.0)
     mini_mime (1.1.5)
     minitest (5.20.0)
     msgpack (1.7.2)
-    multi_json (1.15.0)
     net-imap (0.3.7)
       date
       net-protocol
@@ -371,17 +185,12 @@ GEM
       timeout
     net-smtp (0.4.0)
       net-protocol
-    netrc (0.11.0)
     nio4r (2.5.9)
     nokogiri (1.15.4-x64-mingw-ucrt)
       racc (~> 1.4)
     nokogiri (1.15.4-x86_64-linux)
       racc (~> 1.4)
-    optimist (3.1.0)
     orm_adapter (0.5.0)
-    os (1.1.4)
-    ovirt-engine-sdk (4.4.1)
-      json (>= 1, < 3)
     pg (1.5.4)
     pg (1.5.4-x64-mingw-ucrt)
     popper_js (1.16.1)
@@ -427,29 +236,13 @@ GEM
       rake (>= 12.2)
       thor (~> 1.0)
     rake (13.0.6)
-    rbvmomi2 (3.7.0)
-      builder (~> 3.2)
-      json (~> 2.3)
-      nokogiri (~> 1.12, >= 1.12.5)
-      optimist (~> 3.0)
     regexp_parser (2.8.1)
-    representable (3.2.0)
-      declarative (< 0.1.0)
-      trailblazer-option (>= 0.1.1, < 0.2.0)
-      uber (< 0.2.0)
     responders (3.1.0)
       actionpack (>= 5.2)
       railties (>= 5.2)
-    rest-client (2.1.0)
-      http-accept (>= 1.7.0, < 2.0)
-      http-cookie (>= 1.0.2, < 2.0)
-      mime-types (>= 1.16, < 4.0)
-      netrc (~> 0.8)
-    retriable (3.1.2)
     rexml (3.2.6)
     ruby-vips (2.1.4)
       ffi (~> 1.12)
-    ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -466,11 +259,6 @@ GEM
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
     semantic_range (3.0.0)
-    signet (0.18.0)
-      addressable (~> 2.8)
-      faraday (>= 0.17.5, < 3.a)
-      jwt (>= 1.5, < 3.0)
-      multi_json (~> 1.10)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -484,11 +272,14 @@ GEM
     thor (1.2.2)
     tilt (2.3.0)
     timeout (0.4.0)
+<<<<<<< HEAD
     trailblazer-option (0.1.2)
     turbo-rails (1.5.0)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)
+=======
+>>>>>>> parent of d05950d6 (update)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -496,11 +287,6 @@ GEM
       concurrent-ruby (~> 1.0)
     tzinfo-data (1.2023.3)
       tzinfo (>= 1.0.0)
-    uber (0.1.0)
-    unf (0.1.4)
-      unf_ext
-    unf_ext (0.0.8.2)
-    unf_ext (0.0.8.2-x64-mingw-ucrt)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.1)
@@ -517,15 +303,10 @@ GEM
       rack-proxy (>= 0.6.1)
       railties (>= 5.2)
       semantic_range (>= 2.3.0)
-    webrick (1.8.1)
     websocket (1.2.10)
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    xml-simple (1.1.9)
-      rexml
-    xmlrpc (0.3.3)
-      webrick
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.6.11)
@@ -541,8 +322,6 @@ DEPENDENCIES
   capybara (>= 3.26)
   carrierwave
   devise
-  fog
-  fog-aws
   font-awesome-rails
   hotwire-rails
   jbuilder (~> 2.7)
