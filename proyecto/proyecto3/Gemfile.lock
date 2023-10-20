@@ -139,10 +139,6 @@ GEM
       multi_json (~> 1.11)
       os (>= 0.9, < 2.0)
       signet (>= 0.16, < 2.a)
-    hotwire-rails (0.1.3)
-      rails (>= 6.0.0)
-      stimulus-rails
-      turbo-rails
     http-accept (1.7.0)
     http-cookie (1.0.5)
       domain_name (~> 0.5)
@@ -267,19 +263,20 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     ssrf_filter (1.1.2)
-    stimulus-rails (1.3.0)
-      railties (>= 6.0.0)
     thor (1.2.2)
     tilt (2.3.0)
     timeout (0.4.0)
 <<<<<<< HEAD
     trailblazer-option (0.1.2)
+<<<<<<< HEAD
     turbo-rails (1.5.0)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)
 =======
 >>>>>>> parent of d05950d6 (update)
+=======
+>>>>>>> parent of 9c82f891 (update)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -323,7 +320,6 @@ DEPENDENCIES
   carrierwave
   devise
   font-awesome-rails
-  hotwire-rails
   jbuilder (~> 2.7)
   jquery-rails
   pg (~> 1.1)
@@ -333,7 +329,6 @@ DEPENDENCIES
   rails (~> 6.1.7, >= 6.1.7.6)
   sass-rails (>= 6)
   selenium-webdriver (>= 4.0.0.rc1)
-  turbo-rails
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)

@@ -61,8 +61,12 @@ gem "carrierwave"
 gem "pundit", "~> 2.3"
 <<<<<<< HEAD
 gem "fog"
+<<<<<<< HEAD
 gem "fog-aws"
 gem 'turbo-rails'
 gem 'hotwire-rails'
 =======
 >>>>>>> parent of d05950d6 (update)
+=======
+gem "fog-aws"
+>>>>>>> parent of 9c82f891 (update)

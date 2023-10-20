@@ -7,10 +7,10 @@
 				<div class="title"><%= product.title %></div>
 				<div class="desc"><%= product.description %></div>
 				<div class="price"><%= number_to_currency(product.price) %></div>
-				<%= form_with(url: cart_add_path) do |f| %>
+				<%= form_for @order_item, remote: true do |f| %>
 					<%= f.hidden_field :product_id, value: product.id %>
 					<div class="input-group">
-						<%= f.number_field :quantity, value: 0, min: 1, class: 'form-control col-md-3' %>
+						<%= f.number_field :quantity, value: 1, min: 1, class: 'form-control col-md-3' %>
 						<div class="input-group-append">
 						<%= f.button type: "submit", class: "btn btn-success custom-button" do %>
 							<i class="fa fa-plus"></i>
