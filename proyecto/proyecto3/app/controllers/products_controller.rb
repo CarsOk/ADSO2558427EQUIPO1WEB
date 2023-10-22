@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_product, only: %i[show edit update destroy]
   skip_before_action :authenticate_user!, if: -> { request.format.json? }
+  skip_before_action :verify_authenticity_token, if: -> { self.json_request? }
 
   def index
     if request.format.json?
@@ -98,5 +99,9 @@ class ProductsController < ApplicationController
 
   def product_params
     params.require(:product).permit(:title, :price, :image, :description, :available, :category)
+  end
+
+  def json_request?
+    self.request.format.json?
   end
 end
