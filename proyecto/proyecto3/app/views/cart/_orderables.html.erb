@@ -87,7 +87,9 @@
 						<div class="btn-row">
 							<a href="#" class="btn btn-default"><i class="fa fa-bell fa-fw fa-lg"></i> Service</a>
 							<a href="#" class="btn btn-default"><i class="fa fa-file-invoice-dollar fa-fw fa-lg"></i> Bill</a>
-							<a href="#" class="btn btn-success"><i class="fa fa-check fa-fw fa-lg"></i> Submit Order</a>
+							<%= form_tag finish_order_cart_index_path, method: :post do %>
+							<%= submit_tag 'Finalizar Orden', class: 'btn btn-success' %>
+							<% end %>
 						</div>
 					</div>
 				</div>

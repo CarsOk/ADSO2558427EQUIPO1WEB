@@ -30,7 +30,11 @@
                     <i class="fa fa-shopping-cart"></i> <span class="nav-label" data-i18n="nav.dashboard">Shops</span></a>
                 <% end %>
             </li>
-
+            <li class="<%= is_active_controller('orders') %>">
+                <%= link_to orders_path do %>
+                    <i class="fa fa-folder"></i> <span class="nav-label" data-i18n="nav.dashboard">Orders</span></a>
+                <% end %>
+            </li>
             </ul>
             
         </li>

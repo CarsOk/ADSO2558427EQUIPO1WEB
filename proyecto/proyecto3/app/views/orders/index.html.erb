@@ -1,0 +1,28 @@
+<div id="Notification" class="alert alert-info alert-dismissible custom-alert">
+  <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+  <p id="notice"><%= notice %></p>
+</div>
+
+<h1 class="custom-header">Órdenes</h1>
+
+<table class="table table-bordered custom-table">
+  <thead class="thead-dark">
+    <tr>
+      <th class="col-md-3">Número de Orden</th>
+      <th class="col-md-3">Fecha de Creación</th>
+      <th class="text-center">Detalles</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.id %></td>
+        <td><%= order.created_at.strftime('%d/%m/%Y %H:%M') %></td>
+        <td class="col-md-1 text-center"><%= link_to content_tag(:i, '', class: 'fa fa-eye'), order, class: 'btn btn-primary' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Nueva Orden', shops_path, class: 'btn btn-primary' %>

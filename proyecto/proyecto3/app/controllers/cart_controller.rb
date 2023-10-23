@@ -39,7 +39,13 @@ class CartController < ApplicationController
   end
 
   def finish_order
-    @cart.orderables.destroy_all # Limpia el carrito actual
-    redirect_to shops_path, notice: 'Orden finalizada con éxito. Una nueva orden ha sido creada.'
+    order = current_user.orders.create(total: @cart.total)
+
+    @cart.orderables.each do |orderable|
+      order.order_products.create(product: orderable.product, quantity: orderable.quantity)
+    end
+  
+    @cart.orderables.destroy_all
+    redirect_to order, notice: 'Orden finalizada con éxito. Una nueva orden ha sido creada.'
   end
 end
