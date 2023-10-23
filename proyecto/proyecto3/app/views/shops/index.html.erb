@@ -70,14 +70,14 @@
 				<div class="pos-content">
 					<div class="pos-content-container" data-scrollbar="true" data-height="100%" data-skip-mobile="true">
 						<div class="product-row">
-							<%= render 'cards/contenidos' %>
+							<% @products.each do |product| %>
+								<%= render 'products/product', product: product %>
+							<% end %>
 						</div>
 					</div>
 				</div>
 
-				<div id="card-item">
-					<%= render 'cards/cards_item' %>
-				</div>
+        <%= render 'cart/cart' %>
 
 	<script>
 
@@ -103,12 +103,6 @@
 	  
 			handleFilter();
 		  });
-
-		$('.custom-button').on('click', function(event) {
-			setTimeout(function() {
-			location.reload();
-			}, 10);
-		});
 
    </script>
 </body>
