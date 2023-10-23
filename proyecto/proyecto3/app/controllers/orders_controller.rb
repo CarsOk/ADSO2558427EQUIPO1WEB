@@ -12,9 +12,13 @@ class OrdersController < ApplicationController
     def show
       @order = Order.find(params[:id])
       @products = @order.products
-      puts @products.inspect
     end
 
+    def destroy
+      @order = current_user.orders.find(params[:id])
+      @order.destroy
+      redirect_to orders_path, notice: 'Orden eliminada con éxito.'
+    end
 
     def create
       @order = current_user.orders.build(order_params)

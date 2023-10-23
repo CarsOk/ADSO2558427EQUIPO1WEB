@@ -8,9 +8,11 @@
 <table class="table table-bordered custom-table">
   <thead class="thead-dark">
     <tr>
-      <th class="col-md-3">Número de Orden</th>
+      <th class="col-md-3">ID Orden</th>
       <th class="col-md-3">Fecha de Creación</th>
+      <th class="col-md-3">Total de la Orden</th>
       <th class="text-center">Detalles</th>
+      <th class="text-center">Eliminar</th>
     </tr>
   </thead>
 
@@ -19,10 +21,17 @@
       <tr>
         <td><%= order.id %></td>
         <td><%= order.created_at.strftime('%d/%m/%Y %H:%M') %></td>
-        <td class="col-md-1 text-center"><%= link_to content_tag(:i, '', class: 'fa fa-eye'), order, class: 'btn btn-primary' %></td>
+        <td><%= number_to_currency(order.total) %></td>
+        <td class="col-md-1 text-center">
+          <%= link_to content_tag(:i, '', class: 'fa fa-eye'), order, class: 'btn btn-primary' %>
+        </td>
+        <td class="col-md-1 text-center">
+          <%= link_to content_tag(:i, '', class: 'fa fa-trash'), order, method: :delete, data: { confirm: '¿Estás seguro?' }, class: 'btn btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <%= link_to 'Nueva Orden', shops_path, class: 'btn btn-primary' %>
+

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   post 'cart/remove'
   devise_for :users
   resources :products
-  resources :orders, only: [:new, :create, :show, :edit, :update, :index]
+  resources :orders, only: [:new, :create, :show, :edit, :destroy, :update, :index]
   resource :sessions, only:[:index] 
   resource :cards, only:[:show]
   resources :shops, only:[:index, :show]

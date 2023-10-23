@@ -9,7 +9,7 @@
         <%= form_with(url: cart_add_path) do |f| %>
           <%= f.hidden_field :id, value: product.id %>
           <div class="input-group">
-            <%= f.number_field :quantity, value: 1, min: 1, class: 'form-control col-md-3' %>
+            <%= f.number_field :quantity, value: 1, min: 1, class: 'form-control col-md-6' %>
             <div class="input-group-append">
             <%= f.button type: "submit", class: "btn btn-success" do %>
                 <i class="fa fa-plus"></i>

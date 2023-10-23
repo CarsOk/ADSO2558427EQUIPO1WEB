@@ -18,6 +18,7 @@
       <th class="col-md-3">Nombre</th>
       <th class="col-md-2">Cantidad</th>
       <th class="col-md-3">Precio</th>
+      <th class="col-md-3">Total por producto</th>
     </tr>
   </thead>
 
@@ -28,10 +29,11 @@
         <td><%= product.title %></td>
         <td><%= order_product.quantity %></td>
         <td><%= number_to_currency(product.price) %></td>
+        <td><%= number_to_currency(order_product.quantity * product.price)%></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+  <h1><strong>Total de Orden:</strong> <%= number_to_currency(@order.total) %></h1>
   <%= link_to 'Volver a la lista de órdenes', orders_path, class: 'btn btn-primary' %>
 
