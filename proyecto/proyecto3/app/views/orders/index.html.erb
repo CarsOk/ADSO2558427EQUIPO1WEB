@@ -3,29 +3,28 @@
   <p id="notice"><%= notice %></p>
 </div>
 
-<h1 class="custom-header">Órdenes</h1>
+<h1 class="custom-header"><strong>Órdenes</strong></h1>
 
-<table class="table table-bordered custom-table">
+<table id="orders-table" class="table table-bordered custom-table">
   <thead class="thead-dark">
     <tr>
-      <th class="col-md-3">ID Orden</th>
-      <th class="col-md-3">Fecha de Creación</th>
-      <th class="col-md-3">Total de la Orden</th>
-      <th class="text-center">Detalles</th>
-      <th class="text-center">Eliminar</th>
+      <th>ID Orden</th>
+      <th>Fecha de Creación</th>
+      <th>Total de la Orden</th>
+      <th class="col-md-1 text-center">Detalles</th>
+      <th class="col-md-1 text-center">Eliminar</th>
     </tr>
   </thead>
-
   <tbody>
     <% @orders.each do |order| %>
       <tr>
         <td><%= order.id %></td>
         <td><%= order.created_at.strftime('%d/%m/%Y %H:%M') %></td>
         <td><%= number_to_currency(order.total) %></td>
-        <td class="col-md-1 text-center">
+        <td class="text-center justify-content-center">
           <%= link_to content_tag(:i, '', class: 'fa fa-eye'), order, class: 'btn btn-primary' %>
         </td>
-        <td class="col-md-1 text-center">
+        <td class="text-center justify-content-center">
           <%= link_to content_tag(:i, '', class: 'fa fa-trash'), order, method: :delete, data: { confirm: '¿Estás seguro?' }, class: 'btn btn-danger' %>
         </td>
       </tr>
@@ -34,4 +33,3 @@
 </table>
 
 <%= link_to 'Nueva Orden', shops_path, class: 'btn btn-primary' %>
-

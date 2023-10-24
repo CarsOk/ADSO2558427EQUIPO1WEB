@@ -23,6 +23,10 @@ class OrdersController < ApplicationController
     def create
       @order = current_user.orders.build(order_params)
       if @order.save
+        @order_products.each do |order_product|
+          product = Product.find(order_product[:product_id])
+          quantity = order_product[:quantity].to_i
+        end
         redirect_to shops_path, notice: 'Orden creada con éxito.'
       else
         render :new

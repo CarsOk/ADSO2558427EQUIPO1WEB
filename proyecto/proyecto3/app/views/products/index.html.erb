@@ -10,7 +10,7 @@
     <tr>
       <th class="col-md-3">Title</th>
       <th class="col-md-3">Price</th>
-      <th class="col-md-3">Available</th>
+      <th class="col-md-1">Available</th>
       <th class="text-center">Ver</th>
       <th class="text-center">Editar</th>
       <th class="text-center">Eliminar</th>
@@ -21,7 +21,7 @@
     <% @products.each do |product| %>
       <tr>
         <td><%= product.title %></td>
-        <td><%= product.price %></td>
+        <td><%= number_to_currency(product.price) %></td>
         <td>
           <% if product.available == true %>
             <span class="badge badge-success">Disponible</span>
@@ -38,4 +38,4 @@
 </table>
 
 
-<%= link_to 'New Product', new_product_path %>
+<%= link_to 'Nuevo Producto', new_product_path, class: 'btn btn-primary' %>
