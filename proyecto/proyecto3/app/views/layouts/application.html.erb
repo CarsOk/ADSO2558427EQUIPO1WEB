@@ -11,12 +11,9 @@
 
 
     <!-- Main css styles -->
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
-    <!-- Main javascript files -->
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag asset_path('LogoCurb.png') %>
-    <%= javascript_importmap_tags %>
     <%= turbo_frame_tag %>
     
   </head>
@@ -44,10 +41,6 @@
       <!-- End page wrapper-->
 
   </div>
-  <!-- End wrapper-->
-
-  <!-- Include javascript per-view -->
-  <!-- For demo purpose we include javascript in view but you can easily start SeedProject and organize it with Rails asset pipeline as you want -->
   <%= yield :javascript %>
 
 </html>

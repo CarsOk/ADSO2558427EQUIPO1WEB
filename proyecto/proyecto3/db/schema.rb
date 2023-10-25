@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_10_24_023859) do
+ActiveRecord::Schema.define(version: 2023_10_25_042433) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "btree_gin"
@@ -41,6 +41,13 @@ ActiveRecord::Schema.define(version: 2023_10_24_023859) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "inventories", force: :cascade do |t|
+    t.string "product_id"
+    t.integer "quantity"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "order_products", force: :cascade do |t|
     t.bigint "order_id", null: false
     t.bigint "product_id", null: false
@@ -66,6 +73,12 @@ ActiveRecord::Schema.define(version: 2023_10_24_023859) do
     t.float "total"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
+    t.string "residential"
+    t.string "tower"
+    t.string "apartment"
+    t.string "payment_method"
+    t.string "estado"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
