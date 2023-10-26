@@ -1,3 +1,4 @@
+
 <div class="pos-sidebar" id="pos-sidebar">
 					<div class="pos-sidebar-header">
 						<div class="back-btn">
@@ -9,12 +10,12 @@
 						</div>
 						<%= image_tag "icon-table.svg", class: "icon", width: 20 %>
 						<div class="title">Table 01</div>
-						<div class="order">Order: <b>#0056</b></div>
+						<div class="order">Order: <b></b></div>
 					</div>
 					<div class="pos-sidebar-nav">
 						<ul class="nav nav-tabs nav-fill">
 							<li class="nav-item">
-								<a class="nav-link active" href="#" data-bs-toggle="tab" data-bs-target="#newOrderTab">Nueva Orden (<%="#{current_order.order_items.size}"%>)</a>
+								<a class="nav-link active" href="#" data-bs-toggle="tab" data-bs-target="#newOrderTab">Nueva Orden (<%="#{@cart.orderables.size}"%>)</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="#" data-bs-toggle="tab" data-bs-target="#orderHistoryTab">Order History (0)</a>
@@ -23,31 +24,35 @@
 					</div>
 					<div class="pos-sidebar-body tab-content" data-scrollbar="true" data-height="100%">
 						<div class="tab-pane fade h-100 show active" id="newOrderTab">
-							<% @order_items.each do |item|%>
+							<% @cart.orderables.each do |orderable| %>
+								<% product = orderable.product %>								
 								<div class="pos-table">
 									<div class="row pos-table-row">
 										<div class="col-9">
 										<div class="pos-product-thumb">
-											<div class="img" style="background-image: url(<%= asset_path(item.product.image) %>)"></div>
+											<div class="img" style="background-image: url(<%= asset_path(product.image) %>)"></div>
 											<div class="info">
-											<div class="title"><%= item.product.title %></div>
-											<div class="single-price">$<%= item.product.price %></div>
-											<div class="input-group">
-												<%= form_for item, remote: true do |f|%>
-													<%= f.hidden_field :product_id, :value => item.product.id %>
-													<%= f.number_field :quantity, :value => item.quantity.to_i, class: "col-md-4 quantity" %>
-        											<%= f.button type: "submit", class: "btn btn-success btn-sm" do %>
-														<i class="fa fa-refresh"></i> 
-													<% end %>
-													<%= link_to order_item_path(item), method: :delete, remote: true, class: "btn btn-danger btn-sm" do %>
-														<i class="fa fa-trash"></i>
-													<% end %>
+											<div class="title"><%= product.title %></div>
+											<div class="single-price">$<%= product.price %></div>
+											<div class="input-group-append">
+												<%= form_with(url: cart_add_path) do |f| %>
+													<%= f.hidden_field :id, value: product.id %>
+													<%= f.number_field :quantity, value: orderable.quantity, min: 1, class:"col-md-8 quantity" %>
+													<%= f.button type: "submit", class: "btn btn-success btn-sm" do %>
+															<i class="fa fa-refresh"></i> 
+													<% end %>                        
+												<% end %>
+												<%= form_with(url: cart_remove_path) do |f| %>
+													<%= f.hidden_field :id, value: orderable.id %>
+													<%= f.button type: "submit", class: "btn btn-danger btn-sm" do %>
+														<i class="fa fa-trash"></i> 
+													<% end %>  
 												<% end %>
 											</div>
 											</div>
 										</div>
 										</div>
-										<div class="col-3 total-price">$<%= item.total %></div>
+										<div class="col-3 total-price">$<%= orderable.total %></div>
 									</div>
 								</div>
 							<%end%>
@@ -69,7 +74,7 @@
 					<div class="pos-sidebar-footer">
 						<div class="subtotal">
 							<div class="text">Subtotal</div>
-							<div class="price">$<%= current_order.subtotal %></div>
+							<div class="price">$<%= @cart.total %></div>
 						</div>
 						<div class="taxes">
 							<div class="text">Impuesto (0%)</div>
@@ -77,12 +82,14 @@
 						</div>
 						<div class="total">
 							<div class="text">Total</div>
-							<div class="price">$<%= current_order.subtotal %></div>
+							<div class="price">$<%= @cart.total %></div>
 						</div>
 						<div class="btn-row">
 							<a href="#" class="btn btn-default"><i class="fa fa-bell fa-fw fa-lg"></i> Service</a>
 							<a href="#" class="btn btn-default"><i class="fa fa-file-invoice-dollar fa-fw fa-lg"></i> Bill</a>
-							<a href="#" class="btn btn-success"><i class="fa fa-check fa-fw fa-lg"></i> Submit Order</a>
+							<%= form_tag finish_order_cart_index_path, method: :post do %>
+							<%= submit_tag 'Finalizar Orden', class: 'btn btn-success' %>
+							<% end %>
 						</div>
 					</div>
 				</div>

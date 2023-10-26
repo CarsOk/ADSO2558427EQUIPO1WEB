@@ -1,0 +1,43 @@
+<div id="Notification" class="alert alert-info alert-dismissible custom-alert">
+  <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+  <p id="notice"><%= notice %></p>
+</div>
+
+<h1 class="custom-header">Orden</h1>
+
+<div class="order-details">
+  <p><strong>Número de Orden:</strong> <%= @order.id %></p>
+  <p><strong>Fecha de Creación:</strong> <%= @order.created_at.strftime('%d/%m/%Y %H:%M') %></p>
+</div>
+
+<h2>Productos en la Orden</h2>
+
+<table class="table table-bordered custom-table">
+  <thead class="thead-dark">
+    <tr>
+      <th class="col-md-1"></th>
+      <th class="col-md-3">Nombre</th>
+      <th class="col-md-2">Cantidad</th>
+      <th class="col-md-3">Precio</th>
+      <th class="col-md-3">Total por producto</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @order.products.each do |product| %>
+    <% order_product = @order.order_products.find_by(product_id: product.id) %>
+      <tr>
+        <td class="text-center">
+          <%= image_tag product.image.url, class: "product-image rounded", style: "max-width: 70px;" %>
+        </td>
+        <td><%= product.title %></td>
+        <td><%= order_product.quantity %></td>
+        <td><%= number_to_currency(product.price) %></td>
+        <td><%= number_to_currency(order_product.quantity * product.price) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
+<h1><strong>Total de Orden:</strong> <%= number_to_currency(@order.total) %></h1>
+<%= link_to 'Volver a la lista de órdenes', orders_path, class: 'btn btn-primary' %>
