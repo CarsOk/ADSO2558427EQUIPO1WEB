@@ -7,37 +7,68 @@
 
 <h1 class="custom-header">Productos</h1>
 
-<table class="table table-bordered custom-table">
-  <thead class="thead-dark">
-    <tr>
-      <th class="col-md-3">Title</th>
-      <th class="col-md-3">Price</th>
-      <th class="col-md-1">Available</th>
-      <th class="text-center">Ver</th>
-      <th class="text-center">Editar</th>
-      <th class="text-center">Eliminar</th>
-    </tr>
-  </thead>
+<div class="wrapper wrapper-content animated fadeInRight ecommerce">
+  <div class="row">
+      <div class="col-lg-12">
+          <div class="ibox">
+              <div class="ibox-content">
 
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.title %></td>
-        <td><%= number_to_currency(product.price) %></td>
-        <td>
-          <% if product.available == true %>
-            <span class="badge badge-success">Disponible</span>
-          <% else %>
-            <span class="badge badge-danger">No Disponible</span>
-          <% end %>
-        </td>        
-        <td class="col-md-1 text-center"><%= link_to content_tag(:i, '', class: 'fa fa-eye'), product, class: 'btn btn-primary' %></td>
-        <td class="col-md-1 text-center"><%= link_to content_tag(:i, '', class: 'fa fa-edit'), edit_product_path(product), class: 'btn btn-success' %></td>
-        <td class="col-md-1 text-center"><%= link_to content_tag(:i, '', class: 'fa fa-trash'), product, method: :delete, data: { confirm: 'Estas seguro?' }, class: 'btn btn-danger' %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+                  <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="15">
+                      <thead>
+                      <tr>
+                          <th data-hide="phone">Title</th>
+                          <th data-hide="phone">Price</th>
+                          <th data-hide="phone">Available</th>
+                          <th class="text-right">Accion</th>
+
+                      </tr>
+                      </thead>
+                      <tbody>
+                        <% @products.each do |product| %>
+                          <tr>
+                              <td><%= product.title %></td>
+                              <td><%= number_to_currency(product.price) %></td>
+                              <td>
+                                <% if product.available == true %>
+                                  <span class="badge badge-success">Disponible</span>
+                                <% else %>
+                                  <span class="badge badge-danger">No Disponible</span>
+                                <% end %>
+                              </td>        
+                              <td class="text-right">
+                                  <div class="btn-group">
+                                    <%= link_to 'View', product, class: 'btn-white btn btn-xs' %>
+                                    <%= link_to 'Edit', edit_product_path(product), class: 'btn-white btn btn-xs' %>
+                                    <%= link_to 'Delete', product, method: :delete, data: { confirm: '¿Estás seguro?' }, class: 'btn-white btn btn-xs' %>
+                                  </div>
+                              </td>
+                          </tr>
+                        <%end%>
+                      </tbody>
+                      <tfoot>
+                      <tr>
+                          <td colspan="7">
+                              <ul class="pagination float-right"></ul>
+                          </td>
+                      </tr>
+                      </tfoot>
+                  </table>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<% content_for :javascript do %>
+
+<script type="text/javascript">
 
 
-<%= link_to 'Nuevo Producto', new_product_path, class: 'btn btn-primary' %>
+$(function () {
+
+    $('.footable').footable();
+
+});
+
+</script>
+
+<% end %>
