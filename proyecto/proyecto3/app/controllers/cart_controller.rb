@@ -1,4 +1,5 @@
 class CartController < ApplicationController
+  before_action :authenticate_user!
   def show
     @render_cart = false
   end
@@ -46,6 +47,6 @@ class CartController < ApplicationController
     end
   
     @cart.orderables.destroy_all
-    redirect_to order, notice: 'Orden finalizada con éxito. Una nueva orden ha sido creada.'
+    redirect_to shops_path, notice: 'Orden finalizada con éxito. Una nueva orden ha sido creada.'
   end
 end

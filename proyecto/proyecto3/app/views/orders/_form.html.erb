@@ -1,0 +1,56 @@
+<%= form_with(model: @order, class: "form") do |form| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+        <% @order.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+<div class="form-group">
+  <%= form.label :residential %>
+  <%= form.select :residential, ['Isla', 'Bahía', 'Coralina', 'Arrecife'], { prompt: 'Selecciona Conjunto' }, class: "form-control" %>
+</div>
+
+
+<div class="form-group">
+  <%= form.label :tower %>
+  <%= form.select :tower, (1..15).map { |n| "Torre #{n}" }, { prompt: 'Selecciona Torre' }, class: "form-control" %>
+</div>
+
+
+  <div class="form-group">
+    <%= form.label :apartment %>
+    <%= form.text_field :apartment, class: "form-control" %>
+  </div>
+
+<div class="form-group">
+  <%= form.label :payment_method %>
+  <%= form.select :payment_method, ['Efectivo', 'Nequi', 'Daviplata', 'Bancolombia'], { prompt: 'Selecciona un método de pago' }, class: "form-control" %>
+</div>
+
+<div class="form-group">
+  <%= form.label :estado %>
+  <%= form.select :estado, ['Entregado', 'En Cocina', 'Cancelado'], { prompt: 'Selecciona un estado' }, class: "form-control" %>
+</div>
+
+
+  <div class="form-group">
+    <%= form.label :total %>
+    <%= form.number_field :total, class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Update Order", class: "btn btn-primary" %>
+  </div>
+<% end %>
+<br><br>

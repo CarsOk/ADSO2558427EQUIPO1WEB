@@ -1,28 +1,84 @@
-<div id="Notification" class="alert alert-info alert-dismissible custom-alert">
-  <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-  <p id="notice"><%= notice %></p>
+<% if notice || alert %>
+  <div id="Notification" class="alert-dismissible custom-alert">
+    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+    <p id="notice"><%= notice || alert %></p>
+  </div>
+<% end %>
+
+<h1 class="custom-header"><strong>Órdenes</strong></h1>
+<form method="get" action="<%= filter_orders_path %>" class="form-inline">
+  <div class="form-group">
+    <%= label_tag 'Filtrar por Estado:' %>
+    <%= select_tag 'filter', options_for_select(['', 'Entregado', 'En Cocina', 'Cancelado'], params[:filter]), class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= label_tag 'Fecha de Creación Desde:' %>
+    <%= text_field_tag 'created_at_date_start', params[:created_at_date_start], class: 'form-control', id: 'created_at_date_start' %>
+    <%= text_field_tag 'created_at_time_start', params[:created_at_time_start], class: 'form-control', id: 'created_at_time_start' %>
+  </div>
+  <div class="form-group">
+    <%= label_tag 'Fecha de Creación Hasta:' %>
+    <%= text_field_tag 'created_at_date_end', params[:created_at_date_end], class: 'form-control', id: 'created_at_date_end' %>
+    <%= text_field_tag 'created_at_time_end', params[:created_at_time_end], class: 'form-control', id: 'created_at_time_end' %>
+  </div>
+  <div class="form-group">
+    <%= submit_tag 'Filtrar', class: 'btn btn-primary' %>
+  </div>
+  <div class="form-group">
+    <%= link_to 'Mostrar Todo', orders_path, class: 'btn btn-primary' %>
+  </div>
+</form>
+
+
+
+<div class="wrapper wrapper-content animated fadeInRight ecommerce">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox">
+        <div class="ibox-content">
+          <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="15">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th data-hide="phone">Precio</th>
+                <th data-hide="phone">Fecha de Creacion</th>
+                <th data-hide="phone,tablet">Fecha de Modificacion</th>
+                <th data-hide="phone">Estado</th>
+                <th class="text-right">Accion</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @orders.each do |order| %>
+                <tr>
+                  <td><%= order.id %></td>
+                  <td><%= number_to_currency(order.total) %></td>
+                  <td><%= order.created_at.strftime('%d/%m/%Y %H:%M') %></td>
+                  <td><%= order.updated_at.strftime('%d/%m/%Y') %></td>
+                  <td>
+                    <% case order.estado %>
+                      <% when 'Entregado' %>
+                        <span class="badge badge-success"><%= order.estado %></span>
+                      <% when 'En Cocina' %>
+                        <span class="badge badge-warning"><%= order.estado %></span>
+                      <% when 'Cancelado' %>
+                        <span class="badge badge-danger"><%= order.estado %></span>
+                      <% else %>
+                        <span class="badge badge-default"><%= order.estado %></span>
+                    <% end %>
+                  </td>
+                  <td class="text-right">
+                    <div class="btn-group">
+                      <%= link_to 'View', order, class: 'btn-white btn btn-xs' %>
+                      <%= link_to 'Edit', edit_order_path(order), class: 'btn-white btn btn-xs' %>
+                      <%= link_to 'Delete', order, method: :delete, data: { confirm: '¿Estás seguro?' }, class: 'btn-white btn btn-xs' %>
+                    </div>
+                  </td>
+                </tr>
+              <%end%>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-<h1 class="custom-header">Órdenes</h1>
-
-<table class="table table-bordered custom-table">
-  <thead class="thead-dark">
-    <tr>
-      <th class="col-md-3">Número de Orden</th>
-      <th class="col-md-3">Fecha de Creación</th>
-      <th class="text-center">Detalles</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @orders.each do |order| %>
-      <tr>
-        <td><%= order.id %></td>
-        <td><%= order.created_at.strftime('%d/%m/%Y %H:%M') %></td>
-        <td class="col-md-1 text-center"><%= link_to content_tag(:i, '', class: 'fa fa-eye'), order, class: 'btn btn-primary' %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<%= link_to 'Nueva Orden', shops_path, class: 'btn btn-primary' %>
