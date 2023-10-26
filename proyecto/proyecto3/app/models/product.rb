@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
   has_many :order_products
+  has_many :inventories
   has_many :orders, through: :order_products
   
   mount_uploader :image, ImageUploader

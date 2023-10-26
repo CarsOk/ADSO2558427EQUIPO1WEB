@@ -1,0 +1,35 @@
+<!-- app/views/inventories/index.html.erb -->
+<div class="inventories-container">
+  <h1>Inventories</h1>
+  <table class="table table-bordered custom-table">
+  <thead class="thead-dark">
+      <tr>
+        <th>Nombre del producto</th>
+        <th>Cantidad</th>
+        <th>Creado</th>
+        <th>Actualizado</th>
+        <th class="text-center">Editar</th>
+        <th class="text-center">Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @inventories.each do |inventory| %>
+        <tr>
+          <td><%= inventory.product.title %></td>
+          <td><%= inventory.quantity %></td>
+          <td><%= inventory.created_at %></td>
+          <td><%= inventory.updated_at %></td>
+          <td>
+            <%= link_to content_tag(:i, '', class: 'fa fa-edit'), edit_inventory_path(inventory), class: "btn btn-success" %>
+          </td>
+          <td>
+          <%= link_to content_tag(:i, '', class: 'fa fa-trash'), inventory, method: :delete, data: { confirm: "¿Estás seguro?" }, class: "btn btn-danger" %>
+        </td>
+          
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to "New Inventory", new_inventory_path, class: "btn btn-primary" %>
+</div>
