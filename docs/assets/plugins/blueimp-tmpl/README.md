@@ -51,7 +51,7 @@ your template definition as content:
 
 ```html
 <script type="text/x-tmpl" id="tmpl-demo">
-  <h3>{%=o.title%}</h3>
+  <h3>{{ o.title }}</h3>
   <p>Released under the
   <a href="{%=o.license.url%}">{%=o.license.name%}</a>.</p>
   <h4>Features</h4>
