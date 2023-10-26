@@ -11,12 +11,9 @@ class InventoriesController < ApplicationController
   def create
     @inventory = Inventory.new(inventory_params)
 
-    # Verificar si ya existe un inventario con el mismo producto
     existing_inventory = Inventory.find_by(product_id: @inventory.product_id)
     
     if existing_inventory
-      # Si ya existe un inventario con el mismo producto, puedes manejarlo como desees.
-      # En este ejemplo, mostramos un mensaje de error y redirigimos de nuevo a la página de creación.
       flash[:error] = "Este producto ya se encuentra en el inventario."
       render :new
     elsif @inventory.save

@@ -1,24 +1,39 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, unless: -> { request.format.json? }
 
   def new
     @order = current_user.orders.build
+    respond_to do |format|
+      format.html
+      format.json { render json: @order }
+    end
   end
 
   def edit
     @order = current_user.orders.find(params[:id])
     @order_products = @order.order_products.includes(:product)
+    respond_to do |format|
+      format.html
+      format.json { render json: { order: @order, order_products: @order_products } }
+    end
   end
 
   def show
     @order = Order.find(params[:id])
     @products = @order.products
+    respond_to do |format|
+      format.html
+      format.json { render json: { order: @order, products: @products } }
+    end
   end
 
   def destroy
     @order = current_user.orders.find(params[:id])
     @order.destroy
-    redirect_to orders_path, notice: 'Orden eliminada con éxito.'
+    respond_to do |format|
+      format.html { redirect_to orders_path, notice: 'Orden eliminada con éxito.' }
+      format.json { head :no_content }
+    end
   end
 
   def create
@@ -29,22 +44,46 @@ class OrdersController < ApplicationController
         quantity = order_product[:quantity].to_i
         # Aquí puedes realizar alguna lógica para manejar los productos de la orden
       end
-      redirect_to shops_path, notice: 'Orden creada con éxito.'
+      respond_to do |format|
+        format.html { redirect_to shops_path, notice: 'Orden creada con éxito.' }
+        format.json { render json: @order, status: :created, location: @order }
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html { render :new }
+        format.json { render json: @order.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   def index
-    @orders = current_user.orders
+    if request.format.json?
+      @orders = current_user.orders
+      render json: @orders
+    else
+      if current_user && current_user.admin?
+        @orders = current_user.orders
+        respond_to do |format|
+          format.html
+        end
+      else
+        redirect_back(fallback_location: root_path, alert: 'No tienes permisos para acceder aquí.')
+      end
+    end
   end
 
   def update
     @order = current_user.orders.find(params[:id])
     if @order.update(order_params)
-      redirect_to orders_path, notice: 'Orden actualizada con éxito.'
+      respond_to do |format|
+        format.html { redirect_to orders_path, notice: 'Orden actualizada con éxito.' }
+        format.json { render json: @order, status: :ok, location: @order }
+      end
     else
-      render :edit
+      respond_to do |format|
+        format.html { render :edit }
+        format.json { render json: @order.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -54,26 +93,28 @@ class OrdersController < ApplicationController
     @created_at_time_start = params[:created_at_time_start]
     @created_at_date_end = params[:created_at_date_end]
     @created_at_time_end = params[:created_at_time_end]
-  
+
     orders = current_user.orders
     orders = orders.where(estado: @filter) if @filter.present?
-  
+
     if @created_at_date_start.present? && @created_at_time_start.present?
       start_datetime = DateTime.parse("#{@created_at_date_start} #{@created_at_time_start}")
       orders = orders.where('created_at >= ?', start_datetime)
     end
-  
+
     if @created_at_date_end.present? && @created_at_time_end.present?
       end_datetime = DateTime.parse("#{@created_at_date_end} #{@created_at_time_end}")
       orders = orders.where('created_at <= ?', end_datetime)
     end
-  
+
     @orders = orders
-    render :index
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @orders }
+    end
   end
-  
-  
-  
+
   private
 
   def order_params
