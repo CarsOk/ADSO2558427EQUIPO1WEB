@@ -72,25 +72,7 @@
 						</div>
 					</div>
 					<div class="pos-sidebar-footer">
-						<div class="subtotal">
-							<div class="text">Subtotal</div>
-							<div class="price">$<%= @cart.total %></div>
-						</div>
-						<div class="taxes">
-							<div class="text">Impuesto (0%)</div>
-							<div class="price">$0</div>
-						</div>
-						<div class="total">
-							<div class="text">Total</div>
-							<div class="price">$<%= @cart.total %></div>
-						</div>
-						<div class="btn-row">
-							<a href="#" class="btn btn-default"><i class="fa fa-bell fa-fw fa-lg"></i> Service</a>
-							<a href="#" class="btn btn-default"><i class="fa fa-file-invoice-dollar fa-fw fa-lg"></i> Bill</a>
-							<%= form_tag finish_order_cart_index_path, method: :post do %>
-							<%= submit_tag 'Finalizar Orden', class: 'btn btn-success' %>
-							<% end %>
-						</div>
+						<%= render 'cart/order_form' %>
 					</div>
 				</div>
 			</div>

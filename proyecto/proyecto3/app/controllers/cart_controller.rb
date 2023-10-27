@@ -41,12 +41,24 @@ class CartController < ApplicationController
 
   def finish_order
     order = current_user.orders.create(total: @cart.total)
-
+  
     @cart.orderables.each do |orderable|
       order.order_products.create(product: orderable.product, quantity: orderable.quantity)
     end
   
+    order.update(order_params.merge(estado: "En Cocina"))
+
     @cart.orderables.destroy_all
-    redirect_to shops_path, notice: 'Orden finalizada con éxito. Una nueva orden ha sido creada.'
+  
+    respond_to do |format|
+      format.html { redirect_to shops_path, notice: 'Orden finalizada con éxito. Una nueva orden ha sido creada.' }
+    end
   end
+  
+  private
+  
+  def order_params
+    params.permit(:name, :residential, :tower, :apartment, :payment_method)
+  end
+  
 end

@@ -89,32 +89,26 @@ class OrdersController < ApplicationController
 
   def filter
     @filter = params[:filter]
-    @created_at_date_start = params[:created_at_date_start]
-    @created_at_time_start = params[:created_at_time_start]
-    @created_at_date_end = params[:created_at_date_end]
-    @created_at_time_end = params[:created_at_time_end]
-
+    @created_at_start = params[:created_at_start]
+    @created_at_end = params[:created_at_end]
+  
     orders = current_user.orders
     orders = orders.where(estado: @filter) if @filter.present?
-
-    if @created_at_date_start.present? && @created_at_time_start.present?
-      start_datetime = DateTime.parse("#{@created_at_date_start} #{@created_at_time_start}")
-      orders = orders.where('created_at >= ?', start_datetime)
+  
+    if @created_at_start.present?
+      start_date = Date.parse(@created_at_start)
+      orders = orders.where('created_at >= ?', start_date)
     end
-
-    if @created_at_date_end.present? && @created_at_time_end.present?
-      end_datetime = DateTime.parse("#{@created_at_date_end} #{@created_at_time_end}")
-      orders = orders.where('created_at <= ?', end_datetime)
+  
+    if @created_at_end.present?
+      end_date = Date.parse(@created_at_end)
+      orders = orders.where('created_at <= ?', end_date.end_of_day)
     end
-
+  
     @orders = orders
-
-    respond_to do |format|
-      format.html
-      format.json { render json: @orders }
-    end
+    render :index
   end
-
+  
   private
 
   def order_params

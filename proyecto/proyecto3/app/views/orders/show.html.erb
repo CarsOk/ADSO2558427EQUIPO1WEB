@@ -1,15 +1,15 @@
-<div id="Notification" class="alert alert-info alert-dismissible custom-alert">
-  <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-  <p id="notice"><%= notice %></p>
-</div>
-
 <h1 class="custom-header">Orden</h1>
 
 <div class="order-details">
   <p><strong>Número de Orden:</strong> <%= @order.id %></p>
   <p><strong>Fecha de Creación:</strong> <%= @order.created_at.strftime('%d/%m/%Y %H:%M') %></p>
+  <p><strong>Nombre:</strong> <%= @order.name %></p>
+  <p><strong>Conjunto Residencial:</strong> <%= @order.residential %></p>
+  <p><strong>Torre:</strong> <%= @order.tower %></p>
+  <p><strong>Apartamento:</strong> <%= @order.apartment %></p>
+  <p><strong>Método de Pago:</strong> <%= @order.payment_method %></p>
+  <p><strong>Estado:</strong> <%= @order.estado %></p>
 </div>
-
 <h2>Productos en la Orden</h2>
 
 <table class="table table-bordered custom-table">
