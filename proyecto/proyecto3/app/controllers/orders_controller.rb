@@ -2,57 +2,77 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!, unless: -> { request.format.json? }
 
   def new
-    @order = current_user.orders.build
-    respond_to do |format|
-      format.html
-      format.json { render json: @order }
+    if current_user.admin?
+      @order = current_user.orders.build
+      respond_to do |format|
+        format.html
+        format.json { render json: @order }
+      end
+    else
+      redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
     end
   end
 
   def edit
-    @order = current_user.orders.find(params[:id])
-    @order_products = @order.order_products.includes(:product)
-    respond_to do |format|
-      format.html
-      format.json { render json: { order: @order, order_products: @order_products } }
+    if current_user.admin?
+      @order = current_user.orders.find(params[:id])
+      @order_products = @order.order_products.includes(:product)
+      respond_to do |format|
+        format.html
+        format.json { render json: { order: @order, order_products: @order_products } }
+      end
+    else
+      redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
     end
   end
 
   def show
-    @order = Order.find(params[:id])
-    @products = @order.products
-    respond_to do |format|
-      format.html
-      format.json { render json: { order: @order, products: @products } }
+    if current_user.admin?
+      @order = Order.find(params[:id])
+      @products = @order.products
+      respond_to do |format|
+        format.html
+        format.json { render json: { order: @order, products: @products } }
+      end
+    else
+      redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
     end
   end
 
   def destroy
-    @order = current_user.orders.find(params[:id])
-    @order.destroy
-    respond_to do |format|
-      format.html { redirect_to orders_path, notice: 'Orden eliminada con éxito.' }
-      format.json { head :no_content }
+    if current_user.admin?
+      @order = current_user.orders.find(params[:id])
+      @order.destroy
+      respond_to do |format|
+        format.html { redirect_to orders_path, notice: 'Orden eliminada con éxito.' }
+        format.json { head :no_content }
+      end
+    else
+      redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
     end
   end
 
   def create
-    @order = current_user.orders.build(order_params)
-    if @order.save
-      @order_products.each do |order_product|
-        product = Product.find(order_product[:product_id])
-        quantity = order_product[:quantity].to_i
-        # Aquí puedes realizar alguna lógica para manejar los productos de la orden
-      end
-      respond_to do |format|
-        format.html { redirect_to shops_path, notice: 'Orden creada con éxito.' }
-        format.json { render json: @order, status: :created, location: @order }
+    if current_user.admin?
+      @order = current_user.orders.build(order_params)
+      if @order.save
+        @order_products.each do |order_product|
+          product = Product.find(order_product[:product_id])
+          quantity = order_product[:quantity].to_i
+          # Aquí puedes realizar alguna lógica para manejar los productos de la orden
+        end
+        respond_to do |format|
+          format.html { redirect_to shops_path, notice: 'Orden creada con éxito.' }
+          format.json { render json: @order, status: :created, location: @order }
+        end
+      else
+        respond_to do |format|
+          format.html { render :new }
+          format.json { render json: @order.errors, status: :unprocessable_entity }
+        end
       end
     else
-      respond_to do |format|
-        format.html { render :new }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
-      end
+      redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
     end
   end
 

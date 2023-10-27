@@ -62,7 +62,17 @@
 								</li>
 							</ul>
 						</div>
-						
+						<li class="nav-item">
+							<a class="nav-link">
+							<% if current_user.admin? %>
+									<!-- No mostrar el botón de Cerrar Sesión para los administradores -->
+							<% else %>
+									<%= button_to destroy_user_session_path, method: :delete, class: "btn btn-danger" do %>
+								<i class=""></i> Cerrar Sesión 
+							<% end %>
+						  <% end %>					
+							</a>
+						</li>
 					</div>
 				</div>
 
