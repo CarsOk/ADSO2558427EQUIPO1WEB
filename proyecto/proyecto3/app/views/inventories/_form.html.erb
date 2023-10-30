@@ -1,23 +1,20 @@
 <%= form_with(model: @inventory, local: true, class: "inventory-form") do |form| %>
   <div class="form-group">
-    <%= form.label :product_id, "Select Product", class: "form-label" %>
+    <%= form.label :product_id, "Seleccionar Producto", class: "form-label" %>
     <% if @products.present? && @products.any? %>
-      <%= form.collection_select(:product_id, @products, :id, :title, { include_blank: "Select a Product" }, class: "form-control select-field", required: true) %>
+      <%= form.collection_select(:product_id, @products, :id, :title, { include_blank: "Selecciona un Producto" }, class: "form-control select-field", required: true) %>
     <% else %>
-      <p>Este producto ya se encuentra Inventariado, edítelo</p>
+      <p>Este producto ya se encuentra en el inventario, edítelo</p>
     <% end %>
   </div>
 
   <div class="form-group">
-    <%= form.label :quantity, "Quantity", class: "form-label" %>
-    <%= form.number_field :quantity, min: 1, class: "form-control quantity-field", required: true %>
+    <%= form.label :quantity, "Cantidad", class: "form-label" %>
+    <%= form.number_field :quantity, min: 0, class: "form-control quantity-field", required: true %>
   </div>
 
   <div class="form-actions">
-    <%= form.submit "Create Inventory", class: "btn btn-primary submit-button" %>
-    <%= link_to "Back to Inventories", inventories_path, class: "btn btn-secondary submit-button" %>
+    <%= form.submit "Crear Inventario", class: "btn btn-primary submit-button" %>
+    <%= link_to "Volver a Inventario", inventories_path, class: "btn btn-secondary submit-button" %>
   </div>
 <% end %>
-
-
-

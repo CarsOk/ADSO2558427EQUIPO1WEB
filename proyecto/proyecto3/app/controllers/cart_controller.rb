@@ -8,14 +8,13 @@ class CartController < ApplicationController
     @product = Product.find_by(id: params[:id])
     quantity = params[:quantity].to_i
     current_orderable = @cart.orderables.find_by(product_id: @product.id)
-    if current_orderable && quantity > 0
-      current_orderable.update(quantity:)
-    elsif quantity <= 0
-      current_orderable.destroy
+  
+    if current_orderable
+      current_orderable.update(quantity: current_orderable.quantity + quantity)
     else
-      @cart.orderables.create(product: @product, quantity:)
+      @cart.orderables.create(product: @product, quantity: quantity)
     end
-
+  
     respond_to do |format|
       format.turbo_stream do
         render turbo_stream: [turbo_stream.replace('cart',
@@ -26,6 +25,8 @@ class CartController < ApplicationController
       format.html { redirect_to shops_path }
     end
   end
+  
+  
 
   def remove
     Orderable.find_by(id: params[:id]).destroy
@@ -41,19 +42,35 @@ class CartController < ApplicationController
 
   def finish_order
     order = current_user.orders.create(total: @cart.total)
+    
+    errors = []
   
     @cart.orderables.each do |orderable|
-      order.order_products.create(product: orderable.product, quantity: orderable.quantity)
+      product = orderable.product
+      quantity = orderable.quantity
+  
+      inventory = Inventory.find_by(product_id: product.id)
+  
+      if inventory.nil? || inventory.quantity < quantity
+        errors << "No hay suficiente inventario disponible para el producto '#{product.title}'"
+      else
+        order.order_products.create(product: product, quantity: quantity)
+        inventory.update(quantity: inventory.quantity - quantity)
+      end
     end
   
-    order.update(order_params.merge(estado: "En Cocina"))
-
-    @cart.orderables.destroy_all
-  
-    respond_to do |format|
-      format.html { redirect_to shops_path, notice: 'Orden finalizada con éxito. Una nueva orden ha sido creada.' }
+    if errors.empty?
+      order.update(order_params.merge(estado: "En Cocina"))
+      @cart.orderables.destroy_all
+      flash[:notice] = 'Orden finalizada con éxito. Una nueva orden ha sido creada.'
+      redirect_to shops_path
+    else
+      @cart.orderables.reload
+      flash[:alert] = errors.join(', ')
+      redirect_to shops_path
     end
   end
+  
   
   private
   

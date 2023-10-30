@@ -41,12 +41,12 @@
                               <td><%= product.title %></td>
                               <td><%= number_to_currency(product.price) %></td>
                               <td>
-                                <% if product.available == true %>
+                                <% if product.available == true && product.inventory_quantity.to_i > 0 %>
                                   <span class="badge badge-success">Disponible</span>
                                 <% else %>
                                   <span class="badge badge-danger">No Disponible</span>
                                 <% end %>
-                              </td>        
+                              </td> 
                               <td class="text-right">
                                   <div class="btn-group">
                                     <%= link_to 'View', product, class: 'btn-white btn btn-xs' %>

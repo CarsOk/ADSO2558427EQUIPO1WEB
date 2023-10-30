@@ -50,10 +50,42 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
+        # Crear o actualizar registro de Inventory
+        inventory = Inventory.find_or_initialize_by(product_id: @product.id)
+        inventory.quantity = 0 # Inicialmente, el inventario está vacío
+        inventory.save
+
+        # Marcar el producto como disponible
+        @product.available = true
+        @product.inventory_quantity = 0
+        @product.save
+
         format.html { redirect_to product_url(@product), notice: "Product was successfully created." }
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @product.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def update
+    respond_to do |format|
+      if @product.update(product_params)
+        # Crear o actualizar registro de Inventory
+        inventory = Inventory.find_or_initialize_by(product_id: @product.id)
+        inventory.quantity = 0 # Inicialmente, el inventario está vacío
+        inventory.save
+
+        # Marcar el producto como disponible
+        @product.available = true
+        @product.inventory_quantity = 0
+        @product.save
+
+        format.html { redirect_to products_path, notice: "Product was successfully updated." }
+        format.json { render :show, status: :ok, location: @product }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
@@ -64,18 +96,6 @@ class ProductsController < ApplicationController
       @product = Product.find(params[:id])
     else
       redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
-    end
-  end
-
-  def update
-    respond_to do |format|
-      if @product.update(product_params)
-        format.html { redirect_to products_path, notice: "Product was successfully updated." }
-        format.json { render :show, status: :ok, location: @product }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
-      end
     end
   end
 
