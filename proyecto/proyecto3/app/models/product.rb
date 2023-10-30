@@ -4,7 +4,7 @@ class Product < ApplicationRecord
   has_many :orders, through: :order_products
   
   mount_uploader :image, ImageUploader
-  validates :title, :price, :image, :description, :category, presence: true
+  validates :title, :price, :description, :category, presence: true
     
     private
   

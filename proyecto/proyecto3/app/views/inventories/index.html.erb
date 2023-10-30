@@ -1,5 +1,16 @@
-  <h1>Inventories</h1>
-
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h1>Inventario</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="<%= url_for :controller => 'sessions', :action => 'index' %>">Home</a>
+            </li>
+            <li class="breadcrumb-item active">
+                <strong>Inventario</strong>
+            </li>
+        </ol>
+    </div>
+</div>
 <div class="wrapper wrapper-content animated fadeInRight ecommerce">
   <div class="row">
     <div class="col-lg-12">
@@ -20,8 +31,8 @@
                 <tr>
                   <td><%= inventory.product.title %></td>
                   <td><%= inventory.quantity %></td>
-                  <td><%= inventory.created_at %></td>
-                  <td><%= inventory.updated_at %></td>
+                  <td><%= inventory.created_at.strftime('%d/%m/%Y %H:%M') %></td>
+                  <td><%= inventory.updated_at.strftime('%d/%m/%Y %H:%M') %></td>
                   <td class="text-right">
                     <div class="btn-group">
                       <%= link_to 'View', inventory, class: 'btn-white btn btn-xs' %>
@@ -39,5 +50,5 @@
   </div>
 </div>
 
-  <%= link_to "New Inventory", new_inventory_path, class: "btn btn-primary" %>
+<%= link_to "New Inventory", new_inventory_path, class: "btn btn-primary" %>
 

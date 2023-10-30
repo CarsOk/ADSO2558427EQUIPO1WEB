@@ -5,7 +5,19 @@
   </div>
 <% end %>
 
-<h1 class="custom-header"><strong>Órdenes</strong></h1>
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h1>Ordenes</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="<%= url_for :controller => 'sessions', :action => 'index' %>">Home</a>
+            </li>
+            <li class="breadcrumb-item active">
+                <strong>Ordenes</strong>
+            </li>
+        </ol>
+    </div>
+</div>
 
 <div class="wrapper wrapper-content animated fadeInRight ecommerce">
   <div class="ibox-content m-b-sm border-bottom">

@@ -78,11 +78,10 @@ class OrdersController < ApplicationController
 
   def index
     if request.format.json?
-      @orders = current_user.orders
-      render json: @orders
+      @orders = current_user.orders.order(created_at: :desc)
     else
       if current_user && current_user.admin?
-        @orders = current_user.orders
+        @orders = current_user.orders.order(created_at: :desc)
         respond_to do |format|
           format.html
         end
