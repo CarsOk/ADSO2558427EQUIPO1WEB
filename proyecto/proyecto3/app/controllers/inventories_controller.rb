@@ -1,4 +1,4 @@
-class InventoriesController < ApplicationController
+  class InventoriesController < ApplicationController
   before_action :authenticate_user!
 
   def index
@@ -53,13 +53,15 @@ class InventoriesController < ApplicationController
   def update
     if current_user.admin?
       @inventory = Inventory.find(params[:id])
-
+  
       if @inventory.update(inventory_params)
         redirect_to inventories_path, notice: "Inventario actualizado exitosamente."
-
-        # Actualiza la cantidad disponible en el producto
         product = Product.find(@inventory.product_id)
-        product.update(inventory_quantity: @inventory.quantity)
+        if @inventory.quantity.zero?
+          product.update(available: false)
+        else
+          product.update(available: true)
+        end
       else
         render :edit
       end
@@ -67,6 +69,7 @@ class InventoriesController < ApplicationController
       redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
     end
   end
+  
 
   def destroy
     if current_user.admin?
