@@ -36,7 +36,6 @@ class ProductsController < ApplicationController
     end
   end
 
-
   def new
     if current_user.admin?
       @product = Product.new
@@ -47,19 +46,16 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-
+  
     respond_to do |format|
       if @product.save
-        # Crear o actualizar registro de Inventory
         inventory = Inventory.find_or_initialize_by(product_id: @product.id)
-        inventory.quantity = 0 # Inicialmente, el inventario está vacío
+        inventory.quantity = @product.inventory_quantity
         inventory.save
-
-        # Marcar el producto como disponible
-        @product.available = true
-        @product.inventory_quantity = 0
+  
+        @product.available = @product.inventory_quantity.positive?
         @product.save
-
+  
         format.html { redirect_to product_url(@product), notice: "Product was successfully created." }
         format.json { render :show, status: :created, location: @product }
       else
@@ -68,20 +64,17 @@ class ProductsController < ApplicationController
       end
     end
   end
-
+  
   def update
     respond_to do |format|
       if @product.update(product_params)
-        # Crear o actualizar registro de Inventory
         inventory = Inventory.find_or_initialize_by(product_id: @product.id)
-        inventory.quantity = 0 # Inicialmente, el inventario está vacío
+        inventory.quantity = @product.inventory_quantity
         inventory.save
-
-        # Marcar el producto como disponible
-        @product.available = true
-        @product.inventory_quantity = 0
+  
+        @product.available = @product.inventory_quantity.positive?
         @product.save
-
+  
         format.html { redirect_to products_path, notice: "Product was successfully updated." }
         format.json { render :show, status: :ok, location: @product }
       else
@@ -90,6 +83,7 @@ class ProductsController < ApplicationController
       end
     end
   end
+  
 
   def edit
     if current_user.admin?

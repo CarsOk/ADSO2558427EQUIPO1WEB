@@ -10,7 +10,7 @@ class CartController < ApplicationController
     current_orderable = @cart.orderables.find_by(product_id: @product.id)
   
     if current_orderable
-      current_orderable.update(quantity: current_orderable.quantity + quantity)
+      current_orderable.update(quantity: quantity)
     else
       @cart.orderables.create(product: @product, quantity: quantity)
     end
@@ -56,6 +56,8 @@ class CartController < ApplicationController
       else
         order.order_products.create(product: product, quantity: quantity)
         inventory.update(quantity: inventory.quantity - quantity)
+  
+        product.update(available: (inventory.quantity - quantity) > 0)
       end
     end
   
@@ -70,6 +72,7 @@ class CartController < ApplicationController
       redirect_to shops_path
     end
   end
+  
   
   
   private

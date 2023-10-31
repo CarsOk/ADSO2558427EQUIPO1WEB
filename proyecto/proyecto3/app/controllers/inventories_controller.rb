@@ -3,7 +3,7 @@
 
   def index
     if current_user.admin?
-      @inventories = Inventory.all
+      @inventories = Inventory.order(quantity: :desc).all
     else
       redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
     end
@@ -21,18 +21,17 @@
   def create
     if current_user.admin?
       @inventory = Inventory.new(inventory_params)
-
+  
       existing_inventory = Inventory.find_by(product_id: @inventory.product_id)
-
+  
       if existing_inventory
         flash[:notice] = "Este producto ya se encuentra en el inventario."
         redirect_to inventories_path
       elsif @inventory.save
-        redirect_to inventories_path, notice: "Inventario creado exitosamente."
-
-        # Actualiza la cantidad disponible en el producto
         product = Product.find(@inventory.product_id)
         product.update(inventory_quantity: @inventory.quantity)
+        product.update(available: @inventory.quantity.positive?)
+        redirect_to inventories_path, notice: "Inventario creado exitosamente."
       else
         render :new
       end
@@ -40,6 +39,7 @@
       redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
     end
   end
+  
 
   def edit
     if current_user.admin?
@@ -55,13 +55,10 @@
       @inventory = Inventory.find(params[:id])
   
       if @inventory.update(inventory_params)
-        redirect_to inventories_path, notice: "Inventario actualizado exitosamente."
         product = Product.find(@inventory.product_id)
-        if @inventory.quantity.zero?
-          product.update(available: false)
-        else
-          product.update(available: true)
-        end
+        available = @inventory.quantity.positive?
+        product.update(available: available)
+        redirect_to inventories_path, notice: "Inventario actualizado exitosamente."
       else
         render :edit
       end
@@ -70,13 +67,13 @@
     end
   end
   
-
+  
+  
   def destroy
     if current_user.admin?
       @inventory = Inventory.find(params[:id])
       @inventory.destroy
 
-      # Restablece la cantidad disponible en el producto
       product = Product.find(@inventory.product_id)
       product.update(inventory_quantity: nil)
       product.save
