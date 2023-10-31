@@ -95,8 +95,13 @@ class ProductsController < ApplicationController
 
   def destroy
     if current_user.admin?
+      @product = Product.find(params[:id])
+  
+      inventory = Inventory.find_by(product_id: @product.id)
+      inventory.destroy if inventory
+  
       @product.destroy
-
+  
       respond_to do |format|
         format.html { redirect_to products_url, notice: "Product was successfully destroyed." }
         format.json { head :no_content }
@@ -105,6 +110,7 @@ class ProductsController < ApplicationController
       redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
     end
   end
+  
 
   private
   def set_product
