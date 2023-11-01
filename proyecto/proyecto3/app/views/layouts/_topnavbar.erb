@@ -4,11 +4,13 @@
             <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a> 
         </div>
         <ul class="nav navbar-top-links navbar-right">
+        <% if policy(current_user).admin? %> 
             <li>
             <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-sign-out"></i> Cerrar Sesion
             <% end %>
             </li>
+        <% end %>
         </ul>
 
     </nav>

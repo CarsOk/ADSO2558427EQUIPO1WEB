@@ -3,6 +3,7 @@
         <ul class="nav metismenu" id="side-menu">
             <li class="nav-header">
             
+
                 <div class="dropdown profile-element">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <%= image_tag("LogoCurb.png" , width: "150px" )%>
@@ -33,13 +34,13 @@
                     <% end %>
                 </li>
             <% end %>
-            <% if policy(current_user).admin? %> 
+           
                 <li class="<%= is_active_controller('inventories') %>">
                     <%= link_to inventories_index_path  do %>
                         <i class="fa fa-sitemap"></i><span class="nav-label" data-i18n="nav.dashboard">Inventario</span></a>
                     <% end %>
                 </li>
-            <% end %>
+            
             
             <li class="<%= is_active_controller('shops') %>">
                 <%= link_to shops_path do %>

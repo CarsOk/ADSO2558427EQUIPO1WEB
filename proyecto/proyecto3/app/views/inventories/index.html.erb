@@ -23,7 +23,9 @@
                 <th data-hide="phone">Cantidad</th>
                 <th data-hide="phone">Creado</th>
                 <th data-hide="phone,tablet">Actualizado</th>
-                <th class="text-right">Acción</th>
+              <% if policy(current_user).admin? %> 
+                  <th class="text-right">Acción</th>
+              <% end %>
               </tr>
             </thead>
             <tbody>
@@ -34,11 +36,13 @@
                   <td><%= inventory.created_at.strftime('%d/%m/%Y %H:%M') %></td>
                   <td><%= inventory.updated_at.strftime('%d/%m/%Y %H:%M') %></td>
                   <td class="text-right">
+                <% if policy(current_user).admin? %> 
                     <div class="btn-group">
                       <%= link_to 'Editar', edit_inventory_path(inventory), class: 'btn-white btn btn-xs' %>
                       <%= link_to 'Eliminar', inventory, method: :delete, data: { confirm: '¿Estás seguro?' }, class: 'btn-white btn btn-xs' %>
                     </div>
-                  </td>
+                <% end %>
+                    </td>
                 </tr>
               <% end %>
             </tbody>
@@ -48,5 +52,6 @@
     </div>
   </div>
 </div>
-
-<%= link_to "Nuevo Inventario", new_inventory_path, class: "btn btn-primary" %>
+<% if policy(current_user).admin? %> 
+  <%= link_to "Nuevo Inventario", new_inventory_path, class: "btn btn-primary" %>
+<% end %>
