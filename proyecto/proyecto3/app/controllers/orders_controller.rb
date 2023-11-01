@@ -78,10 +78,10 @@ class OrdersController < ApplicationController
 
   def index
     if request.format.json?
-      @orders = current_user.orders.order(created_at: :desc)
+      @orders = current_user.orders.order(created_at: :desc).paginate(page: params[:page], per_page: 15)
     else
       if current_user && current_user.admin?
-        @orders = current_user.orders.order(created_at: :desc)
+        @orders = current_user.orders.order(created_at: :desc).paginate(page: params[:page], per_page: 15)
         respond_to do |format|
           format.html
         end
@@ -89,7 +89,7 @@ class OrdersController < ApplicationController
         redirect_back(fallback_location: root_path, alert: 'No tienes permisos para acceder aquí.')
       end
     end
-  end
+  end  
 
   def update
     @order = current_user.orders.find(params[:id])

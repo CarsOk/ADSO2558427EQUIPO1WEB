@@ -64,3 +64,4 @@ gem "fog-aws"
 gem "stimulus-rails"
 gem "importmap-rails"
 gem 'turbo-rails'
+gem 'will_paginate'
