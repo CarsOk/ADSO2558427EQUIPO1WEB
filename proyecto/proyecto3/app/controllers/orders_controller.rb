@@ -109,7 +109,7 @@ class OrdersController < ApplicationController
       render json: @orders
     else
       if current_user && current_user.admin?
-        @orders = current_user.orders.order(created_at: :desc).paginate(page: params[:page], per_page: 15)
+        @orders = Order.order(created_at: :desc).paginate(page: params[:page], per_page: 15)
       else
         redirect_back(fallback_location: root_path, alert: 'No tienes permisos para acceder aquí.')
       end

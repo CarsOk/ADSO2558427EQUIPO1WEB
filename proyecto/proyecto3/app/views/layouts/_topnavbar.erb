@@ -5,9 +5,11 @@
         </div>
         <ul class="nav navbar-top-links navbar-right">
             <li>
+          <% if policy(current_user).admin? %>
             <%= link_to destroy_user_session_path, method: :delete do %>
                 <i class="fa fa-sign-out"></i> Cerrar Sesion
             <% end %>
+          <% end %>
             </li>
         </ul>
 

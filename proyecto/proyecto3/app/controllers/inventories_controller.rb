@@ -2,11 +2,7 @@ class InventoriesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    if current_user.admin?
       @inventories = Inventory.all
-    else
-      redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
-    end
   end
 
   def new
