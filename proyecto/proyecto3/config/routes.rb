@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   resources :inventories
   resources :orders do
     get 'filter', on: :collection
+    member do
+      get 'generate_invoice', format: 'pdf'
+    end
   end
   resource :sessions, only: [:index]
   resource :cards, only: [:show]

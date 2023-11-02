@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <%= wicked_pdf_stylesheet_link_tag 'factura' %>
+</head>
+<body>
+  <div id="header">
+    <%= wicked_pdf_image_tag asset_url('LogoCurb.png'), style: 'display: block; margin: 0 auto;', width: 200 %>
+  </div>
+
+
+  <div id="invoice">
+    <h3>Orden #<%= @order.id %></h3>
+    <p>Cliente: <%= @order.name %></p>
+    <p>Direccion: <%= "#{@order.residential} #{@order.tower} #{@order.apartment}"   %></p>
+    <p>Metodo de Pago: <%= @order.payment_method %></p>
+    <p>Fecha: <%= @order.created_at.strftime('%d/%m/%Y %H:%M')%></p>
+    
+    <table>
+      <thead>
+        <tr>
+          <th class="text-center">Producto</th>
+          <th class="text-center">Precio</th>
+          <th class="text-center">Cantidad</th>
+          <th class="text-center">Total por Producto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @order.order_products.each do |order_product| %>
+          <tr>
+            <td class="text-center"><%= order_product.product.title %></td>
+            <td class="text-center"><%= number_to_currency(order_product.product.price) %></td>
+            <td class="text-center"><%= order_product.quantity %></td>
+            <td class="text-center"><%= number_to_currency(order_product.quantity * order_product.product.price) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    
+        <h2>Total: <%= number_to_currency(@order.total) %></h2>
+
+  </div>
+</body>
+</html>

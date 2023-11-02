@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, unless: -> { request.format.json? }
+  skip_before_action :verify_authenticity_token, only: [:create]
+
 
   def new
     if current_user.admin?
@@ -27,22 +29,21 @@ class OrdersController < ApplicationController
   end
 
   def show
-    if current_user.admin?
-      @order = Order.find(params[:id])
-      @products = @order.products
-      respond_to do |format|
-        format.html
-        format.json { render json: { order: @order, products: @products } }
-      end
-    else
-      redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
+    @order = Order.find(params[:id])
+    @products = @order.products
+    respond_to do |format|
+      format.html
+      format.json { render json: { order: @order, products: @products } }
     end
   end
+
 
   def destroy
     if current_user.admin?
       @order = current_user.orders.find(params[:id])
+      @order.order_products.destroy_all  
       @order.destroy
+  
       respond_to do |format|
         format.html { redirect_to orders_path, notice: 'Orden eliminada con éxito.' }
         format.json { head :no_content }
@@ -53,17 +54,39 @@ class OrdersController < ApplicationController
   end
 
   def create
-    if current_user.admin?
-      @order = current_user.orders.build(order_params)
+    user_id = 1
+    user = User.find_by(id: user_id)
+    
+    if user
+      @order = user.orders.build(order_params)
+      total = 0
+      estado = "En Cocina"
+
       if @order.save
-        @order_products.each do |order_product|
-          product = Product.find(order_product[:product_id])
-          quantity = order_product[:quantity].to_i
-          # Aquí puedes realizar alguna lógica para manejar los productos de la orden
+        associated_products = []
+  
+        if params[:products].present?
+          params[:products].each do |product_params|
+            product_id = product_params[:id]
+            quantity = product_params[:quantity]
+  
+            product = Product.find_by(id: product_id)
+  
+            if product && quantity.to_i > 0
+              subtotal = product.price * quantity.to_i
+              total += subtotal 
+  
+              order_product = @order.order_products.create(product_id: product_id, quantity: quantity)
+              associated_products << { product: product, quantity: order_product.quantity }
+            end
+          end
         end
+  
+        @order.update(total: total, estado: estado)
+  
         respond_to do |format|
-          format.html { redirect_to shops_path, notice: 'Orden creada con éxito.' }
-          format.json { render json: @order, status: :created, location: @order }
+          format.html { redirect_to orders_path, notice: 'Orden creada con éxito.' }
+          format.json { render json: { order: @order, products: associated_products }, status: :created, location: @order }
         end
       else
         respond_to do |format|
@@ -72,24 +95,28 @@ class OrdersController < ApplicationController
         end
       end
     else
-      redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
+      respond_to do |format|
+        format.json { render json: { error: 'Usuario no encontrado.' }, status: :not_found }
+      end
     end
   end
+  
+  
 
   def index
     if request.format.json?
-      @orders = current_user.orders.order(created_at: :desc)
+      @orders = Order.order(created_at: :desc)
+      render json: @orders
     else
       if current_user && current_user.admin?
-        @orders = current_user.orders.order(created_at: :desc)
-        respond_to do |format|
-          format.html
-        end
+        @orders = current_user.orders.order(created_at: :desc).paginate(page: params[:page], per_page: 15)
       else
         redirect_back(fallback_location: root_path, alert: 'No tienes permisos para acceder aquí.')
       end
     end
   end
+
+  
 
   def update
     @order = current_user.orders.find(params[:id])
@@ -112,7 +139,10 @@ class OrdersController < ApplicationController
     @created_at_end = params[:created_at_end]
   
     orders = current_user.orders
-    orders = orders.where(estado: @filter) if @filter.present?
+  
+    if @filter.present?
+      orders = orders.where(estado: @filter)
+    end
   
     if @created_at_start.present?
       start_date = Date.parse(@created_at_start)
@@ -123,11 +153,24 @@ class OrdersController < ApplicationController
       end_date = Date.parse(@created_at_end)
       orders = orders.where('created_at <= ?', end_date.end_of_day)
     end
-  
-    @orders = orders
-    render :index
+    
+    @orders = orders.order(created_at: :desc).paginate(page: params[:page], per_page: 15)
+
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @orders }
+    end
   end
   
+  def generate_invoice
+    @order = Order.find(params[:id])
+    respond_to do |format|
+      format.pdf do
+        render pdf: "generate_invoice", template: "orders/generate_invoice"
+      end
+    end
+  end
+
   private
 
   def order_params

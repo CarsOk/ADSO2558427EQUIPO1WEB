@@ -36,3 +36,72 @@
     color: #fff;
     cursor: pointer;
   }  
+
+    /* Estilos generales para la paginación */
+.pagination {
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  float: right;
+
+ }
+ 
+ /* Estilos para los elementos de la paginación */
+ .pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+  margin: 0;
+ }
+ 
+ /* Estilos para el elemento activo de la paginación */
+ .pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+ }
+ 
+ /* Estilos para el elemento deshabilitado de la paginación */
+ .pagination a.disabled {
+  background-color: #f5f5f5;
+  color: #ccc;
+  border: 1px solid #ddd;
+ }
+ 
+ /* Estilos para el elemento "next" de la paginación */
+ .pagination a.next {
+  margin-right: 20px;
+ }
+ 
+ /* Estilos para el elemento "previous" de la paginación */
+ .pagination a.previous {
+  margin-left: 20px;
+ }
+
+ .pagination a.previous.first {
+  color: #ccc;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.pagination em {
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  background-color: #1ab394;
+  border-color: #1ab394;
+  color: white;
+}
+
+.pagination span{
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+}

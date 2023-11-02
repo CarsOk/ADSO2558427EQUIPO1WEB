@@ -36,7 +36,6 @@ class ProductsController < ApplicationController
     end
   end
 
-
   def new
     if current_user.admin?
       @product = Product.new
@@ -45,12 +44,20 @@ class ProductsController < ApplicationController
     end
   end
 
+
   def create
     @product = Product.new(product_params)
-
+  
     respond_to do |format|
       if @product.save
-        format.html { redirect_to product_url(@product), notice: "Product was successfully created." }
+        inventory = Inventory.find_or_initialize_by(product_id: @product.id)
+        inventory.quantity = @product.inventory_quantity || 0
+        inventory.save
+  
+        @product.available = @product.inventory_quantity.to_i.positive?
+        @product.save
+  
+        format.html { redirect_to product_url(@product), notice: "Producto creado exitosamente." }
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -58,6 +65,8 @@ class ProductsController < ApplicationController
       end
     end
   end
+  
+  
 
   def edit
     if current_user.admin?
@@ -70,6 +79,13 @@ class ProductsController < ApplicationController
   def update
     respond_to do |format|
       if @product.update(product_params)
+        inventory = Inventory.find_or_initialize_by(product_id: @product.id)
+        inventory.quantity = @product.inventory_quantity
+        inventory.save
+  
+        @product.available = @product.inventory_quantity.positive?
+        @product.save
+  
         format.html { redirect_to products_path, notice: "Product was successfully updated." }
         format.json { render :show, status: :ok, location: @product }
       else
@@ -81,8 +97,13 @@ class ProductsController < ApplicationController
 
   def destroy
     if current_user.admin?
+      @product = Product.find(params[:id])
+  
+      inventory = Inventory.find_by(product_id: @product.id)
+      inventory.destroy if inventory
+  
       @product.destroy
-
+  
       respond_to do |format|
         format.html { redirect_to products_url, notice: "Product was successfully destroyed." }
         format.json { head :no_content }
@@ -91,8 +112,10 @@ class ProductsController < ApplicationController
       redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
     end
   end
+  
 
   private
+
   def set_product
     @product = Product.find(params[:id])
   end
