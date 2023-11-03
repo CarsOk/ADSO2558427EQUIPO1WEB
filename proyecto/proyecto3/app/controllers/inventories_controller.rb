@@ -1,11 +1,17 @@
 class InventoriesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, unless: -> { request.format.json? }
 
   def index
-    if current_user.admin?
+    if request.format.json?
       @inventories = Inventory.all
+      render json: @inventories.as_json(include: :product)
     else
-      redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
+      if current_user && current_user.admin?
+        @inventories = Inventory.all
+        @products = Product.all
+      else
+        redirect_back(fallback_location: root_path, alert: 'No tienes permisos para acceder aquí.')
+      end
     end
   end
 
@@ -21,9 +27,9 @@ class InventoriesController < ApplicationController
   def create
     if current_user.admin?
       @inventory = Inventory.new(inventory_params)
-  
+
       existing_inventory = Inventory.find_by(product_id: @inventory.product_id)
-  
+
       if existing_inventory
         flash[:notice] = "Este producto ya se encuentra en el inventario."
         redirect_to inventories_path
@@ -39,7 +45,6 @@ class InventoriesController < ApplicationController
       redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
     end
   end
-  
 
   def edit
     if current_user.admin?
@@ -53,7 +58,7 @@ class InventoriesController < ApplicationController
   def update
     if current_user.admin?
       @inventory = Inventory.find(params[:id])
-  
+
       if @inventory.update(inventory_params)
         product = Product.find(@inventory.product_id)
         available = @inventory.quantity.positive?
@@ -66,9 +71,6 @@ class InventoriesController < ApplicationController
       redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
     end
   end
-  
-  
-
 
   def destroy
     if current_user.admin?

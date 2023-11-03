@@ -4,6 +4,7 @@ class ShopsController < ApplicationController
 
   def index
     @products = Product.all
+    @orders = Order.order(created_at: :desc)
   end
   
   def custom_action

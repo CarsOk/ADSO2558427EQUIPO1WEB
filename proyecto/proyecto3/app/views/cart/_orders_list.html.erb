@@ -1,0 +1,26 @@
+<% @orders.each do |order| %>
+	<div class="pos-table">
+			<div class="row pos-table-row">
+				<div class="col-9">
+					<div class="pos-product-thumb">
+							<div class="img"><%= order.id %></div>
+							<div class="info">
+							<div class="title"><%= order.estado %></div>
+							<div class="single-price"><%= number_to_currency(order.total) %></div>
+							</div>
+					</div>
+				</div>
+				<div class="col-3 total-price">
+                    <p>$<%= order.total %></p>
+						<div class="input-group-append justify-content-end">
+                            <%= link_to order, class: 'btn btn-secondary btn-sm' do %>
+                                <i class="fa fa-eye"></i>
+                            <% end %>                         
+                            <%= link_to generate_invoice_order_path(order, format: :pdf), class: 'btn btn-primary btn-sm' do %>
+                                <i class="fa fa-file-invoice"></i>
+                            <% end %>
+						</div>                
+                    </div>
+			</div>
+	</div>
+<%end%>
