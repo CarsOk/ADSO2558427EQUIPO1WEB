@@ -8,7 +8,8 @@ Rails.application.routes.draw do
     member do
       patch 'update_quantity', to: 'inventories#update'
     end
-  end  resources :orders do
+  end  
+  resources :orders do
     get 'filter', on: :collection
     member do
       get 'generate_invoice', format: 'pdf'
