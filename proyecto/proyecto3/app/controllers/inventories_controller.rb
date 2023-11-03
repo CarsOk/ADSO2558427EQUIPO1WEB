@@ -63,9 +63,15 @@ class InventoriesController < ApplicationController
         product = Product.find(@inventory.product_id)
         available = @inventory.quantity.positive?
         product.update(available: available)
-        redirect_to inventories_path, notice: "Inventario actualizado exitosamente."
+        respond_to do |format|
+          format.html { redirect_to inventories_path, notice: "Inventario actualizado exitosamente." }
+          format.json { render json: @inventory }
+        end
       else
-        render :edit
+        respond_to do |format|
+          format.html { render :edit }
+          format.json { render json: @inventory.errors, status: :unprocessable_entity }
+        end
       end
     else
       redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
