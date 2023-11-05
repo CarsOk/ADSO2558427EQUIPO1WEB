@@ -1,0 +1,58 @@
+tr{
+    border-bottom: solid 1px black;
+}
+td, th{
+    text-align: left;
+}
+
+table, tr, td, th, tbody, thead, tfoot{
+    page-break-inside: avoid !important;
+}
+header{
+    border-bottom: 3px solid black;
+}
+header h6 {
+    color: blue;
+    font-weight: bold;
+}
+.header-content {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+}
+.logo {
+    margin-right: 10px;
+    grid-column: 1 / span 1;
+}
+body{
+    height: 50;
+    width: 50;
+}
+body .header-info{
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+body .header-info p{
+    margin: 5px 0;
+}
+body h3{
+    margin-top: 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 50px;
+    width: 100%;
+    height: 200px;
+    position: relative;
+    clear: both;
+    color: blue;
+    font-weight: bold;
+    font-size: 13px;
+}  
+.table-container {
+    margin-top: 20px;
+}

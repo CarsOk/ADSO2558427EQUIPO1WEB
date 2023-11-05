@@ -64,3 +64,6 @@ gem "fog-aws"
 gem "stimulus-rails"
 gem "importmap-rails"
 gem 'turbo-rails'
+gem 'will_paginate'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'

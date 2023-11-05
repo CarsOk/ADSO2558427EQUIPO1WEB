@@ -521,6 +521,10 @@ GEM
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    wicked_pdf (2.7.0)
+      activesupport
+    will_paginate (4.0.0)
+    wkhtmltopdf-binary (0.12.6.6)
     xml-simple (1.1.9)
       rexml
     xmlrpc (0.3.3)
@@ -560,6 +564,9 @@ DEPENDENCIES
   web-console (>= 4.1.0)
   webdrivers
   webpacker (~> 5.4, >= 5.4.4)
+  wicked_pdf
+  will_paginate
+  wkhtmltopdf-binary
 
 RUBY VERSION
    ruby 3.1.4p223

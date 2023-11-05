@@ -1,15 +1,15 @@
 <div class="row wrapper border-bottom white-bg page-heading">
-    <div class="col-lg-10">
-        <h1>Inventario</h1>
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="<%= url_for :controller => 'sessions', :action => 'index' %>">Home</a>
-            </li>
-            <li class="breadcrumb-item active">
-                <strong>Inventario</strong>
-            </li>
-        </ol>
-    </div>
+  <div class="col-lg-10">
+    <h1>Inventario</h1>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="<%= url_for :controller => 'sessions', :action => 'index' %>">Home</a>
+      </li>
+      <li class="breadcrumb-item active">
+        <strong>Inventario</strong>
+      </li>
+    </ol>
+  </div>
 </div>
 <div class="wrapper wrapper-content animated fadeInRight ecommerce">
   <div class="row">
@@ -23,7 +23,7 @@
                 <th data-hide="phone">Cantidad</th>
                 <th data-hide="phone">Creado</th>
                 <th data-hide="phone,tablet">Actualizado</th>
-                <th class="text-right">Accion</th>
+                <th class="text-right">Acción</th>
               </tr>
             </thead>
             <tbody>
@@ -35,13 +35,13 @@
                   <td><%= inventory.updated_at.strftime('%d/%m/%Y %H:%M') %></td>
                   <td class="text-right">
                     <div class="btn-group">
-                      <%= link_to 'View', inventory, class: 'btn-white btn btn-xs' %>
-                      <%= link_to 'Edit', edit_inventory_path(inventory), class: 'btn-white btn btn-xs' %>
-                      <%= link_to 'Delete', inventory, method: :delete, data: { confirm: '¿Estás seguro?' }, class: 'btn-white btn btn-xs' %>
+                      <%= link_to 'Ver', inventory, class: 'btn-white btn btn-xs' %>
+                      <%= link_to 'Editar', edit_inventory_path(inventory), class: 'btn-white btn btn-xs' %>
+                      <%= link_to 'Eliminar', inventory, method: :delete, data: { confirm: '¿Estás seguro?' }, class: 'btn-white btn btn-xs' %>
                     </div>
                   </td>
                 </tr>
-              <%end%>
+              <% end %>
             </tbody>
           </table>
         </div>
@@ -50,5 +50,4 @@
   </div>
 </div>
 
-<%= link_to "New Inventory", new_inventory_path, class: "btn btn-primary" %>
-
+<%= link_to "Nuevo Inventario", new_inventory_path, class: "btn btn-primary" %>

@@ -1,9 +1,17 @@
 class InventoriesController < ApplicationController
+  before_action :authenticate_user!, unless: -> { request.format.json? }
+
   def index
-    if current_user.admin?
+    if request.format.json?
       @inventories = Inventory.all
+      render json: @inventories.as_json(include: :product)
     else
-      redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
+      if current_user && current_user.admin?
+        @inventories = Inventory.all
+        @products = Product.all
+      else
+        redirect_back(fallback_location: root_path, alert: 'No tienes permisos para acceder aquí.')
+      end
     end
   end
 
@@ -21,11 +29,14 @@ class InventoriesController < ApplicationController
       @inventory = Inventory.new(inventory_params)
 
       existing_inventory = Inventory.find_by(product_id: @inventory.product_id)
-      
+
       if existing_inventory
         flash[:notice] = "Este producto ya se encuentra en el inventario."
         redirect_to inventories_path
       elsif @inventory.save
+        product = Product.find(@inventory.product_id)
+        product.update(inventory_quantity: @inventory.quantity)
+        product.update(available: @inventory.quantity.positive?)
         redirect_to inventories_path, notice: "Inventario creado exitosamente."
       else
         render :new
@@ -49,22 +60,34 @@ class InventoriesController < ApplicationController
       @inventory = Inventory.find(params[:id])
 
       if @inventory.update(inventory_params)
-        redirect_to inventories_path, notice: "Inventory was successfully updated."
+        product = Product.find(@inventory.product_id)
+        available = @inventory.quantity.positive?
+        product.update(available: available)
+        respond_to do |format|
+          format.html { redirect_to inventories_path, notice: "Inventario actualizado exitosamente." }
+          format.json { render json: @inventory }
+        end
       else
-        render :edit
+        respond_to do |format|
+          format.html { render :edit }
+          format.json { render json: @inventory.errors, status: :unprocessable_entity }
+        end
       end
     else
       redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
     end
   end
-  
 
   def destroy
     if current_user.admin?
       @inventory = Inventory.find(params[:id])
       @inventory.destroy
 
-      redirect_to inventories_path, notice: "Inventory was successfully deleted."
+      product = Product.find(@inventory.product_id)
+      product.update(inventory_quantity: nil)
+      product.save
+
+      redirect_to inventories_path, notice: "Inventario eliminado exitosamente."
     else
       redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
     end
