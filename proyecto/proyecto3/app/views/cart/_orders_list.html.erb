@@ -1,22 +1,32 @@
 <% @orders.each do |order| %>
 	<div class="pos-table">
 			<div class="row pos-table-row">
-				<div class="col-9">
+				<div class="col-8">
 					<div class="pos-product-thumb">
-							<div class="img"><%= order.id %></div>
+							<div class="single-price" style="margin: 0 10px"><%= order.id %></div>
 							<div class="info">
-							<div class="title"><%= order.estado %></div>
+							<div class="title">
+								<% case order.estado %>
+									<% when 'Entregado' %>
+									<span class="badge badge-success"><%= order.estado %></span>
+									<% when 'En Cocina' %>
+									<span class="badge badge-warning"><%= order.estado %></span>
+									<% when 'Cancelado' %>
+									<span class="badge badge-danger"><%= order.estado %></span>
+								<% else %>
+									<span class="badge badge-default"><%= order.estado %></span>
+								<% end %>
+							</div>
 							<div class="single-price"><%= number_to_currency(order.total) %></div>
 							</div>
 					</div>
 				</div>
-				<div class="col-3 total-price">
-                    <p>$<%= order.total %></p>
-						<div class="input-group-append justify-content-end">
-                            <%= link_to order, class: 'btn btn-secondary btn-sm' do %>
+				<div class="col-4 total-price">
+						<div class="input-group-append justify-content-around">
+                            <%= link_to order, class: 'btn btn-outline-success btn-sm' do %>
                                 <i class="fa fa-eye"></i>
                             <% end %>                         
-                            <%= link_to generate_invoice_order_path(order, format: :pdf), class: 'btn btn-primary btn-sm' do %>
+                            <%= link_to generate_invoice_order_path(order, format: :pdf), class: 'btn btn-outline-warning btn-sm' do %>
                                 <i class="fa fa-file-invoice"></i>
                             <% end %>
 						</div>                
