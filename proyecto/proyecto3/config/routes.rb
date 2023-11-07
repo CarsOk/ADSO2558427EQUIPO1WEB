@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
-  get 'inventories/index'
-  get 'inventories/edit'
-  get 'inventories/new'
   get 'cart', to: 'cart#show'
   post 'cart/add'
   post 'cart/remove'
   devise_for :users
   resources :products
-  resources :inventories
+  resources :inventories, except: [:show] do
+    member do
+      patch 'update_quantity', to: 'inventories#update'
+    end
+  end  
   resources :orders do
     get 'filter', on: :collection
     member do
