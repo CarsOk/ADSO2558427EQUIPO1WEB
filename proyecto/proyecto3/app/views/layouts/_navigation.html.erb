@@ -33,13 +33,11 @@
                     <% end %>
                 </li>
             <% end %>
-            <% if policy(current_user).admin? %> 
                 <li class="<%= is_active_controller('inventories') %>">
                     <%= link_to inventories_path  do %>
                         <i class="fa fa-sitemap"></i><span class="nav-label" data-i18n="nav.dashboard">Inventario</span></a>
                     <% end %>
                 </li>
-            <% end %>
             
             <li class="<%= is_active_controller('shops') %>">
                 <%= link_to shops_path do %>

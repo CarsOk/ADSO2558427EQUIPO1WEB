@@ -1,4 +1,5 @@
-<%= form_with(model: @order, url: finish_order_cart_index_path, method: :post) do |f| %>
+<div class="pos-sidebar-footer" id="order-form-container" style="display: none;">
+ <%= form_with(model: @order, url: finish_order_cart_index_path, method: :post) do |f| %>
     <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, class: "form-control" %>
@@ -27,7 +28,7 @@
         <%= f.select :payment_method, ['Efectivo', 'Nequi', 'Daviplata', 'Bancolombia'], { prompt: 'Selecciona un método de pago' }, class: "form-control" %>
     </div>
     </div>
-
+</div>
 
     <div class="pos-sidebar-footer">
 		<div class="subtotal">
@@ -44,7 +45,7 @@
 		</div>
 		<div class="btn-row">
 			<a href="#" class="btn btn-default"><i class="fa fa-bell fa-fw fa-lg"></i> Service</a>
-			<a href="#" class="btn btn-default"><i class="fa fa-file-invoice-dollar fa-fw fa-lg"></i> Bill</a>
+			<button type="button" id="show-form-button" class="btn btn-primary">Tomar Orden</button>
             <div class="actions">
                 <%= f.button type: 'submit', class: 'btn btn-success' do %>
                     <i class="fa fa-check fa-fw fa-lg"></i> Finalizar Orden
@@ -53,3 +54,20 @@
 		</div>
 	</div>
 <% end %>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const showFormButton = document.getElementById("show-form-button");
+    const formContainer = document.getElementById("order-form-container");
+    let isFormVisible = false;
+
+    showFormButton.addEventListener("click", function() {
+      if (isFormVisible) {
+        formContainer.style.display = "none";
+      } else {
+        formContainer.style.display = "block";
+      }
+      isFormVisible = !isFormVisible; 
+    });
+  });
+</script>
