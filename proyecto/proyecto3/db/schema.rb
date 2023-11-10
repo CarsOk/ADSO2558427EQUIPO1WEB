@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2023_10_24_050630) do
-
+ActiveRecord::Schema.define(version: 2023_11_10_023112) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "btree_gin"
@@ -81,6 +79,7 @@ ActiveRecord::Schema.define(version: 2023_10_24_050630) do
     t.string "apartment"
     t.string "payment_method"
     t.string "estado"
+    t.integer "order_number"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -94,6 +93,7 @@ ActiveRecord::Schema.define(version: 2023_10_24_050630) do
     t.boolean "available"
     t.string "category"
     t.integer "stock"
+    t.integer "inventory_quantity"
   end
 
   create_table "users", force: :cascade do |t|

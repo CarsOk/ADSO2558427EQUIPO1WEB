@@ -16,7 +16,7 @@ module Login
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
-    # config.time_zone = "Central Time (US & Canada)"
+    config.time_zone = 'America/Bogota'
     # config.eager_load_paths << Rails.root.join("extras")
     config.to_prepare do
       Devise::SessionsController.layout "empty"

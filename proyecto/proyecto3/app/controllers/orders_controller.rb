@@ -171,6 +171,31 @@ class OrdersController < ApplicationController
     end
   end
 
+  def daily_report
+    date = params[:date] ? Date.parse(params[:date]) : Date.today
+    result = Order.daily_report(date)
+    @orders = result[:orders]
+    @total_amount = result[:total_amount]
+  end
+
+  def orders_of_the_day
+    @orders = Order.where(created_at: Date.today.beginning_of_day..Date.today.end_of_day)
+  end
+
+  def accounting_report
+    start_date = params[:start_date]
+    end_date = params[:end_date]
+
+    if start_date.present? && end_date.present?
+      @orders = Order.where(created_at: start_date.to_date.beginning_of_day..end_date.to_date.end_of_day)
+      @total_amount = @orders.sum(:total)
+    else
+      @orders = []
+      @total_amount = 0
+    end
+  end
+  
+    
   private
 
   def order_params

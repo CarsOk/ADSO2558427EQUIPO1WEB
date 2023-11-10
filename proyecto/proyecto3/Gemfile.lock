@@ -95,6 +95,7 @@ GEM
       image_processing (~> 1.1)
       marcel (~> 1.0.0)
       ssrf_filter (~> 1.0)
+    chronic (0.10.2)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     date (3.3.3)
@@ -521,6 +522,8 @@ GEM
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    whenever (1.0.0)
+      chronic (>= 0.6.3)
     wicked_pdf (2.7.0)
       activesupport
     will_paginate (4.0.0)
@@ -564,6 +567,7 @@ DEPENDENCIES
   web-console (>= 4.1.0)
   webdrivers
   webpacker (~> 5.4, >= 5.4.4)
+  whenever
   wicked_pdf
   will_paginate
   wkhtmltopdf-binary

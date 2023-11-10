@@ -1,0 +1,31 @@
+<h1>Accounting Report</h1>
+<p>Total Amount: <%= number_to_currency(@total_amount) %></p>
+
+<%= form_tag accounting_report_orders_path, method: :get do %>
+  <label for="start_date">Start Date:</label>
+  <%= text_field_tag 'start_date', params[:start_date], type: 'date' %>
+
+  <label for="end_date">End Date:</label>
+  <%= text_field_tag 'end_date', params[:end_date], type: 'date' %>
+
+  <%= submit_tag 'Generate Report' %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Order Number</th>
+      <!-- Otros campos relevantes de la orden -->
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.order_number %></td>
+        <!-- Otros campos relevantes de la orden -->
+        <td><%= number_to_currency(order.total) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -28,10 +28,14 @@
 
             <% if policy(current_user).admin? %> 
                 <li class="<%= is_active_controller('orders') %>">
-                    <%= link_to orders_path do %>
-                        <i class="fa fa-folder"></i> <span class="nav-label" data-i18n="nav.dashboard">Orders</span></a>
-                    <% end %>
-                </li>
+                <a href=""><i class="fa fa-folder"></i> <span class="nav-label" data-i18n="nav.dashboard">Orders</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse <%= is_active_controller('orders', 'in') %>">
+                    <li class="<%= is_active_action('index') %>"><%= link_to "Ordenes", orders_path %></li>
+                    <li class="<%= is_active_action('orders_of_the_day') %>"><%= link_to "Ordenes del Dia", orders_of_the_day_path %></li>
+                    <li class="<%= is_active_action('accounting_report') %>"><%= link_to "Contabilidad Ordenes", accounting_report_orders_path %></li>
+
+                </ul>
+            </li>
             <% end %>
                 <li class="<%= is_active_controller('inventories') %>">
                     <%= link_to inventories_path  do %>

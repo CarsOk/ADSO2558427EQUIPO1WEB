@@ -20,12 +20,11 @@
                 <div class="ibox-title">
                     <h5>Ordenes</h5>
                 </div>
-                <div class="ibox-content">
-                    <h1 class="no-margins"><%= Order.count %></h1>
-                    <div class="stat-percent font-bold text-info">0%<i class="fa fa-level-up"></i></div>
-                    <%= link_to "New orders", shops_path, class: "small" %>
-
-                </div>
+                    <div class="ibox-content">
+                        <h1 class="no-margins"><%= Order.where(created_at: Time.current.beginning_of_day..Time.current.end_of_day).count %></h1>
+                        <div class="stat-percent font-bold text-info">0%<i class="fa fa-level-up"></i></div>
+                        <%= link_to "New orders", shops_path, class: "small" %>
+                    </div>
             </div>
         </div>
         <div class="col-lg-4">
@@ -44,3 +43,6 @@
             </div>
         </div>
     </div>
+
+<%= link_to 'Órdenes del Día', orders_of_the_day_path %>
+
