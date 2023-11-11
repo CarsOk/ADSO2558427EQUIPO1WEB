@@ -14,6 +14,9 @@ Rails.application.routes.draw do
     member do
       get 'generate_invoice', format: 'pdf'
     end
+    collection do
+      get 'export_excel'
+    end
   end
 
   get '/orders_of_the_day', to: 'orders#orders_of_the_day'

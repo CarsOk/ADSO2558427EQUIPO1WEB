@@ -4,7 +4,6 @@ class Order < ApplicationRecord
   has_many :products, through: :order_products
   before_create :assign_daily_order_number
 
-
   def self.daily_report(date)
     orders = where(created_at: date.beginning_of_day..date.end_of_day)
     total_amount = orders.sum(:total)
@@ -14,12 +13,8 @@ class Order < ApplicationRecord
   private
 
   def assign_daily_order_number
-    self.order_number = Order.transaction do
-      Order.where(created_at: Time.current.beginning_of_day..Time.current.end_of_day).lock.select('1').first
-
-      today_orders_count = Order.where(created_at: Time.current.beginning_of_day..Time.current.end_of_day).count
-      today_orders_count + 1
-    end
+    today_orders_count = Order.where(created_at: Time.current.beginning_of_day..Time.current.end_of_day).count
+    self.order_number = today_orders_count + 1
   end
-  
 end
+

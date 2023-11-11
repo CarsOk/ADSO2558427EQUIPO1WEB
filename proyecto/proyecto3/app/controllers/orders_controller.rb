@@ -1,3 +1,5 @@
+require 'axlsx'
+
 class OrdersController < ApplicationController
   before_action :authenticate_user!, unless: -> { request.format.json? }
   skip_before_action :verify_authenticity_token, only: [:create]
@@ -189,6 +191,9 @@ class OrdersController < ApplicationController
     if start_date.present? && end_date.present?
       @orders = Order.where(created_at: start_date.to_date.beginning_of_day..end_date.to_date.end_of_day)
       @total_amount = @orders.sum(:total)
+    elsif start_date.present?
+      @orders = Order.where(created_at: start_date.to_date.beginning_of_day..start_date.to_date.end_of_day)
+      @total_amount = @orders.sum(:total)
     else
       @orders = []
       @total_amount = 0
@@ -196,6 +201,49 @@ class OrdersController < ApplicationController
   end
   
     
+  def export_excel
+    start_date = params[:start_date]
+    end_date = params[:end_date]
+  
+    if start_date.present?
+      start_date = start_date.to_date.beginning_of_day
+    end
+  
+    if end_date.present?
+      end_date = end_date.to_date.end_of_day
+    end
+  
+    @orders = Order.where(created_at: start_date..end_date)
+  
+    respond_to do |format|
+      format.xlsx do
+        template_path = File.join(Rails.root, 'lib', 'assets', 'plantilla.xlsx')
+        excel = Axlsx::Package.new
+        workbook = excel.workbook
+  
+        workbook.add_worksheet(name: 'Ordenes') do |sheet|
+          sheet.add_row ['Fecha', 'Producto', 'Cantidad', 'Valor', 'Total', 'Método de Pago']
+  
+          @orders.each do |order|
+            order.order_products.each do |order_product|
+              sheet.add_row [order.created_at.to_date, order_product.product.title, order_product.quantity, order_product.product.price, order_product.product.price * order_product.quantity, order.payment_method]
+            end
+          end
+        end
+  
+        tmpfile = Tempfile.new(['ordenes', '.xlsx'])
+        excel.serialize(tmpfile.path)
+  
+        send_file tmpfile.path, filename: 'ordenes.xlsx', type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', disposition: 'attachment'
+      end
+    end
+  end
+  
+  
+  
+  
+  
+
   private
 
   def order_params
