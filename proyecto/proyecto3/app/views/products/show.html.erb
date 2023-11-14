@@ -8,7 +8,11 @@
               <div class="product-images">
                 <div>
                   <div class="image-imitation" style="padding: 0">
-                    <%= image_tag @product.image.url, class: "img-fluid rounded" %>
+                  <% if @product.image? %>
+                    <%= image_tag @product.image.url, width: "350px", height: "250px", class: "rounded" %>
+                  <% else %>
+                    <%= image_tag("placeholder.png" , width: "350px", height: "250px" )%>
+                  <% end %>
                   </div>
                 </div>
               </div>
@@ -34,17 +38,16 @@
               </div>
               <hr>
               <div>
-                <div class="btn-group">
-                  <button class="btn btn-primary btn-sm">
-                    <i class="fa fa-edit"></i>
-                    <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-primary" %>
-                  </button>
-                  <button class="btn btn-white btn-sm">
-                    <i class="fa fa-star"></i>
-                    <%= link_to 'Back', products_path, class: "btn btn-secondary" %>
-                  </button>
-                </div>
+              <div class="btn-group">
+                <%= link_to products_path, class: "btn btn-secondary" , style: "margin-right: 10px" do %>
+                  <i class="fas fa-arrow-left"></i> Back
+                <% end %>
+                <%= link_to edit_product_path(@product), class: "btn btn-primary" do %>
+                  <i class="fas fa-edit"></i> Edit
+                <% end %>
               </div>
+            </div>
+            
             </div>
           </div>
         </div>
