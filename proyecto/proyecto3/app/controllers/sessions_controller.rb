@@ -5,9 +5,9 @@ class SessionsController < ApplicationController
     unless current_user.admin?
       redirect_to shops_path
     end
+
     @orders = current_user.orders
-    @total_orders = @orders.sum(&:total)
-    
+    @statistics = Order.daily_statistics
+
   end
-  
 end

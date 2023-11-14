@@ -100,6 +100,7 @@ GEM
       image_processing (~> 1.1)
       marcel (~> 1.0.0)
       ssrf_filter (~> 1.0)
+    chartkick (5.0.4)
     chronic (0.10.2)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
@@ -556,6 +557,7 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   carrierwave
+  chartkick
   devise
   fog
   fog-aws

@@ -10,11 +10,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <%= stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css' %>
 
+    <!-- Agregado para Chart.js -->
+    <%= javascript_include_tag 'https://cdn.jsdelivr.net/npm/chart.js' %>
+    <%= javascript_include_tag 'https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns' %>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag asset_path('LogoCurb.png') %>
     <%= turbo_frame_tag %>
-    
+    <%= javascript_include_tag 'chartkick' %>
+
   </head>
 
   <body>

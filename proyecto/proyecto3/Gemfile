@@ -69,4 +69,5 @@ gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'whenever', require: false
 gem 'axlsx'
+gem 'chartkick'
 

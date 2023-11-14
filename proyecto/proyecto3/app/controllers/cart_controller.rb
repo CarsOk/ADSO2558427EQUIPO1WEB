@@ -26,6 +26,17 @@ class CartController < ApplicationController
     end
   end
   
+    def remove
+    Orderable.find_by(id: params[:id]).destroy
+    respond_to do |format|
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace('cart',
+                                                  partial: 'cart/cart',
+                                                  locals: { cart: @cart })
+      end
+      format.html { redirect_to shops_path }
+    end
+  end
   
   def finish_order
     order = current_user.orders.create(total: @cart.total)
