@@ -46,6 +46,26 @@
             </div>
         </div>
     </div>
-<%= line_chart @statistics[:daily_orders], height: '300px', width: '500px', library: { title: 'Órdenes Diarias' } %>
 
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5>Orders Statistics</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="flot-chart">
+                                <div class="flot-chart-content" id="flot-dashboard-chart">
+                                    <%= line_chart @statistics[:daily_orders], id: 'line-chart', height: '200px' %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 

@@ -38,7 +38,6 @@
                   <td class="text-right">
                   <% if policy(current_user).admin? %>
                     <div class="btn-group">
-                      <%= link_to 'Ver', inventory, class: 'btn-white btn btn-xs' %>
                       <%= link_to 'Editar', edit_inventory_path(inventory), class: 'btn-white btn btn-xs' %>
                       <%= link_to 'Eliminar', inventory, method: :delete, data: { confirm: '¿Estás seguro?' }, class: 'btn-white btn btn-xs' %>
                     </div>

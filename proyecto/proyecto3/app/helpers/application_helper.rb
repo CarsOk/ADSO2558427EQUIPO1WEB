@@ -7,6 +7,10 @@ module ApplicationHelper
         actions.include?(action_name) ? 'active' : ''
       end
 
+      def percentage(value, total)
+        return 0 if total.nil? || total.zero?
+        (value / total.to_f * 100).to_i
+      end
 
       def current_order
         if !session[:order_id].nil?

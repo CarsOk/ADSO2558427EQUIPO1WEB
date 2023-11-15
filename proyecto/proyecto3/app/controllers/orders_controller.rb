@@ -58,12 +58,12 @@ class OrdersController < ApplicationController
   def create
     user_id = 1
     user = User.find_by(id: user_id)
-    
+  
     if user
       @order = user.orders.build(order_params)
       total = 0
       estado = "En Cocina"
-
+  
       if @order.save
         associated_products = []
   
@@ -76,10 +76,17 @@ class OrdersController < ApplicationController
   
             if product && quantity.to_i > 0
               subtotal = product.price * quantity.to_i
-              total += subtotal 
+              total += subtotal
   
               order_product = @order.order_products.create(product_id: product_id, quantity: quantity)
               associated_products << { product: product, quantity: order_product.quantity }
+  
+              inventory = Inventory.find_by(product_id: product.id)
+              if inventory
+                new_quantity = inventory.quantity - quantity.to_i
+                inventory.update(quantity: new_quantity)
+                product.update(available: new_quantity > 0)
+              end
             end
           end
         end
@@ -102,6 +109,7 @@ class OrdersController < ApplicationController
       end
     end
   end
+  
   
   
 
