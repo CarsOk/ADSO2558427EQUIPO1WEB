@@ -24,7 +24,7 @@ class Order < ApplicationRecord
 
   def complete_order
     self.order_products.each do |order_product|
-      order_product.product.increment_sold_count(order_product.quantity)
+      order_product.product.increment(:sold_count, order_product.quantity).save
     end
   end
 

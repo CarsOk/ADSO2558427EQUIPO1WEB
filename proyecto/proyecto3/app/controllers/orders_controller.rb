@@ -58,30 +58,31 @@ class OrdersController < ApplicationController
   def create
     user_id = 1
     user = User.find_by(id: user_id)
-  
+
     if user
       @order = user.orders.build(order_params)
       total = 0
       estado = "En Cocina"
       error_messages = []
-  
+      associated_products = []  # Inicializar associated_products aquí
+
       if params[:products].present?
         params[:products].each do |product_params|
           product_id = product_params[:id]
           quantity = product_params[:quantity]
-  
+
           product = Product.find_by(id: product_id)
           inventory = Inventory.find_by(product_id: product_id)
-  
+
           if product && inventory && quantity.to_i > 0
             if inventory.quantity >= quantity.to_i
               subtotal = product.price * quantity.to_i
               total += subtotal
-  
+
               order_product = @order.order_products.build(product_id: product_id, quantity: quantity)
-  
+
               associated_products << { product: product, quantity: order_product.quantity }
-  
+
               new_quantity = inventory.quantity - quantity.to_i
               inventory.update(quantity: new_quantity)
               product.update(available: new_quantity > 0)
@@ -93,10 +94,11 @@ class OrdersController < ApplicationController
           end
         end
       end
-  
+
       if error_messages.empty? && @order.save
         @order.update(total: total, estado: estado)
-  
+        @order.complete_order
+        
         respond_to do |format|
           format.html { redirect_to orders_path, notice: 'Orden creada con éxito.' }
           format.json { render json: { order: @order, products: associated_products }, status: :created, location: @order }
@@ -178,6 +180,13 @@ class OrdersController < ApplicationController
     end
   end
   
+  def complete_order
+    self.order_products.each do |order_product|
+      product = order_product.product
+      product.increment_sold_count(order_product.quantity)
+    end
+  end
+
   def generate_invoice
     @order = Order.find(params[:id])
     respond_to do |format|

@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
     @total_daily_orders = Order.total_daily_orders
     @total_weekly_orders = Order.total_weekly_orders
     @total_monthly_orders = Order.total_monthly_orders
-    
-    @top_selling_products = Product.order(sold_count: :asc).limit(3)
+
+    @top_selling_products = Product.order(sold_count: :desc).limit(3)
   end
 end

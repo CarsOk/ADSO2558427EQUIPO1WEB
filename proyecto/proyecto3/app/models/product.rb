@@ -5,9 +5,11 @@ class Product < ApplicationRecord
   
   mount_uploader :image, ImageUploader
     
-  def increment_sold_count(quantity = 1)
+  def increment_sold_count(quantity)
     self.update(sold_count: self.sold_count + quantity)
   end
+
+  
 
   private
 
