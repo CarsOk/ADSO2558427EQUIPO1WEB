@@ -63,34 +63,38 @@ class OrdersController < ApplicationController
       @order = user.orders.build(order_params)
       total = 0
       estado = "En Cocina"
+      error_messages = []
   
-      if @order.save
-        associated_products = []
+      if params[:products].present?
+        params[:products].each do |product_params|
+          product_id = product_params[:id]
+          quantity = product_params[:quantity]
   
-        if params[:products].present?
-          params[:products].each do |product_params|
-            product_id = product_params[:id]
-            quantity = product_params[:quantity]
+          product = Product.find_by(id: product_id)
+          inventory = Inventory.find_by(product_id: product_id)
   
-            product = Product.find_by(id: product_id)
-  
-            if product && quantity.to_i > 0
+          if product && inventory && quantity.to_i > 0
+            if inventory.quantity >= quantity.to_i
               subtotal = product.price * quantity.to_i
               total += subtotal
   
-              order_product = @order.order_products.create(product_id: product_id, quantity: quantity)
+              order_product = @order.order_products.build(product_id: product_id, quantity: quantity)
+  
               associated_products << { product: product, quantity: order_product.quantity }
   
-              inventory = Inventory.find_by(product_id: product.id)
-              if inventory
-                new_quantity = inventory.quantity - quantity.to_i
-                inventory.update(quantity: new_quantity)
-                product.update(available: new_quantity > 0)
-              end
+              new_quantity = inventory.quantity - quantity.to_i
+              inventory.update(quantity: new_quantity)
+              product.update(available: new_quantity > 0)
+            else
+              error_messages << "No hay suficiente inventario para #{product.title}."
             end
+          else
+            error_messages << "Producto no encontrado o cantidad inválida para #{product.title}."
           end
         end
+      end
   
+      if error_messages.empty? && @order.save
         @order.update(total: total, estado: estado)
   
         respond_to do |format|
@@ -98,6 +102,7 @@ class OrdersController < ApplicationController
           format.json { render json: { order: @order, products: associated_products }, status: :created, location: @order }
         end
       else
+        error_messages.each { |msg| @order.errors.add(:base, msg) }
         respond_to do |format|
           format.html { render :new }
           format.json { render json: @order.errors, status: :unprocessable_entity }
@@ -109,6 +114,7 @@ class OrdersController < ApplicationController
       end
     end
   end
+  
   
   
   

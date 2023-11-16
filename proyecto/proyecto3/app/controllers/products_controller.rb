@@ -46,6 +46,8 @@ class ProductsController < ApplicationController
 
 
   def create
+    puts "Parameters: #{params.inspect}"
+
     @product = Product.new(product_params)
   
     respond_to do |format|
@@ -112,7 +114,6 @@ class ProductsController < ApplicationController
       redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
     end
   end
-  
 
   private
 

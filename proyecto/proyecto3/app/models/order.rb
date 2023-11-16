@@ -12,14 +12,47 @@ class Order < ApplicationRecord
     { orders: orders, total_amount: total_amount }
   end
 
-  def self.daily_statistics
+  def self.statistics
     {
       total_orders: sum(:total),
-      daily_orders: group("DATE(created_at)").count
+      daily_orders: daily_order_counts,
+      graphic_orders: group("DATE(created_at)").count,
+      weekly_orders: weekly_order_counts,
+      monthly_orders: monthly_order_counts
     }
   end
 
+  def complete_order
+    self.order_products.each do |order_product|
+      order_product.product.increment_sold_count(order_product.quantity)
+    end
+  end
+
   private
+
+  def self.daily_order_counts
+    where(created_at: Date.today.all_day).count
+  end
+
+  def self.weekly_order_counts
+    where(created_at: Date.today.beginning_of_week..Date.today.end_of_week).count
+  end
+
+  def self.monthly_order_counts
+    where(created_at: Date.today.beginning_of_month..Date.today.end_of_month).count
+  end
+
+  def self.total_daily_orders
+    where(created_at: Date.today.all_day).sum(:total)
+  end
+
+  def self.total_weekly_orders
+    where(created_at: Date.today.beginning_of_week..Date.today.end_of_week).sum(:total)
+  end
+
+  def self.total_monthly_orders
+    where(created_at: Date.today.beginning_of_month..Date.today.end_of_month).sum(:total)
+  end
 
   def assign_daily_order_number
     today_orders_count = Order.where(created_at: Time.current.beginning_of_day..Time.current.end_of_day).count

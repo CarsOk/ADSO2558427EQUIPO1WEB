@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_11_10_023112) do
+ActiveRecord::Schema.define(version: 2023_11_15_231529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "btree_gin"
@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 2023_11_10_023112) do
     t.string "category"
     t.integer "stock"
     t.integer "inventory_quantity"
+    t.integer "sold_count", default: 0
   end
 
   create_table "users", force: :cascade do |t|
