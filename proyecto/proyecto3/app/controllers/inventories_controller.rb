@@ -10,7 +10,7 @@ class InventoriesController < ApplicationController
       render json: @inventories.as_json(include: :product)
     else
       if current_user && current_user.admin?
-        @inventories = Inventory.all
+        @inventories = Inventory.includes(:product).order(quantity: :desc)
         @products = Product.all
       else
         redirect_back(fallback_location: root_path, alert: 'No tienes permisos para acceder aquí.')

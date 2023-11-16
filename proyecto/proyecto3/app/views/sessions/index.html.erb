@@ -1,7 +1,8 @@
 <div class="wrapper wrapper-content">
     <div class="row">
+        <!-- Columna 1 -->
         <div class="col-lg-4">
-            <div class="ibox ">
+            <div class="ibox">
                 <div class="ibox-title">
                     <div class="ibox-tools">
                         <span class="label label-success float-right">Día</span>
@@ -16,8 +17,9 @@
             </div>
         </div>
 
+        <!-- Columna 2 -->
         <div class="col-lg-4">
-            <div class="ibox ">
+            <div class="ibox">
                 <div class="ibox-title">
                     <div class="ibox-tools">
                         <span class="label label-success float-right">Semana</span>
@@ -32,8 +34,9 @@
             </div>
         </div>
 
+        <!-- Columna 3 -->
         <div class="col-lg-4">
-            <div class="ibox ">
+            <div class="ibox">
                 <div class="ibox-title">
                     <div class="ibox-tools">
                         <span class="label label-success float-right">Mes</span>
@@ -48,10 +51,11 @@
             </div>
         </div>
     </div>
-    
-     <div class="row">
+
+    <div class="row">
+        <!-- Columna 1 -->
         <div class="col-lg-4">
-            <div class="ibox ">
+            <div class="ibox">
                 <div class="ibox-title">
                     <div class="ibox-tools">
                         <span class="label label-success float-right">Día</span>
@@ -66,8 +70,9 @@
             </div>
         </div>
 
+        <!-- Columna 2 -->
         <div class="col-lg-4">
-            <div class="ibox ">
+            <div class="ibox">
                 <div class="ibox-title">
                     <div class="ibox-tools">
                         <span class="label label-success float-right">Semana</span>
@@ -82,8 +87,9 @@
             </div>
         </div>
 
+        <!-- Columna 3 -->
         <div class="col-lg-4">
-            <div class="ibox ">
+            <div class="ibox">
                 <div class="ibox-title">
                     <div class="ibox-tools">
                         <span class="label label-success float-right">Mes</span>
@@ -99,14 +105,14 @@
         </div>
     </div>
 
-    
     <div class="row">
+        <!-- Columna 1 -->
         <div class="col-lg-4">
-            <div class="ibox ">
+            <div class="ibox">
                 <div class="ibox-title">
                     <div class="ibox-tools">
-                    <span class="label label-primary float-right">Today</span>
-                        </div>
+                        <span class="label label-primary float-right">Today</span>
+                    </div>
                     <h5>Productos</h5>
                 </div>
                 <div class="ibox-content">
@@ -116,8 +122,16 @@
                 </div>
             </div>
         </div>
+
+        
+        <%= line_chart @formatted_graphic_sales, id: 'line-chart', height: '200px' %>
+        
+        <%= puts "@formatted_graphic_sales: #{@formatted_graphic_sales}" %>
+        <%= puts "@statistics[:graphic_sales]: #{@statistics[:graphic_sales]}" %>
+        
+
         <div class="col-lg-8">
-            <div class="ibox ">
+            <div class="ibox">
                 <div class="ibox-title">
                     <h5>Orders Statistics</h5>
                 </div>
@@ -132,30 +146,30 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
+
     <div class="row">
         <div class="col-lg-12">
-            <div class="ibox ">
+            <div class="ibox">
                 <div class="ibox-title">
-                    <h5>Lo Mas Vendido</h5>
+                    <h5>Lo Más Vendido</h5>
                 </div>
                 <div class="ibox-content">
                     <div class="row">
                         <div class="col-lg-12">
                             <% @top_selling_products.each do |product| %>
-                            <div>
-                                <% if product.image? %>
-                                <%= image_tag product.image.url, width: "50px", height: "50px", class: "rounded" %>
-                                <% else %>
-                                <%= image_tag("placeholder.png", width: "50px", height: "50px") %>
-                                <% end %>                              
-                                <h2><%= product.title %></h2>
-                                <p>Price: <%= number_to_currency(product.price) %></p>
-                                <p>Sold Count: <%= product.sold_count %></p>
-                            </div>
+                                <div>
+                                    <% if product.image? %>
+                                        <%= image_tag product.image.url, width: "50px", height: "50px", class: "rounded" %>
+                                    <% else %>
+                                        <%= image_tag("placeholder.png", width: "50px", height: "50px") %>
+                                    <% end %>
+                                    <h2><%= product.title %></h2>
+                                    <p>Price: <%= number_to_currency(product.price) %></p>
+                                    <p>Sold Count: <%= product.sold_count %></p>
+                                </div>
                             <% end %>
                         </div>
                     </div>
@@ -163,4 +177,4 @@
             </div>
         </div>
     </div>
-
+</div>
