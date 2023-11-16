@@ -75,6 +75,6 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  config.hosts << "2de8-152-204-170-147.ngrok-free.app"
+  config.hosts << "cbe9-152-204-170-147.ngrok-free.app"
   config.middleware.use WickedPdf::Middleware
 end
