@@ -17,6 +17,7 @@ class Order < ApplicationRecord
       total_orders: sum(:total),
       daily_orders: daily_order_counts,
       graphic_orders: group("DATE(created_at)").count,
+      graphic_total: group("DATE(created_at)").sum(:total),
       weekly_orders: weekly_order_counts,
       monthly_orders: monthly_order_counts
     }

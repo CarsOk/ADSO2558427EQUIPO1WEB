@@ -10,7 +10,9 @@ class ProductsController < ApplicationController
       render json: @products
     else
       if current_user && current_user.admin?
-        @products = Product.all
+        @available_products = Product.where(available: "Disponible").order(:title)
+        @unavailable_products = Product.where.not(available: "Disponible").order(:title)
+        @products = @available_products + @unavailable_products        
         respond_to do |format|
           format.html
         end

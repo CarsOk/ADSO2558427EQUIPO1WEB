@@ -1,9 +1,9 @@
 class Product < ApplicationRecord
   has_many :order_products
-  has_many :inventories, dependent: :destroy
+  has_one :inventory
   has_many :orders, through: :order_products
   
-  validates :title, :price, :image, :description, :available, :category, presence: true
+  validates :title, :price, :image, :description , :category, presence: true
 
   mount_uploader :image, ImageUploader
     

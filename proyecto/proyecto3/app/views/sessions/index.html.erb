@@ -1,8 +1,10 @@
 <div class="wrapper wrapper-content">
+    <!-- Sección de Resumen de Órdenes -->
     <div class="row">
         <!-- Columna 1 -->
         <div class="col-lg-4">
             <div class="ibox">
+                <!-- Contenido de la columna 1 -->
                 <div class="ibox-title">
                     <div class="ibox-tools">
                         <span class="label label-success float-right">Día</span>
@@ -20,6 +22,7 @@
         <!-- Columna 2 -->
         <div class="col-lg-4">
             <div class="ibox">
+                <!-- Contenido de la columna 2 -->
                 <div class="ibox-title">
                     <div class="ibox-tools">
                         <span class="label label-success float-right">Semana</span>
@@ -37,6 +40,7 @@
         <!-- Columna 3 -->
         <div class="col-lg-4">
             <div class="ibox">
+                <!-- Contenido de la columna 3 -->
                 <div class="ibox-title">
                     <div class="ibox-tools">
                         <span class="label label-success float-right">Mes</span>
@@ -52,10 +56,12 @@
         </div>
     </div>
 
+    <!-- Sección de Resumen de Ventas -->
     <div class="row">
         <!-- Columna 1 -->
         <div class="col-lg-4">
             <div class="ibox">
+                <!-- Contenido de la columna 1 -->
                 <div class="ibox-title">
                     <div class="ibox-tools">
                         <span class="label label-success float-right">Día</span>
@@ -73,6 +79,7 @@
         <!-- Columna 2 -->
         <div class="col-lg-4">
             <div class="ibox">
+                <!-- Contenido de la columna 2 -->
                 <div class="ibox-title">
                     <div class="ibox-tools">
                         <span class="label label-success float-right">Semana</span>
@@ -90,6 +97,7 @@
         <!-- Columna 3 -->
         <div class="col-lg-4">
             <div class="ibox">
+                <!-- Contenido de la columna 3 -->
                 <div class="ibox-title">
                     <div class="ibox-tools">
                         <span class="label label-success float-right">Mes</span>
@@ -105,10 +113,51 @@
         </div>
     </div>
 
+    <!-- Sección de Productos -->
     <div class="row">
-        <!-- Columna 1 -->
-        <div class="col-lg-4">
+        <div class="col-lg-6">
             <div class="ibox">
+                <div class="ibox-title">
+                    <h5>Estadísticas de Pedidos - Gráfico de Pedidos</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="flot-chart">
+                                <div class="flot-chart-content" id="flot-dashboard-chart-pedidos">
+                                    <%= line_chart @statistics[:graphic_orders], id: 'line-chart-pedidos', height: '200px' %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="ibox">
+                <!-- Contenido de la columna 3 -->
+                <div class="ibox-title">
+                    <h5>Estadísticas de Pedidos - Gráfico Total</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="flot-chart">
+                                <div class="flot-chart-content" id="flot-dashboard-chart-total">
+                                    <%= line_chart @statistics[:graphic_total], id: 'line-chart-total', height: '200px' %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+            <div class="col-lg-4">
+            <div class="ibox">
+                <!-- Contenido de la columna 1 -->
                 <div class="ibox-title">
                     <div class="ibox-tools">
                         <span class="label label-primary float-right">Today</span>
@@ -122,37 +171,13 @@
                 </div>
             </div>
         </div>
-
-        
-        <%= line_chart @formatted_graphic_sales, id: 'line-chart', height: '200px' %>
-        
-        <%= puts "@formatted_graphic_sales: #{@formatted_graphic_sales}" %>
-        <%= puts "@statistics[:graphic_sales]: #{@statistics[:graphic_sales]}" %>
-        
-
-        <div class="col-lg-8">
-            <div class="ibox">
-                <div class="ibox-title">
-                    <h5>Orders Statistics</h5>
-                </div>
-                <div class="ibox-content">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="flot-chart">
-                                <div class="flot-chart-content" id="flot-dashboard-chart">
-                                    <%= line_chart @statistics[:graphic_orders], id: 'line-chart', height: '200px' %>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-
+    <!-- Sección de Productos Más Vendidos -->
     <div class="row">
+        <!-- Columna única a lo ancho de la página -->
         <div class="col-lg-12">
             <div class="ibox">
+                <!-- Contenido de la columna única -->
                 <div class="ibox-title">
                     <h5>Lo Más Vendido</h5>
                 </div>
