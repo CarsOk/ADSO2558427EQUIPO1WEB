@@ -14,7 +14,7 @@
 
 
   <div id="invoice">
-    <h3>Orden #<%= @order.id %></h3>
+    <h3>Orden #<%= @order.order_number %></h3>
     <p>Cliente: <%= @order.name %></p>
     <p>Direccion: <%= "#{@order.residential} #{@order.tower} #{@order.apartment}"   %></p>
     <p>Metodo de Pago: <%= @order.payment_method %></p>

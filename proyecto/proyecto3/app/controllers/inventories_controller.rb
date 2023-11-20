@@ -1,5 +1,8 @@
 class InventoriesController < ApplicationController
-  before_action :authenticate_user!, unless: -> { request.format.json? }
+  before_action :authenticate_user!
+  skip_before_action :authenticate_user!, if: -> { request.format.json? }
+  skip_before_action :verify_authenticity_token, if: -> { self.json_request? }
+
 
   def index
     if request.format.json?
@@ -7,7 +10,7 @@ class InventoriesController < ApplicationController
       render json: @inventories.as_json(include: :product)
     else
       if current_user && current_user.admin?
-        @inventories = Inventory.all
+        @inventories = Inventory.order(quantity: :desc).all
         @products = Product.all
       else
         redirect_back(fallback_location: root_path, alert: 'No tienes permisos para acceder aquí.')
@@ -55,26 +58,21 @@ class InventoriesController < ApplicationController
     end
   end
 
-  def update
-    if current_user.admin?
-      @inventory = Inventory.find(params[:id])
 
+  def update
+    respond_to do |format|
+      @inventory = Inventory.find(params[:id])
       if @inventory.update(inventory_params)
         product = Product.find(@inventory.product_id)
         available = @inventory.quantity.positive?
         product.update(available: available)
-        respond_to do |format|
-          format.html { redirect_to inventories_path, notice: "Inventario actualizado exitosamente." }
-          format.json { render json: @inventory }
-        end
-      else
-        respond_to do |format|
-          format.html { render :edit }
-          format.json { render json: @inventory.errors, status: :unprocessable_entity }
-        end
+
+        format.html { redirect_to inventories_path, notice: "Inventario actualizado exitosamente." }
+        format.json { render json: @inventory }
+      else 
+        format.html { render :edit }
+        format.json { render json: @inventory.errors, status: :unprocessable_entity }
       end
-    else
-      redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
     end
   end
 
@@ -97,5 +95,9 @@ class InventoriesController < ApplicationController
 
   def inventory_params
     params.require(:inventory).permit(:product_id, :quantity)
+  end
+  
+  def json_request?
+    self.request.format.json?
   end
 end

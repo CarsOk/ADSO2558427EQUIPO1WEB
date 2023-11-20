@@ -1,3 +1,5 @@
+require 'axlsx'
+
 class OrdersController < ApplicationController
   before_action :authenticate_user!, unless: -> { request.format.json? }
   skip_before_action :verify_authenticity_token, only: [:create]
@@ -56,39 +58,53 @@ class OrdersController < ApplicationController
   def create
     user_id = 1
     user = User.find_by(id: user_id)
-    
+
     if user
       @order = user.orders.build(order_params)
       total = 0
       estado = "En Cocina"
+      error_messages = []
+      associated_products = []  # Inicializar associated_products aquí
 
-      if @order.save
-        associated_products = []
-  
-        if params[:products].present?
-          params[:products].each do |product_params|
-            product_id = product_params[:id]
-            quantity = product_params[:quantity]
-  
-            product = Product.find_by(id: product_id)
-  
-            if product && quantity.to_i > 0
+      if params[:products].present?
+        params[:products].each do |product_params|
+          product_id = product_params[:id]
+          quantity = product_params[:quantity]
+
+          product = Product.find_by(id: product_id)
+          inventory = Inventory.find_by(product_id: product_id)
+
+          if product && inventory && quantity.to_i > 0
+            if inventory.quantity >= quantity.to_i
               subtotal = product.price * quantity.to_i
-              total += subtotal 
-  
-              order_product = @order.order_products.create(product_id: product_id, quantity: quantity)
+              total += subtotal
+
+              order_product = @order.order_products.build(product_id: product_id, quantity: quantity)
+
               associated_products << { product: product, quantity: order_product.quantity }
+
+              new_quantity = inventory.quantity - quantity.to_i
+              inventory.update(quantity: new_quantity)
+              product.update(available: new_quantity > 0)
+            else
+              error_messages << "No hay suficiente inventario para #{product.title}."
             end
+          else
+            error_messages << "Producto no encontrado o cantidad inválida para #{product.title}."
           end
         end
-  
+      end
+
+      if error_messages.empty? && @order.save
         @order.update(total: total, estado: estado)
-  
+        @order.complete_order
+        
         respond_to do |format|
           format.html { redirect_to orders_path, notice: 'Orden creada con éxito.' }
           format.json { render json: { order: @order, products: associated_products }, status: :created, location: @order }
         end
       else
+        error_messages.each { |msg| @order.errors.add(:base, msg) }
         respond_to do |format|
           format.html { render :new }
           format.json { render json: @order.errors, status: :unprocessable_entity }
@@ -100,6 +116,8 @@ class OrdersController < ApplicationController
       end
     end
   end
+  
+  
   
   
 
@@ -162,6 +180,13 @@ class OrdersController < ApplicationController
     end
   end
   
+  def complete_order
+    self.order_products.each do |order_product|
+      product = order_product.product
+      product.increment_sold_count(order_product.quantity)
+    end
+  end
+
   def generate_invoice
     @order = Order.find(params[:id])
     respond_to do |format|
@@ -170,6 +195,77 @@ class OrdersController < ApplicationController
       end
     end
   end
+
+  def daily_report
+    date = params[:date] ? Date.parse(params[:date]) : Date.today
+    result = Order.daily_report(date)
+    @orders = result[:orders]
+    @total_amount = result[:total_amount]
+  end
+
+  def orders_of_the_day
+    @orders = Order.where(created_at: Date.today.beginning_of_day..Date.today.end_of_day)
+  end
+
+  def accounting_report
+    start_date = params[:start_date]
+    end_date = params[:end_date]
+
+    if start_date.present? && end_date.present?
+      @orders = Order.where(created_at: start_date.to_date.beginning_of_day..end_date.to_date.end_of_day)
+      @total_amount = @orders.sum(:total)
+    elsif start_date.present?
+      @orders = Order.where(created_at: start_date.to_date.beginning_of_day..start_date.to_date.end_of_day)
+      @total_amount = @orders.sum(:total)
+    else
+      @orders = []
+      @total_amount = 0
+    end
+  end
+  
+    
+  def export_excel
+    start_date = params[:start_date]
+    end_date = params[:end_date]
+  
+    if start_date.present?
+      start_date = start_date.to_date.beginning_of_day
+    end
+  
+    if end_date.present?
+      end_date = end_date.to_date.end_of_day
+    end
+  
+    @orders = Order.where(created_at: start_date..end_date)
+  
+    respond_to do |format|
+      format.xlsx do
+        template_path = File.join(Rails.root, 'lib', 'assets', 'plantilla.xlsx')
+        excel = Axlsx::Package.new
+        workbook = excel.workbook
+  
+        workbook.add_worksheet(name: 'Ordenes') do |sheet|
+          sheet.add_row ['Fecha', 'Producto', 'Cantidad', 'Valor', 'Total', 'Método de Pago']
+  
+          @orders.each do |order|
+            order.order_products.each do |order_product|
+              sheet.add_row [order.created_at.to_date, order_product.product.title, order_product.quantity, order_product.product.price, order_product.product.price * order_product.quantity, order.payment_method]
+            end
+          end
+        end
+  
+        tmpfile = Tempfile.new(['ordenes', '.xlsx'])
+        excel.serialize(tmpfile.path)
+  
+        send_file tmpfile.path, filename: 'ordenes.xlsx', type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', disposition: 'attachment'
+      end
+    end
+  end
+  
+  
+  
+  
+  
 
   private
 

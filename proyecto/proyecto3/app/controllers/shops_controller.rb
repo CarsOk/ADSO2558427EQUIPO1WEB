@@ -4,7 +4,7 @@ class ShopsController < ApplicationController
 
   def index
     @products = Product.all
-    @orders = Order.order(created_at: :desc)
+    @orders = Order.where(created_at: Date.today.beginning_of_day..Date.today.end_of_day)
   end
   
   def custom_action

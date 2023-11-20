@@ -1,39 +1,167 @@
 <div class="wrapper wrapper-content">
+    <!-- Sección de Resumen de Órdenes -->
     <div class="row">
+        <!-- Columna 1 -->
         <div class="col-lg-4">
-            <div class="ibox ">
+            <div class="ibox">
+                <!-- Contenido de la columna 1 -->
                 <div class="ibox-title">
                     <div class="ibox-tools">
-                    <span class="label label-success float-right">Mes</span>
-                        </div>
-                    <h5>Ventas</h5>
+                        <span class="label label-success float-right">Día</span>
+                    </div>
+                    <h5>Ordenes Diarias</h5>
                 </div>
                 <div class="ibox-content">
-                    <h1 class="no-margins"><%= number_to_currency(@total_orders) %></h1>
+                    <h1 class="no-margins"><%= @daily_orders %></h1>
                     <div class="stat-percent font-bold text-success">0% <i class="fa fa-bolt"></i></div>
-                    <small>Total Ventas</small>
+                    <small>Total Ventas Diarias</small>
                 </div>
             </div>
         </div>
-        <div class="col-lg-4">
-            <div class="ibox ">
-                <div class="ibox-title">
-                    <h5>Ordenes</h5>
-                </div>
-                <div class="ibox-content">
-                    <h1 class="no-margins"><%= Order.count %></h1>
-                    <div class="stat-percent font-bold text-info">0%<i class="fa fa-level-up"></i></div>
-                    <%= link_to "New orders", shops_path, class: "small" %>
 
-                </div>
-            </div>
-        </div>
+        <!-- Columna 2 -->
         <div class="col-lg-4">
-            <div class="ibox ">
+            <div class="ibox">
+                <!-- Contenido de la columna 2 -->
                 <div class="ibox-title">
                     <div class="ibox-tools">
-                    <span class="label label-primary float-right">Today</span>
+                        <span class="label label-success float-right">Semana</span>
+                    </div>
+                    <h5>Ordenes Semanales</h5>
+                </div>
+                <div class="ibox-content">
+                    <h1 class="no-margins"><%= @weekly_orders %></h1>
+                    <div class="stat-percent font-bold text-success">0% <i class="fa fa-bolt"></i></div>
+                    <small>Total Ventas Semanales</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Columna 3 -->
+        <div class="col-lg-4">
+            <div class="ibox">
+                <!-- Contenido de la columna 3 -->
+                <div class="ibox-title">
+                    <div class="ibox-tools">
+                        <span class="label label-success float-right">Mes</span>
+                    </div>
+                    <h5>Ordenes Mensuales</h5>
+                </div>
+                <div class="ibox-content">
+                    <h1 class="no-margins"><%= @monthly_orders %></h1>
+                    <div class="stat-percent font-bold text-success">0% <i class="fa fa-bolt"></i></div>
+                    <small>Total Ventas Mensuales</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de Resumen de Ventas -->
+    <div class="row">
+        <!-- Columna 1 -->
+        <div class="col-lg-4">
+            <div class="ibox">
+                <!-- Contenido de la columna 1 -->
+                <div class="ibox-title">
+                    <div class="ibox-tools">
+                        <span class="label label-success float-right">Día</span>
+                    </div>
+                    <h5>Ventas Diarias</h5>
+                </div>
+                <div class="ibox-content">
+                    <h1 class="no-margins"><%= number_to_currency(@total_daily_orders) %></h1>
+                    <div class="stat-percent font-bold text-success">0% <i class="fa fa-bolt"></i></div>
+                    <small>Total Ventas Diarias</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Columna 2 -->
+        <div class="col-lg-4">
+            <div class="ibox">
+                <!-- Contenido de la columna 2 -->
+                <div class="ibox-title">
+                    <div class="ibox-tools">
+                        <span class="label label-success float-right">Semana</span>
+                    </div>
+                    <h5>Ventas Semanales</h5>
+                </div>
+                <div class="ibox-content">
+                    <h1 class="no-margins"><%= number_to_currency(@total_weekly_orders) %></h1>
+                    <div class="stat-percent font-bold text-success">0% <i class="fa fa-bolt"></i></div>
+                    <small>Total Ventas Semanales</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Columna 3 -->
+        <div class="col-lg-4">
+            <div class="ibox">
+                <!-- Contenido de la columna 3 -->
+                <div class="ibox-title">
+                    <div class="ibox-tools">
+                        <span class="label label-success float-right">Mes</span>
+                    </div>
+                    <h5>Ventas Mensuales</h5>
+                </div>
+                <div class="ibox-content">
+                    <h1 class="no-margins"><%= number_to_currency(@total_monthly_orders) %></h1>
+                    <div class="stat-percent font-bold text-success">0% <i class="fa fa-bolt"></i></div>
+                    <small>Total Ventas Mensuales</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de Productos -->
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>Estadísticas de Pedidos - Gráfico de Pedidos</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="flot-chart">
+                                <div class="flot-chart-content" id="flot-dashboard-chart-pedidos">
+                                    <%= line_chart @statistics[:graphic_orders], id: 'line-chart-pedidos', height: '200px' %>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="ibox">
+                <!-- Contenido de la columna 3 -->
+                <div class="ibox-title">
+                    <h5>Estadísticas de Pedidos - Gráfico Total</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="flot-chart">
+                                <div class="flot-chart-content" id="flot-dashboard-chart-total">
+                                    <%= line_chart @statistics[:graphic_total], id: 'line-chart-total', height: '200px' %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+            <div class="col-lg-4">
+            <div class="ibox">
+                <!-- Contenido de la columna 1 -->
+                <div class="ibox-title">
+                    <div class="ibox-tools">
+                        <span class="label label-primary float-right">Today</span>
+                    </div>
                     <h5>Productos</h5>
                 </div>
                 <div class="ibox-content">
@@ -44,3 +172,34 @@
             </div>
         </div>
     </div>
+    <!-- Sección de Productos Más Vendidos -->
+    <div class="row">
+        <!-- Columna única a lo ancho de la página -->
+        <div class="col-lg-12">
+            <div class="ibox">
+                <!-- Contenido de la columna única -->
+                <div class="ibox-title">
+                    <h5>Lo Más Vendido</h5>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <% @top_selling_products.each do |product| %>
+                                <div>
+                                    <% if product.image? %>
+                                        <%= image_tag product.image.url, width: "50px", height: "50px", class: "rounded" %>
+                                    <% else %>
+                                        <%= image_tag("placeholder.png", width: "50px", height: "50px") %>
+                                    <% end %>
+                                    <h2><%= product.title %></h2>
+                                    <p>Price: <%= number_to_currency(product.price) %></p>
+                                    <p>Sold Count: <%= product.sold_count %></p>
+                                </div>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
