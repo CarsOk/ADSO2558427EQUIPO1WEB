@@ -90,7 +90,7 @@ class ProductsController < ApplicationController
         @product.available = @product.inventory_quantity.positive?
         @product.save
   
-        format.html { redirect_to products_path, notice: "Product was successfully updated." }
+        format.html { redirect_to products_path, notice: "Producto actualizado exitosamente." }
         format.json { render :show, status: :ok, location: @product }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -109,7 +109,7 @@ class ProductsController < ApplicationController
       @product.destroy
   
       respond_to do |format|
-        format.html { redirect_to products_url, notice: "Product was successfully destroyed." }
+        format.html { redirect_to products_url, notice: "Producto eliminado exitosamente." }
         format.json { head :no_content }
       end
     else

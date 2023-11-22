@@ -55,19 +55,22 @@ class CartController < ApplicationController
         }
   
         errors = []
+        associated_products = []
   
         @cart.orderables.each do |orderable|
           product = orderable.product
           quantity = orderable.quantity
-  
-          inventory = Inventory.find_by(product_id: product.id)
+          inventory = product.inventory
   
           if inventory.nil? || inventory.quantity < quantity
-            errors << "No hay suficiente inventario disponible para el producto '#{product.title}'"
+            errors << "No hay suficiente inventario disponible para el producto '#{product.title}'. La cantidad disponible es de #{inventory&.quantity || 0}"
+            raise ActiveRecord::Rollback
           else
+            associated_products << { product: product, quantity: quantity }
             order_product = order.order_products.build(product: product, quantity: quantity)
-            inventory.update(quantity: inventory.quantity - quantity)
-            product.update(available: (inventory.quantity - quantity) > 0)
+            new_quantity = inventory.quantity - quantity
+            inventory.update(quantity: new_quantity)
+            product.update(available: new_quantity > 0)
   
             unless order_product.save
               errors << "Error al agregar el producto '#{product.title}' a la orden"
@@ -76,24 +79,22 @@ class CartController < ApplicationController
           end
         end
   
-        if errors.empty?
+        if errors.empty? && order.save
           order.update(order_params.merge(estado: "En Cocina"))
           @cart.orderables.destroy_all
           flash[:notice] = 'Orden finalizada con éxito. Una nueva orden ha sido creada.'
           redirect_to shops_path
         else
           @cart.orderables.reload
-          flash[:alert] = errors.join(', ')
-          redirect_to shops_path
+          flash.now[:alert] = errors.join(', ')
+          render 'shops/index'
         end
       else
-        flash[:alert] = 'Por favor, completa todos los campos del formulario.'
-        redirect_to shops_path
+        flash.now[:alert] = 'Por favor, completa todos los campos del formulario.'
+        render 'shops/index' 
       end
     end
   end
-  
-  
   
   
   

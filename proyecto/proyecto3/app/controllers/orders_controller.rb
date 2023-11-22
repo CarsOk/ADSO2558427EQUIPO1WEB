@@ -58,47 +58,50 @@ class OrdersController < ApplicationController
   def create
     user_id = 1
     user = User.find_by(id: user_id)
-
+  
     if user
       @order = user.orders.build(order_params)
       total = 0
       estado = "En Cocina"
       error_messages = []
       associated_products = []  # Inicializar associated_products aquí
-
-      if params[:products].present?
-        params[:products].each do |product_params|
-          product_id = product_params[:id]
-          quantity = product_params[:quantity]
-
-          product = Product.find_by(id: product_id)
-          inventory = Inventory.find_by(product_id: product_id)
-
-          if product && inventory && quantity.to_i > 0
-            if inventory.quantity >= quantity.to_i
-              subtotal = product.price * quantity.to_i
-              total += subtotal
-
-              order_product = @order.order_products.build(product_id: product_id, quantity: quantity)
-
-              associated_products << { product: product, quantity: order_product.quantity }
-
-              new_quantity = inventory.quantity - quantity.to_i
-              inventory.update(quantity: new_quantity)
-              product.update(available: new_quantity > 0)
+  
+      ActiveRecord::Base.transaction do
+        if params[:products].present?
+          params[:products].each do |product_params|
+            product_id = product_params[:id]
+            quantity = product_params[:quantity]
+  
+            product = Product.find_by(id: product_id)
+            inventory = Inventory.find_by(product_id: product_id)
+  
+            if product && inventory && quantity.to_i > 0
+              if inventory.quantity >= quantity.to_i
+                subtotal = product.price * quantity.to_i
+                total += subtotal
+  
+                order_product = @order.order_products.build(product_id: product_id, quantity: quantity)
+  
+                associated_products << { product: product, quantity: order_product.quantity }
+  
+              else
+                error_messages << "No hay suficiente inventario para #{product.title}. La cantidad disponible es de #{inventory.quantity}"
+              end
             else
-              error_messages << "No hay suficiente inventario para #{product.title}."
+              error_messages << "Producto no encontrado o cantidad inválida para #{product.title}."
             end
+          end
+  
+          if error_messages.empty? && @order.save
+            @order.update(total: total, estado: estado)
+            @order.complete_order
           else
-            error_messages << "Producto no encontrado o cantidad inválida para #{product.title}."
+            raise ActiveRecord::Rollback
           end
         end
       end
-
-      if error_messages.empty? && @order.save
-        @order.update(total: total, estado: estado)
-        @order.complete_order
-        
+  
+      if error_messages.empty?
         respond_to do |format|
           format.html { redirect_to orders_path, notice: 'Orden creada con éxito.' }
           format.json { render json: { order: @order, products: associated_products }, status: :created, location: @order }
@@ -116,6 +119,7 @@ class OrdersController < ApplicationController
       end
     end
   end
+  
   
   
   
@@ -204,7 +208,16 @@ class OrdersController < ApplicationController
   end
 
   def orders_of_the_day
-    @orders = Order.where(created_at: Date.today.beginning_of_day..Date.today.end_of_day)
+    if request.format.json?
+      @orders = Order.where(created_at: Date.today.beginning_of_day..Date.today.end_of_day)
+      render json: @orders
+    else
+      if current_user && current_user.admin?
+        @orders = Order.where(created_at: Date.today.beginning_of_day..Date.today.end_of_day)
+      else
+        redirect_back(fallback_location: root_path, alert: 'No tienes permisos para acceder aquí.')
+      end
+    end
   end
 
   def accounting_report

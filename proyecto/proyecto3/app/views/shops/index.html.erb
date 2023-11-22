@@ -20,6 +20,11 @@
 <body class='pace-top'>
 	<div id="app" class="app app-content-full-height app-without-sidebar app-without-header bg-white">
 		<div id="content" class="app-content p-0">
+		        <% if flash.now[:alert].present? %>
+					<div class="alert alert-danger">
+					<%= flash.now[:alert] %>
+					</div>
+				<% end %>
 			<div class="pos pos-customer" id="pos-customer">
 				<div class="pos-menu">
 					<div class="logo">
