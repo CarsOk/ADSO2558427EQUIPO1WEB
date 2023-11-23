@@ -10,7 +10,9 @@ class ProductsController < ApplicationController
       render json: @products
     else
       if current_user && current_user.admin?
-        @products = Product.all
+        @available_products = Product.where(available: "Disponible").order(:title)
+        @unavailable_products = Product.where.not(available: "Disponible").order(:title)
+        @products = @available_products + @unavailable_products        
         respond_to do |format|
           format.html
         end
@@ -46,6 +48,8 @@ class ProductsController < ApplicationController
 
 
   def create
+    puts "Parameters: #{params.inspect}"
+
     @product = Product.new(product_params)
   
     respond_to do |format|
@@ -86,7 +90,7 @@ class ProductsController < ApplicationController
         @product.available = @product.inventory_quantity.positive?
         @product.save
   
-        format.html { redirect_to products_path, notice: "Product was successfully updated." }
+        format.html { redirect_to products_path, notice: "Producto actualizado exitosamente." }
         format.json { render :show, status: :ok, location: @product }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -105,14 +109,13 @@ class ProductsController < ApplicationController
       @product.destroy
   
       respond_to do |format|
-        format.html { redirect_to products_url, notice: "Product was successfully destroyed." }
+        format.html { redirect_to products_url, notice: "Producto eliminado exitosamente." }
         format.json { head :no_content }
       end
     else
       redirect_back(fallback_location: root_path, alert: "No tienes permisos para acceder aquí.")
     end
   end
-  
 
   private
 

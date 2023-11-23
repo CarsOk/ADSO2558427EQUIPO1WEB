@@ -26,37 +26,73 @@ class CartController < ApplicationController
     end
   end
   
+    def remove
+    Orderable.find_by(id: params[:id]).destroy
+    respond_to do |format|
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace('cart',
+                                                  partial: 'cart/cart',
+                                                  locals: { cart: @cart })
+      end
+      format.html { redirect_to shops_path }
+    end
+  end
   
   def finish_order
-    order = current_user.orders.create(total: @cart.total)
-    
-    errors = []
+    ActiveRecord::Base.transaction do
+      order = current_user.orders.build(total: @cart.total)
   
-    @cart.orderables.each do |orderable|
-      product = orderable.product
-      quantity = orderable.quantity
+      if params[:name].present? && params[:residential].present? &&
+         params[:tower].present? && params[:apartment].present? &&
+         params[:payment_method].present?
   
-      inventory = Inventory.find_by(product_id: product.id)
+        order_params = {
+          name: params[:name],
+          residential: params[:residential],
+          tower: params[:tower],
+          apartment: params[:apartment],
+          payment_method: params[:payment_method]
+        }
   
-      if inventory.nil? || inventory.quantity < quantity
-        errors << "No hay suficiente inventario disponible para el producto '#{product.title}'"
+        errors = []
+        associated_products = []
+  
+        @cart.orderables.each do |orderable|
+          product = orderable.product
+          quantity = orderable.quantity
+          inventory = product.inventory
+  
+          if inventory.nil? || inventory.quantity < quantity
+            errors << "No hay suficiente inventario disponible para el producto '#{product.title}'. La cantidad disponible es de #{inventory&.quantity || 0}"
+            raise ActiveRecord::Rollback
+          else
+            associated_products << { product: product, quantity: quantity }
+            order_product = order.order_products.build(product: product, quantity: quantity)
+            new_quantity = inventory.quantity - quantity
+            inventory.update(quantity: new_quantity)
+            product.update(available: new_quantity > 0)
+  
+            unless order_product.save
+              errors << "Error al agregar el producto '#{product.title}' a la orden"
+              raise ActiveRecord::Rollback
+            end
+          end
+        end
+  
+        if errors.empty? && order.save
+          order.update(order_params.merge(estado: "En Cocina"))
+          @cart.orderables.destroy_all
+          flash[:notice] = 'Orden finalizada con éxito. Una nueva orden ha sido creada.'
+          redirect_to shops_path
+        else
+          @cart.orderables.reload
+          flash.now[:alert] = errors.join(', ')
+          render 'shops/index'
+        end
       else
-        order.order_products.create(product: product, quantity: quantity)
-        inventory.update(quantity: inventory.quantity - quantity)
-  
-        product.update(available: (inventory.quantity - quantity) > 0)
+        flash.now[:alert] = 'Por favor, completa todos los campos del formulario.'
+        render 'shops/index' 
       end
-    end
-  
-    if errors.empty?
-      order.update(order_params.merge(estado: "En Cocina"))
-      @cart.orderables.destroy_all
-      flash[:notice] = 'Orden finalizada con éxito. Una nueva orden ha sido creada.'
-      redirect_to shops_path
-    else
-      @cart.orderables.reload
-      flash[:alert] = errors.join(', ')
-      redirect_to shops_path
     end
   end
   

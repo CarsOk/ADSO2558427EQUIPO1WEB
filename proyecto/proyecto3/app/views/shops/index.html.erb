@@ -20,10 +20,15 @@
 <body class='pace-top'>
 	<div id="app" class="app app-content-full-height app-without-sidebar app-without-header bg-white">
 		<div id="content" class="app-content p-0">
+		        <% if flash.now[:alert].present? %>
+					<div class="alert alert-danger">
+					<%= flash.now[:alert] %>
+					</div>
+				<% end %>
 			<div class="pos pos-customer" id="pos-customer">
 				<div class="pos-menu">
 					<div class="logo">
-						<a href="<%= shops_path %>">
+						<a href="<%= root_path %>">
 							<%= image_tag('LogoCurb.png', alt: 'LogoCurb', class: 'imagen-pequena') %>
 						</a>
 					</div>
@@ -71,7 +76,7 @@
 									<%= button_to destroy_user_session_path, method: :delete, class: "btn btn-danger" do %>
 								<i class=""></i> Cerrar Sesión 
 							<% end %>
-								<%= link_to "Ver Inventario", inventories_index_path, class: "btn btn-dark"%>
+								<%= link_to "Ver Inventario", inventories_path, class: "btn btn-dark"%>
 						  <% end %>					
 							</a>
 						</li>
