@@ -1,0 +1,13 @@
+.theme-panel-content {
+    color: black;
+}
+
+.form-check-input:checked ~ .form-check-label,
+.form-check-label:hover {
+    color: white;
+}
+
+.line-container {
+    width: 80%;
+    margin: 0 auto;
+}
