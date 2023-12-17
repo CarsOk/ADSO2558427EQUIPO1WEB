@@ -22,7 +22,7 @@ public class ClienteService implements DBRepository<Cliente, ClienteDto, String>
 
     @Autowired
     @Qualifier("applicationRepository")
-    private ApplicationRepository repository;
+    private ApplicationRepository<Cliente, String> repository;
 
     @Override
     @Transactional
