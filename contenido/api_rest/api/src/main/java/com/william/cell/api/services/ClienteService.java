@@ -8,21 +8,21 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.william.cell.api.converter.ClienteConverter;
+import com.william.cell.api.converter.interfaces.EntityConverter;
 import com.william.cell.api.models.dto.ClienteDto;
 import com.william.cell.api.models.entity.Cliente;
-import com.william.cell.api.repositories.ApplicationRepository;
+import com.william.cell.api.repositories.ClienteRepository;
 import com.william.cell.api.services.repository.DBRepository;
  
 @Service("clienteService")
 public class ClienteService implements DBRepository<Cliente, ClienteDto, String> {
 
     @Autowired
-    private ClienteConverter clienteConverter;
+    @Qualifier("clienteConverter")
+    private EntityConverter<Cliente, ClienteDto> clienteConverter;
 
     @Autowired
-    @Qualifier("applicationRepository")
-    private ApplicationRepository<Cliente, String> repository;
+    private ClienteRepository repository;
 
     @Override
     @Transactional
