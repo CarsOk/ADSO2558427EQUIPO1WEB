@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.api.william_cell.converter.interfaces.EntityConverter;
 import com.api.william_cell.models.dto.ClienteDto;
 import com.api.william_cell.models.entity.Cliente;
-import com.api.william_cell.services.repository.DBRepository;
+import com.api.william_cell.services.ClienteService;
 
 import java.util.HashMap;
 import java.util.List;
@@ -31,7 +31,7 @@ public class ClienteController {
 
     @Autowired
     @Qualifier("clienteService")
-    private DBRepository<Cliente, ClienteDto, String> clienteService;
+    private ClienteService clienteService;
 
     @Autowired
     @Qualifier("clienteConverter")

@@ -6,12 +6,17 @@ import org.springframework.web.bind.annotation.RestController;
 import com.api.william_cell.models.dto.ClienteContactDto;
 import com.api.william_cell.models.entity.Cliente;
 import com.api.william_cell.models.entity.ClienteContact;
-import com.api.william_cell.services.repository.DBRepository;
+import com.api.william_cell.services.ClienteContactService;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.dao.DataAccessException;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,10 +27,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 @RestController
 @RequestMapping("/api/v1")
 public class ClienteContactController {
+
+    private Map<String, Object> response = new HashMap<>();
     
     @Autowired
     @Qualifier("clienteContactService")
-    DBRepository<ClienteContact, ClienteContactDto, Long> clienteContactService;
+    ClienteContactService clienteContactService;
 
     @PostMapping("/cliente/contact")
     public ClienteContactDto create(@RequestBody ClienteContact cliente) {
@@ -42,7 +49,23 @@ public class ClienteContactController {
     public List<ClienteContactDto> getAll() {
         return clienteContactService.findAllEntities();
     }
-    
 
+    @GetMapping("/contact/{id}")
+    public ResponseEntity<?> findByClienteId(@PathVariable(name = "id") String id) {
+        response.clear();
+        try {
+            ClienteContactDto clienteContact = clienteContactService.findByClienteId(id);
+            if (clienteContact != null) {
+                return new ResponseEntity<>(clienteContact, HttpStatus.ACCEPTED);
+            } else {
+                response.put("mensaje", "Cliente no encontrado");
+                return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+            }
+        } catch (DataAccessException e) {
+            response.put("mensaje", e.getMessage());
+            return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    
     
 }
