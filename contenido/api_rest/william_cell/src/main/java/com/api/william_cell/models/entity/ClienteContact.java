@@ -1,5 +1,7 @@
 package com.api.william_cell.models.entity;
 
+import java.io.Serializable;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,7 +22,7 @@ import lombok.ToString;
 @Entity
 @Builder
 @Table(name = "cliente_contact")
-public class ClienteContact {
+public class ClienteContact implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

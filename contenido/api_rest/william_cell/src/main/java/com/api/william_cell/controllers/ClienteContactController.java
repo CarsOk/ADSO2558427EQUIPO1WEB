@@ -8,7 +8,7 @@ import com.api.william_cell.models.entity.Cliente;
 import com.api.william_cell.models.entity.ClienteContact;
 import com.api.william_cell.services.ClienteContactService;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -28,13 +28,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 @RequestMapping("/api/v1")
 public class ClienteContactController {
 
-    private Map<String, Object> response = new HashMap<>();
+    private Map<String, Object> response = new LinkedHashMap<>();
     
     @Autowired
     @Qualifier("clienteContactService")
     ClienteContactService clienteContactService;
 
-    @PostMapping("/cliente/contact")
+    @PostMapping("/contact")
     public ClienteContactDto create(@RequestBody ClienteContact cliente) {
         return clienteContactService.saveEntity(cliente);
     }
@@ -56,9 +56,10 @@ public class ClienteContactController {
         try {
             ClienteContactDto clienteContact = clienteContactService.findByClienteId(id);
             if (clienteContact != null) {
-                return new ResponseEntity<>(clienteContact, HttpStatus.ACCEPTED);
+                return new ResponseEntity<>(clienteContact, HttpStatus.OK);
             } else {
                 response.put("mensaje", "Cliente no encontrado");
+                response.put("detalles", "El cliente con idenficación " + id + "no fue encontrado");
                 return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
             }
         } catch (DataAccessException e) {

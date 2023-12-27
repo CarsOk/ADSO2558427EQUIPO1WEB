@@ -24,6 +24,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+// TODO agregar capturas de error
+// TODO agregar documentación
 
 @RestController
 @RequestMapping("/api/v1")

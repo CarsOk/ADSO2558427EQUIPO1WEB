@@ -15,7 +15,7 @@ import com.api.william_cell.repositories.ClienteRepository;
 
  
 @Service("clienteService")
-public class ClienteService {
+public class ClienteService implements IService<Cliente, ClienteDto, String>{
 
     @Autowired
     @Qualifier("clienteConverter")
@@ -41,7 +41,7 @@ public class ClienteService {
 
     @Transactional(readOnly = true)
     public List<ClienteDto> findAllEntities() {
-       Iterable<Cliente> clientes = repository.findAll();
+       List<Cliente> clientes = repository.findAll();
 
         return StreamSupport.stream(clientes.spliterator(), false)
             .map(clienteConverter::toDto)

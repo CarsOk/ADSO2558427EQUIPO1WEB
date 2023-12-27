@@ -18,6 +18,10 @@ public class ClienteConverter implements EntityConverter<Cliente, ClienteDto> {
      * @return una instancia de ClienteDto ya convertida
      */
     public Cliente toEntity(ClienteDto clienteDto) {
+        if (clienteDto == null) {
+            return null;
+        }
+
         Cliente cliente = Cliente.builder()
                             .cliente_id(clienteDto.getCliente_id())
                             .primer_nombre(clienteDto.getPrimer_nombre())
@@ -31,6 +35,11 @@ public class ClienteConverter implements EntityConverter<Cliente, ClienteDto> {
      
     @Override
     public ClienteDto toDto(Cliente cliente) {
+
+        if (cliente == null) {
+            return null;
+        }
+
         ClienteDto clienteDto = ClienteDto.builder()
                             .cliente_id(cliente.getCliente_id())
                             .primer_nombre(cliente.getPrimer_nombre())

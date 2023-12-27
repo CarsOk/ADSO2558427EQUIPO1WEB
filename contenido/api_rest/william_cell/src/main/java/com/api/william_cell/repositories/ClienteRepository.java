@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.api.william_cell.models.entity.Cliente;
 
-@Repository
+@Repository("clienteRepository")
 public interface ClienteRepository extends JpaRepository<Cliente, String> {
 
 }

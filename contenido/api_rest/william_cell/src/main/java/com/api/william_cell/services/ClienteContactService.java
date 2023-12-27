@@ -15,9 +15,10 @@ import com.api.william_cell.repositories.ClienteContactRepository;
 
 
 @Service("clienteContactService")
-public class ClienteContactService {
+public class ClienteContactService implements IService<ClienteContact, ClienteContactDto, Long> {
 
     @Autowired
+    @Qualifier("clienteContactRepository")
     ClienteContactRepository repository;
 
     @Autowired
@@ -47,7 +48,7 @@ public class ClienteContactService {
             .map(converter::toDto).toList();
     }
     
-    @Transactional
+    @Transactional(readOnly = true)
     public ClienteContactDto findByClienteId(String id) {
         List<ClienteContact> clienteContacts = repository.findByClienteId(id);
 

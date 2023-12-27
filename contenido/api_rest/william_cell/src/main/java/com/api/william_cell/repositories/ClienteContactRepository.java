@@ -10,7 +10,7 @@ import java.util.List;
 
 
 
-@Repository
+@Repository("clienteContactRepository")
 public interface ClienteContactRepository extends JpaRepository<ClienteContact, Long> {
     
     @Query("SELECT cc FROM ClienteContact cc JOIN cc.cliente c WHERE c.cliente_id = :clienteId")
