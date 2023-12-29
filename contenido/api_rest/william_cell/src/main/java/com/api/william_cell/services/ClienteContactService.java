@@ -26,21 +26,25 @@ public class ClienteContactService implements IService<ClienteContact, ClienteCo
     EntityConverter<ClienteContact, ClienteContactDto> converter;
 
     @Transactional
+    @Override
     public ClienteContactDto saveEntity(ClienteContact clienteContact) {
         return converter.toDto(repository.save(clienteContact));
     }
 
     @Transactional(readOnly = true)
+    @Override
     public ClienteContactDto findEntityById(Long id) {
         return converter.toDto(repository.findById(id).orElse(null));
     }
 
     @Transactional
+    @Override
     public void deleteEntity(ClienteContact entity) {
         repository.deleteById(entity.getCliente_contact_id());
     }
 
     @Transactional(readOnly = true)
+    @Override
     public List<ClienteContactDto> findAllEntities() {
         List<ClienteContact> clienteContacts = repository.findAll();
 

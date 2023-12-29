@@ -6,6 +6,7 @@ import java.util.stream.StreamSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.api.william_cell.converter.interfaces.EntityConverter;
 import com.api.william_cell.models.dto.VentaDto;
@@ -22,12 +23,14 @@ public class VentaService implements IService<Venta, VentaDto, Long> {
     @Autowired
     VentaRepository ventaRepository;
 
+    @Transactional
     @Override
     public void deleteEntity(Venta entity) {
         ventaRepository.delete(entity);
     }
 
     @Override
+    @Transactional
     public VentaDto saveEntity(Venta entity) {
         return converter.toDto(ventaRepository.save(entity));
     }

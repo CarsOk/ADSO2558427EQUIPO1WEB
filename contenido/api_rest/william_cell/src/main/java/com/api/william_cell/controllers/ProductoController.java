@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.api.william_cell.controllers.errors.ControllerResponses;
+import com.api.william_cell.controllers.response.ControllerResponses;
 import com.api.william_cell.converter.interfaces.EntityConverter;
 import com.api.william_cell.models.dto.ProductoDto;
 import com.api.william_cell.models.entity.Producto;
@@ -23,7 +23,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
-public class ProductoController extends ControllerResponses<Producto> implements BaseController<Producto, ProductoDto, String> {
+public class ProductoController extends ControllerResponses<Producto>
+        implements BaseController<Producto, ProductoDto, String> {
 
     @Autowired
     ProductService productService;
@@ -32,9 +33,9 @@ public class ProductoController extends ControllerResponses<Producto> implements
     @Qualifier("productConverter")
     EntityConverter<Producto, ProductoDto> converter;
 
+    @Override
     @PostMapping("/producto")
     public ResponseEntity<?> create(@RequestBody Producto producto) {
-        response.clear();
         try {
             return new ResponseEntity<>(productService.saveEntity(producto), HttpStatus.CREATED);
         } catch (DataAccessException e) {
@@ -42,11 +43,10 @@ public class ProductoController extends ControllerResponses<Producto> implements
         }
     }
 
+    @Override
     @PutMapping("/producto/{id}")
     public ResponseEntity<?> update(@PathVariable(name = "id") String id, @RequestBody Producto producto) {
-        response.clear();
         try {
-
             if (!producto.getProduct_id().equals(id)) {
                 return nonModifiableId(producto);
             }
@@ -64,15 +64,14 @@ public class ProductoController extends ControllerResponses<Producto> implements
         }
     }
 
+    @Override
     @DeleteMapping("producto/{id}")
     public ResponseEntity<?> delete(@PathVariable(name = "id") String id) {
-        response.clear();
         try {
             ProductoDto productodDto = productService.findEntityById(id);
             if (productodDto != null) {
                 productService.deleteEntity(converter.toEntity(productodDto));
-                response.put("mensaje", "Producto eliminado correctamente");
-                return new ResponseEntity<>(response, HttpStatus.OK);
+                return successfullyDeleted();
             } else {
                 return idNotFound();
             }
@@ -81,9 +80,9 @@ public class ProductoController extends ControllerResponses<Producto> implements
         }
     }
 
+    @Override
     @GetMapping("/producto/{id}")
     public ResponseEntity<?> showById(@PathVariable(name = "id") String id) {
-        response.clear();
         try {
             ProductoDto productoDto = productService.findEntityById(id);
             if (productoDto != null) {
@@ -96,9 +95,10 @@ public class ProductoController extends ControllerResponses<Producto> implements
         }
     }
 
+    @Override
     @GetMapping("/productos")
     public List<ProductoDto> findAll() {
         return productService.findAllEntities();
     }
-    
+
 }

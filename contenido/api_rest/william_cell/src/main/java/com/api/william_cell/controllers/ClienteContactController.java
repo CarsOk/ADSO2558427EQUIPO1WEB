@@ -2,7 +2,7 @@ package com.api.william_cell.controllers;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.api.william_cell.controllers.errors.ControllerResponses;
+import com.api.william_cell.controllers.response.ControllerResponses;
 import com.api.william_cell.models.dto.ClienteContactDto;
 import com.api.william_cell.models.entity.Cliente;
 import com.api.william_cell.models.entity.ClienteContact;
@@ -62,14 +62,12 @@ public class ClienteContactController extends ControllerResponses<ClienteContact
 
     @GetMapping("/contact/{id}")
     public ResponseEntity<?> findByClienteId(@PathVariable(name = "id") String id) {
-        response.clear();
         try {
             ClienteContactDto clienteContact = clienteContactService.findByClienteId(id);
             if (clienteContact != null) {
                 return new ResponseEntity<>(clienteContact, HttpStatus.OK);
             } else {
-               
-                return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
+                return idNotFound();
             }
         } catch (DataAccessException e) {
             return internalServerError(e);

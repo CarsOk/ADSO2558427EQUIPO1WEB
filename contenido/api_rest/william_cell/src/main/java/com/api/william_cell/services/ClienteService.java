@@ -25,21 +25,25 @@ public class ClienteService implements IService<Cliente, ClienteDto, String>{
     private ClienteRepository repository;
 
     @Transactional
+    @Override
     public void deleteEntity(Cliente cliente) {
         repository.delete(cliente);
     }
 
     @Transactional
+    @Override
     public ClienteDto saveEntity(Cliente cliente) {
         return clienteConverter.toDto(repository.save(cliente));
     }
 
     @Transactional(readOnly = true)
+    @Override
     public ClienteDto findEntityById(String id) {
         return clienteConverter.toDto(repository.findById(id).orElse(null));
     }
 
     @Transactional(readOnly = true)
+    @Override
     public List<ClienteDto> findAllEntities() {
        List<Cliente> clientes = repository.findAll();
 
