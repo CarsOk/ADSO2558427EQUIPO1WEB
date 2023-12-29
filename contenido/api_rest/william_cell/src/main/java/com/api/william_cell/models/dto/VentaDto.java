@@ -19,11 +19,12 @@ public class VentaDto {
 
     private String cliente_id;
     
-    private Long producto_id;
+    private String producto_id;
 
     private Integer venta_cantidad;
     
     private LocalDateTime venta_fecha;
 
-    private String venta_detalles;
+    private Long venta_total;
+
 }

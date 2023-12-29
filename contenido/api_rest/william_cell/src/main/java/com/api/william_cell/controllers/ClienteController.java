@@ -12,24 +12,21 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.api.william_cell.controllers.errors.ControllerResponses;
 import com.api.william_cell.converter.interfaces.EntityConverter;
 import com.api.william_cell.models.dto.ClienteDto;
 import com.api.william_cell.models.entity.Cliente;
 import com.api.william_cell.services.ClienteService;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 // TODO agregar capturas de error
 // TODO agregar documentación
 
 @RestController
-@RequestMapping("/api/v1")
-public class ClienteController {
+public class ClienteController extends ControllerResponses<Cliente> implements BaseController<Cliente, ClienteDto, String> {
 
     @Autowired
     @Qualifier("clienteService")
@@ -40,40 +37,51 @@ public class ClienteController {
     private EntityConverter<Cliente, ClienteDto> converter;
 
     @PostMapping("/cliente")
-    @ResponseStatus(value = HttpStatus.CREATED)
-    public ClienteDto create(@RequestBody Cliente cliente) {
-        return clienteService.saveEntity(cliente);
+    public ResponseEntity<?> create(@RequestBody Cliente cliente) {
+        try {
+            return new ResponseEntity<>(clienteService.saveEntity(cliente), HttpStatus.CREATED);
+        } catch (DataAccessException e) {
+           return internalServerError(e);
+        }
     }    
 
     @PutMapping("/cliente")
-    @ResponseStatus(value = HttpStatus.CREATED)
     public ClienteDto update(@RequestBody Cliente cliente) {
         return clienteService.saveEntity(cliente);
     }
 
     @DeleteMapping("/cliente/{id}")
     public ResponseEntity<?> delete(@PathVariable(name = "id") String id) {
-        Map<String, Object> response = new HashMap<>();
         try {
             Cliente clienteDelete = converter.toEntity(clienteService.findEntityById(id));
             clienteService.deleteEntity(clienteDelete);
             return new ResponseEntity<>(clienteDelete, HttpStatus.NO_CONTENT);
         } catch (DataAccessException e) {
-            response.put("cliente", null);
-            response.put("mensaje", e.getMessage());
-            return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+            return internalServerError(e);
         }
     }
 
     @GetMapping("/cliente/{id}")
-    @ResponseStatus(value = HttpStatus.OK)
-    public ClienteDto showById(@PathVariable(name = "id") String id) {
-        return clienteService.findEntityById(id);
+    public ResponseEntity<?> showById(@PathVariable(name = "id") String id) {
+        try {
+            if (clienteService.findEntityById(id) != null) {
+                return new ResponseEntity<>(clienteService.findEntityById(id), HttpStatus.FOUND);
+            }
+            return new ResponseEntity<>(idNotFound(), HttpStatus.NOT_FOUND);
+        } catch (DataAccessException e) {
+            return internalServerError(e);
+        }
     }
 
     @GetMapping("/clientes")
     public List<ClienteDto> findAll() {
         return clienteService.findAllEntities();
+    }
+
+    @Override
+    public ResponseEntity<?> update(String id, Cliente entity) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'update'");
     }
     
     

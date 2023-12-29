@@ -21,10 +21,10 @@ public class VentaConverter implements EntityConverter<Venta, VentaDto> {
         return Venta.builder()
             .venta_id(dto.getVenta_id())
             .cliente(Cliente.builder().cliente_id(dto.getCliente_id()).build())
-            .producto(Producto.builder().product_id(dto.).build())
+            .producto(Producto.builder().product_id(dto.getProducto_id()).build())
             .venta_fecha(dto.getVenta_fecha())
             .venta_cantidad(dto.getVenta_cantidad())
-            .venta_detalles(dto.getVenta_detalles())
+            .venta_total(dto.getVenta_total())
             .build();
     }
 
@@ -39,8 +39,8 @@ public class VentaConverter implements EntityConverter<Venta, VentaDto> {
             .cliente_id(entity.getCliente().getCliente_id())
             .producto_id(entity.getProducto().getProduct_id())
             .venta_fecha(entity.getVenta_fecha())
-            .venta_detalles(entity.getVenta_detalles())
             .venta_cantidad(entity.getVenta_cantidad())
+            .venta_total(entity.getVenta_total())
             .build();
     }
     

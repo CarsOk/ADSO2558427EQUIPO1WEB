@@ -21,14 +21,11 @@ import lombok.ToString;
 public class Producto implements Serializable{
     
     @Id
-    private Long product_id;
+    private String product_id;
 
     private String product_nombre;
 
-    @Builder.Default
-    private String product_img = "N/A";
-
     private Integer product_cant;
 
-    private Integer product_precio;
+    private Long product_precio;
 }

@@ -6,17 +6,9 @@ import com.api.william_cell.converter.interfaces.EntityConverter;
 import com.api.william_cell.models.dto.ClienteDto;
 import com.api.william_cell.models.entity.Cliente;
 
-/**
- * Esta es la clase ClienteConverter <p>
- * Es la encargada de convertir los tipos de datos de las clases {@code Cliente} (Entidad) y {@code ClienteDto} (Repositorio)
- */
 @Component("clienteConverter")
 public class ClienteConverter implements EntityConverter<Cliente, ClienteDto> {
-   
-    /**
-     * Convierte todos los argumentos de un objeto de tipo ClienteDto a Cliente <p>
-     * @return una instancia de ClienteDto ya convertida
-     */
+
     public Cliente toEntity(ClienteDto clienteDto) {
         if (clienteDto == null) {
             return null;

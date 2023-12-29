@@ -18,7 +18,6 @@ public class ProductConverter implements EntityConverter<Producto, ProductoDto> 
         return Producto.builder()
             .product_id(dto.getProduct_id())
             .product_nombre(dto.getProduct_nombre())
-            .product_img(dto.getProduct_img())
             .product_precio(dto.getProduct_precio())
             .product_cant(dto.getProduct_cant())
             .build();
@@ -34,7 +33,6 @@ public class ProductConverter implements EntityConverter<Producto, ProductoDto> 
         return ProductoDto.builder()
             .product_id(entity.getProduct_id())
             .product_nombre(entity.getProduct_nombre())
-            .product_img(entity.getProduct_img())
             .product_cant(entity.getProduct_cant())
             .product_precio(entity.getProduct_precio())
             .build();

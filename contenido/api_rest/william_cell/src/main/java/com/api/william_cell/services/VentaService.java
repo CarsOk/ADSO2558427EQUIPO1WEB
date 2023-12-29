@@ -5,12 +5,14 @@ import java.util.stream.StreamSupport;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
 import com.api.william_cell.converter.interfaces.EntityConverter;
 import com.api.william_cell.models.dto.VentaDto;
 import com.api.william_cell.models.entity.Venta;
 import com.api.william_cell.repositories.VentaRepository;
 
+@Service
 public class VentaService implements IService<Venta, VentaDto, Long> {
 
     @Autowired

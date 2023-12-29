@@ -27,22 +27,22 @@ import lombok.ToString;
 public class Venta {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long venta_id;
 
     @ManyToOne
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "product_id")
     private Producto producto;
 
     private Integer venta_cantidad;
     
-    private LocalDateTime venta_fecha;
+    @Builder.Default
+    private LocalDateTime venta_fecha = LocalDateTime.now();
 
-    @Lob
-    private String venta_detalles;
+    private Long venta_total;
 
 }
