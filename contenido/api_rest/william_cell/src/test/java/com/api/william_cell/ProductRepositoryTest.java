@@ -14,6 +14,8 @@ public class ProductRepositoryTest {
     @Autowired
     private ProductRepository productRepository;
 
+    @Autowired
+
     @Test
     @Transactional
     public void testUpdateProductCant() {
