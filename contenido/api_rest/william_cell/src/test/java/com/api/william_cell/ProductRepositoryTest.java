@@ -7,10 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.api.william_cell.controllers.UsuarioController;
 import com.api.william_cell.repositories.ProductRepository;
-import com.api.william_cell.repositories.UsuarioRepository;
-import com.api.william_cell.services.UsuarioService;
 
 @SpringBootTest
 public class ProductRepositoryTest {
@@ -18,7 +15,6 @@ public class ProductRepositoryTest {
     private ProductRepository productRepository;
 
     @Autowired
-    private UsuarioService usuarioService;
 
     @Test
     @Transactional
