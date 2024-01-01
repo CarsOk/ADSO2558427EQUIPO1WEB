@@ -8,10 +8,15 @@ Registro de cambios de la aplicación web William Cell Web.
 ### Adiciones  
 - Url's de peticiones HTTP intiutivas.  
 - Cubrimiento y manejo de algunos errores comúnes durante las peticiones.
-- Modelos tales como:    
+- Entidades tales como:    
   - Cliente  
   - Venta  
   - Producto  
   - ClienteContact  
-- Respectivos DTO's para todos los modelos.
+- Respectivos DTO's para todas las entidades.
 - Implementación de metodos POST, PUT, DELETE Y GET.
+## APIRESTful [1.0.1] - 2024-1-1  
+### Cambios  
+- Agregación de las entidades 'Rol' y 'Usuario' para guardar la información de inicio de sesión.
+- Url's de petición para las respectivas entidades.
+- Metodos HTTP POST, PUT, DELETE Y GET agregados.
