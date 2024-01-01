@@ -1,9 +1,5 @@
 package com.api.william_cell.models.dto;
 
-import java.util.List;
-
-import com.api.william_cell.models.entity.Usuario;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
