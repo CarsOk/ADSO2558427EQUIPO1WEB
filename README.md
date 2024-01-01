@@ -2,6 +2,9 @@
 
 Registro de cambios de la aplicación web William Cell Web.
 
+## Endpoints para las peticiones REST
+- api/v1/clientes
+
 ### Changelog
 
 ## APIRESTful [1.0.0] - 2023-12-29
