@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -69,7 +71,8 @@ public class VentaController extends ControllerResponses<Venta> implements BaseC
     }
 
     @Override
-    public ResponseEntity<?> delete(Long id) {
+    @DeleteMapping("/venta/{id}")
+    public ResponseEntity<?> delete(@PathVariable(name = "id") Long id) {
         try {
             if (ventaService.findEntityById(id) != null) {
                 Venta venta = ventaConverter.toEntity(ventaService.findEntityById(id));
@@ -84,7 +87,8 @@ public class VentaController extends ControllerResponses<Venta> implements BaseC
     }
 
     @Override
-    public ResponseEntity<?> showById(Long id) {
+    @GetMapping("/venta/{id}")
+    public ResponseEntity<?> showById(@PathVariable(name = "id") Long id) {
         try {
             if (ventaService.findEntityById(id) != null) {
                 return new ResponseEntity<>(ventaService.findEntityById(id), HttpStatus.FOUND);
@@ -97,6 +101,7 @@ public class VentaController extends ControllerResponses<Venta> implements BaseC
     }
 
     @Override
+    @GetMapping("/ventas")
     public List<VentaDto> findAll() {
         return ventaService.findAllEntities();
     }
