@@ -1,5 +1,7 @@
 # WILLIAM CELL WEB
 
+Registro de cambios de la aplicación web William Cell Web.
+
 ### Changelog
 
 ## APIRESTful [1.0.0] - 2023-12-29
