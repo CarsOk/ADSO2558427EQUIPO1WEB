@@ -52,7 +52,7 @@ public class ProductService implements IService<Producto, ProductoDto, String> {
     
     @Transactional
     public int updateProductCant(Integer n_product_cant, String product_id) {
-       return productRepository.updateProductCant(n_product_cant, product_id);
+        return productRepository.updateProductCant(n_product_cant, product_id);
     }
 
 }
