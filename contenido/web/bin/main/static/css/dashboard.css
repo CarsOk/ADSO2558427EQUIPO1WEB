@@ -1,0 +1,32 @@
+.bienvenida {
+    color: white;
+}
+
+.card {
+    border-width: 3px;
+    background-color: white;
+}
+
+.card-info {
+    margin-top: 50px;
+}
+
+.gradient {
+    background: linear-gradient(to bottom right, #546e90, #503e2c);
+}
+
+.card-small {
+    background-color: #233142;
+}
+
+.card-small span {
+    color: white;
+}
+
+.card-small h3 {
+    color: white;
+}
+
+.card svg {
+    fill: white;
+}

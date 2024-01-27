@@ -1,0 +1,36 @@
+.custom-navbar {
+    background-color: #2c3e50;
+}
+
+.nav-link {
+    color: white;
+
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.nav-link:focus {
+    color: gainsboro;
+}
+
+.nav-link:hover {
+    background-color: #405668;
+}
+
+.offcanvas {
+    background-color: #2c3e50;
+}
+
+.offcanvas-title {
+    color: white;
+}
+
+.btn-close {
+    background-color: white;
+}
+
+.navbar-toggler {
+    background-color: #4a657c;
+}

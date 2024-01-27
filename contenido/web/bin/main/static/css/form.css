@@ -1,0 +1,18 @@
+.btn-outline-success {
+    border-color: #2c3e50;
+    color: #2c3e50;
+}
+
+.btn-outline-success:hover {
+    background-color: #2c3e50;
+    border-color: #2c3e50;
+}
+
+.btn-outline-success:active {
+    background-color: #546e90 !important;
+    border-color: #546e90 !important;
+}
+
+.gradient {
+    background: linear-gradient(to bottom right, #546e90, #503e2c);
+}

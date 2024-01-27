@@ -1,0 +1,20 @@
+Color Base:
+
+#2c3e50
+Variantes de Luminosidad:
+
+#364754
+#405668
+#4a657c
+#546e90
+Variantes de Saturación:
+
+#233142
+#2c546e
+#337390
+#3e8fad
+Tonos Complementarios:
+
+#503e2c (Inverso)
+#503c2c
+#50382c
