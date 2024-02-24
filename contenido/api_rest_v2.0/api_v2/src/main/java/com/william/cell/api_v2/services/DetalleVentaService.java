@@ -1,5 +1,6 @@
 package com.william.cell.api_v2.services;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,12 +14,21 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.william.cell.api_v2.converters.EntityConverter;
 import com.william.cell.api_v2.models.DTO.DetalleVentaDTO;
+import com.william.cell.api_v2.models.DTO.ProductoDTO;
 import com.william.cell.api_v2.models.entities.DetalleVenta;
+import com.william.cell.api_v2.models.entities.Producto;
 import com.william.cell.api_v2.repositories.DetalleVentaRepository;
 import com.william.cell.api_v2.services.errors.ErrorResponses;
 
 @Service
 public class DetalleVentaService extends BaseService<DetalleVenta, DetalleVentaDTO, Long> {
+
+    @Autowired
+    private ProductoService productoService;
+
+    @Autowired
+    @Qualifier("productoConverter")
+    private EntityConverter<Producto, ProductoDTO> productoConverter;
 
     @Autowired
     private DetalleVentaRepository detalleVentaRepository;
@@ -45,6 +55,31 @@ public class DetalleVentaService extends BaseService<DetalleVenta, DetalleVentaD
         } catch (DataAccessException e) {
             return ErrorResponses.internalServerError(e);
         }
+    }
+
+    @Override
+    public ResponseEntity<?> postEntity(DetalleVentaDTO dto) {
+        try {
+            Producto producto = (Producto) productoService.getById(dto.getProductoId()).getBody();
+
+            if (producto.getStockActual() <= 0) {
+                return ErrorResponses.soldOut();
+            }
+
+            int ventaCantidad = dto.getCantidad();
+            BigDecimal productoPrecio = producto.getPrecio();
+
+            dto.setPrecioUnitario(productoPrecio);
+            dto.setSubtotal(productoPrecio.multiply(new BigDecimal(ventaCantidad)));
+
+            producto.setStockActual(producto.getStockActual() - ventaCantidad);
+
+            productoService.updateEntity(producto.getProductoId(), productoConverter.toDto(producto));
+
+        } catch (DataAccessException e) {
+            return ErrorResponses.internalServerError(e);
+        }
+        return super.postEntity(dto);
     }
 
 }

@@ -22,13 +22,21 @@ public class VentaController extends BaseController<Venta, VentaDTO, Long>{
     @Autowired
     private VentaService ventaService;
 
-    @GetMapping("/find/clienteId/{id}")
+    @GetMapping("/findByClienteId/{id}")
     public ResponseEntity<?> getVentaByClienteId(@PathVariable(name = "id") String id) {
         return ventaService.getByClienteId(id); 
     }
 
-    @GetMapping("/find")
+    @GetMapping("/findByfecha")
     public ResponseEntity<?> getVentaByFecha(@RequestParam(name = "fecha", required = true) LocalDateTime fecha) {
         return ventaService.getByFechaVenta(fecha);
+    }
+
+    @GetMapping("/findByFechaAndClienteId")
+    public ResponseEntity<?> findByFechaAndClienteId(
+        @RequestParam(name = "fecha", required = true) LocalDateTime fecha, 
+        @RequestParam(name = "clienteId", required = true) String clienteId) {
+
+        return ventaService.getByFechaVentaAndClienteId(fecha, clienteId);
     }
 }   

@@ -25,7 +25,7 @@ import lombok.NoArgsConstructor;
 public class DetalleVenta implements BaseEntity<Long>, Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long detalle_id;
 
     @ManyToOne

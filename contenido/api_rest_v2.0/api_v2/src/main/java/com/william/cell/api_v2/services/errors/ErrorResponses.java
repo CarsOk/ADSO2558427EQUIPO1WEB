@@ -33,4 +33,13 @@ public final class ErrorResponses {
         return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
+
+    public static ResponseEntity<?> soldOut() {
+        response.put("Mensaje", "producto agotado o cantidad de venta superior al stock disponible");
+        response.put("Detalles", """
+                    parece que la cantidad de productos que desea agregar sobrepasa 
+                    el limite del stock actualmente disponible o el producto se encuentra agotado.
+                    """);
+        return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+    } 
 }

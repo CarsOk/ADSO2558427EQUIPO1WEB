@@ -69,4 +69,18 @@ public class VentaService extends BaseService<Venta, VentaDTO, Long> {
             return ErrorResponses.internalServerError(e);
         }
     }
+
+    public ResponseEntity<?> getByFechaVentaAndClienteId(LocalDateTime fechaVenta, String clienteId) {
+        try {
+            List<Venta> ventas = repository.findByFechaVentaAndClienteId(fechaVenta, clienteId);
+
+            if (ventas.isEmpty()) {
+                return ErrorResponses.notFound();
+            }
+
+            return new ResponseEntity<>(ventas, HttpStatus.OK);
+        } catch (DataAccessException e) {
+            return ErrorResponses.internalServerError(e);
+        }
+    }
 }

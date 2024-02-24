@@ -14,7 +14,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class DetalleVentaDTO {
 
-    private Long detalle_id;
+    @Builder.Default
+    private Long detalle_id = Long.valueOf(1);
 
     private Long ventaId;
 

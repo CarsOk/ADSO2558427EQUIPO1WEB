@@ -17,4 +17,6 @@ public interface VentaRepository extends JpaRepository<Venta, Long> {
 
     List<Venta> findByFechaVenta(LocalDateTime fechaVenta);
 
+    @Query("SELECT venta FROM Venta venta WHERE venta.fechaVenta = :fechaVenta AND venta.cliente.id = :clienteId")
+    List<Venta> findByFechaVentaAndClienteId(@Param("fechaVenta") LocalDateTime fechaVenta, @Param("clienteId") String clienteId);
 }

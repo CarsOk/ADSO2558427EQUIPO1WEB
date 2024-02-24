@@ -13,13 +13,13 @@ import com.william.cell.api_v2.models.entities.DetalleVenta;
 import com.william.cell.api_v2.services.DetalleVentaService;
 
 @RestController
-@RequestMapping("/api/v2/detalle/venta")
+@RequestMapping("/api/v2/detalleVenta")
 public class DetalleVentaController extends BaseController<DetalleVenta, DetalleVentaDTO, Long> {
     
     @Autowired
     private DetalleVentaService detalleVentaService;
 
-    @GetMapping("/find/venta/{id}")
+    @GetMapping("/findByVenta/{id}")
     public ResponseEntity<?> getVentaId(@PathVariable("id") Long id) {
         return detalleVentaService.getByVentaId(id);
     }

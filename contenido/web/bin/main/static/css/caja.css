@@ -1,0 +1,7 @@
+.card {
+    height: 500px;
+}
+
+.no-margin {
+    margin: 0 !important;
+}

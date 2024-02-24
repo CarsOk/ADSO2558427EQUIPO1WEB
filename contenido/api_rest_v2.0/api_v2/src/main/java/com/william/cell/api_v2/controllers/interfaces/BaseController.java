@@ -36,6 +36,11 @@ public class BaseController<T extends BaseEntity<ID>, D, ID extends Serializable
         return service.updateEntity(id, dto);
     }
 
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> deleteById(@PathVariable(name = "id") ID id) {
+        return service.deleteById(id);
+    }
+
     @Autowired
     public void setService(BaseService<T, D, ID> service) {
         this.service = service;
